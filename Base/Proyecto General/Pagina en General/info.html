@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estiloinfo.css">
+
+    <title>Microgames Studio</title>
+</head>
+
+<body>
+    <nav>
+        <img class="hamster" src="C:/Users/A-07/Desktop/Microgames-Studio/Base/Proyecto General/Image/logopagina.png">
+        <div></div>
+        <ul>
+            <li><a href="Inicio.html">Inicio</a></li>
+            <li><a href="">Perfil</a></li>
+            <li><a href="">Creadores</a></li>
+        </ul>
+    </nav>
+
+    <h1 class="subtitulo">¿Quiénes somos?</h1>
+
+    <br><br>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo nulla impedit ducimus doloribus vitae quo
+        fuga! Excepturi architecto veritatis corrupti? Eligendi doloribus at exercitationem expedita maxime!
+        Consequuntur beatae facere minima.
+    </p>
+
+    <br><br>
+
+    <h2 class="sub">Integrantes</h2>
+
+    <br>
+
+    <img id="buttonD" onclick="infoDe()" class="perfildev"
+        src="https://lh3.googleusercontent.com/a/ACg8ocLkHqxZhJnRmepb1OsCGdg9OXtCQweHqbXPV5fD9g_pNCRZqDLf=s288-c-no">
+
+    <img id="buttonA" onclick="infoAg()" class="perfilagus"
+        src="https://static.wikia.nocookie.net/memes-pedia/images/2/2b/Perro_Sovi%C3%A9tico_MEME.png/revision/latest?cb=20200129172847&path-prefix=es">
+
+    <img id="buttonM" onclick="infoMa()" class="perfilmart" src="https://avatars.githubusercontent.com/u/205787438?v=4">
+
+    <img id="buttonJ" onclick="infoJo()" class="perfiljohn" src="C:/Users/A-07/Desktop/Microgames-Studio/Base/Proyecto General/Image/perfiljohn.jpg">
+
+    <img id="buttonN" onclick="infoNi()" class="perfilnilt" src="C:/Users/A-07/Desktop/Microgames-Studio/Base/Proyecto General/Image/perfilnilton.jpg">
+
+    <img id="buttonP" onclick="infoPa()" class="perfilpati" src="C:/Users/A-07/Desktop/Microgames-Studio/Base/Proyecto General/Image/perfilpatiño.jpg">
+
+    <img id="buttonZ" onclick="infoZa()" class="perfilzaid" src="C:/Users/A-07/Desktop/Microgames-Studio/Base/Proyecto General/Image/perfilzaid.jpg">
+
+    <br>
+
+    <div class="infoDev" id="devinfo">
+        <div class="decinfo"></div>
+       
+
+
+         <button id="cerrar" onclick="cerrar()" class="btncerrar">X</button>
+
+        <h1>tiro info</h1>
+        <br>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis enim, omnis laboriosam consequatur quae explicabo ad, facilis est fugiat rerum tenetur accusamus officiis, natus eum? Tempore, iusto. Sit, autem corrupti!Lorem<p>
+
+
+
+    </div>
+
+    <div class="infoMart" id="infomartin">
+       <div class="decinfo"></div>
+       
+
+
+         <button id="cerrar" onclick="cerrar()" class="btncerrar">X</button>
+
+        <h1>pederasta</h1>
+        <br>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis enim, omnis laboriosam consequatur quae explicabo ad, facilis est fugiat rerum tenetur accusamus officiis, natus eum? Tempore, iusto. Sit, autem corrupti!Lorem<p>
+
+
+
+    </div>
+
+
+
+    <div class="infoAgus" id="infoescobar">
+        <div class="decinfo"></div>
+       
+
+
+         <button id="cerrar" onclick="cerrar()" class="btncerrar">X</button>
+
+        <h1>JJJJJJIIJJJ</h1>
+        <br>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis enim, omnis laboriosam consequatur quae explicabo ad, facilis est fugiat rerum tenetur accusamus officiis, natus eum? Tempore, iusto. Sit, autem corrupti!Lorem<p>
+
+
+
+    </div>
+
+
+
+    <script>
+
+
+        function infoDe() {
+
+        document.getElementById('devinfo').style.display = 'block'; 
+
+        }
+
+        function infoMa(){
+
+            document.getElementById('infomartin').style.display = 'block';
+        }
+
+        function infoAg(){
+
+            document.getElementById('infoescobar').style.display = 'block';
+        }
+
+        function cerrar(){
+           
+            document.getElementById('devinfo').style.display = 'none';
+
+            document.getElementById('infomartin').style.display = 'none';
+
+            document.getElementById('infoescobar').style.display = 'none';
+        }
+
+
+    </script>
+
+</body>
+
+</html>

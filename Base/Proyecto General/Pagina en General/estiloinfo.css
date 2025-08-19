@@ -1,0 +1,204 @@
+body {
+    background-size: cover;
+    margin: 0;
+    background-color:    
+    
+    rgb(250, 224, 235);
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: #ffdab7;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.hamster{
+    width: 70px;
+    height: 80px;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+li {
+    margin-right: 30px;
+}
+a {
+    font-size: 20px;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    transition: color 0.3s, border-bottom 0.3s;
+}
+a:hover {
+    color: #0ef;
+    border-bottom: 2px solid #0ef;
+}
+
+.subtitulo{
+    text-align: center;
+    font-size: 50px;
+}
+
+.sub{
+    background-color: black;
+    margin: 5px;
+    padding: 5px;
+    text-align: center;
+    color:white;
+    font-size: 40px;
+    
+}
+
+.perfildev{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    border: solid 5px, rgb(97, 88, 231);
+    position:relative;
+    top: 350px;
+    left: 250px;
+    
+}
+
+.perfilagus{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    border: solid 5px, rgb(97, 88, 231);
+    position: relative;
+    left: 1000px;
+}
+
+.perfilmart{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    border: solid 5px, rgb(97, 88, 231);
+    position: relative;
+   
+    left: 250px;
+    
+}
+
+.perfiljohn{
+
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    border: solid 5px, rgb(97, 88, 231);
+    position: relative;
+    top: 350px;
+    left: 250px;
+
+}
+
+.perfilnilt{
+
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    border: solid 5px, rgb(97, 88, 231);
+    position: relative;
+    top: 350px;
+    left: 250px;
+}
+
+.perfilpati{
+
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    border: solid 5px, rgb(97, 88, 231);
+    position: relative;
+    left: 50%;
+    top: 350px;
+    left: 250px;
+
+}
+
+.perfilzaid{
+
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    border: solid 5px, rgb(97, 88, 231);
+    position: relative;
+    top: 350px;
+    left: 250px;
+
+}
+
+.infoDev{
+
+    display: none; 
+    position: relative;
+    background-color: black;
+    padding: 5px;
+    margin: -500px auto 0;   /*Valor negativo sube la caja de mierrrda*/
+    border-radius: 5px;
+    text-align: center;
+    color:white;
+    width: 1000px; 
+    height: 500px; 
+
+}
+
+.decinfo{
+     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 20px;
+    background: #203fec;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.infoMart{
+
+    display: none; 
+    position: relative;
+    background-color: black;
+    padding: 5px;
+    margin: -500px auto 0;   /*Valor negativo sube la caja de mierrrda*/
+    border-radius: 5px;
+    text-align: center;
+    color:white;
+    width: 1000px; 
+    height: 500px;
+
+}
+
+.infoAgus{
+
+    display: none; 
+    position: relative;
+    background-color: black;
+    padding: 5px;
+    margin: -500px auto 0;   /*Valor negativo sube la caja de mierrrda*/
+    border-radius: 5px;
+    text-align: center;
+    color:white;
+    width: 1000px; 
+    height: 500px;
+    
+
+}
+
+
+
+.btncerrar{
+
+   background-color: rgb(74, 117, 238);
+   color: white;
+   position: absolute;
+   top: 10px;
+   right: 10px;
+   height: 25px;
+   width: 30px;
+   
+
+}
