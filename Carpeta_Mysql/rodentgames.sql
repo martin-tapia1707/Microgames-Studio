@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 01-09-2025 a las 16:46:05
+-- Tiempo de generación: 04-09-2025 a las 05:58:23
 -- Versión del servidor: 10.4.32-MariaDB
--- Versión de PHP: 8.0.30
+-- Versión de PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,6 +20,32 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `rodentgames`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `informacion`
+--
+
+CREATE TABLE `informacion` (
+  `IDusuario` int(11) NOT NULL,
+  `IDjuego` int(11) NOT NULL,
+  `PuntajeMax` int(11) NOT NULL,
+  `Pulgar` tinyint(1) DEFAULT NULL,
+  `Comentario` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `informacion`
+--
+
+INSERT INTO `informacion` (`IDusuario`, `IDjuego`, `PuntajeMax`, `Pulgar`, `Comentario`) VALUES
+(1, 1, 500, 1, NULL),
+(1, 2, 700, 0, 'Buen juego ojala sea el ultimo'),
+(2, 1, 200, 1, 'Muy entretenido'),
+(3, 2, 100, NULL, NULL),
+(4, 2, 800, NULL, NULL),
+(4, 3, 200, 0, 'La verdad un 0/10 y zzz');
 
 -- --------------------------------------------------------
 
@@ -41,31 +67,6 @@ INSERT INTO `juegos` (`IDjuego`, `Nombre`) VALUES
 (2, 'Minecraft vs Roblox'),
 (3, 'Dodge'),
 (4, 'Solitario');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `tenerpuntos`
---
-
-CREATE TABLE `tenerpuntos` (
-  `IDusuario` int(11) NOT NULL,
-  `IDjuego` int(11) NOT NULL,
-  `PuntajeMax` int(11) NOT NULL,
-  `Opinion` tinyint(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `tenerpuntos`
---
-
-INSERT INTO `tenerpuntos` (`IDusuario`, `IDjuego`, `PuntajeMax`, `Opinion`) VALUES
-(1, 1, 500, 1),
-(1, 2, 700, 0),
-(2, 1, 200, 1),
-(3, 2, 100, NULL),
-(4, 2, 800, NULL),
-(4, 3, 200, 0);
 
 -- --------------------------------------------------------
 
@@ -97,17 +98,17 @@ INSERT INTO `usuario` (`IDusuario`, `Nombre`, `Correo`, `Foto`, `Contraseña`) V
 --
 
 --
+-- Indices de la tabla `informacion`
+--
+ALTER TABLE `informacion`
+  ADD PRIMARY KEY (`IDusuario`,`IDjuego`),
+  ADD KEY `fk_TenerPuntos_juegos` (`IDjuego`);
+
+--
 -- Indices de la tabla `juegos`
 --
 ALTER TABLE `juegos`
   ADD PRIMARY KEY (`IDjuego`);
-
---
--- Indices de la tabla `tenerpuntos`
---
-ALTER TABLE `tenerpuntos`
-  ADD PRIMARY KEY (`IDusuario`,`IDjuego`),
-  ADD KEY `fk_TenerPuntos_juegos` (`IDjuego`);
 
 --
 -- Indices de la tabla `usuario`
@@ -138,9 +139,9 @@ ALTER TABLE `usuario`
 --
 
 --
--- Filtros para la tabla `tenerpuntos`
+-- Filtros para la tabla `informacion`
 --
-ALTER TABLE `tenerpuntos`
+ALTER TABLE `informacion`
   ADD CONSTRAINT `fk_TenerPuntos_juegos` FOREIGN KEY (`IDjuego`) REFERENCES `juegos` (`IDjuego`),
   ADD CONSTRAINT `fk_TenerPuntos_usuario` FOREIGN KEY (`IDusuario`) REFERENCES `usuario` (`IDusuario`);
 COMMIT;
