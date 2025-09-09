@@ -1,165 +1,167 @@
 * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+/* APARTADO HEADER / BOTONES */
 
-    header {
-        margin-top: 60px;
-    }
+header {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 10px 30px;
+    padding-left: 80px;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #ffeb99, #ffd54f);
+    box-shadow: 0px 3px 8px rgba(0,0,0,0.2);
+    position: sticky;
+    top: 0;
+    z-index: 9000;
+}
 
+.contenedorBotones {
+    display: flex;
+    gap: 15px;
+}
 
+.Logotexto {
+    width: 185px;
+    height: auto;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
 
+.Logotexto:hover {
+    transform: scale(1.05);
+    filter: brightness(1.15);
+}
 
-    body, html {
-        height: 100%;
-        font-family: 'Arial', sans-serif;
-        background-color: rgb(41, 30, 202);
-        overflow-x: hidden;
-    }
+.Login {
+    width: 120px;
+    height: 40px;
+    border: none;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #ffda6a, #ffb700);
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
 
+.Login:hover {
+    background: linear-gradient(135deg, #ffb700, #ff9100);
+    transform: scale(1.05);
+    color: white;
+}
 
-    .sidebar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100vh;
-        width: 60px;
-        background-color: #221fa7;
-        color: white;
-        transition: width 0.75s ease;
-        padding: 20px 10px;
-        overflow: hidden;
-        z-index: 9999; /* para que esté encima de todo */
-        box-shadow: 2px 0 5px rgba(0,0,0,0.3);
-    }
-    .sidebar:hover {
-        width: 200px;
-    }
-    .sidebar ul {
-        list-style: none;
-        display: flex;
-        flex-direction: column;
-        row-gap: 1rem;
-    }
-    .sidebar li {
-        padding: 10px;
-        border-bottom: 2px solid #222369;
-        border-radius: 0.5rem;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-    }
-    .sidebar li:hover {
-        background-color: #2925ff;
-    }
-    .nav-link {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        color: white;
-        text-decoration: none;
-        font-weight: 600;
-        white-space: nowrap;
-    }
-    .item-icon {
-        font-size: 1.5rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .item-txt {
-        opacity: 0;
-        transition: opacity 0.3s;
-    }
-    .sidebar:hover .item-txt {
-        opacity: 1;
-    }
+/* APARTADO SIDEBAR */
 
+body, html {
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    background-color: #ffeb99;
+    overflow-x: hidden;
+}
 
-    .content {
-        margin-left: 60px;
-        padding: 40px 20px;
-        background: linear-gradient(1deg,rgb(4, 142, 255) 0%, rgb(18, 24, 92) 50%, rgb(44, 20, 131) 100%);
-        min-height: 100vh;
-        transition: margin-left 0.75s ease;
-    }
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 60px;
+    background: linear-gradient(180deg, #ffeb99, #ffda6a);
+    transition: width 0.75s ease;
+    padding: 20px 10px;
+    overflow: hidden;
+    z-index: 9999;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+}
+.sidebar:hover {
+    width: 200px;
+    box-shadow: 4px 0 15px rgba(0,0,0,0.25);
+}
+.sidebar ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+.sidebar li {
+    padding: 10px;
+    border-radius: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.sidebar li:hover {
+    background: linear-gradient(135deg, #ffb700, #ff9100);
+    transform: scale(1.05);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.25);
+}
+.sidebar li:hover .nav-link {
+    color: white;
+}
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: #333;
+    text-decoration: none;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: color 0.3s ease;
+}
+.item-icon {
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.item-txt {
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.sidebar:hover .item-txt {
+    opacity: 1;
+}
 
+/* APARTADO BODY, PAGINA EN GENERAL */
 
-    .logotexto {
-        width: 720px;
-        height: auto;
-        margin-bottom: 20px;
-    }
+.content {
+    margin-left: 60px; /* espacio para la sidebar */
+    padding: 40px 20px;
+    background: #fff7de;
+    min-height: 100vh;
+    transition: margin-left 0.75s ease;
 
+    display: flex;              /* centramos los juegos en fila */
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
 
-    .animate__animated.animate__bounce {
-    --animate-duration: 2s;
-    }
+/* ==== JUEGOS ==== */
 
+.juego {
+    width: 300px;
+    height: 220px;
+    background-color: rgb(5, 6, 63);
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.6s ease;
+    background-size: cover;
+    background-position: center;
+}
 
-    .juegoSelect {
-        width: 720px;
-        height: 520px;
-        background-color: rgb(5, 6, 63);
-        margin: 0 auto; /* centrar */
-        border-radius: 30px;
-        position: relative;
-        margin-top: 40px;
-    }
+/* juego central (imagen principal) */
+.juegoSelect {
+    width: 720px;
+    height: 520px;
+    z-index: 2;
+}
 
-
-    .juegoSelect:hover{
-        transition: transform 0.4s ease;
-        transform: scale(1.04)
-    }
-
-
-    .juegoSecuizq {
-        width: 300px;
-        height: 330px;
-        background-color: rgb(5, 6, 63);
-        margin: 0 auto; /* centrar */
-        border-radius: 30px;
-        position: relative;
-        margin-top: -430px;
-        margin-left: 150px;
-    }
-
-
-    .juegoSecuder {
-        width: 300px;
-        height: 330px;
-        background-color: rgb(5, 6, 63);
-        margin: 0 auto; /* centrar */
-        border-radius: 30px;
-        position: relative;
-        margin-top: -320px;
-        margin-right: 150px;
-    }
-
-
-    .juegoFondoizq {
-        width: 80px;
-        height: 100px;
-        background-color: rgb(5, 6, 63);
-        margin: 0 auto; /* centrar */
-        border-radius: 30px;
-        position: relative;
-        margin-top: -230px;
-        margin-left: 35px
-    }
-
-
-    .juegoFondoder {
-        width: 80px;
-        height: 100px;
-        background-color: rgb(5, 6, 63);
-        margin: 0 auto; /* centrar */
-        border-radius: 30px;
-        position: relative;
-        margin-top: -90px;
-        margin-right: 35px
-    }
-
-    
+.juegoSecuizq, .juegoSecuder {
+    width: 300px;
+    height: 220px;
+    opacity: 0.8;
+}
