@@ -1,7 +1,7 @@
         <div class="sidebar">
         <ul>
             <li>
-                <a href="inicio.php" class="nav-link">
+                <a href="home.php" class="nav-link">
                     <span class="item-icon"><i class='bx bxs-home'></i></span>
                     <span class="item-txt">Inicio</span>
                 </a>

@@ -7,7 +7,7 @@
     <title>Microgames Studio</title>
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
     <link rel="shortcut icon" href="../IMG/LogoEmpresa.png" />
-    <link rel= "stylesheet" href= "../CSS/EstiloInicio.css">
+    <link rel= "stylesheet" href= "../CSS/home.css">
     <link rel= "stylesheet" href= "../CSS/header.css">
     <link rel= "stylesheet" href= "../CSS/sidebar.css">
 
@@ -25,7 +25,7 @@
     <!-- Contenido principal -->
 
         <div class="content">
-                <div class="juego juegoSelect" style="background-image: url('../IMG/IconoJuego.jpg');"></div>
+                <div class="juego juegoSelect" href= "game1.php" style="background-image: url('../IMG/IconoJuego.jpg');"></div>
                 <div class="juego juegoSecuizq" style="background-image: url('../IMG/Tapia.jpg');"></div>
                 <div class="juego juegoSecuder" style="background-image: url('../IMG/perfiljohn.jpg');"></div>
         </div>
