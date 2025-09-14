@@ -4,7 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <link rel="stylesheet" href="../CSS/estiloinfo.css">
+    <link rel= "stylesheet" href= "../CSS/header.css">
+    <link rel= "stylesheet" href= "../CSS/sidebar.css">
+
     <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
     <link rel="shortcut icon">
@@ -15,52 +19,10 @@
 
 <body>
 
-    <!-- Header -->
-
-    <header class="header">
-
-        <img src="Logo_texto.png" class="Logotexto">
-        <div class="contenedorBotones">
-            <button div class="Login" onclick=""><b>Iniciar Sesión</b></button>
-            <button div class="Login" onclick=""><b>Registrarse</b></button>
-        </div>
-
-    </header>
-
-
-    <div class="contenedorPrincipal">
-
-        <!-- Sidebar -->
-
-        <div class="sidebar">
-            <ul>
-                <li>
-                    <a href="Inicio.html" class="nav-link">
-                        <span class="item-icon"><i class='bx bxs-home'></i></span>
-                        <span class="item-txt">Inicio</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="info.html" class="nav-link">
-                        <span class="item-icon"><i class='bx bxs-info-circle'></i></span>
-                        <span class="item-txt">Creadores</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="nav-link">
-                        <span class="item-icon"><i class='bx bx-task'></i></span>
-                        <span class="item-txt">Ayuda</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="nav-link">
-                        <span class="item-icon"><i class='bx bxs-contact'></i></span>
-                        <span class="item-txt">Perfil</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-
+    <?php
+    require_once "header.php";
+    require_once "sidebar.php";
+    ?>
 
         <!-- INFORMACION DE LA EMPRESA -->
 
