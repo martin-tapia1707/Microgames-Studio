@@ -6,48 +6,17 @@
     <title>Microgames Studio</title>
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
     <link rel="shortcut icon" href="../IMG/LogoEmpresa.png" />
-    <link rel="stylesheet" href="../Carpeta_CSS/usuario.css">
+    <link rel="stylesheet" href="../CSS/user.css">
+    <link rel="stylesheet" href="../CSS/header.css">
+    <link rel="stylesheet" href="../CSS/sidebar.css">
 </head>
 <body>
-<!-- Header -->
-    <header>
-        <img src="../IMG/Logo_texto.png" class="logo-texto">
-        <div class="botones">
-            <button class="boton-login" onclick=""><b>Iniciar Sesión</b></button>
-            <button class="boton-login" onclick=""><b>Registrarse</b></button>
-        </div>
-    </header>
 
-    <div class="principal">
-<!-- Sidebar -->
-        <div class="barra-lateral">
-            <ul>
-                <li>
-                    <a href="Inicio.html" class="enlace-nav">
-                        <span class="icono-item"><i class='bx bxs-home'></i></span>
-                        <span class="texto-item">Inicio</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="info.html" class="enlace-nav">
-                        <span class="icono-item"><i class='bx bxs-info-circle'></i></span>
-                        <span class="texto-item">Creadores</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="enlace-nav">
-                        <span class="icono-item"><i class='bx bx-task'></i></span>
-                        <span class="texto-item">Ayuda</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="enlace-nav activo">
-                        <span class="icono-item"><i class='bx bxs-contact'></i></span>
-                        <span class="texto-item">Perfil</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
+<?php
+    require_once "header.php";
+    require_once "sidebar.php";
+?>
+
 <!-- Contenido principal -->
         <div class="contenido">
             <section class="perfil-contenedor">

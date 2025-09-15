@@ -15,11 +15,11 @@
             <li>
                 <a href="#" class="nav-link">
                     <span class="item-icon"><i class='bx bx-task'></i></span>
-                    <span class="item-txt">Ayuda</span>
+                    <span class="item-txt">Comentarios</span>
                 </a>
             </li>
             <li>
-                <a href="#" class="nav-link">
+                <a href="user.php" class="nav-link">
                     <span class="item-icon"><i class='bx bxs-contact'></i></span>
                     <span class="item-txt">Perfil</span>
                 </a>
