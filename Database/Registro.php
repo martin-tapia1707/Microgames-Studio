@@ -1,5 +1,5 @@
 <?php
-    include("C:/xampp/htdocs/Database/Config.php");
+    include("C:/xampp/htdocs/Microgames-Studio/Includes/Config.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
