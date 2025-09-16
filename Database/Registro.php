@@ -1,5 +1,5 @@
 <?php
-    include("C:/xampp/htdocs/Database/Conexion.php");
+    include("C:/xampp/htdocs/Database/Config.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
