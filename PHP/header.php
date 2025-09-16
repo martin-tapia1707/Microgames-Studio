@@ -14,8 +14,15 @@
             <img src="../IMG/Logo_texto.png" class="Logotexto">
         </a>
         <div class="contenedorBotones">
-            <button href="#" div class="Login" onclick=""><b>Iniciar Sesión</b></button>
-            <button href="#" div class="Login" onclick=""><b>Registrarse</b></button>
+
+        <a href="login.php">
+            <button div class="Login" onclick=""><b>Iniciar Sesión</b></button>
+        </a>
+
+        <a href="register.php">
+            <button div class="Login" onclick=""><b>Registrarse</b></button>
+        </a>
+
         </div>
     </header>
 

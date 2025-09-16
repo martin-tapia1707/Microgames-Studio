@@ -1,0 +1,196 @@
+html{
+      background-color: #ffeb99;
+ }
+
+        .header-info {
+            position: relative;
+            top: 50px;
+            left: 25%;
+            background-color: #ff6d4d;
+            width: 700px;
+            height: 790px;
+            border-radius: 4%;
+            color: #ffeb99;
+            font-family: "Acme", sans-serif;
+            font-weight: 400;
+      
+
+        }
+
+        .content{
+            position: relative;
+            bottom: 200px;
+
+        }
+
+        .logo{
+            position: relative;
+            height: 200px;
+            width: 400px;
+            left: 150px;
+            bottom: 20px;
+            position: center;
+
+        }
+
+
+        .text-register {
+            position: relative;
+            top: 100px;
+            left: 20px;
+            font-size: 40px;
+    
+        }
+
+        .sign-up{
+            position: relative;
+            top: 45px;
+            left: 410px;
+            font-size: 17px;
+            color: #fff4c3e0;
+
+        }
+
+
+        .caja-info{
+            position: relative;
+            top: 20px;
+
+        }
+
+       
+        .text-box-name-user{
+            position: relative;
+            top: 20px;
+            left: 25px;
+            width: 640px;
+            height: 45px;
+            font-size: 30px;
+            background-color: #690013;
+            border-radius: 15px;
+            color: #ffeb99;
+            
+ 
+        }
+
+        .text-box-name-user:focus{
+            border:3px solid #ffd54f;
+            outline: none; 
+
+        }
+
+        .text-box-name-user::placeholder{
+            color: #ffeb998a;
+        }
+
+        .text-box-password{
+            position: relative;
+            top: 0px;
+            left: 25px;
+            width: 640px;
+            height: 45px;
+            font-size: 30px;
+            background-color: #690013;
+            border-radius: 15px;
+            color: #ffeb99;
+ 
+        }
+
+        .text-box-password:focus{
+            border:3px solid #ffd54f;
+            outline: none; 
+
+        }
+
+        .text-box-password::placeholder{
+            color: #ffeb998a;
+        }
+
+        .text-box-repeat-password{
+            position: relative;
+            bottom: 20px;
+            left: 25px;
+            width: 640px;
+            height: 45px;
+            font-size: 30px;
+            background-color: #690013;
+            border-radius: 15px;
+            color: #ffeb99;
+ 
+        }
+
+        .text-box-repeat-password:focus{
+            border:3px solid #ffd54f;
+            outline: none; 
+        }
+
+        .text-box-repeat-password::placeholder{
+            color: #ffeb998a;
+        }
+
+        .text-box-mail{
+            position: relative;
+            bottom: 40px;
+            left: 25px;
+            width: 640px;
+            height: 45px;
+            font-size: 30px;
+            background-color: #690013;
+            border-radius: 15px;
+            color: #ffeb99;
+            
+        }
+       
+        .text-box-mail:focus{
+            border:3px solid #ffd54f;
+            outline: none; 
+        }
+
+        .text-box-mail::placeholder{
+            color: #ffeb998a;
+        }
+
+        .user{
+            position:relative;
+            font-size: 25px;
+            top: 40px;
+            left: 30px;
+        }
+
+        .password{
+            position:relative;
+            font-size: 25px;
+            top: 20px;
+            left: 30px;
+
+        }
+
+        .repeat{
+            position:relative;
+            font-size: 25px;
+            top: 0px;
+            left: 30px;
+
+        }
+
+        .mail{
+            position:relative;
+            font-size: 25px;
+            bottom: 20px;
+            left: 30px;
+
+        }
+
+        .make{
+            position:relative;
+            width: 550px;
+            height: 80px;
+            left:68px;
+            font-size: 20px;
+            color: #ffeb99;
+            border-radius: 10px;
+            background-color: #690013;
+            cursor: pointer;
+            
+
+        }

@@ -15,7 +15,7 @@
             <li>
                 <a href="#" class="nav-link">
                     <span class="item-icon"><i class='bx bx-task'></i></span>
-                    <span class="item-txt">Comentarios</span>
+                    <span class="item-txt">Ayuda</span>
                 </a>
             </li>
             <li>
