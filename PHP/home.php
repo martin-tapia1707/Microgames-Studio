@@ -25,7 +25,9 @@
     <!-- Contenido principal -->
 
         <div class="content">
-                <div class="juego juegoSelect" href= "game1.php" style="background-image: url('../IMG/IconoJuego.jpg');"></div>
+    <a href="game1.php">
+        <div class="juego juegoSelect" style="background-image: url('../IMG/IconoJuego.jpg');"></div>
+    </a>
                 <div class="juego juegoSecuizq" style="background-image: url('../IMG/Tapia.jpg');"></div>
                 <div class="juego juegoSecuder" style="background-image: url('../IMG/perfiljohn.jpg');"></div>
         </div>

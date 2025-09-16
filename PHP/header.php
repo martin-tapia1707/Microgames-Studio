@@ -10,7 +10,9 @@
 <body>
 
     <header>
-        <img src="../IMG/Logo_texto.png" class="Logotexto">
+        <a href="home.php">
+            <img src="../IMG/Logo_texto.png" class="Logotexto">
+        </a>
         <div class="contenedorBotones">
             <button href="#" div class="Login" onclick=""><b>Iniciar Sesión</b></button>
             <button href="#" div class="Login" onclick=""><b>Registrarse</b></button>
