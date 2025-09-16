@@ -1,0 +1,55 @@
+body {
+    background: #fff7de;
+    font-family: "Acme", sans-serif;
+}
+
+.contenedorJuego {
+    width: 750px;
+    margin: 50px auto 0 auto;
+    position: relative;
+}
+
+.screen {
+    height: 500px;
+    width: 750px;
+    background-color: rgb(27, 27, 27);
+    border-radius: 20px;
+    position: relative;
+}
+
+.acciones {
+    position: absolute;
+    bottom: -60px; /* coloca los botones debajo del .screen */
+    right: 0;       /* pegado al extremo derecho:  Sisi, todo este "acciones" fue chagepetiado CHATGPT DEIDAD*/ 
+    display: flex;
+    gap: 10px;     /* espacio entre botones */
+}
+
+.acciones button {
+    background: #ffffff;
+    border: none;
+    font-size: 28px; /* tamaño del ícono */
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    transition: transform 0.2s, background 0.2s;
+}
+
+.acciones button:hover {
+    transform: scale(1.2);
+    background: #f1f1f1;
+}
+
+.like {
+    color: green;
+}
+
+.dislike {
+    color: red;
+}
+
+.contenedorTutorial {
+    margin-left: 220px;
+    margin-right: 300px;
+}
