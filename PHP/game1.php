@@ -53,11 +53,13 @@
 
 </div>
 
-  <div class = "apartadoComentarios">
+<div class="apartadoComentarios">
 
-  <input type="text" placeholder="Escribe un comentario" class="comentar"><br>
+  <h1 class="titulocomentarios">Comentarios</h1>
+
+  <textarea class="comentar" placeholder="Escribe un comentario"></textarea><br>
   <button class="publicar" id="publicacion">Publicar</button>
-  <button class="descartar" id="descartacion">Descartar</button>
+  <button class="publicar" id="descartacion">Descartar</button>
 
 </div>
 
