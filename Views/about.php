@@ -1,68 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../CSS/estiloinfo.css">
-    <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-    <link rel="shortcut icon">
-
-
-    <title>Microgames Studio</title>
-</head>
-
-<body>
-
-    <!-- Header -->
-
-    <header class="header">
-
-        <img src="../IMG/Logo_texto.png" class="Logotexto">
-        <div class="contenedorBotones">
-            <button div class="Login" onclick=""><b>Iniciar Sesión</b></button>
-            <button div class="Login" onclick=""><b>Registrarse</b></button>
-        </div>
-
-    </header>
-
-
-    <div class="contenedorPrincipal">
-
-        <!-- Sidebar -->
-
-        <div class="sidebar">
-            <ul>
-                <li>
-                    <a href="Inicio.html" class="nav-link">
-                        <span class="item-icon"><i class='bx bxs-home'></i></span>
-                        <span class="item-txt">Inicio</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="info.html" class="nav-link">
-                        <span class="item-icon"><i class='bx bxs-info-circle'></i></span>
-                        <span class="item-txt">Creadores</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="nav-link">
-                        <span class="item-icon"><i class='bx bx-task'></i></span>
-                        <span class="item-txt">Ayuda</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="nav-link">
-                        <span class="item-icon"><i class='bx bxs-contact'></i></span>
-                        <span class="item-txt">Perfil</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-
-
-        <!-- INFORMACION DE LA EMPRESA -->
+       <!-- INFORMACION DE LA EMPRESA -->
 
 
         <div class="cajasub">
@@ -112,12 +48,6 @@
             <div class="cajaM">
                 <div id="buttonM" onclick="infoMa()" class="perfilmart"></div>
             </div>
-
-
-            <div class="cajaJ">
-                <div id="buttonJ" onclick="infoJo()" class="perfiljohn"></div>
-            </div>
-
 
             <div class="cajaN">
                 <img id="buttonN" onclick="infoNi()" class="perfilnilt" src="../IMG/perfilnilton.jpg">
@@ -232,33 +162,6 @@
             </div>
 
             
-        <div class="header-info" id="infojohn">
-
-                <div class="content-header-info">
-                    <h1 class="text-header">Rol: Diseñador gráfico</h1>
-                     <button id="cerrar" class="cerrar-info" onclick="cerrar()">X</button>
-                </div>
-
-
-                <div class="perfil-info-J"></div>
-
-                <div class="caja-info">
-
-                    <div class="nombre-info">
-                        <p class="text-box-name">Nombre: John Huallpa</p>
-                    </div>
-                    <div class="datos-info">
-                        <p class="text-box-facts">Datos Datos Datos Datos Datos Datos Datos Datos Datos Datos Datos
-                            Datos.</p>
-                    </div>
-                    <div class="apartado-info">
-                        <p class="text-box-apartado">Apartado: Diseño</p>
-                    </div>
-                    <div class="encargado-info">
-                        <p class="text-box-encargado">Encargado de: Diseño, arte de la empresa y módulo de avatar.</p>
-                    </div>
-
-                </div>
         </div>
 
         <div class="header-info" id="infopati">
@@ -354,10 +257,3 @@
                 </div>
 
         </div>
-                
-
-        <script src="../JS/JSinfo.js"></script>
-
-</body>
-
-</html>

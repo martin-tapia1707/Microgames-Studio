@@ -1,23 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../CSS/login.css">
-</head>
-
-<body>
-
-    
-
-    <div class="header-info">
+   <div class="header-info">
 
         <img class="logo" src="../IMG/logopagina.png">
 
-        <div class="content">
+        <div class="content-login">
 
             <h1 class="text-log-in"><b>Iniciar Sesión</h1>  
 
@@ -28,13 +13,10 @@
 
         <button class="make">Iniciar sesión</button>
 
-        <a class="sign-in" href="register.HTML"><p>¿No tenés una cuenta? ¡¡Creala ya!!</p></a>
+        <a href="Mainsite.php?section=register" class="sign-in">
+        <p>¿No tenés una cuenta? ¡Creala ya!</p></a>
 
         </div>
         </div>
 
     </div>
-
-</body>
-
-</html>

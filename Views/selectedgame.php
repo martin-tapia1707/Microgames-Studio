@@ -1,23 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../CSS/game1.css">
-  <link rel="stylesheet" href="../CSS/sidebar.css">
-  <link rel="stylesheet" href="../CSS/header.css">
-  <!-- Boxicons deidad -->
-  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-  <title>Game1</title>
-</head>
-<body>
-
-    <?php
-    require_once "header.php";
-    require_once "sidebar.php";
-    ?>
-
-
 <div class="contenedorJuego">
 
   <h1>NombreJuego</h1>
@@ -62,6 +42,3 @@
   <button class="publicar" id="descartacion">Descartar</button>
 
 </div>
-
-</body>
-</html>

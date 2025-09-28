@@ -2,10 +2,12 @@
 
 .content {
     margin-left: 60px; /* espacio para la sidebar */
+    margin-top: 60px;
     padding: 40px 20px;
     background: #fff7de;
     min-height: 100vh;
     transition: margin-left 0.75s ease;
+    min-height: calc(100vh - 60px);
     font-family: "Acme", sans-serif;
     display: flex;              /* centramos los juegos en fila */
     justify-content: center;
@@ -18,7 +20,7 @@
 .juego {
     width: 300px;
     height: 220px;
-    background-color: rgb(5, 6, 63);
+    background-color: rgb(238, 179, 51);
     border-radius: 30px;
     cursor: pointer;
     transition: all 0.6s ease;
