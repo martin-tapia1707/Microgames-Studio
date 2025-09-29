@@ -1,3 +1,6 @@
+<?php
+    session_start()
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -51,9 +54,11 @@
                         <p>PuntuajeMax: </p>
                         <p>Horas registradas: </p>
                     </div>
+                    <a href="../Database/Controlador_CerrarLogin.php">Salir</a>
                 </div>
             </section>
         </div>
+        
 
         <script src="../Carpeta_JS/Inicio.js"></script>
     </div>

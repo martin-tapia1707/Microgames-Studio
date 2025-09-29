@@ -1,4 +1,14 @@
-   <div class="header-info">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <form method="post" action="">
+        
+        <div class="header-info">
 
         <img class="logo" src="../IMG/logopagina.png">
 
@@ -7,16 +17,26 @@
             <h1 class="text-log-in"><b>Iniciar Sesión</h1>  
 
         <div class="caja-info">
+        
+        <p class="user"><b>Nombre de usuario</b></p><br>
+        <input type="text" name="nombreL" class="text-box-name-user" placeholder="Nombre de usuario"><br>
+        <p class="password"><b>Contraseña</b><a class="forgot" href="recuperar.html"><p>¿Olvidaste tu contraseña?</p></a></p><br>
+        <input type="password" name="contraseñaL" class="text-box-password" type="text" placeholder="Contraseña"><br>
+        <input type="submit" value="Iniciar secion" name="Login" class="make"><br><br><br>
+        <?php
+        include("../Includes/Config.php");
+        include("../Database/Controlador_Login.php");
+        ?>
 
-        <p class="user"><b>Nombre de usuario</b></p><input class="text-box-name-user" type="text" placeholder="Nombre de usuario">
-        <p class="password"><b>Contraseña</b><a class="forgot" href="recuperar.html"><p>¿Olvidaste tu contraseña?</p></a></p><input class="text-box-password" type="text" placeholder="Contraseña">
 
-        <button class="make">Iniciar sesión</button>
-
-        <a href="Mainsite.php?section=register" class="sign-in">
+        <a href="Mainsite.php?section=login" class="sign-in">
         <p>¿No tenés una cuenta? ¡Creala ya!</p></a>
 
         </div>
         </div>
 
     </div>
+    </form>
+</body>
+</html>
+

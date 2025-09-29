@@ -14,10 +14,10 @@
     //     exit;
     // }
 
-    if($conexion){
-        echo "estas conectado";
-    }else{
-        echo "ahora que paso";
-    }
+    // if($conexion){
+    //     echo "estas conectado";
+    // }else{
+    //     echo "ahora que paso";
+    // }
 
 ?>
