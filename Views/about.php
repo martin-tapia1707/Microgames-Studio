@@ -257,3 +257,5 @@
                 </div>
 
         </div>
+
+<script src="../JS/info.js"></script>

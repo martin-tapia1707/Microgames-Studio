@@ -4,12 +4,14 @@
      box-sizing: border-box;
  }
 
+
  body {
      height: 100%;
      font-family: 'Arial', sans-serif;
      background-color: #fff7de;
      overflow-x: hidden;
  }
+
 
  nav {
      display: flex;
@@ -27,10 +29,15 @@
  }
 
 
+
+
  /* APARTADO TITULOS Y SUBTITULOS */
 
 
+
+
  .subtitulo {
+
 
      position: relative;
      left: 250px;
@@ -42,7 +49,11 @@
 
 
 
+
+
+
  }
+
 
  .quienes {
      font-size: 25px;
@@ -55,7 +66,10 @@
      font-style: normal;
 
 
+
+
  }
+
 
  .empresalogo {
      position: relative;
@@ -68,6 +82,8 @@
  }
 
 
+
+
  .sub {
      position: relative;
      bottom: 500px;
@@ -77,9 +93,12 @@
      font-family: "Acme", sans-serif;
      color: #ff880d;
 
+
  }
 
+
  .textomiembros {
+
 
      font-size: 25px;
      position: relative;
@@ -91,39 +110,50 @@
      font-weight: 400;
      font-style: normal;
 
+
  }
+
+
+
 
 
 
  /* APARTADO DE MIEMBROS */
 
+
  .controlCajas {
      position: relative;
 
+
      bottom: 500px;
  }
+
 
  .cajaD {
      background-color: #ffeb99;
      position: relative;
      padding: 5px;
-     margin: 0px auto 0;
+     bottom: 0px;
      /*Valor negativo sube la caja de mierrrda*/
      border-radius: 12%;
      text-align: center;
      color: white;
      width: 425px;
      height: 520px;
-     right: 600px;
+     left: 150px;
      transition: transform 1.0s ease;
      transform-origin: center, center;
 
+
  }
+
 
  .cajaD:hover {
      transform: scale(1.04);
 
+
  }
+
 
  .perfildev {
      height: 200px;
@@ -137,62 +167,81 @@
  }
 
 
+
+
  @keyframes animacionDev {
      0% {
          transform: rotate(0deg);
      }
 
+
      5% {
          transform: rotate(30deg);
      }
+
 
      10% {
          transform: rotate(-25deg);
      }
 
+
      15% {
          transform: rotate(20deg);
      }
 
+
      20% {
          transform: rotate(-15deg);
      }
+
 
      30% {
          transform: rotate(10deg);
      }
 
 
+
+
      45% {
          transform: rotate(0deg);
      }
+
 
      75% {
          transform: rotate(30deg);
      }
 
+
      80% {
          transform: rotate(-25deg);
      }
+
 
      85% {
          transform: rotate(20deg);
      }
 
+
      90% {
          transform: rotate(-15deg);
      }
+
 
      95% {
          transform: rotate(10deg);
      }
 
+
      100% {
          transform: rotate(0deg);
 
+
      }
 
+
  }
+
+
 
 
  .perfildev:hover {
@@ -201,26 +250,30 @@
      transition: 0.7s;
  }
 
+
  .cajaA {
      background-color: #ffeb99;
      position: relative;
      padding: 5px;
-     margin: -530px auto 0;
+     top: -520px;
      /*Valor negativo sube la caja de mierrrda*/
      border-radius: 12%;
      text-align: center;
      color: white;
      width: 425px;
      height: 520px;
-     left: 590px;
+     left: 1335px;
      transition: transform 1.0s ease;
      transform-origin: center, center;
  }
 
+
  .cajaA:hover {
      transform: scale(1.04);
 
+
  }
+
 
  .perfilagus {
      height: 200px;
@@ -237,31 +290,37 @@
      background-position: center;
  }
 
+
  .perfilagus:hover {
      background-image: url('https://media.tenor.com/KxLhjoEInTUAAAAM/%D9%81%D8%A7%D8%B4%DB%8C%D8%B3%D9%85%D8%B3%D8%B1%D8%AE-soviet-union.gif');
  }
 
+
  .cajaM {
+
 
      background-color: #ffeb99;
      position: relative;
      padding: 5px;
-     margin: -530px auto 0;
+     bottom: 1040px;
      /*Valor negativo sube la caja de mierrrda*/
      border-radius: 12%;
      text-align: center;
      color: white;
      width: 425px;
      height: 520px;
-     right: 0px;
+     left: 740px;
      transition: transform 1.0s ease;
      transform-origin: center, center;
  }
 
+
  .cajaM:hover {
      transform: scale(1.04);
 
+
  }
+
 
  .perfilmart {
      height: 200px;
@@ -279,74 +338,52 @@
  }
 
 
+
+
  .perfilmart:hover {
      background-image: url('https://media.tenor.com/AwWxwJVLj4oAAAAM/stechumielihampterki-zi-ewan-ie.gif');
  }
 
 
- .cajaJ {
-     background-color: #ffeb99;
-     position: relative;
-     padding: 5px;
-     margin: 25px auto 0;
-     /*Valor negativo sube la caja de mierrrda*/
-     border-radius: 12%;
-     text-align: center;
-     color: white;
-     width: 425px;
-     height: 520px;
-     left: 0px;
-     transition: transform 1.0s ease;
-     transform-origin: center, center;
- }
 
- .cajaJ:hover {
-     transform: scale(1.04);
 
- }
+ /*     CAJAS  DE ABAJO
 
- .perfiljohn {
 
-     height: 200px;
-     width: 200px;
-     border-radius: 50%;
-     border: solid 5px;
-     border-color: #751a12;
-     position: relative;
-     margin: 125px auto 0;
-     left: 0px;
-     background-image: url('perfiles/perfiljohn.jpg');
-     background-position: center;
-     background-size: cover;
+        |             |
+        |             |
+        V             V            */
 
- }
 
- .perfiljohn:hover {
-     background-image: url('https://media1.tenor.com/m/g9qdy2Qq7DMAAAAC/the-p-club-ddlc.gif');
- }
 
+
+ 
  .cajaN {
      background-color: #ffeb99;
      position: relative;
      padding: 5px;
-     margin: 46px auto 0;
-     /*Valor negativo sube la caja de mierrrda*/
+     top: -1000px;
+     /*Valor negativo sube la caja de info*/
      border-radius: 12%;
      text-align: center;
      color: white;
      width: 425px;
      height: 520px;
-     right: 600px;
+     left: 150px;
      transition: transform 1.0s ease;
      transform-origin: center, center;
  }
+
 
  .cajaN:hover {
      transform: scale(1.04);
 
+
  }
 
+
  .perfilnilt {
+
 
      height: 200px;
      width: 200px;
@@ -359,29 +396,36 @@
  }
 
 
+
+
  .cajaP {
+
 
      background-color: #ffeb99;
      position: relative;
      padding: 5px;
-     margin: -530px auto 0;
-     /*Valor negativo sube la caja de mierrrda*/
+     top: -1520px;
+     /*Valor negativo sube la caja de info*/
      border-radius: 12%;
      text-align: center;
      color: white;
      width: 425px;
      height: 520px;
-     left: 0px;
+     left: 740px;
      transition: transform 1.0s ease;
      transform-origin: center, center;
  }
 
+
  .cajaP:hover {
      transform: scale(1.04);
 
+
  }
 
+
  .perfilpati {
+
 
      height: 200px;
      width: 200px;
@@ -392,7 +436,10 @@
      margin: 125px auto 0;
      left: 0px;
 
+
  }
+
+
 
 
  @keyframes animacionPat {
@@ -400,38 +447,46 @@
          transform: rotate(0deg);
      }
 
+
      100% {
          transform: rotate(360deg);
      }
  }
 
+
  .perfilpati:hover {
      animation: animacionPat 3s linear infinite;
 
+
  }
+
 
  .cajaZ {
      background-color: #ffeb99;
      position: relative;
      padding: 5px;
-     margin: -530px auto 0;
-     /*Valor negativo sube la caja de mierrrda*/
+     top: -2040px;
+     /*Valor negativo sube la caja de info*/
      border-radius: 12%;
      text-align: center;
      color: white;
      width: 425px;
      height: 520px;
-     left: 590px;
+     left: 1335px;
      transition: transform 1.0s ease;
      transform-origin: center, center;
  }
 
+
  .cajaZ:hover {
      transform: scale(1.04);
 
+
  }
 
+
  .perfilzaid {
+
 
      height: 200px;
      width: 200px;
@@ -442,10 +497,18 @@
      margin: 125px auto 0;
      left: 0px;
 
+
  }
 
 
+
+
  /*  APARTADO DE INFORMACION DE LOS MIEMBROS */
+
+
+
+
+
 
 
 
@@ -467,6 +530,7 @@
      font-style: normal;
  }
 
+
  .content-header-info {
      position: relative;
      justify-content: space-between;
@@ -474,13 +538,16 @@
      width: 700px;
      background-color: #690013;
 
+
  }
+
 
  .text-header {
      position: relative;
      top: 8px;
      left: 20px;
  }
+
 
  .cerrar-info {
      background-color: #ff880d;
@@ -497,7 +564,9 @@
      border: none;
      font-weight: bold;
 
+
  }
+
 
  .perfil-info-D {
      position: relative;
@@ -511,7 +580,9 @@
       background-position: center;
      background-size: cover;
 
+
  }
+
 
  .perfil-info-M {
      position: relative;
@@ -525,7 +596,9 @@
      background-size: cover;
      background-position: center;
 
+
  }
+
 
 .perfil-info-A {
      position: relative;
@@ -539,20 +612,6 @@
      background-size: cover;
      background-position: center;
 
- }
-
-
- .perfil-info-J {
-     position: relative;
-     background-color: #690013;
-     width: 250px;
-     height: 250px;
-     border-radius: 50%;
-     top: 30px;
-     left: 20px;
-     background-image: url('perfiles/perfiljohn.jpg');
-     background-position: center;
-     background-size: cover;
 
  }
 
@@ -569,7 +628,10 @@
      background-position: center;
      background-size: cover;
 
+
  }
+
+
 
 
  .perfil-info-N {
@@ -584,7 +646,10 @@
      background-position: center;
      background-size: cover;
 
+
  }
+
+
 
 
  .perfil-info-Z {
@@ -599,13 +664,17 @@
      background-position: center;
      background-size: cover;
 
+
  }
+
 
  .caja-info {
      position: relative;
      bottom: 250px;
 
+
  }
+
 
  .nombre-info {
      position: relative;
@@ -616,7 +685,9 @@
      background-color: #690013;
      border-radius: 15px;
 
+
  }
+
 
  .datos-info {
      position: relative;
@@ -627,7 +698,9 @@
      background-color: #690013;
      border-radius: 15px;
 
+
  }
+
 
  .apartado-info {
      position: relative;
@@ -639,6 +712,7 @@
      border-radius: 15px;
  }
 
+
  .encargado-info {
      position: relative;
      height: 100px;
@@ -648,7 +722,9 @@
      background-color: #690013;
      border-radius: 15px;
 
+
  }
+
 
  .text-box-name {
      position: relative;
@@ -660,6 +736,7 @@
      overflow-wrap: break-word;
  }
 
+
  .text-box-apartado {
      position: relative;
      top: 11px;
@@ -669,7 +746,9 @@
      word-wrap: break-word;
      overflow-wrap: break-word;
 
+
  }
+
 
  .text-box-encargado {
      position: relative;
@@ -681,6 +760,7 @@
      overflow-wrap: break-word;
  }
 
+
  .text-box-facts {
      position: relative;
      top: 13px;
@@ -689,6 +769,8 @@
      white-space: normal;
      word-wrap: break-word;
      overflow-wrap: break-word;
+
+
 
 
  }

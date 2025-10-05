@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-09-2025 a las 05:58:23
+-- Tiempo de generación: 05-10-2025 a las 06:13:30
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -20,6 +20,20 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `rodentgames`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `comentario`
+--
+
+CREATE TABLE `comentario` (
+  `IDcomentario` int(11) NOT NULL,
+  `texto` varchar(255) NOT NULL,
+  `fecha` date NOT NULL,
+  `valorLike` tinyint(1) DEFAULT NULL,
+  `IDusuario` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -71,6 +85,17 @@ INSERT INTO `juegos` (`IDjuego`, `Nombre`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `roles`
+--
+
+CREATE TABLE `roles` (
+  `IDrol` int(11) NOT NULL,
+  `rol` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `usuario`
 --
 
@@ -79,23 +104,31 @@ CREATE TABLE `usuario` (
   `Nombre` varchar(40) NOT NULL,
   `Correo` varchar(255) NOT NULL,
   `Foto` varchar(255) NOT NULL,
-  `Contraseña` varchar(40) NOT NULL
+  `Contraseña` varchar(40) NOT NULL,
+  `IDrol` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`IDusuario`, `Nombre`, `Correo`, `Foto`, `Contraseña`) VALUES
-(1, 'PuerroXeneize', 'davidquin@gmail.com', ' https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvsyStKbhDTNBCCnjxseHhlMeC5oRFI4DAZg&s', 'LASD9'),
-(2, 'Vegetta777', 'vegetta777@gmail.com', ' https://static.wikia.nocookie.net/karmaland/images/9/94/VEGETTA777.jpg/revision/latest?cb=20220912024105&path-prefix=es', '26062011'),
-(3, 'quericacola', 'quericacola@gmail.com', 'https://i.ytimg.com/vi/DnSZ2qZIREU/maxres2.jpg?sqp=-oaymwEoCIAKENAF8quKqQMcGADwAQH4Ab4EgALMB4oCDAgAEAEYZSBaKE0wDw==&rs=AOn4CLDAWUanoMkDK32xZSj_xmOEDA5AtA', 'Coca-cola'),
-(4, 'Lacobra', 'Lautaro@gmail.com', 'https://enagenda.com.ar/uploads/ckeditor/2024/12/20241229201349_img-6307.jpg', 'Colepalmercomecarne'),
-(5, 'Elpadre', 'Elpadrecito666@gmail.com', 'https://i1.sndcdn.com/artworks-l2eLwat7RPLoz3WK-5JntIQ-t500x500.jpg', 'Cidaparati');
+INSERT INTO `usuario` (`IDusuario`, `Nombre`, `Correo`, `Foto`, `Contraseña`, `IDrol`) VALUES
+(1, 'PuerroXeneize', 'davidquin@gmail.com', ' https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvsyStKbhDTNBCCnjxseHhlMeC5oRFI4DAZg&s', 'LASD9', 0),
+(2, 'Vegetta777', 'vegetta777@gmail.com', ' https://static.wikia.nocookie.net/karmaland/images/9/94/VEGETTA777.jpg/revision/latest?cb=20220912024105&path-prefix=es', '26062011', 0),
+(3, 'quericacola', 'quericacola@gmail.com', 'https://i.ytimg.com/vi/DnSZ2qZIREU/maxres2.jpg?sqp=-oaymwEoCIAKENAF8quKqQMcGADwAQH4Ab4EgALMB4oCDAgAEAEYZSBaKE0wDw==&rs=AOn4CLDAWUanoMkDK32xZSj_xmOEDA5AtA', 'Coca-cola', 0),
+(4, 'Lacobra', 'Lautaro@gmail.com', 'https://enagenda.com.ar/uploads/ckeditor/2024/12/20241229201349_img-6307.jpg', 'Colepalmercomecarne', 0),
+(5, 'Elpadre', 'Elpadrecito666@gmail.com', 'https://i1.sndcdn.com/artworks-l2eLwat7RPLoz3WK-5JntIQ-t500x500.jpg', 'Cidaparati', 0);
 
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `comentario`
+--
+ALTER TABLE `comentario`
+  ADD PRIMARY KEY (`IDcomentario`),
+  ADD KEY `FK_comentario_usuario` (`IDusuario`);
 
 --
 -- Indices de la tabla `informacion`
@@ -111,6 +144,12 @@ ALTER TABLE `juegos`
   ADD PRIMARY KEY (`IDjuego`);
 
 --
+-- Indices de la tabla `roles`
+--
+ALTER TABLE `roles`
+  ADD PRIMARY KEY (`IDrol`);
+
+--
 -- Indices de la tabla `usuario`
 --
 ALTER TABLE `usuario`
@@ -123,10 +162,22 @@ ALTER TABLE `usuario`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `comentario`
+--
+ALTER TABLE `comentario`
+  MODIFY `IDcomentario` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de la tabla `juegos`
 --
 ALTER TABLE `juegos`
   MODIFY `IDjuego` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT de la tabla `roles`
+--
+ALTER TABLE `roles`
+  MODIFY `IDrol` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
@@ -139,11 +190,23 @@ ALTER TABLE `usuario`
 --
 
 --
+-- Filtros para la tabla `comentario`
+--
+ALTER TABLE `comentario`
+  ADD CONSTRAINT `FK_comentario_usuario` FOREIGN KEY (`IDusuario`) REFERENCES `usuario` (`IDusuario`);
+
+--
 -- Filtros para la tabla `informacion`
 --
 ALTER TABLE `informacion`
   ADD CONSTRAINT `fk_TenerPuntos_juegos` FOREIGN KEY (`IDjuego`) REFERENCES `juegos` (`IDjuego`),
   ADD CONSTRAINT `fk_TenerPuntos_usuario` FOREIGN KEY (`IDusuario`) REFERENCES `usuario` (`IDusuario`);
+
+--
+-- Filtros para la tabla `roles`
+--
+ALTER TABLE `roles`
+  ADD CONSTRAINT `roles_ibfk_1` FOREIGN KEY (`IDrol`) REFERENCES `usuario` (`IDusuario`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
