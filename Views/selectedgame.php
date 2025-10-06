@@ -34,13 +34,14 @@
 </div>
 
 <div class="apartadoComentarios">
-
   <h1 class="titulocomentarios">Comentarios</h1>
 
-  <textarea class="comentar" placeholder="Escribe un comentario"></textarea><br>
+  <textarea class="comentar" id="textoComentario" placeholder="Escribe un comentario"></textarea><br>
   <button class="publicar" id="publicacion">Publicar</button>
   <button class="publicar" id="descartacion">Descartar</button>
 
+  <!-- Aca se van a insertar los nuevos comentarios -->
+  <div id="listaComentarios"></div>
 </div>
 
-<script src="selectedgame.js"></script>
+<script src="../js/selectedgame.js"></script>
