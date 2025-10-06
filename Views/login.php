@@ -22,7 +22,7 @@
         <input type="text" name="nombreL" class="text-box-name-user" placeholder="Nombre de usuario"><br>
         <p class="password"><b>Contraseña</b><a class="forgot" href="recuperar.html"><p>¿Olvidaste tu contraseña?</p></a></p><br>
         <input type="password" name="contraseñaL" class="text-box-password" type="text" placeholder="Contraseña"><br>
-        <input type="submit" value="Iniciar secion" name="Login" class="make"><br><br><br>
+        <input type="submit" value="Iniciar sesion" name="Login" class="make"><br><br><br>
         <?php
         include("../Includes/Config.php");
         include("../Database/Controlador_Login.php");

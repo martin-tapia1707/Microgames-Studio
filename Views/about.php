@@ -69,7 +69,7 @@
 
 
                 <div class="content-header-info">
-                    <h1 class="text-header">Rol: Programador</h1>
+                    <h1 class="text-header">Rol: Programador Front-End</h1>
                     <button id="cerrar" onclick="cerrar()" class="cerrar-info">X</button>
                 </div>
 
@@ -82,14 +82,15 @@
                         <p class="text-box-name">Nombre: Devin Segovia</p>
                     </div>
                     <div class="datos-info">
-                        <p class="text-box-facts">Datos Datos Datos Datos Datos Datos Datos Datos Datos Datos Datos
-                            Datos.</p>
+                        <p class="text-box-facts">Hizo los apartados de Perfil de usuario, el about, el register y login con sus
+                            respectivas interacciones Javascript
+                        </p>
                     </div>
                     <div class="apartado-info">
                         <p class="text-box-apartado">Apartado: Programación</p>
                     </div>
                     <div class="encargado-info">
-                        <p class="text-box-encargado">Encargado de: Apartado de paginas e interacciones js.</p>
+                        <p class="text-box-encargado">Encargado de: Front-End e interacciones Javascript con la pagina web</p>
                     </div>
 
                 </div>
@@ -103,7 +104,7 @@
 
 
                 <div class="content-header-info">
-                    <h1 class="text-header">Rol: Scrum Master</h1>
+                    <h1 class="text-header">Rol: Scrumm Master</h1>
                     <button id="cerrar" class="cerrar-info" onclick="cerrar()">X</button>
                 </div>
 
@@ -116,14 +117,14 @@
                         <p class="text-box-name">Nombre: Martin Tapia</p>
                     </div>
                     <div class="datos-info">
-                        <p class="text-box-facts">Datos Datos Datos Datos Datos Datos Datos Datos Datos Datos Datos
-                            Datos.</p>
+                        <p class="text-box-facts">Hizo el apartado de Home, la Sidebar, el Header y las interacciones entre apartados con los mismos
+                        </p>
                     </div>
                     <div class="apartado-info">
                         <p class="text-box-apartado">Apartado: Programación</p>
                     </div>
                     <div class="encargado-info">
-                        <p class="text-box-encargado">Encargado de: Coordinación, Back end, Front end, Diseño web.
+                        <p class="text-box-encargado">Encargado de: Coordinación, Back end, Front end, Diseño web y Base de datos.
                         </p>
                     </div>
 
@@ -148,7 +149,7 @@
                         <p class="text-box-name">Nombre: Agustin Escobar</p>
                     </div>
                     <div class="datos-info">
-                        <p class="text-box-facts">Datos Datos Datos Datos Datos Datos Datos Datos Datos Datos Datos
+                        <p class="text-box-facts">Encargado del register, del login y de el perfil funcional
                             Datos.</p>
                     </div>
                     <div class="apartado-info">
@@ -180,8 +181,7 @@
                         <p class="text-box-name">Nombre: Daniel Patiño</p>
                     </div>
                     <div class="datos-info">
-                        <p class="text-box-facts">Datos Datos Datos Datos Datos Datos Datos Datos Datos Datos Datos
-                            Datos.</p>
+                        <p class="text-box-facts">Encargado del Modelo Entidad Relacion y de la verificacion del correo electronico</p>
                     </div>
                     <div class="apartado-info">
                         <p class="text-box-apartado">Apartado: Diseño</p>
@@ -199,7 +199,7 @@
         <div class="header-info" id="infonilt">
 
              <div class="content-header-info">
-                    <h1 class="text-header">Rol: Pixel art en juegos</h1>
+                    <h1 class="text-header">Rol: Diseñador videojuegos</h1>
                      <button id="cerrar" class="cerrar-info" onclick="cerrar()">X</button>
                 </div>
 
@@ -212,14 +212,13 @@
                         <p class="text-box-name">Nombre: Nilton Bueno</p>
                     </div>
                     <div class="datos-info">
-                        <p class="text-box-facts">Datos Datos Datos Datos Datos Datos Datos Datos Datos Datos Datos
-                            Datos.</p>
+                        <p class="text-box-facts">Encargado de el apartado artistico del 1° videojuego</p>
                     </div>
                     <div class="apartado-info">
                         <p class="text-box-apartado">Apartado: juegos</p>
                     </div>
                     <div class="encargado-info">
-                        <p class="text-box-encargado">Encargado de: Sprites.</p>
+                        <p class="text-box-encargado">Encargado de: Sprites y animaciones.</p>
                     </div>
 
                 </div>
@@ -231,7 +230,7 @@
         <div class="header-info" id="infozaid">
 
              <div class="content-header-info">
-                    <h1 class="text-header">Rol: Programador de juegos</h1>
+                    <h1 class="text-header">Rol: Desarrollador de videojuegos</h1>
                      <button id="cerrar" class="cerrar-info" onclick="cerrar()">X</button>
                 </div>
 
@@ -244,8 +243,7 @@
                         <p class="text-box-name">Nombre: Zaid Casimiro</p>
                     </div>
                     <div class="datos-info">
-                        <p class="text-box-facts">Datos Datos Datos Datos Datos Datos Datos Datos Datos Datos Datos
-                            Datos.</p>
+                        <p class="text-box-facts">Encargado de las funcionalidades del primer videojuego y algunos sprites</p>
                     </div>
                     <div class="apartado-info">
                         <p class="text-box-apartado">Apartado: juegos</p>

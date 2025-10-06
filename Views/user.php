@@ -1,5 +1,7 @@
 <?php
-    session_start()
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -24,16 +26,17 @@
         <div class="contenido">
             <section class="perfil-contenedor">
                 <div class="perfil-cabecera">
-                    <img src="../IMG/usuario.png" alt="Avatar" class="perfil-avatar">
+                    <img src="<?php echo $_SESSION["perfil"]?>" alt="Avatar" class="perfil-avatar">
                     <div class="perfil-info">
-                        <h1>Usuario</h1>
-                        <p>Correo</p>
+                        <h1><?php echo $_SESSION['usuario']; ?><h1>
+                        <h3><?php echo $_SESSION['email']; ?><h>
+                        <a href="CambiarDatos.php"><button id="perfil-datos" onclick=""><b>Cambiar Datos</b></button></a>
                     </div>
                 </div>
                 <div class="perfil-detalles">
                     <div class="perfil-bio">
                         <h2>Sobre mí:</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <p><?php echo $_SESSION["descripcion"];?></p>
                     </div>
                     <button class="cambiar-clave">Cambiar contraseña</button>
                 </div>
@@ -60,7 +63,6 @@
         </div>
         
 
-        <script src="../Carpeta_JS/Inicio.js"></script>
     </div>
 
 </body>

@@ -24,12 +24,23 @@ if (isset($_SESSION["usuario"])):
     
     </div>
     
-    <span class="nombre-usuario">
-
     <!--Muestra tu nombre de usuario-->
-        <?php echo $_SESSION["usuario"]; ?>
-    </span>
+
+    <span class="nombre-usuario"><?php echo $_SESSION["usuario"]; ?></span>
 </div>
+
+    <!-- Si pasas el mouse por encima de la foto de perfil se te abre este menu -->
+
+<!-- <div class = "user-info" id= "visualizacion">
+
+
+    <img src="?php echo $_SESSION["perfil"]; ?>" alt="Foto de perfil">
+    <h1> ?php echo $_SESSION["usuario"]; ?> </h1>
+    
+    <a href="../Database/Controlador_CerrarLogin.php">Cerrar Sesion</a>
+    <a href="Mainsite.php?section=user">Ir al perfil</a>
+
+</div> -->
 
 <!-- Esto aparece si el usuario no esta logueado (los dos botones) -->
 
@@ -51,4 +62,3 @@ endif;
 
     </div>
 </header>
-
