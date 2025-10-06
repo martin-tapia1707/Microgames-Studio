@@ -1,6 +1,8 @@
 <?php
 
+if (session_status() === PHP_SESSION_NONE) {
     session_start();
+}
 
     if(!empty($_POST["Login"])){
         if((!empty($_POST["nombreL"])) && (!empty($_POST["contraseñaL"]))){
