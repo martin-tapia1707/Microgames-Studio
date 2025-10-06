@@ -67,3 +67,35 @@ header {
     transform: scale(1.05);
     color: white;
 }
+
+.usuario-logueado {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* espacio entre la foto y el nombre */
+    background-color: transparent;
+}
+
+.fotousuario img {
+    width: 45px;           /* tamaño de la imagen */
+    height: 45px;
+    border-radius: 50%;    /* la hace redonda */
+    object-fit: cover;     /* recorta bien las fotos */
+    border: 2px solid #ffb700; /* borde decorativo opcional */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fotousuario img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.nombre-usuario {
+    font-family: "Acme", sans-serif; /* igual que el header */
+    font-weight: 600;
+    color: #333;
+    font-size: 18px;
+    text-transform: capitalize; /* pone la primera letra en mayúscula */
+    letter-spacing: 0.5px;
+    cursor: default;
+}

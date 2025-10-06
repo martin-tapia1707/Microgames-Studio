@@ -42,3 +42,5 @@
   <button class="publicar" id="descartacion">Descartar</button>
 
 </div>
+
+<script src="selectedgame.js"></script>
