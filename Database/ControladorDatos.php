@@ -15,11 +15,13 @@
             $descripcionN = $_POST["nuevaDescripcion"];
             if($contraseñaN == ""){
                 $contraseñaN = $contraseñaV;
-            }elseif($contraseñaN != $contraseñaR){
-                    echo "las contraseñas no coinciden";
-                }else{
+            }if($contraseñaR==""){
+                    $contraseñaR=$contraseñaN;
+            }if($contraseñaN!=$contraseñaR){
+                echo "las contraseñas no coinciden";
+            }else{
             
-            $sql = ("UPDATE usuario SET Nombre = '$nombreN', Correo = '$correoN', Contraseña = '$contraseñaN'  WHERE IDusuario = '$id';");
+            $sql = ("UPDATE usuario SET Nombre = '$nombreN', Correo = '$correoN', Contraseña = '$contraseñaN', Descripcion = '$descripcionN'  WHERE IDusuario = '$id';");
             mysqli_query($conexion, $sql);
             $lqs = $conexion->query("SELECT * FROM usuario WHERE IDusuario = '$id'");
             if($datos=$lqs->fetch_object()){

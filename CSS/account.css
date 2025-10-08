@@ -1,0 +1,296 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* BACKGROUND */
+
+
+.contenido {
+    margin-left: 60px;
+    padding: 0;
+    background: #fff9c4;     
+    min-height: 100vh;                  /** que mierda???*/
+    transition: margin-left 0.75s ease;   /**QUE MIERDA???? */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+/*    APARTADO  DE  PERFIL */
+
+
+.profile-content {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 20px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    background: #fff9c4;
+    border-radius: 0;
+}
+
+
+.perfil-cabecera {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 0 20px;
+}
+
+
+.profile-avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.profile-info {
+    font-size: 1rem;
+    color: #555;
+    margin: 5px 0;
+}
+
+
+.user-name{
+    font-size: 40px;
+    margin: 0;
+    color: #333;
+}
+
+.user-mail{
+    font-size: 15px;
+}
+
+.perfil-detalles {
+    margin-bottom: 20px;
+    padding: 0 20px;
+}
+
+.user-desc {
+    position: relative;
+    font-size: 20px;
+    color: #333;
+    bottom: 0px;
+    width: 950px;
+}
+
+
+    /*   APARTADO SOBRE MI     */
+
+
+.about-me {
+    font-size: 32px;
+    color: #ff6d4d;
+    font-family: "Acme", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.desc{
+    position: relative;
+    top: 5px;
+}
+
+
+     /*   APARTADO DE MI HISTORIAL EN LOS JUEGOS   */
+
+
+.profile-history {
+    position: relative;
+    top: 12px;
+    padding: 0 20px;
+    font-family: "Acme", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.your-register{
+
+    font-size: 34px;
+    color: #ff6d4d;
+    
+}
+
+.game-title{
+    position:relative;
+    font-size: 42px;
+    color: #ffd54f;
+    left: 10px;
+
+}
+
+.info-game{
+
+    position: relative;
+    left:10px;
+
+}
+
+
+.first-game-info {
+    background-color: #ff880d;
+    position: relative;
+    font-size: 35px;
+    color: #690013;
+    top: 10px;
+    width: 500px;
+    border-radius: 20px;
+}
+
+
+.second-game-info {
+    background-color: #ff880d;
+    position: relative;
+    font-size: 35px;
+    color: #690013;
+    left: 650px;
+    bottom: 131px;
+    width: 500px;
+    border-radius: 20px;
+    
+}
+
+
+.third-game-info{
+    background-color: #ff880d;   /*  intenta despues fijarte si los colores de la info de creadores sirve*/
+    position: relative;
+    font-size: 35px;
+    color: #690013;
+    bottom: 95px;
+    width: 500px;
+    border-radius: 20px;
+}
+
+
+    /*   CAMBIOS DE USUARIO   */
+
+/*
+.changes-info{
+    position: relative;
+}
+
+
+ .user{
+            position:relative;
+            font-size: 25px;
+            color: #690013;
+            bottom: 15px;
+            left: 30px;
+        }
+
+.text-box-name-user{
+            position: relative;
+            left: 25px;
+            width: 640px;
+            height: 45px;
+            font-size: 25px;
+            background-color: #ff6d4d;
+            border-radius: 15px;
+            border:none;
+            color: #ffeb99;
+            
+ 
+        }
+
+        .text-box-name-user:focus{
+            border:3px solid #aa1905;
+            outline: none; 
+
+        }
+
+        .text-box-name-user::placeholder{
+            color: #690013;
+        }
+
+
+        .password{
+            position:relative;
+            font-size: 25px;
+            color: #690013;
+            bottom: 15px;
+            left: 30px;
+        }
+
+        .text-box-password{
+            position: relative;
+            left: 25px;
+            width: 640px;
+            height: 45px;
+            font-size: 25px;
+            background-color: #ff6d4d;
+            border-radius: 15px;
+            border:none;
+            color: #ffeb99;
+ 
+        }
+
+        .text-box-password:focus{
+            border:3px solid #aa1905;
+            outline: none; 
+
+        }
+
+        .text-box-password::placeholder{
+            color: #690013;
+        }
+        */
+
+
+   /*   BOTONES PARA HACER EL CAMBIO    */
+
+
+/*.change-name-button {
+    position:relative;
+    background-color: #690013;
+    color: #ffeb99;
+    padding: 15px 25px;
+    font-size: 20px;
+    border-radius: 25px;
+    bottom: 50px;
+    left: 720px;
+    border: none;
+    display: block;
+    cursor: pointer;
+}*/
+.log-out-button{
+    position:relative;
+    background-color: #690013;
+    color: #ffeb99;
+    padding: 15px 180px;
+    font-size: 20px;
+    border-radius: 25px;
+    bottom: -12px;
+    left: 50px;
+    border: none;
+    display: block;
+    cursor: pointer;
+}
+
+.edit-profile-button {
+    position:relative;
+    background-color: #690013;
+    color: #ffeb99;
+    padding: 15px 180px;
+    font-size: 20px;
+    border-radius: 25px;
+    bottom: 30px;
+    left: 800px;
+    border: none;
+    display: block;
+    cursor: pointer;
+}
+
+
+
+.edit-profile-button:hover {
+    background-color: #e43008;
+    color:#ffeb99d3;
+}

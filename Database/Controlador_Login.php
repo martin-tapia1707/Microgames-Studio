@@ -15,6 +15,7 @@ if (session_status() === PHP_SESSION_NONE) {
                 $_SESSION["email"]=$datos->Correo;
                 $_SESSION["perfil"]=$datos->Foto; 
                 $_SESSION["password"]=$datos->Contraseña;
+                $_SESSION["descripcion"]=$datos->Descripcion;
                 header("location: ../Views/Mainsite.php");
             }else{
                 echo "<div>Accesso denegado</div>";

@@ -1,0 +1,416 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; /*Elimina scroll lateral */
+    background: #fff9c4;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* BACKGROUND */
+
+
+.contenido {
+    margin-left: 60px;
+    padding: 0;
+    background: #fff9c4;
+    min-height: 145vh;
+    /** que mierda???*/
+    transition: margin-left 0.75s ease;
+    /**QUE MIERDA???? */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.todo{
+    position: relative;
+    top: 220px;
+    right: 180px;
+    transform: scale(1.4); /* Aumenta el tamaño del elemento al 120% */
+    }
+
+
+
+/*    APARTADO  DE  PERFIL */
+
+
+.profile-content {
+    position: relative;
+    left: 450px;
+    width: 100%;
+    max-width: 100%;
+    padding: 20px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    background: #fff9c4;
+    border-radius: 0;
+}
+
+
+.perfil-cabecera {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}
+
+
+.profile-avatar {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    right: 20px;
+}
+
+.profile-info {
+    position: relative;
+    font-size: 1rem;
+}
+
+
+.user-name {
+    position: relative;
+    top: 170px;
+    font-size: 40px;
+    color: #333;
+    right: 250px;
+
+}
+
+.user-mail {
+    position: relative;
+    font-size: 15px;
+    color: #555;
+    top: 170px;
+    right: 240px;
+}
+
+
+.user-desc {
+    position: relative;
+    font-size: 20px;
+    color: #333;
+    bottom: 0px;
+    width: 950px;
+}
+
+
+/*   APARTADO SOBRE MI     */
+
+.perfil-detalles {
+    position: relative;
+    top: 100px;
+
+}
+
+.about-me {
+    position: relative;
+    left: 10px;
+    font-size: 32px;
+    color: #ff6d4d;
+    font-family: "Acme", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.desc {
+    position: relative;
+    top: 5px;
+    right: 310px;
+}
+
+
+
+
+
+/*   CAMBIOS DE USUARIO INCLUYE INPUTS  */
+
+
+.changes-info {
+    position: relative;
+    top: 80px;
+    right: 400px;
+}
+
+.title{
+    position: relative;
+    bottom: 40px;
+    left: 395px;
+    font-size: 50px;
+    font-family: "Acme", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #ff880d;
+
+}
+
+.user {
+    position: relative;
+    font-size: 25px;
+    color: #690013;
+    bottom: 10px;
+    left: 30px;
+    font-family: "Acme", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.text-box-name-user {
+    position: relative;
+    left: 25px;
+    width: 750px;
+    height: 45px;
+    font-size: 25px;
+    background-color: #ff6d4d;
+    border-radius: 15px;
+    border: none;
+    color: #ffeb99;
+    padding-left: 10px;
+    padding-right: 50px;
+
+
+}
+
+.text-box-name-user:focus {
+    border: 3px solid #aa1905;
+    outline: none;
+
+}
+
+.text-box-name-user::placeholder {
+    color: #690013;
+}
+
+.password{
+    position: relative;
+    font-size: 25px;
+    color: #690013;
+    top: 25px;
+    left: 30px;
+    font-family: "Acme", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.text-box-password {
+    position: relative;
+    top: 35px;
+    left: 25px;
+    width: 750px;
+    height: 45px;
+    font-size: 25px;
+    background-color: #ff6d4d;
+    border-radius: 15px;
+    border: none;
+    color: #ffeb99;
+    padding-left: 10px;
+    padding-right: 50px;
+
+
+}
+
+.text-box-password:focus {
+    border: 3px solid #aa1905;
+    outline: none;
+
+}
+
+.text-box-password::placeholder {
+    color: #690013;
+}
+
+
+.repeat-password{
+    position: relative;
+    font-size: 25px;
+    color: #690013;
+    top: 60px;
+    left: 30px;
+    font-family: "Acme", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.text-box-repeat-password {
+    position: relative;
+    top: 70px;
+    left: 25px;
+    width: 750px;
+    height: 45px;
+    font-size: 25px;
+    background-color: #ff6d4d;
+    border-radius: 15px;
+    border: none;
+    color: #ffeb99;
+    padding-left: 10px;
+    padding-right: 50px;
+
+
+}
+
+.text-box-repeat-password:focus {
+    border: 3px solid #aa1905;
+    outline: none;
+
+}
+
+.text-box-repeat-password::placeholder {
+    color: #690013;
+}
+
+.mail{
+    position: relative;
+    font-size: 25px;
+    color: #690013;
+    top: 95px;
+    left: 30px;
+    font-family: "Acme", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.text-box-mail{
+    position: relative;
+    left: 25px;
+    top: 100px;
+    width: 750px;
+    height: 45px;
+    font-size: 25px;
+    background-color: #ff6d4d;
+    border-radius: 15px;
+    border: none;
+    color: #ffeb99;
+    padding-left: 10px;
+    padding-right: 50px;
+
+}
+
+.text-box-mail:focus {
+    border: 3px solid #aa1905;
+    outline: none;
+}
+
+.text-box-mail::placeholder {
+    color: #690013;
+}
+
+
+.description{
+    position: relative;
+    font-size: 25px;
+    top: 125px;
+    left: 30px;
+    color: #690013;
+    font-family: "Acme", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+.text-box-description {
+    position: relative;
+    top: 135px;
+    left: 25px;
+    width: 750px;
+    height: 120px;
+    font-size: 25px;
+    background-color: #ff6d4d;
+    border-radius: 15px;
+    border: none;
+    color: #ffeb99;
+    padding-left: 10px;
+
+}
+
+.text-box-description:focus {
+    border: 3px solid #aa1905;
+    outline: none;
+}
+
+.text-box-description::placeholder {
+    color: #690013;
+}
+
+/*          SCROLLBAR DE DESCRIPCION            */
+
+textarea{
+    resize: none;
+}
+
+textarea::-webkit-scrollbar {
+  width: 8px;
+}
+
+textarea::-webkit-scrollbar-thumb {
+  background-color: #690013;
+  border-radius: 4px;
+
+}
+
+textarea::-webkit-scrollbar-track {
+  background-color: #ffeb99;
+  border-radius: 15px;
+}
+
+
+/*  BOTON PARA CAMBIAR DATOS   */
+
+
+.edit-profile-button {
+    position: relative;
+    background-color: #690013;
+    color: #ffeb99;
+    padding: 15px 180px;
+    font-size: 20px;
+    border-radius: 25px;
+    top: 150px;
+    left: 330px;
+    border: none;
+    display: block;
+    cursor: pointer;
+}
+
+.edit-profile-button:hover {
+    background-color: #e43008;
+    color: #ffeb99d3;
+}
+
+
+
+  .pass-button {
+    position: relative;
+    display: inline-block;
+    padding-right: 50px; /* espacio para el botón */;
+    right: 15px;
+    top: 32px;
+    border: none;
+    background-color: #690013;
+    color: #ffeb99;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+  }
+
+ .repeat-button{
+    position: relative;
+    display: inline-block;
+    padding-right: 50px; /* espacio para el botón */;
+    right: 15px;
+    top: 67px;
+    border: none;
+    background-color: #690013;
+    color: #ffeb99;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+ }
+
