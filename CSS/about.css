@@ -1,353 +1,420 @@
- * {
-     margin: 0;
-     padding: 0;
-     box-sizing: border-box;
- }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 
- body {
-     height: 100%;
-     font-family: 'Arial', sans-serif;
-     background-color: #fff7de;
-     overflow-x: hidden;
- }
 
 
- nav {
-     display: flex;
-     justify-content: space-between;
-     align-items: center;
-     padding: 10px 30px;
-     padding-left: 80px;
-     background: linear-gradient(135deg, #ffeb99, #ffd54f);
-     box-shadow: 0px 3px 8px rgb(0, 0, 0, 0.2);
-     position: sticky;
-     top: 0;
-     z-index: 9000;
-     font-family: "Acme", sans-serif;
-     font-weight: 400;
- }
 
 
+body {
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    background-color: #fff7de;
+    overflow-x: hidden;
+}
 
 
- /* APARTADO TITULOS Y SUBTITULOS */
 
 
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    padding-left: 80px;
+    background: linear-gradient(135deg, #ffeb99, #ffd54f);
+    box-shadow: 0px 3px 8px rgb(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 9000;
+    font-family: "Acme", sans-serif;
+    font-weight: 400;
+}
 
 
- .subtitulo {
 
 
-     position: relative;
-     left: 250px;
-     ;
-     top: 70px;
-     font-size: 100px;
-     font-family: "Acme", sans-serif;
-     color: #ff6d4d;
 
 
+/* APARTADO TITULOS Y SUBTITULOS */
 
 
 
 
- }
 
 
- .quienes {
-     font-size: 25px;
-     width: 590px;
-     position: relative;
-     left: 200px;
-     top: 70px;
-     font-family: "Acme", sans-serif;
-     font-weight: 400;
-     font-style: normal;
+.subtitle {
+    position: relative;
+    left: 250px;
+    top: 70px;
+    font-size: 100px;
+    font-family: "Acme", sans-serif;
+    color: #ff6d4d;
+}
 
 
 
 
- }
+.who-we-are-text {
+    font-size: 25px;
+    width: 590px;
+    position: relative;
+    left: 200px;
+    top: 70px;
+    font-family: "Acme", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
 
 
- .empresalogo {
-     position: relative;
-     bottom: 560px;
-     /* Mueve la imagen 30px hacia abajo */
-     left: 950px;
-     /* Mueve la imagen 40px a la derecha */
-     width: 750px;
-     height: 750px;
- }
 
 
+.companylogo {
+    position: relative;
+    bottom: 560px;
+    /* Mueve la imagen 30px hacia abajo */
+    left: 950px;
+    /* Mueve la imagen 40px a la derecha */
+    width: 750px;
+    height: 750px;
+}
 
 
- .sub {
-     position: relative;
-     bottom: 500px;
-     color: white;
-     font-size: 100px;
-     text-align: center;
-     font-family: "Acme", sans-serif;
-     color: #ff880d;
 
 
- }
+.sub {
+    position: relative;
+    bottom: 500px;
+    left: 610px;
+    color: white;
+    font-size: 100px;
+    font-family: "Acme", sans-serif;
+    color: #ff880d;
+}
 
 
- .textomiembros {
 
 
-     font-size: 25px;
-     position: relative;
-     bottom: 440px;
-     left: 220px;
-     width: 1500px;
-     height: 300px;
-     font-family: "Acme", sans-serif;
-     font-weight: 400;
-     font-style: normal;
+.members-text {
+    font-size: 25px;
+    position: relative;
+    bottom: 440px;
+    left: 220px;
+    width: 1500px;
+    height: 300px;
+    font-family: "Acme", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
 
 
- }
 
 
 
 
+/* APARTADO DE MIEMBROS */
 
 
- /* APARTADO DE MIEMBROS */
 
 
- .controlCajas {
-     position: relative;
 
 
-     bottom: 500px;
- }
+.Box-control {
+    position: relative;
+    bottom: 500px;
+}
 
 
- .cajaD {
-     background-color: #ffeb99;
-     position: relative;
-     padding: 5px;
-     bottom: 0px;
-     /*Valor negativo sube la caja de mierrrda*/
-     border-radius: 12%;
-     text-align: center;
-     color: white;
-     width: 425px;
-     height: 520px;
-     left: 150px;
-     transition: transform 1.0s ease;
-     transform-origin: center, center;
 
 
- }
+.member-profile {
+    position: relative;
+    font-size: 1rem;
+}
 
 
- .cajaD:hover {
-     transform: scale(1.04);
 
 
- }
 
 
- .perfildev {
-     height: 200px;
-     width: 200px;
-     border-radius: 50%;
-     border: solid 5px;
-     border-color: #751a12;
-     position: relative;
-     left: 0px;
-     margin: 125px auto 0;
- }
+.member-name {
+    position: relative;
+    font-size: 50px;
+    color: #333;
+    
+}
 
 
 
 
- @keyframes animacionDev {
-     0% {
-         transform: rotate(0deg);
-     }
+.member-mail {
+    position: relative;
+    font-size: 15px;
+    color: #555;
+}
 
 
-     5% {
-         transform: rotate(30deg);
-     }
 
 
-     10% {
-         transform: rotate(-25deg);
-     }
+.boxD {
+    background-color: #ffeb99;
+    position: relative;
+    padding: 5px;
+    bottom: 0px;
+    /*Valor negativo sube la caja de mierrrda*/
+    border-radius: 12%;
+    text-align: center;
+    color: white;
+    width: 425px;
+    height: 520px;
+    left: 150px;
+    transition: transform 1.0s ease;
+    transform-origin: center, center;
+}
 
 
-     15% {
-         transform: rotate(20deg);
-     }
 
 
-     20% {
-         transform: rotate(-15deg);
-     }
+.boxD:hover {
+    transform: scale(1.04);
+}
 
 
-     30% {
-         transform: rotate(10deg);
-     }
 
 
+.devprofile {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    border: solid 5px;
+    border-color: #751a12;
+    position: relative;
+    left: 0px;
+    margin: 125px auto 0;
+    background-image: url('../IMG/pomni.jpg');
+    background-size: cover;
+    background-position: center;
+}
 
 
-     45% {
-         transform: rotate(0deg);
-     }
 
 
-     75% {
-         transform: rotate(30deg);
-     }
+@keyframes Devanimation {
+    0% {
+        transform: rotate(0deg);
+    }
 
 
-     80% {
-         transform: rotate(-25deg);
-     }
 
 
-     85% {
-         transform: rotate(20deg);
-     }
+    5% {
+        transform: rotate(30deg);
+    }
 
 
-     90% {
-         transform: rotate(-15deg);
-     }
 
 
-     95% {
-         transform: rotate(10deg);
-     }
+    10% {
+        transform: rotate(-25deg);
+    }
 
 
-     100% {
-         transform: rotate(0deg);
 
 
-     }
+    15% {
+        transform: rotate(20deg);
+    }
 
 
- }
 
 
+    20% {
+        transform: rotate(-15deg);
+    }
 
 
- .perfildev:hover {
-     animation: animacionDev 2.2s ease-in-out infinite;
-     transform: rotate(40deg);
-     transition: 0.7s;
- }
 
 
- .cajaA {
-     background-color: #ffeb99;
-     position: relative;
-     padding: 5px;
-     top: -520px;
-     /*Valor negativo sube la caja de mierrrda*/
-     border-radius: 12%;
-     text-align: center;
-     color: white;
-     width: 425px;
-     height: 520px;
-     left: 1335px;
-     transition: transform 1.0s ease;
-     transform-origin: center, center;
- }
+    30% {
+        transform: rotate(10deg);
+    }
 
 
- .cajaA:hover {
-     transform: scale(1.04);
 
 
- }
+    45% {
+        transform: rotate(0deg);
+    }
 
 
- .perfilagus {
-     height: 200px;
-     width: 200px;
-     border-radius: 50%;
-     border: solid 5px;
-     border-color: #751a12;
-     position: relative;
-     left: 0px;
-     margin: 125px auto 0;
-     display: flex;
-     background-image: url('../IMG/escobar.webp');
-     background-size: cover;
-     background-position: center;
- }
 
 
- .perfilagus:hover {
-     background-image: url('https://media.tenor.com/KxLhjoEInTUAAAAM/%D9%81%D8%A7%D8%B4%DB%8C%D8%B3%D9%85%D8%B3%D8%B1%D8%AE-soviet-union.gif');
- }
+    75% {
+        transform: rotate(30deg);
+    }
 
 
- .cajaM {
 
 
-     background-color: #ffeb99;
-     position: relative;
-     padding: 5px;
-     bottom: 1040px;
-     /*Valor negativo sube la caja de mierrrda*/
-     border-radius: 12%;
-     text-align: center;
-     color: white;
-     width: 425px;
-     height: 520px;
-     left: 740px;
-     transition: transform 1.0s ease;
-     transform-origin: center, center;
- }
+    80% {
+        transform: rotate(-25deg);
+    }
 
 
- .cajaM:hover {
-     transform: scale(1.04);
 
 
- }
+    85% {
+        transform: rotate(20deg);
+    }
 
 
- .perfilmart {
-     height: 200px;
-     width: 200px;
-     border-radius: 50%;
-     border: solid 5px;
-     border-color: #751a12;
-     position: relative;
-     margin: 125px auto 0;
-     left: 0px;
-     display: flex;
-     background-image: url('https://avatars.githubusercontent.com/u/205787438?v=4');
-     background-size: cover;
-     background-position: center;
- }
 
 
+    90% {
+        transform: rotate(-15deg);
+    }
 
 
- .perfilmart:hover {
-     background-image: url('https://media.tenor.com/AwWxwJVLj4oAAAAM/stechumielihampterki-zi-ewan-ie.gif');
- }
 
 
+    95% {
+        transform: rotate(10deg);
+    }
 
 
- /*     CAJAS  DE ABAJO
+
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+
+
+
+.devprofile:hover {
+    animation: Devanimation 2.2s ease-in-out infinite;
+    transform: rotate(40deg);
+    transition: 0.7s;
+}
+
+
+
+
+.boxA {
+    background-color: #ffeb99;
+    position: relative;
+    padding: 5px;
+    top: -520px;
+    /*Valor negativo sube la caja de mierrrda*/
+    border-radius: 12%;
+    text-align: center;
+    color: white;
+    width: 425px;
+    height: 520px;
+    left: 1335px;
+    transition: transform 1.0s ease;
+    transform-origin: center, center;
+}
+
+
+
+
+.boxA:hover {
+    transform: scale(1.04);
+}
+
+
+
+
+.agusprofile {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    border: solid 5px;
+    border-color: #751a12;
+    position: relative;
+    left: 0px;
+    margin: 125px auto 0;
+    display: flex;
+    background-image: url('../IMG/escobar.webp');
+    background-size: cover;
+    background-position: center;
+}
+
+
+
+
+.agusprofile:hover {
+    background-image: url('https://media.tenor.com/KxLhjoEInTUAAAAM/%D9%81%D8%A7%D8%B4%DB%8C%D8%B3%D9%85%D8%B3%D8%B1%D8%AE-soviet-union.gif');
+}
+
+
+
+
+.boxM {
+    background-color: #ffeb99;
+    position: relative;
+    padding: 5px;
+    bottom: 1040px;
+    /*Valor negativo sube la caja de mierrrda*/
+    border-radius: 12%;
+    text-align: center;
+    color: white;
+    width: 425px;
+    height: 520px;
+    left: 740px;
+    transition: transform 1.0s ease;
+    transform-origin: center, center;
+}
+
+
+
+
+.boxM:hover {
+    transform: scale(1.04);
+}
+
+
+
+
+.martprofile {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    border: solid 5px;
+    border-color: #751a12;
+    position: relative;
+    margin: 125px auto 0;
+    left: 0px;
+    display: flex;
+    background-image: url('https://avatars.githubusercontent.com/u/205787438?v=4');
+    background-size: cover;
+    background-position: center;
+}
+
+
+
+
+.martprofile:hover {
+    background-image: url('https://media.tenor.com/AwWxwJVLj4oAAAAM/stechumielihampterki-zi-ewan-ie.gif');
+}
+
+
+
+
+
+
+/*     CAJAS  DE ABAJO
+
+
+
+
+
+
 
 
         |             |
@@ -357,153 +424,151 @@
 
 
 
- 
- .cajaN {
-     background-color: #ffeb99;
-     position: relative;
-     padding: 5px;
-     top: -1000px;
-     /*Valor negativo sube la caja de info*/
-     border-radius: 12%;
-     text-align: center;
-     color: white;
-     width: 425px;
-     height: 520px;
-     left: 150px;
-     transition: transform 1.0s ease;
-     transform-origin: center, center;
- }
 
 
- .cajaN:hover {
-     transform: scale(1.04);
+.boxN {
+    background-color: #ffeb99;
+    position: relative;
+    padding: 5px;
+    top: -1000px;
+    /*Valor negativo sube la caja de info*/
+    border-radius: 12%;
+    text-align: center;
+    color: white;
+    width: 425px;
+    height: 520px;
+    left: 150px;
+    transition: transform 1.0s ease;
+    transform-origin: center, center;
+}
 
 
- }
 
 
- .perfilnilt {
+.boxN:hover {
+    transform: scale(1.04);
+}
 
 
-     height: 200px;
-     width: 200px;
-     border-radius: 50%;
-     border: solid 5px;
-     border-color: #751a12;
-     position: relative;
-     margin: 125px auto 0;
-     left: 0px;
- }
 
 
+.niltprofile {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    border: solid 5px;
+    border-color: #751a12;
+    position: relative;
+    margin: 125px auto 0;
+    left: 0px;
+}
 
 
- .cajaP {
 
 
-     background-color: #ffeb99;
-     position: relative;
-     padding: 5px;
-     top: -1520px;
-     /*Valor negativo sube la caja de info*/
-     border-radius: 12%;
-     text-align: center;
-     color: white;
-     width: 425px;
-     height: 520px;
-     left: 740px;
-     transition: transform 1.0s ease;
-     transform-origin: center, center;
- }
+.boxP {
+    background-color: #ffeb99;
+    position: relative;
+    padding: 5px;
+    top: -1520px;
+    /*Valor negativo sube la caja de info*/
+    border-radius: 12%;
+    text-align: center;
+    color: white;
+    width: 425px;
+    height: 520px;
+    left: 740px;
+    transition: transform 1.0s ease;
+    transform-origin: center, center;
+}
 
 
- .cajaP:hover {
-     transform: scale(1.04);
 
 
- }
+.boxP:hover {
+    transform: scale(1.04);
+}
 
 
- .perfilpati {
 
 
-     height: 200px;
-     width: 200px;
-     border-radius: 50%;
-     border: solid 5px;
-     border-color: #751a12;
-     position: relative;
-     margin: 125px auto 0;
-     left: 0px;
+.patiprofile {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    border: solid 5px;
+    border-color: #751a12;
+    position: relative;
+    margin: 125px auto 0;
+    left: 0px;
+}
 
 
- }
 
 
 
 
- @keyframes animacionPat {
-     0% {
-         transform: rotate(0deg);
-     }
+@keyframes Patanimation {
+    0% {
+        transform: rotate(0deg);
+    }
 
 
-     100% {
-         transform: rotate(360deg);
-     }
- }
 
 
- .perfilpati:hover {
-     animation: animacionPat 3s linear infinite;
+    100% {
+        transform: rotate(360deg);
+    }
+}
 
 
- }
 
 
- .cajaZ {
-     background-color: #ffeb99;
-     position: relative;
-     padding: 5px;
-     top: -2040px;
-     /*Valor negativo sube la caja de info*/
-     border-radius: 12%;
-     text-align: center;
-     color: white;
-     width: 425px;
-     height: 520px;
-     left: 1335px;
-     transition: transform 1.0s ease;
-     transform-origin: center, center;
- }
 
 
- .cajaZ:hover {
-     transform: scale(1.04);
+.patiprofile:hover {
+    animation: Patanimation 3s linear infinite;
+}
 
 
- }
 
 
- .perfilzaid {
+.boxZ {
+    background-color: #ffeb99;
+    position: relative;
+    padding: 5px;
+    top: -2040px;
+    /*Valor negativo sube la caja de info*/
+    border-radius: 12%;
+    text-align: center;
+    color: white;
+    width: 425px;
+    height: 520px;
+    left: 1335px;
+    transition: transform 1.0s ease;
+    transform-origin: center, center;
+}
 
 
-     height: 200px;
-     width: 200px;
-     border-radius: 50%;
-     border: solid 5px;
-     border-color: #751a12;
-     position: relative;
-     margin: 125px auto 0;
-     left: 0px;
 
 
- }
+.boxZ:hover {
+    transform: scale(1.04);
+}
 
 
 
 
- /*  APARTADO DE INFORMACION DE LOS MIEMBROS */
+.zaidprofile {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    border: solid 5px;
+    border-color: #751a12;
+    position: relative;
+    margin: 125px auto 0;
+    left: 0px;
+}
 
 
 
@@ -512,265 +577,281 @@
 
 
 
+/*  APARTADO DE INFORMACION DE LOS MIEMBROS */
 
 
- .header-info {
-     position: fixed;
-     display: none;
-     left: 500px;
-     top: 200px;
-     background-color: #ff6d4d;
-     width: 700px;
-     height: 500px;
-     border-radius: 4%;
-     color: #ffeb99;
-     z-index: 10000;
-     font-family: "Acme", sans-serif;
-     font-weight: 400;
-     font-style: normal;
- }
 
 
- .content-header-info {
-     position: relative;
-     justify-content: space-between;
-     height: 50px;
-     width: 700px;
-     background-color: #690013;
 
 
- }
 
 
- .text-header {
-     position: relative;
-     top: 8px;
-     left: 20px;
- }
+.header-info {
+    position: fixed;
+    display: none;
+    left: 500px;
+    top: 200px;
+    background-color: #ff6d4d;
+    width: 700px;
+    height: 500px;
+    border-radius: 4%;
+    color: #ffeb99;
+    z-index: 10000;
+    font-family: "Acme", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
 
 
- .cerrar-info {
-     background-color: #ff880d;
-     position: relative;
-     bottom: 30px;
-     left: 640px;
-     height: 35px;
-     width: 45px;
-     text-align: center;
-     font-size: 30px;
-     border-radius: 15px;
-     color: #ffeb99;
-     cursor: pointer;
-     border: none;
-     font-weight: bold;
 
 
- }
+.content-header-info {
+    position: relative;
+    justify-content: space-between;
+    height: 50px;
+    width: 700px;
+    background-color: #690013;
+}
 
 
- .perfil-info-D {
-     position: relative;
-     background-color: #690013;
-     width: 250px;
-     height: 250px;
-     border-radius: 50%;
-     top: 30px;
-     left: 20px;
-     background-image: url('https://lh3.googleusercontent.com/a/ACg8ocLkHqxZhJnRmepb1OsCGdg9OXtCQweHqbXPV5fD9g_pNCRZqDLf=s288-c-no');
-      background-position: center;
-     background-size: cover;
 
 
- }
+.text-header {
+    position: relative;
+    top: 8px;
+    left: 20px;
+}
 
 
- .perfil-info-M {
-     position: relative;
-     background-color: #690013;
-     width: 250px;
-     height: 250px;
-     border-radius: 50%;
-     top: 30px;
-     left: 20px;
-     background-image: url('https://avatars.githubusercontent.com/u/205787438?v=4');
-     background-size: cover;
-     background-position: center;
 
 
- }
+.close-info {
+    background-color: #ff880d;
+    position: relative;
+    bottom: 30px;
+    left: 640px;
+    height: 35px;
+    width: 45px;
+    border-radius: 15px;
+    cursor: pointer;
+    border: none;
+    font-weight: bold;
+}
 
 
-.perfil-info-A {
-     position: relative;
-     background-color: #690013;
-     width: 250px;
-     height: 250px;
-     border-radius: 50%;
-     top: 30px;
-     left: 20px;
-     background-image: url('https://static.wikia.nocookie.net/memes-pedia/images/2/2b/Perro_Sovi%C3%A9tico_MEME.png/revision/latest?cb=20200129172847&path-prefix=es');
-     background-size: cover;
-     background-position: center;
+.close-info-logo{
+    position: relative;
+    text-align: center;
+    font-size: 30px;
+    top: 2px;
+    color: #ffeb99;
+    font-weight: bold;
+}
 
 
- }
 
 
- .perfil-info-P {
-     position: relative;
-     background-color: #690013;
-     width: 250px;
-     height: 250px;
-     border-radius: 50%;
-     top: 30px;
-     left: 20px;
-     background-image: url('perfiles/perfilpatiño.jpg');
-     background-position: center;
-     background-size: cover;
+.D-profile-info {
+    position: relative;
+    background-color: #690013;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    top: 30px;
+    left: 20px;
+    background-image: url('../IMG/pomni.jpg');
+    background-position: center;
+    background-size: cover;
+}
 
 
- }
 
 
+.M-profile-info {
+    position: relative;
+    background-color: #690013;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    top: 30px;
+    left: 20px;
+    background-image: url('https://avatars.githubusercontent.com/u/205787438?v=4');
+    background-size: cover;
+    background-position: center;
+}
 
 
- .perfil-info-N {
-     position: relative;
-     background-color: #690013;
-     width: 250px;
-     height: 250px;
-     border-radius: 50%;
-     top: 30px;
-     left: 20px;
-     background-image: url('perfiles/perfilnilton.jpg');
-     background-position: center;
-     background-size: cover;
 
 
- }
+.A-profile-info {
+    position: relative;
+    background-color: #690013;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    top: 30px;
+    left: 20px;
+    background-image: url('../IMG/escobar.webp');
+    background-size: cover;
+    background-position: center;
+}
 
 
 
 
- .perfil-info-Z {
-     position: relative;
-     background-color: #690013;
-     width: 250px;
-     height: 250px;
-     border-radius: 50%;
-     top: 30px;
-     left: 20px;
-     background-image: url('perfiles/perfilzaid.jpg');
-     background-position: center;
-     background-size: cover;
+.P-profile-info {
+    position: relative;
+    background-color: #690013;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    top: 30px;
+    left: 20px;
+    background-image: url('../IMG/perfilpatiño.jpg');
+    background-position: center;
+    background-size: cover;
+}
 
 
- }
 
 
- .caja-info {
-     position: relative;
-     bottom: 250px;
+.N-profile-info {
+    position: relative;
+    background-color: #690013;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    top: 30px;
+    left: 20px;
+    background-image: url('../IMG/perfilnilton.jpg');
+    background-position: center;
+    background-size: cover;
+}
 
 
- }
 
 
- .nombre-info {
-     position: relative;
-     height: 60px;
-     width: 370px;
-     left: 300px;
-     top: 30px;
-     background-color: #690013;
-     border-radius: 15px;
+.Z-profile-info {
+    position: relative;
+    background-color: #690013;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    top: 30px;
+    left: 20px;
+    background-image: url('../IMG/perfilzaid.jpg');
+    background-position: center;
+    background-size: cover;
+}
 
 
- }
 
 
- .datos-info {
-     position: relative;
-     height: 85px;
-     width: 370px;
-     left: 300px;
-     top: 50px;
-     background-color: #690013;
-     border-radius: 15px;
+.info-box {
+    position: relative;
+    bottom: 250px;
+}
 
 
- }
 
 
- .apartado-info {
-     position: relative;
-     height: 60px;
-     width: 370px;
-     left: 300px;
-     top: 70px;
-     background-color: #690013;
-     border-radius: 15px;
- }
+.info-name {
+    position: relative;
+    height: 60px;
+    width: 370px;
+    left: 300px;
+    top: 30px;
+    background-color: #690013;
+    border-radius: 15px;
+}
 
 
- .encargado-info {
-     position: relative;
-     height: 100px;
-     width: 640px;
-     left: 30px;
-     top: 100px;
-     background-color: #690013;
-     border-radius: 15px;
 
 
- }
+.info-data {
+    position: relative;
+    height: 85px;
+    width: 370px;
+    left: 300px;
+    top: 50px;
+    background-color: #690013;
+    border-radius: 15px;
+}
 
 
- .text-box-name {
-     position: relative;
-     top: 13px;
-     left: 20px;
-     font-size: 30px;
-     white-space: normal;
-     word-wrap: break-word;
-     overflow-wrap: break-word;
- }
 
 
- .text-box-apartado {
-     position: relative;
-     top: 11px;
-     left: 32px;
-     font-size: 30px;
-     white-space: normal;
-     word-wrap: break-word;
-     overflow-wrap: break-word;
+.info-section {
+    position: relative;
+    height: 60px;
+    width: 370px;
+    left: 300px;
+    top: 70px;
+    background-color: #690013;
+    border-radius: 15px;
+}
 
 
- }
 
 
- .text-box-encargado {
-     position: relative;
-     top: 14px;
-     left: 10px;
-     font-size: 30px;
-     white-space: normal;
-     word-wrap: break-word;
-     overflow-wrap: break-word;
- }
+.charge-of {
+    position: relative;
+    height: 100px;
+    width: 640px;
+    left: 30px;
+    top: 100px;
+    background-color: #690013;
+    border-radius: 15px;
+}
 
 
- .text-box-facts {
-     position: relative;
-     top: 13px;
-     left: 5px;
-     font-size: 20px;
-     white-space: normal;
-     word-wrap: break-word;
-     overflow-wrap: break-word;
 
 
+.text-box-name {
+    position: relative;
+    top: 12px;
+    left: 20px;
+    font-size: 30px;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
 
 
- }
+
+
+.text-box-section {
+    position: relative;
+    top: 11px;
+    left: 20px;
+    font-size: 30px;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+
+
+
+.text-box-charge-of {
+    position: relative;
+    top: 14px;
+    left: 10px;
+    font-size: 30px;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+
+
+
+.text-box-facts {
+    position: relative;
+    top: 13px;
+    left: 5px;
+    font-size: 20px;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
