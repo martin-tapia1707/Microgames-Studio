@@ -1,7 +1,11 @@
-<?php session_start(); ?>
-
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+?>
 <header>
     <a href="Mainsite.php?section=home" class="nav-link">
+        <link rel="stylesheet" href="../css/header.css">
         <img src="../IMG/Logo_texto.png" class="Logotexto">
     </a>
     
@@ -41,4 +45,4 @@
     </div>
 </header>
 
-<script src="../js/header.js"></script>
+<script src="../JS/header.js"></script>
