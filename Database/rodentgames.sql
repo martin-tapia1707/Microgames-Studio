@@ -3,7 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
+<<<<<<< HEAD
 -- Tiempo de generación: 08-10-2025 a las 06:32:57
+=======
+-- Tiempo de generación: 08-10-2025 a las 06:08:56
+>>>>>>> 7010f75e981c3b041f98a620fd1afbef0e88d3c8
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -89,12 +93,20 @@ CREATE TABLE `usuario` (
 
 INSERT INTO `usuario` (`IDusuario`, `Nombre`, `Correo`, `Foto`, `Contraseña`, `Descripcion`) VALUES
 (1, 'PuerroXeneize', 'davidquin@gmail.com', ' https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvsyStKbhDTNBCCnjxseHhlMeC5oRFI4DAZg&s', 'LASD9', 'El manchester no perdio, aprendio - PuerroXeneize\r\n'),
+<<<<<<< HEAD
 (2, 'Vegetta777', 'vegetta777@gmail.com', ' https://static.wikia.nocookie.net/karmaland/images/9/94/VEGETTA777.jpg/revision/latest?cb=20220912024105&path-prefix=es', '26062011', 'hey muy buenas a todos guapisimos aqui vegetta777'),
 (3, 'quericacola', 'quericacola@gmail.com', 'https://i.ytimg.com/vi/DnSZ2qZIREU/maxres2.jpg?sqp=-oaymwEoCIAKENAF8quKqQMcGADwAQH4Ab4EgALMB4oCDAgAEAEYZSBaKE0wDw==&rs=AOn4CLDAWUanoMkDK32xZSj_xmOEDA5AtA', 'putaquericoeh', 'Puta que rico eh'),
 (4, 'Lacobra', 'Lautaro@gmail.com', 'https://enagenda.com.ar/uploads/ckeditor/2024/12/20241229201349_img-6307.jpg', 'Colepalmercomecarne', 'Bueeeeeeeeeeeeeeeeeeeeeeeeeeeeee'),
 (5, 'Elpadre', 'Elpadrecito666@gmail.com', 'https://i1.sndcdn.com/artworks-l2eLwat7RPLoz3WK-5JntIQ-t500x500.jpg', '1234', 'Cida para ti hijo del diablo'),
 (25, '2112', 'casa10@gmail.com', 'https://ceslava.s3-accelerate.amazonaws.com/2016/04/mistery-man-gravatar-wordpress-avatar-persona-misteriosa-510x510.png', 'LASD9', 'hola puerro, or o or, pick one, esta security?\r\n'),
 (26, 'Baggen', 'baggen@gmail.com', 'https://ceslava.s3-accelerate.amazonaws.com/2016/04/mistery-man-gravatar-wordpress-avatar-persona-misteriosa-510x510.png', 'capitanCP', 'Soy el capitan CP y admito que Marcelo>>>Baggen\r\n');
+=======
+(2, 'Vegetta777', 'vegetta777@gmail.com', ' https://static.wikia.nocookie.net/karmaland/images/9/94/VEGETTA777.jpg/revision/latest?cb=20220912024105&path-prefix=es', '', 'hey muy buenas a todos guapisimos aqui vegetta777'),
+(3, 'quericacola', 'quericacola@gmail.com', 'https://i.ytimg.com/vi/DnSZ2qZIREU/maxres2.jpg?sqp=-oaymwEoCIAKENAF8quKqQMcGADwAQH4Ab4EgALMB4oCDAgAEAEYZSBaKE0wDw==&rs=AOn4CLDAWUanoMkDK32xZSj_xmOEDA5AtA', 'LASD9', 'Puta que rico eh'),
+(4, 'Lacobra', 'Lautaro@gmail.com', 'https://enagenda.com.ar/uploads/ckeditor/2024/12/20241229201349_img-6307.jpg', 'LASD9', 'Bueeeeeeeeeeeeeeeeeeeeeeeeeeeeee'),
+(5, 'Elpadre', 'Elpadrecito666@gmail.com', 'https://i1.sndcdn.com/artworks-l2eLwat7RPLoz3WK-5JntIQ-t500x500.jpg', 'LASD9', 'Cida para ti hijo del diablo'),
+(25, '2112', 'casa10@gmail.com', 'https://ceslava.s3-accelerate.amazonaws.com/2016/04/mistery-man-gravatar-wordpress-avatar-persona-misteriosa-510x510.png', 'LASD9', 'hola puerro, or o or, pick one, esta security?\r\n');
+>>>>>>> 7010f75e981c3b041f98a620fd1afbef0e88d3c8
 
 --
 -- Índices para tablas volcadas
@@ -135,7 +147,11 @@ ALTER TABLE `juegos`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
+<<<<<<< HEAD
   MODIFY `IDusuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+=======
+  MODIFY `IDusuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+>>>>>>> 7010f75e981c3b041f98a620fd1afbef0e88d3c8
 
 --
 -- Restricciones para tablas volcadas

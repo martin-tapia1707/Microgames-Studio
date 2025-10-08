@@ -13,9 +13,13 @@
             $contraseñaN = $_POST["nuevaContraseña"];
             $contraseñaR = $_POST["nuevaContraseñaR"];
             $descripcionN = $_POST["nuevaDescripcion"];
-            if($contraseñaN == ""){
+            if($contraseñaN == "Contraseña"){
                 $contraseñaN = $contraseñaV;
+<<<<<<< HEAD
             }if($contraseñaR==""){
+=======
+            }if(($contraseñaR=="Repetir contraseña")&&($contraseñaN=="Contraseña")){
+>>>>>>> 7010f75e981c3b041f98a620fd1afbef0e88d3c8
                     $contraseñaR=$contraseñaN;
             }if($contraseñaN!=$contraseñaR){
                 echo "las contraseñas no coinciden";
@@ -31,7 +35,7 @@
                 $_SESSION["perfil"]=$datos->Foto; 
                 $_SESSION["password"]=$datos->Contraseña;
                 $_SESSION["descripcion"]=$datos->Descripcion;
-                header("location: ../Views/user.php ");
+                header("location: ../Views/account.php ");
             }else{
                 echo "<div>Accesso denegado</div>";
             }
