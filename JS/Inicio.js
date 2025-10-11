@@ -1,41 +1,21 @@
-    const content = document.querySelector('.content');
-    const juegos = document.querySelectorAll('.juego');
+const carrusel = document.querySelector('.carrusel');
+const btnPrev = document.querySelector('.prev');
+const btnNext = document.querySelector('.next');
 
-    function rotateCarousel(nuevoCentral) {
-        let central = document.querySelector('.juegoSelect');
-        let izquierdo = document.querySelector('.juegoSecuizq');
-        let derecho = document.querySelector('.juegoSecuder');
+// Cantidad de desplazamiento (igual al ancho de un .juego)
+let desplazamiento = 750; 
 
-        // Si paso el mouse sobre el izquierdo → ese se hace central y el central pasa a la derecha
-        if (nuevoCentral === izquierdo) {
-            central.classList.remove('juegoSelect');
-            central.classList.add('juegoSecuder');
+btnNext.addEventListener('click', () => {
+  carrusel.scrollBy({
+    left: desplazamiento,
+    behavior: 'smooth'
+  });
+});
 
-            izquierdo.classList.remove('juegoSecuizq');
-            izquierdo.classList.add('juegoSelect');
+btnPrev.addEventListener('click', () => {
+  carrusel.scrollBy({
+    left: -desplazamiento,
+    behavior: 'smooth'
+  });
+});
 
-            derecho.classList.remove('juegoSecuder');
-            derecho.classList.add('juegoSecuizq');
-        }
-
-        // Si paso el mouse sobre el derecho → ese se hace central y el central pasa a la izquierda
-        if (nuevoCentral === derecho) {
-            central.classList.remove('juegoSelect');
-            central.classList.add('juegoSecuizq');
-
-            derecho.classList.remove('juegoSecuder');
-            derecho.classList.add('juegoSelect');
-
-            izquierdo.classList.remove('juegoSecuizq');
-            izquierdo.classList.add('juegoSecuder');
-        }
-    }
-
-    // Eventos de hover (mouseenter en vez de click)
-    juegos.forEach(juego => {
-        juego.addEventListener('mouseenter', () => {
-            if (!juego.classList.contains('juegoSelect')) {
-                rotateCarousel(juego);
-            }
-        });
-    });

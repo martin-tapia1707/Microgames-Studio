@@ -1,36 +1,44 @@
-<div class="contenedorJuego">
+<?php
+  require_once '../Includes/Config.php';
 
-  <h1>NombreJuego</h1>
+if (isset($_GET['id'])) {
+    $idJuego = $_GET['id'];
+
+    $query = "SELECT * FROM juegos WHERE IDjuego = ?";
+    $stmt = $conexion->prepare($query);
+    $stmt->bind_param("i", $idJuego);
+    $stmt->execute();
+    $resultado = $stmt->get_result();
+
+    if ($row = $resultado->fetch_assoc()) {
+        $nombre = $row['Nombre'];
+        $comoJugar = $row['ComoJugar'];
+        $queHacer = $row['QueHacer'];
+    } else {
+        // Si no existe el ID
+        $nombre = "Juego no encontrado";
+        $comoJugar = $queHacer = "No hay información disponible.";
+    }
+}
+?>
+
+
+<div class="contenedorJuego">
+  <h1><?= htmlspecialchars($nombre) ?></h1>
   <div class="screen"></div>
 
-  <!-- Contenedor para los botones -->
   <div class="acciones">
     <button class="like"><i class='bx bxs-like'></i></button>
     <button class="dislike"><i class='bx bxs-dislike'></i></button>
   </div>
-
 </div>
 
 <div class="contenedorTutorial">
-
   <h1>¿Como jugar?</h1>
-    <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
-        ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
-        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
-        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-    </p>
+  <p><?= nl2br(htmlspecialchars($comoJugar)) ?></p>
 
-  <h1>¿Que hacer?</h1>
-    <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
-        ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
-        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
-        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-    </p>
-
+  <h1>¿Qué hacer?</h1>
+  <p><?= nl2br(htmlspecialchars($queHacer)) ?></p>
 </div>
 
 <div class="apartadoComentarios">
@@ -45,3 +53,4 @@
 </div>
 
 <script src="../js/selectedgame.js"></script>
+

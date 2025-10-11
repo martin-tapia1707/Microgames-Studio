@@ -1,18 +1,21 @@
-    <div class="contenedorPrincipal">
+<div class="contenedorPrincipal">
 
+  <button class="btn-carrusel prev">❮</button>
 
-        <div class="content">
-            <a href="Mainsite.php?section=selectedgame">
-        <div class="juego juegoSelect" style="background-image: url('../IMG/IconoJuego.jpg');"></div>
-            </a>
-            <a href="Mainsite.php?section=selectedgame">
-        <div class="juego juegoSecuizq"></div>
-            </a>
-            <a href="Mainsite.php?section=selectedgame">
-        <div class="juego juegoSecuder"></div>
-            </a>
-        </div>
+  <div class="content carrusel">
+    <a href="Mainsite.php?section=selectedgame&id=5">
+      <div class="juego" style="background-image: url('../IMG/IconoJuego.jpg');"></div>
+    </a>
+    <a href="Mainsite.php?section=selectedgame&id=2">
+      <div class="juego" style="background-image: url('../IMG/JuegoRandom.webp');"></div>
+    </a>
+    <a href="Mainsite.php?section=selectedgame&id=3">
+      <div class="juego" style="background-image: url('../IMG/JuegoRandom2.webp');"></div>
+    </a>
+  </div>
 
-        <script src="../JS/Inicio.js"></script>
+  <button class="btn-carrusel next">❯</button>
 
-    </div>
+  <script src="../JS/Inicio.js"></script>
+</div>
+

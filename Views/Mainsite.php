@@ -41,7 +41,7 @@ require_once $section . '.php';
 <?php elseif ($section === 'register'): ?>
     <link rel="stylesheet" href="../CSS/register.css">
 <?php elseif ($section === 'selectedgame'): ?>
-    <link rel="stylesheet" href="../CSS/game1.css">
+    <link rel="stylesheet" href="../CSS/selectedgame.css">
 <?php endif; ?>
 
 </body>

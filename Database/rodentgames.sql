@@ -3,11 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
-<<<<<<< HEAD
--- Tiempo de generación: 08-10-2025 a las 06:32:57
-=======
--- Tiempo de generación: 08-10-2025 a las 06:08:56
->>>>>>> 7010f75e981c3b041f98a620fd1afbef0e88d3c8
+-- Tiempo de generación: 10-10-2025 a las 02:28:10
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -28,6 +24,20 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `comentario`
+--
+
+CREATE TABLE `comentario` (
+  `IDcomentario` int(11) NOT NULL,
+  `texto` varchar(255) NOT NULL,
+  `fecha` date NOT NULL,
+  `IDusuario` int(11) NOT NULL,
+  `valorLike` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `informacion`
 --
 
@@ -35,21 +45,20 @@ CREATE TABLE `informacion` (
   `IDusuario` int(11) NOT NULL,
   `IDjuego` int(11) NOT NULL,
   `PuntajeMax` int(11) NOT NULL,
-  `Pulgar` tinyint(1) DEFAULT NULL,
-  `Comentario` varchar(255) DEFAULT NULL
+  `Pulgar` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `informacion`
 --
 
-INSERT INTO `informacion` (`IDusuario`, `IDjuego`, `PuntajeMax`, `Pulgar`, `Comentario`) VALUES
-(1, 1, 500, 1, NULL),
-(1, 2, 700, 0, 'Buen juego ojala sea el ultimo'),
-(2, 1, 200, 1, 'Muy entretenido'),
-(3, 2, 100, NULL, NULL),
-(4, 2, 800, NULL, NULL),
-(4, 3, 200, 0, 'La verdad un 0/10 y zzz');
+INSERT INTO `informacion` (`IDusuario`, `IDjuego`, `PuntajeMax`, `Pulgar`) VALUES
+(1, 1, 500, 1),
+(1, 2, 700, 0),
+(2, 1, 200, 1),
+(3, 2, 100, NULL),
+(4, 2, 800, NULL),
+(4, 3, 200, 0);
 
 -- --------------------------------------------------------
 
@@ -75,6 +84,37 @@ INSERT INTO `juegos` (`IDjuego`, `Nombre`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `opiniones`
+--
+
+CREATE TABLE `opiniones` (
+  `IDcomentario` int(11) NOT NULL,
+  `IDjuego` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `roles`
+--
+
+CREATE TABLE `roles` (
+  `IDrol` int(11) NOT NULL,
+  `rol` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `roles`
+--
+
+INSERT INTO `roles` (`IDrol`, `rol`) VALUES
+(1, 'Moderador'),
+(2, 'Product Owner'),
+(3, 'Miembro');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `usuario`
 --
 
@@ -82,35 +122,32 @@ CREATE TABLE `usuario` (
   `IDusuario` int(11) NOT NULL,
   `Nombre` varchar(40) NOT NULL,
   `Correo` varchar(255) NOT NULL,
-  `Foto` varchar(255) NOT NULL DEFAULT 'https://ceslava.s3-accelerate.amazonaws.com/2016/04/mistery-man-gravatar-wordpress-avatar-persona-misteriosa-510x510.png',
+  `Foto` varchar(255) NOT NULL,
   `Contraseña` varchar(40) NOT NULL,
-  `Descripcion` varchar(255) DEFAULT 'Descripcion aqui'
+  `IDrol` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`IDusuario`, `Nombre`, `Correo`, `Foto`, `Contraseña`, `Descripcion`) VALUES
-(1, 'PuerroXeneize', 'davidquin@gmail.com', ' https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvsyStKbhDTNBCCnjxseHhlMeC5oRFI4DAZg&s', 'LASD9', 'El manchester no perdio, aprendio - PuerroXeneize\r\n'),
-<<<<<<< HEAD
-(2, 'Vegetta777', 'vegetta777@gmail.com', ' https://static.wikia.nocookie.net/karmaland/images/9/94/VEGETTA777.jpg/revision/latest?cb=20220912024105&path-prefix=es', '26062011', 'hey muy buenas a todos guapisimos aqui vegetta777'),
-(3, 'quericacola', 'quericacola@gmail.com', 'https://i.ytimg.com/vi/DnSZ2qZIREU/maxres2.jpg?sqp=-oaymwEoCIAKENAF8quKqQMcGADwAQH4Ab4EgALMB4oCDAgAEAEYZSBaKE0wDw==&rs=AOn4CLDAWUanoMkDK32xZSj_xmOEDA5AtA', 'putaquericoeh', 'Puta que rico eh'),
-(4, 'Lacobra', 'Lautaro@gmail.com', 'https://enagenda.com.ar/uploads/ckeditor/2024/12/20241229201349_img-6307.jpg', 'Colepalmercomecarne', 'Bueeeeeeeeeeeeeeeeeeeeeeeeeeeeee'),
-(5, 'Elpadre', 'Elpadrecito666@gmail.com', 'https://i1.sndcdn.com/artworks-l2eLwat7RPLoz3WK-5JntIQ-t500x500.jpg', '1234', 'Cida para ti hijo del diablo'),
-(25, '2112', 'casa10@gmail.com', 'https://ceslava.s3-accelerate.amazonaws.com/2016/04/mistery-man-gravatar-wordpress-avatar-persona-misteriosa-510x510.png', 'LASD9', 'hola puerro, or o or, pick one, esta security?\r\n'),
-(26, 'Baggen', 'baggen@gmail.com', 'https://ceslava.s3-accelerate.amazonaws.com/2016/04/mistery-man-gravatar-wordpress-avatar-persona-misteriosa-510x510.png', 'capitanCP', 'Soy el capitan CP y admito que Marcelo>>>Baggen\r\n');
-=======
-(2, 'Vegetta777', 'vegetta777@gmail.com', ' https://static.wikia.nocookie.net/karmaland/images/9/94/VEGETTA777.jpg/revision/latest?cb=20220912024105&path-prefix=es', '', 'hey muy buenas a todos guapisimos aqui vegetta777'),
-(3, 'quericacola', 'quericacola@gmail.com', 'https://i.ytimg.com/vi/DnSZ2qZIREU/maxres2.jpg?sqp=-oaymwEoCIAKENAF8quKqQMcGADwAQH4Ab4EgALMB4oCDAgAEAEYZSBaKE0wDw==&rs=AOn4CLDAWUanoMkDK32xZSj_xmOEDA5AtA', 'LASD9', 'Puta que rico eh'),
-(4, 'Lacobra', 'Lautaro@gmail.com', 'https://enagenda.com.ar/uploads/ckeditor/2024/12/20241229201349_img-6307.jpg', 'LASD9', 'Bueeeeeeeeeeeeeeeeeeeeeeeeeeeeee'),
-(5, 'Elpadre', 'Elpadrecito666@gmail.com', 'https://i1.sndcdn.com/artworks-l2eLwat7RPLoz3WK-5JntIQ-t500x500.jpg', 'LASD9', 'Cida para ti hijo del diablo'),
-(25, '2112', 'casa10@gmail.com', 'https://ceslava.s3-accelerate.amazonaws.com/2016/04/mistery-man-gravatar-wordpress-avatar-persona-misteriosa-510x510.png', 'LASD9', 'hola puerro, or o or, pick one, esta security?\r\n');
->>>>>>> 7010f75e981c3b041f98a620fd1afbef0e88d3c8
+INSERT INTO `usuario` (`IDusuario`, `Nombre`, `Correo`, `Foto`, `Contraseña`, `IDrol`) VALUES
+(1, 'PuerroXeneize', 'davidquin@gmail.com', ' https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvsyStKbhDTNBCCnjxseHhlMeC5oRFI4DAZg&s', 'LASD9', 3),
+(2, 'Vegetta777', 'vegetta777@gmail.com', ' https://static.wikia.nocookie.net/karmaland/images/9/94/VEGETTA777.jpg/revision/latest?cb=20220912024105&path-prefix=es', '26062011', 3),
+(3, 'quericacola', 'quericacola@gmail.com', 'https://i.ytimg.com/vi/DnSZ2qZIREU/maxres2.jpg?sqp=-oaymwEoCIAKENAF8quKqQMcGADwAQH4Ab4EgALMB4oCDAgAEAEYZSBaKE0wDw==&rs=AOn4CLDAWUanoMkDK32xZSj_xmOEDA5AtA', 'Coca-cola', 3),
+(4, 'Lacobra', 'Lautaro@gmail.com', 'https://enagenda.com.ar/uploads/ckeditor/2024/12/20241229201349_img-6307.jpg', 'Colepalmercomecarne', 3),
+(5, 'Elpadre', 'Elpadrecito666@gmail.com', 'https://i1.sndcdn.com/artworks-l2eLwat7RPLoz3WK-5JntIQ-t500x500.jpg', 'Cidaparati', 3);
 
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `comentario`
+--
+ALTER TABLE `comentario`
+  ADD PRIMARY KEY (`IDcomentario`),
+  ADD KEY `FK_comentario_usuario` (`IDusuario`);
 
 --
 -- Indices de la tabla `informacion`
@@ -126,16 +163,34 @@ ALTER TABLE `juegos`
   ADD PRIMARY KEY (`IDjuego`);
 
 --
+-- Indices de la tabla `opiniones`
+--
+ALTER TABLE `opiniones`
+  ADD PRIMARY KEY (`IDcomentario`,`IDjuego`),
+  ADD KEY `FK_opiniones_juegos` (`IDjuego`);
+
+--
+-- Indices de la tabla `roles`
+--
+ALTER TABLE `roles`
+  ADD PRIMARY KEY (`IDrol`);
+
+--
 -- Indices de la tabla `usuario`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`IDusuario`),
-  ADD UNIQUE KEY `Nombre` (`Nombre`),
-  ADD UNIQUE KEY `Correo` (`Correo`);
+  ADD KEY `FK_usuario_roles` (`IDrol`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
+
+--
+-- AUTO_INCREMENT de la tabla `comentario`
+--
+ALTER TABLE `comentario`
+  MODIFY `IDcomentario` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `juegos`
@@ -144,18 +199,26 @@ ALTER TABLE `juegos`
   MODIFY `IDjuego` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT de la tabla `roles`
+--
+ALTER TABLE `roles`
+  MODIFY `IDrol` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-<<<<<<< HEAD
-  MODIFY `IDusuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
-=======
-  MODIFY `IDusuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
->>>>>>> 7010f75e981c3b041f98a620fd1afbef0e88d3c8
+  MODIFY `IDusuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Restricciones para tablas volcadas
 --
+
+--
+-- Filtros para la tabla `comentario`
+--
+ALTER TABLE `comentario`
+  ADD CONSTRAINT `FK_comentario_usuario` FOREIGN KEY (`IDusuario`) REFERENCES `usuario` (`IDusuario`);
 
 --
 -- Filtros para la tabla `informacion`
@@ -163,6 +226,19 @@ ALTER TABLE `usuario`
 ALTER TABLE `informacion`
   ADD CONSTRAINT `fk_TenerPuntos_juegos` FOREIGN KEY (`IDjuego`) REFERENCES `juegos` (`IDjuego`),
   ADD CONSTRAINT `fk_TenerPuntos_usuario` FOREIGN KEY (`IDusuario`) REFERENCES `usuario` (`IDusuario`);
+
+--
+-- Filtros para la tabla `opiniones`
+--
+ALTER TABLE `opiniones`
+  ADD CONSTRAINT `FK_opiniones_comentarios` FOREIGN KEY (`IDcomentario`) REFERENCES `comentario` (`IDcomentario`),
+  ADD CONSTRAINT `FK_opiniones_juegos` FOREIGN KEY (`IDjuego`) REFERENCES `juegos` (`IDjuego`);
+
+--
+-- Filtros para la tabla `usuario`
+--
+ALTER TABLE `usuario`
+  ADD CONSTRAINT `FK_usuario_roles` FOREIGN KEY (`IDrol`) REFERENCES `roles` (`IDrol`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
