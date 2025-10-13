@@ -23,6 +23,8 @@
         <input type="password" name="nuevaContraseñaR" placeholder="Contraseña">
         <p><b>Correo:</b></p>
         <input type="email" name="nuevoCorreo"  Value="<?php echo $_SESSION["email"];?>"><br>
+        <p><b>Actualizar foto:</b></p>
+        <input type="file" name="foto">
         <p><b>Descripcion:</b></p>
         <textarea name="nuevaDescripcion"  rows="4" cols="50"><?php echo $_SESSION["descripcion"];?></textarea><br><br>
         <input type="submit" value="Guardar Datos" name="Guardar"><br><br><br>

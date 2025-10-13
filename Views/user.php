@@ -14,7 +14,7 @@ if (session_status() === PHP_SESSION_NONE) {
     <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
     <link rel="shortcut icon" href="../IMG/LogoEmpresa.png" />
-    <link rel="stylesheet" href="../CSS/user.css">
+    <link rel="stylesheet" href="../CSS/account.css">
     <link rel="stylesheet" href="../CSS/header.css">
     <link rel="stylesheet" href="../CSS/sidebar.css">
 
