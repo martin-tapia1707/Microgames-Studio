@@ -170,96 +170,7 @@
 }
 
 
-    /*   CAMBIOS DE USUARIO   */
 
-/*
-.changes-info{
-    position: relative;
-}
-
-
- .user{
-            position:relative;
-            font-size: 25px;
-            color: #690013;
-            bottom: 15px;
-            left: 30px;
-        }
-
-.text-box-name-user{
-            position: relative;
-            left: 25px;
-            width: 640px;
-            height: 45px;
-            font-size: 25px;
-            background-color: #ff6d4d;
-            border-radius: 15px;
-            border:none;
-            color: #ffeb99;
-            
- 
-        }
-
-        .text-box-name-user:focus{
-            border:3px solid #aa1905;
-            outline: none; 
-
-        }
-
-        .text-box-name-user::placeholder{
-            color: #690013;
-        }
-
-
-        .password{
-            position:relative;
-            font-size: 25px;
-            color: #690013;
-            bottom: 15px;
-            left: 30px;
-        }
-
-        .text-box-password{
-            position: relative;
-            left: 25px;
-            width: 640px;
-            height: 45px;
-            font-size: 25px;
-            background-color: #ff6d4d;
-            border-radius: 15px;
-            border:none;
-            color: #ffeb99;
- 
-        }
-
-        .text-box-password:focus{
-            border:3px solid #aa1905;
-            outline: none; 
-
-        }
-
-        .text-box-password::placeholder{
-            color: #690013;
-        }
-        */
-
-
-   /*   BOTONES PARA HACER EL CAMBIO    */
-
-
-/*.change-name-button {
-    position:relative;
-    background-color: #690013;
-    color: #ffeb99;
-    padding: 15px 25px;
-    font-size: 20px;
-    border-radius: 25px;
-    bottom: 50px;
-    left: 720px;
-    border: none;
-    display: block;
-    cursor: pointer;
-}*/
 .log-out-button{
     position:relative;
     background-color: #690013;
@@ -286,6 +197,7 @@
     border: none;
     display: block;
     cursor: pointer;
+
 }
 
 

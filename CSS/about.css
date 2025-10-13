@@ -125,6 +125,7 @@ nav {
 .Box-control {
     position: relative;
     bottom: 500px;
+    height: 1080px;
 }
 
 
@@ -643,7 +644,7 @@ nav {
     position: relative;
     text-align: center;
     font-size: 30px;
-    top: 2px;
+    bottom: 5px;
     color: #ffeb99;
     font-weight: bold;
 }

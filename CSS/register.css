@@ -5,7 +5,7 @@ html{
         .header-info {
             position: relative;
             top: 50px;
-            left: 25%;
+            left: 32%;
             background-color: #ff6d4d;
             width: 700px;
             height: 790px;
@@ -19,7 +19,7 @@ html{
 
         .content-register{
             position: relative;
-            bottom: 200px;
+            bottom: 155px;
 
         }
 
@@ -36,7 +36,7 @@ html{
 
         .text-register {
             position: relative;
-            top: 100px;
+            top: 85px;
             left: 20px;
             font-size: 40px;
     
@@ -44,11 +44,10 @@ html{
 
         .sign-up{
             position: relative;
-            top: 45px;
-            left: 410px;
+            top: 35px;
+            left: 365px;
             font-size: 17px;
             color: #fff4c3e0;
-
         }
 
 
@@ -61,7 +60,7 @@ html{
        
         .text-box-name-user{
             position: relative;
-            top: 20px;
+            top: 50px;
             left: 25px;
             width: 640px;
             height: 45px;
@@ -85,7 +84,7 @@ html{
 
         .text-box-password{
             position: relative;
-            top: 0px;
+            top: 60px;
             left: 25px;
             width: 640px;
             height: 45px;
@@ -108,7 +107,7 @@ html{
 
         .text-box-repeat-password{
             position: relative;
-            bottom: 20px;
+            top: 70px;
             left: 25px;
             width: 640px;
             height: 45px;
@@ -130,7 +129,7 @@ html{
 
         .text-box-mail{
             position: relative;
-            bottom: 40px;
+            top: 80px;
             left: 25px;
             width: 640px;
             height: 45px;
@@ -153,14 +152,14 @@ html{
         .user{
             position:relative;
             font-size: 25px;
-            top: 40px;
+            top: 60px;
             left: 30px;
         }
 
         .password{
             position:relative;
             font-size: 25px;
-            top: 20px;
+            top: 70px;
             left: 30px;
 
         }
@@ -168,7 +167,7 @@ html{
         .repeat{
             position:relative;
             font-size: 25px;
-            top: 0px;
+            top: 80px;
             left: 30px;
 
         }
@@ -176,7 +175,7 @@ html{
         .mail{
             position:relative;
             font-size: 25px;
-            bottom: 20px;
+            top: 90px;
             left: 30px;
 
         }
@@ -186,6 +185,7 @@ html{
             width: 550px;
             height: 80px;
             left:68px;
+            top: 140px;
             font-size: 20px;
             color: #ffeb99;
             border-radius: 10px;

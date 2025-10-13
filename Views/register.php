@@ -1,7 +1,4 @@
-
-
-        
-<?php
+      <?php
     include("C:/xampp/htdocs/Microgames-Studio/Includes/Config.php");
 ?>
 <!DOCTYPE html>
@@ -9,7 +6,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro</title>
+    <link rel="stylesheet" href="../CSS/header.css">
+    <link rel="stylesheet" href="../CSS/sidebar.css">
+    <link rel="stylesheet" href="../CSS/login.css">
+
+    <title>Register</title>
 </head>
 <body>
     <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"])?>" method="post">    <div class="header-info">
@@ -18,9 +19,13 @@
 
         <div class="content-register">
 
-        <h1 class="text-register"><b>Registrarse</b></h1>  <a class="sign-up" href="Mainsite.php?section=login"><p>¿Ya tenés una cuenta? ¡¡inicia sesión!!</p></a>
-
+        <h1 class="text-register"><b>Registrarse</b></h1>  
+        
         <div class="caja-info">
+
+        <a href="Mainsite.php?section=login" class="sign-up">
+        <p>¿Ya tenés una cuenta? ¡¡inicia sesión!!</p></a>
+
 
 
         <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"])?>" method="post">
@@ -33,7 +38,7 @@
             <input type="password" name="contraseñaRep" class="text-box-repeat-password" placeholder="Repetir contraseña"><br>
             <p class="mail"><b>Correo electronico</b></p><br>
             <input type="email" name="correo" class="text-box-mail" type="text" placeholder="Correo electronico"><br>      
-            <input type="submit" value="registrarse" nombre="registrar" class="make"><br><br><br><br>
+            <input type="submit" value="registrarse" nombre="registrar" class="make">
         </form>
     </div>
 </body>

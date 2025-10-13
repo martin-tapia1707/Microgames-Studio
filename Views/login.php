@@ -1,8 +1,15 @@
+<?php
+    include("C:/xampp/htdocs/Microgames-Studio/Includes/Config.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/header.css">
+    <link rel="stylesheet" href="../CSS/sidebar.css">
+    <link rel="stylesheet" href="../CSS/login.css">
     <title>Login</title>
 </head>
 <body>
@@ -29,7 +36,7 @@
         ?>
 
 
-        <a href="Mainsite.php?section=login" class="sign-in">
+        <a href="Mainsite.php?section=register" class="sign-in">
         <p>¿No tenés una cuenta? ¡Creala ya!</p></a>
 
         </div>
