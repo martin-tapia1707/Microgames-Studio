@@ -92,6 +92,7 @@ html{
             background-color: #690013;
             border-radius: 15px;
             color: #ffeb99;
+            padding-right: 50px; /* espacio para el botón */
  
         }
 
@@ -115,6 +116,7 @@ html{
             background-color: #690013;
             border-radius: 15px;
             color: #ffeb99;
+            padding-right: 50px; /* espacio para el botón */
  
         }
 
@@ -171,33 +173,6 @@ html{
             left: 30px;
 
         }
-        .pass-button {
-        position: relative;
-        display: inline-block;
-        padding-right: 50px; /* espacio para el botón */;
-        right: 15px;
-        top: 32px;
-        border: none;
-        background-color: #690013;
-        color: #ffeb99;
-        padding: 5px 10px;
-        cursor: pointer;
-        border-radius: 3px;
-        }
-
-    .repeat-button{
-        position: relative;
-        display: inline-block;
-        padding-right: 50px; /* espacio para el botón */;
-        right: 15px;
-        top: 67px;
-        border: none;
-        background-color: #690013;
-        color: #ffeb99;
-        padding: 5px 10px;
-        cursor: pointer;
-        border-radius: 3px;
-    }
 
         .mail{
             position:relative;
@@ -211,7 +186,7 @@ html{
             position:relative;
             width: 550px;
             height: 80px;
-            left:68px;
+            left: 68px;
             top: 140px;
             font-size: 20px;
             color: #ffeb99;
@@ -222,5 +197,29 @@ html{
 
         }
 
-    
+        .password-button {
+            position: relative;
+            display: inline-block;
+            right: 15px;
+            top: 55px;
+            border: none;
+            background-color: #ffeb99;
+            color: #690013;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+
+       .repeat-password-button{
+            position: relative;
+            display: inline-block;
+            right: 15px;
+            top: 65px;
+            border: none;
+            background-color: #ffeb99;
+            color: #690013;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 3px;
+        }
 
