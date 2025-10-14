@@ -26,9 +26,9 @@
         <div class="caja-info">
         
         <p class="user"><b>Nombre de usuario</b></p><br>
-        <input type="text" name="nombre" class="text-box-name-user" placeholder="Nombre de usuario"><br>
+        <input type="text" name="nombreL" class="text-box-name-user" placeholder="Nombre de usuario"><br>
         <p class="password"><b>Contraseña</b><a class="forgot" href="recuperar.html"><p>¿Olvidaste tu contraseña?</p></a></p><br>
-        <input id="password-input" type="password" name="contraseña" class="text-box-password" placeholder="Contraseña"><br><button id="view-password" type="button" class="password-button" onclick="view()">X</button>
+        <input id="password-input" type="password" name="contraseñaL" class="text-box-password" placeholder="Contraseña"><br><button id="view-password" type="button" class="password-button" onclick="view()">X</button>
         <input type="submit" value="Iniciar sesion" name="Login" class="make"><br><br><br>
         <?php
         include("../Includes/Config.php");

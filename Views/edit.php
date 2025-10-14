@@ -33,7 +33,7 @@
                         src="<?php echo $_SESSION["perfil"]?>">
                     <div class="profile-info">
                         <p class="user-name"><?php echo $_SESSION['usuario']; ?></p>
-                        <p class="user-mail"><?php echo $_SESSION['email']; ?></p>
+                        <p class="user-mail"><?php echo $_SESSION['rol']; ?></p>
                     </div>
                 </div>
                 <div class="perfil-detalles">

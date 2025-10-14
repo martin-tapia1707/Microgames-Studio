@@ -12,7 +12,7 @@
     <title>Register</title>
 </head>
 <body>
-    <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"])?>" method="post">    <div class="header-info">
+    <div class="header-info">
 
         <img class="logo" src="../IMG/logopagina.png">
 
@@ -27,20 +27,20 @@
 
 
 
-        <form action="<?php htmlspecialchars($_SERVER["PHP_SELF"])?>" method="post">
+        <form action="../Database/InsertarUsuario.php" method="post">
             <br>
             <p class="user"><b>Nombre de usuario</b></p><br>
             <input type="text" name="nombre" class="text-box-name-user" placeholder="Nombre de usuario"><br>
 
                         <p class="password"><b>Contraseña</b></p><br><input id="password-input" class="text-box-password" type="password"
-                            placeholder="Contraseña" name="nuevaContraseña"><button id="view-password" type="button" class="password-button" onclick="view()">X</button>
+                            placeholder="Contraseña" name="contraseña"><button id="view-password" type="button" class="password-button" onclick="view()">X</button>
                         <p class="repeat"><b>Repetir contraseña</b></p><br><input id="repeat-password-input" class="text-box-repeat-password"
-                            type="password" placeholder="Repetir contraseña" name="nuevaContraseña"><button id="view-repeat-password" type="button"
+                            type="password" placeholder="Repetir contraseña" name="contraseñaRep"><button id="view-repeat-password" type="button"
                             class="repeat-password-button" onclick="repeat()">X</button>
 
             <p class="mail"><b>Correo electronico</b></p><br>
             <input type="email" name="correo" class="text-box-mail" type="text" placeholder="Correo electronico"><br>      
-            <input type="submit" value="registrarse" nombre="registrar" class="make">
+            <input type="submit" value="registrarse" name="registrar" class="make">
         </form>
     </div>
 
@@ -50,41 +50,5 @@
 </body>
 </html>
 
-<?php
 
-    if($_SERVER["REQUEST_METHOD"] == "POST"){
-        $nombre = $_POST["nombre"];
-        $contraseña = $_POST["contraseña"];
-        $contraseñaRep = $_POST["contraseñaRep"];
-        $correo = $_POST["correo"];
-
-        if($contraseña == $contraseñaRep){
-            if(empty($nombre)){
-                echo "ingrese un nombre";
-            }elseif(empty($contraseña)){
-                echo "ingrese una contraseña";
-            }elseif(empty($correo)){
-                echo "ingrese un correo";
-            }else{
-                $sql = "INSERT INTO usuario(Nombre, Correo, Contraseña) 
-                        VALUES ('$nombre', '$correo', '$contraseña')";
-                mysqli_query($conexion, $sql);
-                $lqs = $conexion->query("SELECT * FROM usuario WHERE Nombre = '$nombre' AND Contraseña = '$contraseña'");
-                if($datos=$lqs->fetch_object()){
-                    $_SESSION["id"]=$datos->IDusuario;
-                    $_SESSION["usuario"]=$datos->Nombre;
-                    $_SESSION["email"]=$datos->Correo;
-                    $_SESSION["perfil"]=$datos->Foto; 
-                    $_SESSION["password"]=$datos->Contraseña;
-                    $_SESSION["descripcion"]=$datos->Descripcion;
-                    header("location: ../Views/Mainsite.php");
-                    header("location: Mainsite.php");
-                }
-            }
-        }elseif($contraseña != $contraseñaRep){
-            echo "Las contraseñas no coinciden";
-        }
-    }
-    mysqli_close($conexion);
-?>
 

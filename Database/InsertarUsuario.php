@@ -27,8 +27,8 @@
                     $_SESSION["perfil"]=$datos->Foto; 
                     $_SESSION["password"]=$datos->Contraseña;
                     $_SESSION["descripcion"]=$datos->Descripcion;
-                    $_SESSION["rol"]=$datos->nombreRol;
-                    header("location: ../Views/Mainsite.php");
+                    $_SESSION["rol"]=$datos->rol;
+                    header("location: ../Views/Mainsite.php?section=home");
                     exit;
                 }
             }
