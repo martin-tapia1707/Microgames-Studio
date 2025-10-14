@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
@@ -53,4 +53,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     echo 'Contraseña actualizada correctamente. Ya puedes iniciar sesión.';
 
 
-?>
+?> -->

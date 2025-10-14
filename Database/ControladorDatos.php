@@ -27,18 +27,17 @@
             }else{
                 $destino = $_SESSION["perfil"];
             }
-            if($contraseñaN == "Contraseña"){
+            if($contraseñaN == ""){
                 $contraseñaN = $contraseñaV;
             }if($contraseñaR==""){
-            }if(($contraseñaR=="Repetir contraseña")&&($contraseñaN=="Contraseña")){
-                    $contraseñaR=$contraseñaN;
+                $contraseñaR = $contraseñaV;
             }if($contraseñaN!=$contraseñaR){
                 echo "las contraseñas no coinciden";
             }else{
             
-            $sql = ("UPDATE usuario SET Nombre = '$nombreN', Correo = '$correoN', Foto = '$destino' , Contraseña = '$contraseñaN', Descripcion = '$descripcionN'  WHERE IDusuario = '$id';");
+            $sql = ("UPDATE usuario SET Nombre = '$nombreN', Correo = '$correoN', Foto = '$destino' , Contraseña = '$contraseñaN', Descripcion = '$descripcionN'  WHERE IDusuario = $id");
             mysqli_query($conexion, $sql);
-            $lqs = $conexion->query("SELECT * FROM usuario WHERE IDusuario = '$id'");
+            $lqs = $conexion->query("SELECT * FROM usuario u INNER JOIN roles r ON u.IDrol = r.Idrol WHERE IDusuario = $id");
             if($datos=$lqs->fetch_object()){
                 $_SESSION["id"]=$datos->IDusuario;
                 $_SESSION["usuario"]=$datos->Nombre;
@@ -46,6 +45,7 @@
                 $_SESSION["perfil"]=$datos->Foto; 
                 $_SESSION["password"]=$datos->Contraseña;
                 $_SESSION["descripcion"]=$datos->Descripcion;
+                $_SESSION["rol"]=$datos->nombreRol;
                 header("location: ../Views/Mainsite.php?section=user ");
             }else{
                 echo "<div>Accesso denegado</div>";

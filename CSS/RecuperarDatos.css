@@ -1,0 +1,98 @@
+        html {
+            background-color: #ffeb99;
+        }
+
+        .header-info {
+            position: relative;
+            top: 50px;
+            left: 25%;
+            background-color: #ff6d4d;
+            width: 700px;
+            height: 500px;
+            border-radius: 4%;
+            color: #ffeb99;
+
+
+        }
+
+        .content {
+            position: relative;
+            bottom: 200px;
+
+        }
+
+        .logo {
+            position: relative;
+            height: 200px;
+            width: 400px;
+            left: 150px;
+            bottom: 20px;
+            position: center;
+
+        }
+
+
+        .text-account-recovery {
+            position: relative;
+            top: 115px;
+            left: 20px;
+            font-size: 40px;
+
+        }
+
+        .caja-info {
+            position: relative;
+            top: 20px;
+
+        }
+
+
+        .text-box-account-recovery {
+            position: relative;
+            top: 80px;
+            left: 25px;
+            width: 640px;
+            height: 45px;
+            font-size: 30px;
+            background-color: #690013;
+            border-radius: 15px;
+            color: #ffeb99;
+
+
+        }
+
+        .text-box-account-recovery:focus {
+            border: 3px solid #ffd54f;
+            outline: none;
+
+        }
+
+        .text-box-account-recovery::placeholder {
+            color: #ffeb998a;
+            
+        }
+
+        .mail{
+
+            position: relative;
+            font-size: 30px;
+            top:95px;
+            left: 26px;
+            color: #ffeb99;
+
+        }
+
+        .recover {
+            position: relative;
+            width: 550px;
+            height: 80px;
+            left: 68px;
+            top: 125px;
+            font-size: 20px;
+            color: #ffeb99;
+            border-radius: 10px;
+            background-color: #690013;
+            cursor: pointer;
+
+
+        }

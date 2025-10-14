@@ -171,6 +171,33 @@ html{
             left: 30px;
 
         }
+        .pass-button {
+        position: relative;
+        display: inline-block;
+        padding-right: 50px; /* espacio para el botón */;
+        right: 15px;
+        top: 32px;
+        border: none;
+        background-color: #690013;
+        color: #ffeb99;
+        padding: 5px 10px;
+        cursor: pointer;
+        border-radius: 3px;
+        }
+
+    .repeat-button{
+        position: relative;
+        display: inline-block;
+        padding-right: 50px; /* espacio para el botón */;
+        right: 15px;
+        top: 67px;
+        border: none;
+        background-color: #690013;
+        color: #ffeb99;
+        padding: 5px 10px;
+        cursor: pointer;
+        border-radius: 3px;
+    }
 
         .mail{
             position:relative;
@@ -194,3 +221,6 @@ html{
             
 
         }
+
+    
+

@@ -8,7 +8,7 @@ if (session_status() === PHP_SESSION_NONE) {
         if((!empty($_POST["nombreL"])) && (!empty($_POST["contraseñaL"]))){
             $nombre = $_POST["nombreL"];
             $contraseña = $_POST["contraseñaL"];
-            $sql = $conexion->query("SELECT * FROM usuario WHERE Nombre = '$nombre' AND Contraseña = '$contraseña'");
+            $sql = $conexion->query("SELECT * FROM usuario u INNER JOIN roles r ON u.IDrol = r.Idrol WHERE Nombre = '$nombre' AND Contraseña = '$contraseña'");
             if($datos=$sql->fetch_object()){
                 $_SESSION["id"]=$datos->IDusuario;
                 $_SESSION["usuario"]=$datos->Nombre;
@@ -16,6 +16,7 @@ if (session_status() === PHP_SESSION_NONE) {
                 $_SESSION["perfil"]=$datos->Foto; 
                 $_SESSION["password"]=$datos->Contraseña;
                 $_SESSION["descripcion"]=$datos->Descripcion;
+                $_SESSION["rol"]=$datos->nombreRol;
                 header("location: ../Views/Mainsite.php");
             }else{
                 echo "<div>Accesso denegado</div>";

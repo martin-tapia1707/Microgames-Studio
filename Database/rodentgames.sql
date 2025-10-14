@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-10-2025 a las 07:02:57
+-- Tiempo de generación: 14-10-2025 a las 12:23:08
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -98,10 +98,10 @@ CREATE TABLE `usuario` (
   `IDusuario` int(11) NOT NULL,
   `Nombre` varchar(40) NOT NULL,
   `Correo` varchar(255) NOT NULL,
-  `Foto` text NOT NULL DEFAULT '../IMGU/DefaultPerfil.png',
+  `Foto` text NOT NULL DEFAULT '../IMGU/DefaulPerfil.jpg',
   `Contraseña` varchar(40) NOT NULL,
   `Descripcion` varchar(255) DEFAULT 'Descripcion aqui',
-  `IDrol` int(11) NOT NULL DEFAULT 1
+  `IDrol` int(11) NOT NULL DEFAULT 2
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -109,13 +109,14 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`IDusuario`, `Nombre`, `Correo`, `Foto`, `Contraseña`, `Descripcion`, `IDrol`) VALUES
-(1, 'PuerroXeneize', 'davidquin@gmail.com', '../IMGU/channels4_profile.jpg', 'lasd9', 'El manchester no perdio, aprendio - PuerroXeneize\r\n', 2),
+(1, 'PuerroXeneize', 'davidquin@gmail.com', '../IMGU/davo.jpg', 'LASD9', 'El manchester no perdio, aprendio - PuerroXeneize\r\n', 2),
 (2, 'Vegetta777', 'vegetta777@gmail.com', '../IMGU/VEGETTA777.webp', '26062011', 'hey muy buenas a todos guapisimos aqui vegetta777', 2),
 (3, 'quericacola', 'quericacola@gmail.com', '../IMGU/maxres2.jpg', 'putaquericoeh', 'Puta que rico eh', 2),
 (4, 'Lacobra', 'Lautaro@gmail.com', '../IMGU/20241229201349_img-6307.jpg', 'colepalmercomecarne', 'Bueeeeeeeeeeeeeeeeeeeeeeeeeeeeee', 2),
 (5, 'Elpadre', 'Elpadrecito666@gmail.com', '../IMGU/artworks-l2eLwat7RPLoz3WK-5JntIQ-t500x500.jpg', 'cidaparati', 'Cida para ti hijo del diablo', 2),
-(25, '2112', 'casa10@gmail.com', '../IMGU/DefaultPerfil.png', 'LASD9', 'hola puerro, or o or, pick one, esta security?\r\n', 3),
-(26, 'Baggen', 'baggen@gmail.com', '../IMGU/DefaultPerfil.png', 'capitanCP', 'Soy el capitan CP y admito que Marcelo>>>Baggen\r\n', 1);
+(25, '2112', 'casa10@gmail.com', '../IMGU/DefaulPerfil.jpg', 'LASD9', 'hola puerro, or o or, pick one, esta security?\r\n', 3),
+(49, 'nilton', 'nilton@gmail.com', '../IMGU/perfilnilton.jpg', '12345', 'Descripcion aqui', 2),
+(50, 'tilin', 'geces49017@lorkex.com', '../IMGU/DefaulPerfil.jpg', '1234', 'Descripcion aqui', 2);
 
 --
 -- Índices para tablas volcadas
@@ -169,7 +170,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `IDusuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `IDusuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- Restricciones para tablas volcadas
