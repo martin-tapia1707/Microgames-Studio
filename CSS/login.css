@@ -1,0 +1,159 @@
+ html{
+      background-color: #ffeb99;
+ }
+
+        .header-info {
+            position: relative;
+            top: 50px;
+            left: 32%;
+            background-color: #ff6d4d;
+            width: 700px;
+            height: 600px;
+            border-radius: 4%;
+            color: #ffeb99;
+            font-family: "Acme", sans-serif;
+            font-weight: 400;
+      
+
+        }
+
+        .content-login{
+            position: relative;
+            bottom: 165px;
+
+        }
+
+        .logo{
+            position: relative;
+            height: 200px;
+            width: 400px;
+            left: 150px;
+            bottom: 20px;
+            position: center;
+
+        }
+
+
+        .text-log-in {
+            position: relative;
+            top: 100px;
+            left: 20px;
+            font-size: 40px;
+    
+        }
+
+
+        .caja-info{
+            position: relative;
+            top: 60px;
+
+        }
+
+       
+        .text-box-name-user{
+            position: relative;
+            top: 45px;
+            left: 25px;
+            width: 640px;
+            height: 45px;
+            font-size: 30px;
+            background-color: #690013;
+            border-radius: 15px;
+            color: #ffeb99;
+            
+ 
+        }
+
+        .text-box-name-user:focus{
+            border:3px solid #ffd54f;
+            outline: none; 
+
+        }
+
+        .text-box-name-user::placeholder{
+            color: #ffeb998a;
+        }
+
+        .text-box-password{
+            position: relative;
+            top: 35px;
+            left: 25px;
+            width: 640px;
+            height: 45px;
+            font-size: 30px;
+            background-color: #690013;
+            border-radius: 15px;
+            color: #ffeb99;
+            padding-right: 50px; /* espacio para el botón */
+ 
+        }
+
+        .text-box-password:focus{
+            border:3px solid #ffd54f;
+            outline: none; 
+
+        }
+
+        .text-box-password::placeholder{
+            color: #ffeb998a;
+        }
+
+        .user{
+            position:relative;
+            font-size: 25px;
+            top: 55px;
+            left: 30px;
+        }
+
+        .password{
+            position:relative;
+            font-size: 25px;
+            top: 65px;
+            left: 30px;
+
+        }
+
+        .forgot{
+            position: relative;
+            top: 40px;
+            left: 450px;
+            font-size: 17px;
+            color: #fff4c3e0;
+        
+        }
+
+        .make{
+            position:relative;
+            width: 550px;
+            height: 80px;
+            left:68px;
+            top: 85px;
+            font-size: 20px;
+            color: #ffeb99;
+            border-radius: 10px;
+            background-color: #690013;
+            cursor: pointer;
+            
+        }
+
+        .sign-in{
+            position: relative;
+            top: 65px;
+            left: 210px;
+            font-size: 17px;
+            color: #fff4c3e0;
+
+        }
+
+         .password-button {
+            position: relative;
+            display: inline-block;
+            left: 620px;
+            bottom: 29px;
+            border: none;
+            background-color: #ffeb99;
+            color: #690013;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 3px;
+        }
