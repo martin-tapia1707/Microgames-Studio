@@ -19,7 +19,7 @@
                 $sql = "INSERT INTO usuario(Nombre, Correo, Contraseña) 
                         VALUES ('$nombre', '$correo', '$contraseña')";
                 mysqli_query($conexion, $sql);
-                $lqs = $conexion->query("SELECT * FROM usuario u INNER JOIN roles r ON u.IDrol = r.Idrol WHERE Nombre = '$nombre' AND Contraseña = '$contraseña'");
+                $lqs = $conexion->query("SELECT * FROM usuario u INNER JOIN roles r ON u.IDrol = r.IDrol WHERE Nombre = '$nombre' AND Contraseña = '$contraseña'");
                 if($datos=$lqs->fetch_object()){
                     $_SESSION["id"]=$datos->IDusuario;
                     $_SESSION["usuario"]=$datos->Nombre;
