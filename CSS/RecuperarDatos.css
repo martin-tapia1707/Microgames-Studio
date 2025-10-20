@@ -23,7 +23,7 @@
 
         .logo {
             position: relative;
-            height: 200px;
+            height: auto;
             width: 400px;
             left: 150px;
             bottom: 20px;
