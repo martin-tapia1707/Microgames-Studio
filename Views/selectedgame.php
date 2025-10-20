@@ -23,6 +23,7 @@ if (isset($_GET['id'])) {
 ?>
 
 
+
 <div class="contenedorJuego">
   <h1><?= htmlspecialchars($nombre) ?></h1>
   <div class="screen"></div>
@@ -42,6 +43,9 @@ if (isset($_GET['id'])) {
 </div>
 
 <div class="apartadoComentarios">
+
+        <?php if (isset($_SESSION["usuario"])): ?>
+
   <h1 class="titulocomentarios">Comentarios</h1>
 
   <textarea class="comentar" id="textoComentario" placeholder="Escribe un comentario"></textarea><br>
@@ -52,5 +56,10 @@ if (isset($_GET['id'])) {
   <div id="listaComentarios"></div>
 </div>
 
+            <?php else: ?>
+
+  <h1 class="titulocomentarios">Registrate para poder comentar! <a href="Mainsite.php?section=register" class="nav-link">Clickea aca registrarte!</a></h1>              
+
 <script src="../js/selectedgame.js"></script>
 
+    <?php endif; ?>
