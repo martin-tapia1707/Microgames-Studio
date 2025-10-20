@@ -50,6 +50,8 @@ El apartado de perfil te ofrece la opción de
 caso de que quieras colocarte una foto de 
 perfil a gusto personal 
 
+## Videojuegos
+
 [Imagen de Modulo videojuego random]
 
 A la hora de escoger un videojuego para jugar 
