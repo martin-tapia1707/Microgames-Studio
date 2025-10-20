@@ -12,7 +12,7 @@ objetivo de entretener.
 
 ## Menu principal
 
-![[](https://media.discordapp.net/attachments/954802841485180990/1429814352067825764/717e361a-2b65-4a00-839e-fc788af0c867.png?ex=68f781e2&is=68f63062&hm=673c969b60a18b6eb73018da427161c18181b2260ea03938c6f61c7af6768f3a&=&format=webp&quality=lossless&width=1278&height=718)
+![](https://media.discordapp.net/attachments/954802841485180990/1429814352067825764/717e361a-2b65-4a00-839e-fc788af0c867.png?ex=68f781e2&is=68f63062&hm=673c969b60a18b6eb73018da427161c18181b2260ea03938c6f61c7af6768f3a&=&format=webp&quality=lossless&width=1278&height=718)
 
 El `menu principal` otorga la capacidad de 
 investigar el apartado de videojuegos 
