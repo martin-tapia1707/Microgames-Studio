@@ -1,9 +1,9 @@
 <?php
 
     include("../Includes/Config.php");
-    if (session_status() === PHP_SESSION_NONE) {
+
     session_start();
-    }
+    
 
     if(!empty($_POST["registrar"])){
         $nombre = $_POST["nombre"];
@@ -13,11 +13,14 @@
 
         if($contraseña == $contraseñaRep){
             if(empty($nombre)){
-                echo "<p style='text-indent: 10px;'>ingrese un nombre</p>";
+                $_SESSION["error"] = "<p style='text-indent: 10px;'>ingrese un nombre</p>";
+                header("location: ../Views/Mainsite.php?section=register");
             }elseif(empty($contraseña)){
-                echo "<p style='text-indent: 10px;'>ingrese una contraseña</p>";
+                $_SESSION["error"] = "<p style='text-indent: 10px;'>ingrese una contraseña</p>";
+                header("location: ../Views/Mainsite.php?section=register");
             }elseif(empty($correo)){
-                echo "<p style='text-indent: 10px;'>ingrese un correo</p>";
+                $_SESSION["error"] = "<p style='text-indent: 10px;'>ingrese un correo</p>";
+                header("location: ../Views/Mainsite.php?section=register");
             }else{
                 $verificacion = mysqli_query($conexion, "SELECT * FROM `usuario` WHERE Nombre = '$nombre' OR Correo = '$correo'");
                 $filas = mysqli_num_rows($verificacion);
@@ -26,9 +29,11 @@
                     $nombreRepetido = $repetido["Nombre"];
                     $correoRepetido = $repetido["Correo"];
                     if($nombreRepetido == $nombre){
-                        echo "<p style='text-indent: 10px;'>El usuario ya existe</p>";
+                        $_SESSION["error"] = "<p style='text-indent: 10px;'>El usuario ya existe</p>";
+                        header("location: ../Views/Mainsite.php?section=register");
                     }elseif($correoRepetido == $correo){
-                        echo "<p style='text-indent: 10px;'>El correo ya existe</p>";
+                        $_SESSION["error"] = "<p style='text-indent: 10px;'>El correo ya existe</p>";
+                        header("location: ../Views/Mainsite.php?section=register");
                     }
                 }else{
                 $sql = "INSERT INTO usuario(Nombre, Correo, Contraseña) 
@@ -43,13 +48,14 @@
                     $_SESSION["password"]=$datos->Contraseña;
                     $_SESSION["descripcion"]=$datos->Descripcion;
                     $_SESSION["rol"]=$datos->rol;
+                    $_SESSION["error"] = "";
                     header("location: ../Views/Mainsite.php?section=home");
-                    exit;
                 }
                 }
             }
         }elseif($contraseña != $contraseñaRep){
-            echo "<p style='text-indent: 10px;'>Las contraseñas no coinciden</p>";
+            $_SESSION["error"] = "<p style='text-indent: 10px;'>Las contraseñas no coinciden</p>";
+            header("location: ../Views/Mainsite.php?section=register");
         }
     }
     mysqli_close($conexion);

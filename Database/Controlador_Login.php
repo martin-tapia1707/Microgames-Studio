@@ -17,6 +17,7 @@ if (!empty($_POST["Login"])) {
             $_SESSION["password"] = $datos->Contraseña;
             $_SESSION["descripcion"] = $datos->Descripcion;
             $_SESSION["rol"] = $datos->rol;
+            $_SESSION["error"] = "";
             header("location: ../Views/Mainsite.php");
         } else {
             echo "<br><br><p style='text-indent: 10px;'>Datos incorrectos</p>";
