@@ -1,0 +1,52 @@
+[gd_scene load_steps=9 format=3 uid="uid://bjcs5n6cngf06"]
+
+[ext_resource type="Script" uid="uid://1lox67rdqbuv" path="res://scripts/playerShip.gd" id="1_7t0u0"]
+[ext_resource type="PackedScene" uid="uid://bl10i367c7m4o" path="res://scenes/player_canon.tscn" id="2_ys4te"]
+[ext_resource type="PackedScene" uid="uid://pokqe12mr0kj" path="res://scenes/deadScene.tscn" id="3_ys4te"]
+[ext_resource type="Texture2D" uid="uid://bxo28bcb1wgwa" path="res://assets/sprites/player/Ship/playerShipv4.png" id="4_yf02v"]
+[ext_resource type="Texture2D" uid="uid://kkbvm6m58csm" path="res://assets/sprites/effects/effectsSprites/pixil-frame-0 (1).png" id="5_7ni5w"]
+[ext_resource type="Script" uid="uid://73ypayq4agbh" path="res://scripts/detectionArea.gd" id="5_yf02v"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g8niy"]
+radius = 150.62236
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yf02v"]
+radius = 521.6952
+
+[node name="Node2D" type="Node2D"]
+scale = Vector2(0.9, 0.9)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+scale = Vector2(0.9, 0.9)
+script = ExtResource("1_7t0u0")
+canon_scene = ExtResource("2_ys4te")
+dead_scene = ExtResource("3_ys4te")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("4_yf02v")
+
+[node name="Area2D" type="Area2D" parent="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D"]
+rotation = 1.5707964
+shape = SubResource("CircleShape2D_g8niy")
+
+[node name="detectionArea" type="Area2D" parent="CharacterBody2D"]
+script = ExtResource("5_yf02v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/detectionArea"]
+shape = SubResource("CircleShape2D_yf02v")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D/detectionArea"]
+visible = false
+texture_filter = 1
+position = Vector2(-53.703686, 11.111088)
+scale = Vector2(12.629631, 12.2716055)
+texture = ExtResource("5_7ni5w")
+
+[connection signal="area_entered" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_area_2d_body_entered"]
+[connection signal="area_entered" from="CharacterBody2D/detectionArea" to="CharacterBody2D" method="_on_area_2d_2_area_entered"]
+[connection signal="body_entered" from="CharacterBody2D/detectionArea" to="CharacterBody2D/detectionArea" method="_on_body_entered"]

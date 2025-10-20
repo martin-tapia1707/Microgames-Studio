@@ -1,0 +1,70 @@
+[gd_scene load_steps=9 format=3 uid="uid://bl10i367c7m4o"]
+
+[ext_resource type="Script" uid="uid://ckgmhnorlmdwt" path="res://scripts/player_canon.gd" id="1_sv8d8"]
+[ext_resource type="PackedScene" uid="uid://da1w5jjlpy8ax" path="res://assets/sprites/effects/playerBullet.tscn" id="2_o13h0"]
+[ext_resource type="Texture2D" uid="uid://ceuw8omm12t7v" path="res://assets/sprites/player/Canon/weaponV2.1.png" id="3_de757"]
+[ext_resource type="AudioStream" uid="uid://btvshkfnjwtn5" path="res://assets/sprites/effects/effectsSounds/canonLaser.mp3" id="5_o13h0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tl0fj"]
+size = Vector2(67, 27)
+
+[sub_resource type="Animation" id="Animation_o13h0"]
+resource_name = "fire"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-10, 0), Vector2(-20, 0), Vector2(-10, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_4pdc6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1bfhx"]
+_data = {
+&"RESET": SubResource("Animation_4pdc6"),
+&"fire": SubResource("Animation_o13h0")
+}
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("1_sv8d8")
+bullet_scene = ExtResource("2_o13h0")
+
+[node name="Muzzle" type="Node2D" parent="Area2D"]
+position = Vector2(38, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_tl0fj")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+texture_filter = 1
+texture = ExtResource("3_de757")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Area2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_1bfhx")
+}
+
+[node name="ShotSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_o13h0")

@@ -1,6 +1,7 @@
 <?php
 
     session_start();
+    
     include "../Includes/Config.php";
 
     if(!empty($_POST["Guardar"])){
@@ -32,7 +33,8 @@
             }if($contraseñaR==""){
                 $contraseñaR = $contraseñaV;
             }if($contraseñaN!=$contraseñaR){
-                echo "las contraseñas no coinciden";
+                $_SESSION["error"] = "<br><br><br><p style='text-indent: 20px;'>Las contraseñas no coinciden</p>";
+                header("location: ../Views/edit.php");
             }else{
             
             $sql = ("UPDATE usuario SET Nombre = '$nombreN', Correo = '$correoN', Foto = '$destino' , Contraseña = '$contraseñaN', Descripcion = '$descripcionN'  WHERE IDusuario = $id");
@@ -48,11 +50,14 @@
                 $_SESSION["rol"]=$datos->rol;
                 header("location: ../Views/Mainsite.php?section=user ");
             }else{
-                echo "<div>Accesso denegado</div>";
+                $_SESSION["error"] = "<br><br><br><p style='text-indent: 20px;'>acceso denegado</p>";
+                header("location: ../Views/edit.php");
             }
             }
         }else{
-        echo "campos vacios";
+            $_SESSION["error"] = "<br><br><br><p style='text-indent: 20px;'>campos vacios</p>";
+            header("location: ../Views/edit.php");
+
         }
     }
 

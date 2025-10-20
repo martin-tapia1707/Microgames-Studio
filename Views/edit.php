@@ -69,9 +69,14 @@
                             placeholder="Descripción" name="nuevaDescripcion"><?php echo $_SESSION["descripcion"];?></textarea>
 
 
-                        <input type="submit" name="Guardar" class="edit-profile-button" value="Actualizar perfil"> 
+                        <input type="submit" name="Guardar" class="edit-profile-button" value="Actualizar perfil"><br><br><br>
+
                         
                         </form>
+                        <?php
+                            echo $_SESSION["error"];
+                            $_SESSION["error"] = "";
+                        ?>
 
                     </div>
 

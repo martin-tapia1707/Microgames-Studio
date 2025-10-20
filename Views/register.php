@@ -1,6 +1,7 @@
       <?php
-    include("C:/xampp/htdocs/Microgames-Studio/Includes/Config.php");
-?>
+    include("../Includes/Config.php");
+      
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,7 +28,7 @@
 
 
 
-        <form action="../Database/InsertarUsuario.php" method="post">
+        <form action="" method="post">
             <br>
             <p class="user"><b>Nombre de usuario</b></p><br>
             <input type="text" name="nombre" class="text-box-name-user" placeholder="Nombre de usuario"><br>
@@ -40,8 +41,14 @@
 
             <p class="mail"><b>Correo electronico</b></p><br>
             <input type="email" name="correo" class="text-box-mail" type="text" placeholder="Correo electronico"><br>      
-            <input type="submit" value="registrarse" name="registrar" class="make">
+            <input type="submit" value="registrarse" name="registrar" class="make"><br><br>
+            <?php
+            include("../Database/InsertarUsuario.php");
+            ?>
         </form>
+            
+
+
     </div>
 
 

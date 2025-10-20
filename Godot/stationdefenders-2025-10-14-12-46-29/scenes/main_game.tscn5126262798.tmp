@@ -1,0 +1,137 @@
+[gd_scene load_steps=6 format=3 uid="uid://ct2q0kikpdkkb"]
+
+[ext_resource type="Script" uid="uid://rux81uhmouqo" path="res://scripts/main_game.gd" id="1_s3esy"]
+[ext_resource type="PackedScene" uid="uid://bjcs5n6cngf06" path="res://scenes/player_ship.tscn" id="2_72e8q"]
+[ext_resource type="Script" uid="uid://bppggax6ee602" path="res://scripts/spawner.gd" id="3_d2op2"]
+[ext_resource type="Texture2D" uid="uid://cbcafa6e7ns6p" path="res://assets/sprites/background/SpaceBGGame.png" id="3_ipu61"]
+[ext_resource type="PackedScene" uid="uid://bitci42seuwni" path="res://scenes/playerUI.tscn" id="3_ygxny"]
+
+[node name="Gameplay" type="Node2D"]
+script = ExtResource("1_s3esy")
+player_scene = ExtResource("2_72e8q")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="CanvasLayer"]
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ParallaxBackground"]
+position = Vector2(962, 539)
+scale = Vector2(1.9, 1.9)
+texture = ExtResource("3_ipu61")
+
+[node name="EnemySpawner" type="Node2D" parent="."]
+script = ExtResource("3_d2op2")
+
+[node name="SpawnTimer" type="Timer" parent="EnemySpawner"]
+wait_time = 0.00999999999999999
+autostart = true
+
+[node name="Spawn1" type="Node2D" parent="EnemySpawner"]
+position = Vector2(0, -50)
+
+[node name="Spawn2" type="Node2D" parent="EnemySpawner"]
+position = Vector2(192, -50)
+
+[node name="Spawn3" type="Node2D" parent="EnemySpawner"]
+position = Vector2(384, -50)
+
+[node name="Spawn4" type="Node2D" parent="EnemySpawner"]
+position = Vector2(576, -50)
+
+[node name="Spawn5" type="Node2D" parent="EnemySpawner"]
+position = Vector2(768, -50)
+
+[node name="Spawn6" type="Node2D" parent="EnemySpawner"]
+position = Vector2(960, -50)
+
+[node name="Spawn7" type="Node2D" parent="EnemySpawner"]
+position = Vector2(1152, -50)
+
+[node name="Spawn8" type="Node2D" parent="EnemySpawner"]
+position = Vector2(1344, -50)
+
+[node name="Spawn9" type="Node2D" parent="EnemySpawner"]
+position = Vector2(1536, -50)
+
+[node name="Spawn10" type="Node2D" parent="EnemySpawner"]
+position = Vector2(1728, -50)
+
+[node name="Spawn11" type="Node2D" parent="EnemySpawner"]
+position = Vector2(1920, -50)
+
+[node name="Spawn12" type="Node2D" parent="EnemySpawner"]
+position = Vector2(1970, 0)
+
+[node name="Spawn13" type="Node2D" parent="EnemySpawner"]
+position = Vector2(1970, 180)
+
+[node name="Spawn14" type="Node2D" parent="EnemySpawner"]
+position = Vector2(1970, 360)
+
+[node name="Spawn15" type="Node2D" parent="EnemySpawner"]
+position = Vector2(1970, 540)
+
+[node name="Spawn16" type="Node2D" parent="EnemySpawner"]
+position = Vector2(1970, 720)
+
+[node name="Spawn17" type="Node2D" parent="EnemySpawner"]
+position = Vector2(1970, 900)
+
+[node name="Spawn18" type="Node2D" parent="EnemySpawner"]
+position = Vector2(1970, 1080)
+
+[node name="Spawn19" type="Node2D" parent="EnemySpawner"]
+position = Vector2(1920, 1130)
+
+[node name="Spawn20" type="Node2D" parent="EnemySpawner"]
+position = Vector2(1728, 1130)
+
+[node name="Spawn21" type="Node2D" parent="EnemySpawner"]
+position = Vector2(1536, 1130)
+
+[node name="Spawn22" type="Node2D" parent="EnemySpawner"]
+position = Vector2(1344, 1130)
+
+[node name="Spawn23" type="Node2D" parent="EnemySpawner"]
+position = Vector2(1152, 1130)
+
+[node name="Spawn24" type="Node2D" parent="EnemySpawner"]
+position = Vector2(960, 1130)
+
+[node name="Spawn25" type="Node2D" parent="EnemySpawner"]
+position = Vector2(768, 1130)
+
+[node name="Spawn26" type="Node2D" parent="EnemySpawner"]
+position = Vector2(576, 1130)
+
+[node name="Spawn27" type="Node2D" parent="EnemySpawner"]
+position = Vector2(384, 1130)
+
+[node name="Spawn28" type="Node2D" parent="EnemySpawner"]
+position = Vector2(192, 1130)
+
+[node name="Spawn29" type="Node2D" parent="EnemySpawner"]
+position = Vector2(0, 1130)
+
+[node name="Spawn30" type="Node2D" parent="EnemySpawner"]
+position = Vector2(-50, 1080)
+
+[node name="Spawn31" type="Node2D" parent="EnemySpawner"]
+position = Vector2(-50, 900)
+
+[node name="Spawn32" type="Node2D" parent="EnemySpawner"]
+position = Vector2(-50, 720)
+
+[node name="Spawn33" type="Node2D" parent="EnemySpawner"]
+position = Vector2(-50, 540)
+
+[node name="Spawn34" type="Node2D" parent="EnemySpawner"]
+position = Vector2(-50, 360)
+
+[node name="Spawn35" type="Node2D" parent="EnemySpawner"]
+position = Vector2(-50, 180)
+
+[node name="Spawn36" type="Node2D" parent="EnemySpawner"]
+position = Vector2(-50, 0)
+
+[node name="header" parent="." instance=ExtResource("3_ygxny")]

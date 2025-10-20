@@ -1,5 +1,5 @@
 <?php
-    include("C:/xampp/htdocs/Microgames-Studio/Includes/Config.php");
+    include("../Includes/Config.php");
 ?>
 
 <!DOCTYPE html>
@@ -30,17 +30,18 @@
         <p class="password"><b>Contraseña</b><a class="forgot" href="RecuperarDatos.php"><p>¿Olvidaste tu contraseña?</p></a></p><br>
         <input id="password-input" type="password" name="contraseñaL" class="text-box-password" placeholder="Contraseña"><br><button id="view-password" type="button" class="password-button" onclick="view()">X</button>
         <input type="submit" value="Iniciar sesion" name="Login" class="make"><br><br><br>
+        
+
+        
+        <a href="Mainsite.php?section=register" class="sign-in">
+        <p>¿No tenés una cuenta? ¡Creala ya!</p></a><br>
+        
         <?php
-        include("../Includes/Config.php");
         include("../Database/Controlador_Login.php");
         ?>
-
-
-        <a href="Mainsite.php?section=register" class="sign-in">
-        <p>¿No tenés una cuenta? ¡Creala ya!</p></a>
-
         </div>
         </div>
+        
 
     </div>
 

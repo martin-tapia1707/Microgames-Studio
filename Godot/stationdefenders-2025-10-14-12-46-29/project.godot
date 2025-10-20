@@ -1,0 +1,42 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="StationDefenders"
+config/description="A simple game in which you have to go as far as you can, reach the highest score you can and compete to have the highest score in the global rankings."
+config/version="V0.5.3"
+run/main_scene="uid://bpr4hnc03dosb"
+config/features=PackedStringArray("4.5", "Forward Plus")
+config/icon="uid://byfu68gsjlsf3"
+
+[autoload]
+
+GlobalScore="*res://scripts/globalScore.gd"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=2
+window/stretch/mode="canvas_items"
+
+[file_customization]
+
+folder_colors={
+"res://assets/": "green",
+"res://assets/sprites/": "blue",
+"res://assets/sprites/Enemies/": "red",
+"res://assets/sprites/effects/": "yellow",
+"res://assets/sprites/player/": "gray",
+"res://assets/sprites/player/player_UI/": "yellow",
+"res://scenes/": "orange",
+"res://scripts/": "red"
+}
