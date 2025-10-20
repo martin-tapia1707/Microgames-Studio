@@ -12,7 +12,7 @@ objetivo de entretener.
 
 ## Menu principal
 
-[Imagen]
+![[](../IMG/MenuPrincipal.jtif)
 
 El `menu principal` otorga la capacidad de 
 investigar el apartado de videojuegos 
@@ -22,7 +22,7 @@ videojuego y jugarlo
 
 ## Perfil del usuario
 
-[Imagen del perfil]
+![[](../IMG/Perfil.jtif)
 
 En `Rodent Games` podrás tener tu propia 
 cuenta y usuario si asi lo deseas, asi poder 
@@ -31,13 +31,13 @@ puede ver el puntaje maximo obtenido en cada
 videojuego jugado, incluyendo un registro de 
 tus horas jugadas
 
-[Imagen de Register]
+![[](../IMG/Register.jtif)
 
 En caso de no poseer una cuenta y realmente 
 queres tener un registro de tu progreso, 
 puedes crear tu cuenta
 
-[Imagen del Login]
+![[](../IMG/Login.jtif)
 
 En caso de ya tener tu cuenta, puedes 
 loguearte y al entrar a tu perfil, podrás 
@@ -52,20 +52,20 @@ perfil a gusto personal
 
 ## Videojuegos
 
-[Imagen de Modulo videojuego random]
+![[](../IMG/ModuloJuego.jtif)]
 
 A la hora de escoger un videojuego para jugar 
 podras observar la descripción y el objetivo 
 a seguir en el mismo videojuego, tambien 
 puedes dejar tu opinión sobre el mismo
 
-[Imagen modulo de comentarios]
+![[](../IMG/Comentarios.jtif)
 
 Puedes dejar una opinión de cada videojuego 
 en el apartado de comentarios
 
-[Imagen de videojuego]
-[Imagen de videojuego2]
+![[](../IMG/MenuJuego.jtif)
+![[](../IMG/Gameplay.jtif)
 
 Puedes disfrutar del añartado de videojuegos 
 que ofrece la pagina, deja tu opinión en el 
