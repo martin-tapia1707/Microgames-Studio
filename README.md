@@ -1,6 +1,6 @@
 # Microgames-Studio
 
-## Pagina de videojuegos simples
+### Pagina de videojuegos simples
 
 **Microgames Studio** presenta el producto 
 `Rodent Games`, una pagina de videojuegos 
