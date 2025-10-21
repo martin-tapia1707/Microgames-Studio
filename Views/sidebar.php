@@ -20,12 +20,12 @@ if (session_status() === PHP_SESSION_NONE) {
                 <span class="item-txt">Creadores</span>
             </a>
         </li>
-        <li>
+        <!-- <li>
             <a href="Mainsite.php?section=help" class="nav-link">
-                <span class="item-icon"><i class='bx bxs-help-circle'></i></span> <!-- ícono de ayuda más claro -->
+                <span class="item-icon"><i class='bx bxs-help-circle'></i></span>
                 <span class="item-txt">Ayuda</span>
             </a>
-        </li>
+        </li> -->
         <li>
             <a href="Mainsite.php?section=user" class="nav-link">
                 <span class="item-icon"><i class='bx bxs-user-circle'></i></span> <!-- ícono de usuario más claro -->
@@ -62,4 +62,5 @@ if (session_status() === PHP_SESSION_NONE) {
 </div>
 
     <?php endif; ?>
+
 
