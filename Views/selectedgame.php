@@ -3,6 +3,8 @@
 
 if (isset($_GET['id'])) {
     $idJuego = $_GET['id'];
+    echo "<script>console.log('$idJuego')</script>";
+
 
     $query = "SELECT * FROM juegos WHERE IDjuego = ?";
     $stmt = $conexion->prepare($query);
@@ -14,6 +16,8 @@ if (isset($_GET['id'])) {
         $nombre = $row['Nombre'];
         $comoJugar = $row['ComoJugar'];
         $queHacer = $row['QueHacer'];
+        $direccion = $row['direccion'];
+        echo "<script>console.log('$direccion')</script>";
     } else {
         // Si no existe el ID
         $nombre = "Juego no encontrado";
@@ -25,7 +29,7 @@ if (isset($_GET['id'])) {
 
 <div class="contenedorJuego">
   <h1><?= htmlspecialchars($nombre) ?></h1>
-  <div class="screen"><iframe src="../Godot/Space/StationDefenders.html" height="480px" width= "100%"></iframe></div>
+  <div class="screen"><iframe src="<?= $direccion ?>" height="480px" width= "100%"></iframe></div>
 
   <div class="acciones">
     <button class="like"><i class='bx bxs-like'></i></button>
