@@ -17,6 +17,7 @@ if (!empty($_POST["Login"])) {
             $_SESSION["password"] = $datos->Contraseña;
             $_SESSION["descripcion"] = $datos->Descripcion;
             $_SESSION["rol"] = $datos->rol;
+            $_SESSION["idrol"] = $datos->IDrol;
             $_SESSION["error"] = "";
             header("location: ../Views/Mainsite.php");
         } else {

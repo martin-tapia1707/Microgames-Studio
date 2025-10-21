@@ -1,4 +1,10 @@
-        <?php if (isset($_SESSION["usuario"])): ?>
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}?>
+
+
+<?php if (isset($_SESSION["usuario"])): ?>
 
 <div class="sidebar">
     <ul>

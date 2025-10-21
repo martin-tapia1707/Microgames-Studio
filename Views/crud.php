@@ -116,7 +116,7 @@ $resultado = $conexion->query($query);
 
     <!-- LISTADO -->
     <div class="card">
-        <div class="card-header bg-dark text-white">Lista de Usuarios (Rol 1 y 3)</div>
+        <div class="card-header bg-dark text-white">Listado de Usuarios</div>
         <div class="card-body">
             <table class="table table-striped text-center">
                 <thead>
