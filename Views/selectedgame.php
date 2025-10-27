@@ -17,13 +17,15 @@ if (isset($_GET['id'])) {
         $comoJugar = $row['ComoJugar'];
         $queHacer = $row['QueHacer'];
         $direccion = $row['direccion'];
-        echo "<script>console.log('$direccion')</script>";
+        $like = $row['siLike'];
+        $dislike = $row['noLike'];
     } else {
         // Si no existe el ID
         $nombre = "Juego no encontrado";
         $comoJugar = $queHacer = "No hay información disponible.";
     }
 }
+
 ?>
 
 
@@ -32,8 +34,10 @@ if (isset($_GET['id'])) {
   <div class="screen"><iframe src="<?= $direccion ?>" height="480px" width= "100%"></iframe></div>
 
   <div class="acciones">
-    <button class="like"><i class='bx bxs-like'></i></button>
+    <span class="count" id="likes"><?= $like ?></span>
+    <button class="like" onclick="aumentar()"><i class='bx bxs-like'></i></button>
     <button class="dislike"><i class='bx bxs-dislike'></i></button>
+    <span class="count" id="likes"><?= $dislike ?></span>
   </div>
 </div>
 
@@ -56,5 +60,5 @@ if (isset($_GET['id'])) {
   <div id="listaComentarios"></div>
 </div>
 
-<script src="../js/selectedgame.js"></script>
+<script src="../JS/selectedgame.js"></script>
 

@@ -48,7 +48,12 @@
                           
                       </form>
                       <?php
-                        echo $_SESSION["error"];
+                        if(isset($_SESSION["error"])){
+                            echo $_SESSION["error"];
+                        }elseif(!isset($_SESSION["error"])){
+                            $_SESSION["error"] = "";
+                            echo $_SESSION["error"];
+                        }
                         $_SESSION["error"] = "";
                         ?>
 
