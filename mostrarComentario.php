@@ -19,21 +19,25 @@ if (isset($_GET['IDjuego'])) {
     $stmt->execute();
     $result = $stmt->get_result();
 
-    // Salida HTML directa (puede ser JSON si preferís)
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
             echo "
-            <div class='cuadroComentario'>
-                <img src='{$row['Foto']}' class='fotoPerfil'>
-                <div class='contenidoComentario'>
-                    <strong>{$row['Nombre']} ({$row['rol']})</strong><br>
-                    <p>{$row['texto']}</p>
-                    <small>{$row['fecha']}</small>
-                </div>
-            </div>";
+<div class='cuadroComentario'>
+    <img src='{$row['Foto']}' class='fotoPerfil'>
+    <div class='contenidoComentario'>
+        <div class='cabeceraComentario'>
+            <div class='nombreRol'>
+                <strong>{$row['Nombre']}</strong>
+                <span class='rol'>({$row['rol']})</span>
+            </div>
+            <span class='fecha'>{$row['fecha']}</span>
+        </div>
+        <p class='textoComentario'>{$row['texto']}</p>
+    </div>
+</div>";
         }
     } else {
-        echo "<p class='sinComentarios'>No hay comentarios todavía.</p>";
+        echo "<p class='sinComentarios'>Nadie comentó todavia..</p>";
     }
 }
 ?>

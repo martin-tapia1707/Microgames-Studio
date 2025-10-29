@@ -41,3 +41,7 @@ document.getElementById("publicacion").addEventListener("click", function() {
     console.error("Error al enviar el comentario:", error);
   });
 });
+
+document.getElementById("descartacion").addEventListener("click", function() {
+ const borrarTexto = document.getElementById("texto").value = "";
+})
