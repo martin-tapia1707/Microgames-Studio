@@ -1,9 +1,12 @@
 <?php
   require_once '../Includes/Config.php';
 
+
 if (isset($_GET['id'])) {
     $idJuego = $_GET['id'];
     echo "<script>console.log('$idJuego')</script>";
+
+
 
 
     $query = "SELECT * FROM juegos WHERE IDjuego = ?";
@@ -11,6 +14,7 @@ if (isset($_GET['id'])) {
     $stmt->bind_param("i", $idJuego);
     $stmt->execute();
     $resultado = $stmt->get_result();
+
 
     if ($row = $resultado->fetch_assoc()) {
         $nombre = $row['Nombre'];
@@ -25,13 +29,13 @@ if (isset($_GET['id'])) {
         $comoJugar = $queHacer = "No hay información disponible.";
     }
 }
-
 ?>
 
 
 <div class="contenedorJuego">
   <h1><?= htmlspecialchars($nombre) ?></h1>
   <div class="screen"><iframe src="<?= $direccion ?>" height="480px" width= "100%"></iframe></div>
+
 
   <div class="acciones">
     <span class="count" id="likes"><?= $like ?></span>
@@ -41,24 +45,33 @@ if (isset($_GET['id'])) {
   </div>
 </div>
 
+
 <div class="contenedorTutorial">
   <h1>¿Como jugar?</h1>
   <p><?= nl2br(htmlspecialchars($comoJugar)) ?></p>
+
 
   <h1>¿Qué hacer?</h1>
   <p><?= nl2br(htmlspecialchars($queHacer)) ?></p>
 </div>
 
+
 <div class="apartadoComentarios">
   <h1 class="titulocomentarios">Comentarios</h1>
 
-  <textarea class="comentar" id="textoComentario" placeholder="Escribe un comentario"></textarea><br>
+
+  <textarea class="comentar" id="texto" placeholder="Escribe un comentario"></textarea><br>
   <button class="publicar" id="publicacion">Publicar</button>
   <button class="publicar" id="descartacion">Descartar</button>
+
 
   <!-- Aca se van a insertar los nuevos comentarios -->
   <div id="listaComentarios"></div>
 </div>
 
+
 <script src="../JS/selectedgame.js"></script>
+
+
+
 
