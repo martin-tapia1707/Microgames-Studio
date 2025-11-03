@@ -31,7 +31,6 @@ if (isset($_GET['id'])) {
 }
 ?>
 
-
 <div class="contenedorJuego">
   <h1><?= htmlspecialchars($nombre) ?></h1>
   <div class="screen"><iframe src="<?= $direccion ?>" height="480px" width= "100%"></iframe></div>
@@ -43,8 +42,31 @@ if (isset($_GET['id'])) {
     <button class="dislike"><i class='bx bxs-dislike'></i></button>
     <span class="count" id="likes"><?= $dislike ?></span>
   </div>
-</div>
 
+<div class="publicidad">
+  <img id="anuncio" src="" alt="Publicidad lateral">
+</div>
+</div> 
+
+<!-- JS con publicidad random -->
+
+<script>
+const imagenes = [
+  "../IMG/publicidad.webp",
+  "../IMG/publicidad2.webp",
+  "../IMG/publicidad3.png",
+  "../IMG/publicidad4.jpg",
+  "../IMG/publicidad5.png",
+]
+
+const publicidadRandom = Math.floor(Math.random() * imagenes.length);
+
+const publicidadSeleccionada = imagenes[publicidadRandom];
+
+document.getElementById("anuncio").src = publicidadSeleccionada;
+</script>
+
+<!-- descripcion de los juegos -->
 
 <div class="contenedorTutorial">
   <h1>¿Como jugar?</h1>
@@ -71,7 +93,3 @@ if (isset($_GET['id'])) {
 
 
 <script src="../JS/selectedgame.js"></script>
-
-
-
-

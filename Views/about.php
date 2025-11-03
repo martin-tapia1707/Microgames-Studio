@@ -163,7 +163,7 @@
 
 
         <div class="member-profile">
-            <p class="member-name"><strong>Dianiel Patiño</strong></p>
+            <p class="member-name"><strong>Daniel Patiño</strong></p>
             <p class="member-mail"></p>
         </div>
     </div>
