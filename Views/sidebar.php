@@ -34,7 +34,7 @@ if (session_status() === PHP_SESSION_NONE) {
             </a>
         </li>
         <li>
-            <a href="Mainsite.php?section=crud.php" class="nav-link">
+            <a href="Mainsite.php?section=crud" class="nav-link">
                 <span class="item-icon"><i class='bx  bx-cog'  ></i></span> <!-- ícono de usuario más claro -->
                 <span class="item-txt">Crud</span>
             </a>

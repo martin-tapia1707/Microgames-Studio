@@ -6,11 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Microgames Studio</title>
     <link rel="stylesheet" href="../CSS/RecuperarDatos.css">
+        <link rel="stylesheet" href="../CSS/header.css">
+    <link rel="stylesheet" href="../CSS/sidebar.css">
+    <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="../IMG/LogoEmpresa.png" />
     <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
 </head>
 
 <body>
-
+<?php
+    require_once "header.php";
+    require_once "sidebar.php";
+?>
 
 
     <div class="header-info">

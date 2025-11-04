@@ -30,7 +30,7 @@
   <div class="contenedorCatalogo">
     <a href="Mainsite.php?section=selectedgame&id=1">
       <div class="juegoCatalogo">
-        <img src="../IMG/JuegoRandom1.png" alt="Juego 1">
+        <img src="../IMG/JuegoRandom1.webp" alt="Juego 1">
       </div>
     </a>
     <a href="Mainsite.php?section=selectedgame&id=2">

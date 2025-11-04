@@ -123,4 +123,57 @@
     justify-content: center;
     gap: 15px;
     padding: 0 20px 20px;
+
+}
+
+.log-out-link{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: #690013;
+    color: #ffeb99;
+    font-size: 25px;
+    border-radius: 25px;
+    left: 0px;
+    top: 25px;
+    width: 550px;
+    height: 60px;
+    padding: 100 280px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+
+}
+
+.edit-profile-link{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: #690013;
+    color: #ffeb99;
+    font-size: 25px;
+    border-radius: 25px;
+    bottom: 23px;
+    left: 670px;
+    width: 550px;
+    height: 60px;
+    padding: 100 280px;
+    border: none;
+    cursor: pointer;
+    font-family: "Acme", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: none;   
+}
+
+.log-out-link:hover{
+    background-color: #ff4920;
+    color: #fffbb6;
+}
+
+.edit-profile-link:hover{
+    background-color: #ff4920;
+    color: #fffbb6;
 }

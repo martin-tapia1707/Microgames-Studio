@@ -60,7 +60,7 @@ if (session_status() === PHP_SESSION_NONE) {
                     <p class="info-game">PuntuajeMax: </p>
                     <p class="info-game">Horas activo: </p>
                 </div>
-                <a href="../Database/Controlador_CerrarLogin.php" ><button class="log-out-button" ><strong>Cerrar sesion</strong></button></a>
+                <a href="../Database/Controlador_CerrarLogin.php" class="log-out-link" >Cerrar sesion</a>
 
             </div>
 
@@ -68,7 +68,7 @@ if (session_status() === PHP_SESSION_NONE) {
 
             <div class="changes-info">
 
-                <a href="edit.php"><button class="edit-profile-button" ><strong>Editar perfil</strong></button></a>
+                <a href="edit.php" class="edit-profile-link">Editar perfil</a>
 
             </div>
 

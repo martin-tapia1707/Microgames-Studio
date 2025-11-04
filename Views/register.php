@@ -11,6 +11,7 @@
           <link rel="stylesheet" href="../CSS/header.css">
           <link rel="stylesheet" href="../CSS/sidebar.css">
           <link rel="stylesheet" href="../CSS/register.css">
+          <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
           <title>Register</title>
       </head>
 

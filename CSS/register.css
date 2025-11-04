@@ -1,225 +1,242 @@
-html{
-      background-color: #ffeb99;
- }
+html {
+    background-color: #ffcf99;
+    overflow-x: hidden;
+    width: 100%;
+    height: 100%;
+}
 
-        .header-info {
-            position: relative;
-            top: 50px;
-            left: 32%;
-            background-color: #ff6d4d;
-            width: 700px;
-            height: 790px;
-            border-radius: 4%;
-            color: #ffeb99;
-            font-family: "Acme", sans-serif;
-            font-weight: 400;
-      
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        }
+.header-info {
 
-        .content-register{
-            position: relative;
-            bottom: 155px;
-
-        }
-
-        .logo{
-            position: relative;
-            height: 200px;
-            width: 400px;
-            left: 150px;
-            bottom: 20px;
-            position: center;
-
-        }
+    background-color: #ff6d4d;
+    width: 700px;
+    height: 810px;
+    border-radius: 4%;
+    color: #ffeb99;
+    font-family: "Acme", sans-serif;
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* centra la caja */
+    justify-content: flex-start; /* Se cente mejor, estando todo centrado */
+    margin: 30px auto; /*centra todo, al maximizar no va para algun lado*/
 
 
-        .text-register {
-            position: relative;
-            top: 85px;
-            left: 20px;
-            font-size: 40px;
-    
-        }
+}
 
-        .sign-up{
-            position: relative;
-            top: 35px;
-            left: 365px;
-            font-size: 17px;
-            color: #fff4c3e0;
-        }
+.content-register {
+    position: relative;
+    bottom: 145px;
+
+}
+
+.logo {
+    display: flex;
+    height: 200px;
+    width: 400px;
+    left: 250px;
+    bottom: 20px;
+    flex-direction: column;
+    align-items: center;
 
 
-        .caja-info{
-            position: relative;
-            top: 20px;
 
-        }
 
-       
-        .text-box-name-user{
-            position: relative;
-            top: 50px;
-            left: 25px;
-            width: 640px;
-            height: 45px;
-            font-size: 30px;
-            background-color: #690013;
-            border-radius: 15px;
-            color: #ffeb99;
-            
- 
-        }
+}
 
-        .text-box-name-user:focus{
-            border:3px solid #ffd54f;
-            outline: none; 
 
-        }
+.text-register {
+    position: relative;
+    top: 95px;
+    left: 20px;
+    font-size: 40px;
 
-        .text-box-name-user::placeholder{
-            color: #ffeb998a;
-        }
+}
 
-        .text-box-password{
-            position: relative;
-            top: 60px;
-            left: 25px;
-            width: 640px;
-            height: 45px;
-            font-size: 30px;
-            background-color: #690013;
-            border-radius: 15px;
-            color: #ffeb99;
-            padding-right: 50px; /* espacio para el botón */
- 
-        }
+.sign-up {
+    position: relative;
+    top: 45px;
+    left: 365px;
+    font-size: 17px;
+    color: #fff4c3e0;
+}
 
-        .text-box-password:focus{
-            border:3px solid #ffd54f;
-            outline: none; 
 
-        }
+.caja-info {
+    position: relative;
+    top: 20px;
 
-        .text-box-password::placeholder{
-            color: #ffeb998a;
-        }
+}
 
-        .text-box-repeat-password{
-            position: relative;
-            top: 70px;
-            left: 25px;
-            width: 640px;
-            height: 45px;
-            font-size: 30px;
-            background-color: #690013;
-            border-radius: 15px;
-            color: #ffeb99;
-            padding-right: 50px; /* espacio para el botón */
- 
-        }
 
-        .text-box-repeat-password:focus{
-            border:3px solid #ffd54f;
-            outline: none; 
-        }
+.text-box-name-user {
+    position: relative;
+    top: 50px;
+    left: 25px;
+    width: 640px;
+    height: 45px;
+    font-size: 30px;
+    background-color: #690013;
+    border-radius: 15px;
+    color: #ffeb99;
 
-        .text-box-repeat-password::placeholder{
-            color: #ffeb998a;
-        }
 
-        .text-box-mail{
-            position: relative;
-            top: 80px;
-            left: 25px;
-            width: 640px;
-            height: 45px;
-            font-size: 30px;
-            background-color: #690013;
-            border-radius: 15px;
-            color: #ffeb99;
-            
-        }
-       
-        .text-box-mail:focus{
-            border:3px solid #ffd54f;
-            outline: none; 
-        }
+}
 
-        .text-box-mail::placeholder{
-            color: #ffeb998a;
-        }
+.text-box-name-user:focus {
+    border: 3px solid #ffd54f;
+    outline: none;
 
-        .user{
-            position:relative;
-            font-size: 25px;
-            top: 60px;
-            left: 30px;
-        }
+}
 
-        .password{
-            position:relative;
-            font-size: 25px;
-            top: 70px;
-            left: 30px;
+.text-box-name-user::placeholder {
+    color: #ffeb998a;
+}
 
-        }
+.text-box-password {
+    position: relative;
+    top: 60px;
+    left: 25px;
+    width: 640px;
+    height: 45px;
+    font-size: 30px;
+    background-color: #690013;
+    border-radius: 15px;
+    color: #ffeb99;
+    padding-right: 50px;
+    /* espacio para el botón */
 
-        .repeat{
-            position:relative;
-            font-size: 25px;
-            top: 80px;
-            left: 30px;
+}
 
-        }
+.text-box-password:focus {
+    border: 3px solid #ffd54f;
+    outline: none;
 
-        .mail{
-            position:relative;
-            font-size: 25px;
-            top: 90px;
-            left: 30px;
+}
 
-        }
+.text-box-password::placeholder {
+    color: #ffeb998a;
+}
 
-        .make{
-            position:relative;
-            width: 550px;
-            height: 80px;
-            left: 68px;
-            top: 140px;
-            font-size: 20px;
-            color: #ffeb99;
-            border-radius: 10px;
-            background-color: #690013;
-            cursor: pointer;
-            
+.text-box-repeat-password {
+    position: relative;
+    top: 70px;
+    left: 25px;
+    width: 640px;
+    height: 45px;
+    font-size: 30px;
+    background-color: #690013;
+    border-radius: 15px;
+    color: #ffeb99;
+    padding-right: 50px;
+    /* espacio para el botón */
 
-        }
+}
 
-        .password-button {
-            position: relative;
-            display: inline-block;
-            right: 15px;
-            top: 55px;
-            border: none;
-            background-color: #ffeb99;
-            color: #690013;
-            padding: 5px 10px;
-            cursor: pointer;
-            border-radius: 3px;
-        }
+.text-box-repeat-password:focus {
+    border: 3px solid #ffd54f;
+    outline: none;
+}
 
-       .repeat-password-button{
-            position: relative;
-            display: inline-block;
-            right: 15px;
-            top: 65px;
-            border: none;
-            background-color: #ffeb99;
-            color: #690013;
-            padding: 5px 10px;
-            cursor: pointer;
-            border-radius: 3px;
-        }
+.text-box-repeat-password::placeholder {
+    color: #ffeb998a;
+}
 
+.text-box-mail {
+    position: relative;
+    top: 80px;
+    left: 25px;
+    width: 640px;
+    height: 45px;
+    font-size: 30px;
+    background-color: #690013;
+    border-radius: 15px;
+    color: #ffeb99;
+
+}
+
+.text-box-mail:focus {
+    border: 3px solid #ffd54f;
+    outline: none;
+}
+
+.text-box-mail::placeholder {
+    color: #ffeb998a;
+}
+
+.user {
+    position: relative;
+    font-size: 25px;
+    top: 60px;
+    left: 30px;
+}
+
+.password {
+    position: relative;
+    font-size: 25px;
+    top: 70px;
+    left: 30px;
+
+}
+
+.repeat {
+    position: relative;
+    font-size: 25px;
+    top: 80px;
+    left: 30px;
+
+}
+
+.mail {
+    position: relative;
+    font-size: 25px;
+    top: 90px;
+    left: 30px;
+
+}
+
+.make {
+    position: relative;
+    width: 550px;
+    height: 80px;
+    left: 68px;
+    top: 140px;
+    font-size: 20px;
+    color: #ffeb99;
+    border-radius: 10px;
+    background-color: #690013;
+    cursor: pointer;
+
+
+}
+
+.password-button {
+    position: relative;
+    display: inline-block;
+    right: 15px;
+    top: 55px;
+    border: none;
+    background-color: #ffeb99;
+    color: #690013;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.repeat-password-button {
+    position: relative;
+    display: inline-block;
+    right: 15px;
+    top: 65px;
+    border: none;
+    background-color: #ffeb99;
+    color: #690013;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+}

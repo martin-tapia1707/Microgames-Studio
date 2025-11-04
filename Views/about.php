@@ -46,15 +46,7 @@
 
 
 
-<p class="who-we-are-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo nulla impedit ducimus
-    doloribus vitae quo
-    fuga! Excepturi architecto veritatis corrupti? Eligendi doloribus at exercitationem expedita maxime!
-    Consequuntur beatae facere minima. Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita debitis
-    impedit maiores aperiam aliquid qui enim fugiat, neque ut eaque illum perferendis dolorum officiis
-    laboriosam
-    sapiente voluptates voluptate nihil harum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam
-    quisquam maiores mollitia cupiditate nesciunt impedit illum natus ipsum ea ullam. Odio deserunt aspernatur
-    iusto, quo quis eum numquam praesentium quas?
+<p class="who-we-are-text">¡¡Hola querido usuario!! nosotros nos presentamos como Microgames-Studio, en la cual somos una compania para páginas o productos simples sin tanta dificultad de interactuar para el usuario, en donde nos encargamos de que ustedes tengan una buena y linda experiencia pasando por nuestro proyecto actual "RODENTGAMES", una página de juegos casuales y para pasar el buen rato. Además van a observar lo que podemos llegar a hacer con nuestros conocimientos siendo alumnos, motivando a chicos, grandes y principiantes interesados en el apartado de la infórmatica, brindandoles la bienvenida con este simple y entretenido proyecto. Que lo disfruten.
 </p>
 
 
@@ -80,11 +72,7 @@
 
 
 
-<p class="members-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et consequatur laboriosam eum
-    cupiditate natus dolores error quaerat in deserunt, accusantium blanditiis necessitatibus, dolor iusto,
-    soluta excepturi architecto sint! Architecto, ullam! Lorem ipsum dolor sit amet consectetur adipisicing
-    elit. Et nulla, laborum voluptatibus excepturi beatae saepe eaque sequi recusandae fugiat enim, odit alias
-    numquam corrupti non doloribus, perferendis porro! Officiis, neque.</p>
+<p class="members-text">Somos alumnos del curso 4to 10ma en el turno mañana de taller del aréa de computación. Nos formamos como 6 miembros de los cuales trabajamos en este proyecto para presentarlo a ustedes, cada uno hizo un aporte destacado, si queres ver más información de nosotros, podés interactuar abajo con las tarjetas del integrante que mas te interese, para ver información de alguno de nosotros haciendo click en los perfiles.</p>
 
 
 
@@ -163,7 +151,7 @@
 
 
         <div class="member-profile">
-            <p class="member-name"><strong>Daniel Patiño</strong></p>
+            <p class="member-name"><strong>Dianiel Patiño</strong></p>
             <p class="member-mail"></p>
         </div>
     </div>
@@ -213,14 +201,13 @@
                 <p class="text-box-name">Nombre: Devin Segovia</p>
             </div>
             <div class="info-data">
-                <p class="text-box-facts">Datos Datos Datos Datos Datos Datos Datos Datos Datos Datos Datos
-                    Datos.</p>
+                <p class="text-box-facts">Programador Front-End, encargado de la mayoría de los apartados de la empresa, encargado de Javascript y CSS en general.</p>
             </div>
             <div class="info-section">
-                <p class="text-box-section">Apartado: Programación</p>
+                <p class="text-box-section">Apartado: Front-End</p>
             </div>
             <div class="charge-of">
-                <p class="text-box-charge-of">Encargado de: Apartado de paginas e interacciones js.</p>
+                <p class="text-box-charge-of">Encargado de: Programación.</p>
             </div>
 
 
@@ -251,14 +238,13 @@
                 <p class="text-box-name">Nombre: Martin Tapia</p>
             </div>
             <div class="info-data">
-                <p class="text-box-facts">Datos Datos Datos Datos Datos Datos Datos Datos Datos Datos Datos
-                    Datos.</p>
+                <p class="text-box-facts">Programador Front-End y Back-End, encargado del apartado principal, interfaz del videojuego seleccionado y la publicación de comentarios a la dirección del equipo en general + CRUD.</p>
             </div>
             <div class="info-section">
-                <p class="text-box-section">Apartado: Programación</p>
+                <p class="text-box-section">Apartado: Front-End - Back-End - Base de Datos</p>
             </div>
             <div class="charge-of">
-                <p class="text-box-charge-of">Encargado de: Coordinación, Back end, Front end, Diseño web.
+                <p class="text-box-charge-of">Encargado de: Coordinación y Programación.
                 </p>
             </div>
 
@@ -273,7 +259,7 @@
 
 
         <div class="content-header-info">
-            <h1 class="text-header">Rol: Admin de Base de datos</h1>
+            <h1 class="text-header">Rol: Administrador de Base de datos</h1>
             <button id="cerrar" class="close-info" onclick="cerrar()"><p class="close-info-logo">X</p></button>
         </div>
 
@@ -288,14 +274,13 @@
                 <p class="text-box-name">Nombre: Agustin Escobar</p>
             </div>
             <div class="info-data">
-                <p class="text-box-facts">Datos Datos Datos Datos Datos Datos Datos Datos Datos Datos Datos
-                    Datos.</p>
+                <p class="text-box-facts">Hizo el Modelo E/R más la mayoría de funcionalidades Back. como el Login / Register / Likes / Permisos Roles, tuvo tareas destacadas como Cambiar Datos / Editar perfil.</p>
             </div>
             <div class="info-section">
-                <p class="text-box-section">Apartado: Programación</p>
+                <p class="text-box-section">Apartado: Back-End - Base de Datos</p>
             </div>
             <div class="charge-of">
-                <p class="text-box-charge-of">Encargado de: Back end, arquitectura de carpetas y modelo E/R.</p>
+                <p class="text-box-charge-of">Encargado de: Programación y Arquitectura de carpetas.</p>
             </div>
 
 
@@ -312,7 +297,7 @@
 
 
     <div class="content-header-info">
-        <h1 class="text-header">Rol: Asistente de Base de datos</h1>
+        <h1 class="text-header">Rol: Diseñador</h1>
         <button id="cerrar" class="close-info" onclick="cerrar()"><p class="close-info-logo">X</button>
     </div>
 
@@ -327,14 +312,13 @@
             <p class="text-box-name">Nombre: Daniel Patiño</p>
         </div>
         <div class="info-data">
-            <p class="text-box-facts">Datos Datos Datos Datos Datos Datos Datos Datos Datos Datos Datos
-                Datos.</p>
+            <p class="text-box-facts">Hizo tareas destacadas como la Recuperación de Datos y la Verificación del Mail, también hizo la mayoría de Sprites del 2do videojuego, aportó bastante en el Modelo E/R.</p>
         </div>
         <div class="info-section">
-            <p class="text-box-section">Apartado: Diseño</p>
+            <p class="text-box-section">Apartado: Diseño y Back-End</p>
         </div>
         <div class="charge-of">
-            <p class="text-box-charge-of">Encargado de: Modelo E/R.</p>
+            <p class="text-box-charge-of">Encargado de: Diseño y Programación.</p>
         </div>
 
 
@@ -352,7 +336,7 @@
 
 
     <div class="content-header-info">
-        <h1 class="text-header">Rol: Pixel art en juegos</h1>
+        <h1 class="text-header">Rol: Diseñador</h1>
         <button id="cerrar" class="close-info" onclick="cerrar()"><p class="close-info-logo">X</p></button>
     </div>
 
@@ -367,11 +351,10 @@
             <p class="text-box-name">Nombre: Nilton Bueno</p>
         </div>
         <div class="info-data">
-            <p class="text-box-facts">Datos Datos Datos Datos Datos Datos Datos Datos Datos Datos Datos
-                Datos.</p>
+            <p class="text-box-facts">Hizo algunos sprites y botones del primer videojuego y algunos NPC del segundo.</p>
         </div>
         <div class="info-section">
-            <p class="text-box-section">Apartado: juegos</p>
+            <p class="text-box-section">Apartado: Videojuegos</p>
         </div>
         <div class="charge-of">
             <p class="text-box-charge-of">Encargado de: Sprites.</p>
@@ -390,7 +373,7 @@
 
 
     <div class="content-header-info">
-        <h1 class="text-header">Rol: Programador de juegos</h1>
+        <h1 class="text-header">Rol: Desarrolllador</h1>
         <button id="cerrar" class="close-info" onclick="cerrar()"><p class="close-info-logo">X</p></button>
     </div>
 
@@ -405,14 +388,13 @@
             <p class="text-box-name">Nombre: Zaid Casimiro</p>
         </div>
         <div class="info-data">
-            <p class="text-box-facts">Datos Datos Datos Datos Datos Datos Datos Datos Datos Datos Datos
-                Datos.</p>
+            <p class="text-box-facts">Se encargo de programar el 1er y 2do Videojuego y realizó algunos sprites correspondientes a los mismos, se encargó de arreglar bugs y hacer funcional ambos videojuegos.</p>
         </div>
         <div class="info-section">
-            <p class="text-box-section">Apartado: juegos</p>
+            <p class="text-box-section">Apartado: Programación</p>
         </div>
         <div class="charge-of">
-            <p class="text-box-charge-of">Encargado de: Programador juegos, sprites.</p>
+            <p class="text-box-charge-of">Encargado de: Desarrollo de videojuegos.</p>
         </div>
 
 

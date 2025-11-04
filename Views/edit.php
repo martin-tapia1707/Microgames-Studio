@@ -64,12 +64,12 @@
                         <p class="mail"><b>Correo electronico</b></p><input class="text-box-mail" type="email"
                             Value="<?php echo $_SESSION["email"];?>" name="nuevoCorreo">
 
-                        <p class="mail"><b>Foto:</b></p><input type="file" name="foto" class="text-box-mail">
+                        <p class="pic"><b>Foto:</b></p><input type="file" name="foto" class="text-box-pic">
                         <p class="description"><b>Descripción</b></p><textarea class="text-box-description" type="text"
                             placeholder="Descripción" name="nuevaDescripcion"><?php echo $_SESSION["descripcion"];?></textarea>
 
 
-                        <input type="submit" name="Guardar" class="edit-profile-button" value="Actualizar perfil"><br><br><br>
+                        <input type="submit" name="Guardar" class="edit-profile-button" value="Actualizar perfil"><br><br>
 
                         
                         </form>

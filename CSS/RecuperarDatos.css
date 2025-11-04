@@ -1,18 +1,29 @@
         html {
-            background-color: #ffeb99;
+            background-color: #ffcf99;
+            overflow-x: hidden;
+            width: 100%;
+            height: 100%;
         }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
         .header-info {
-            position: relative;
-            top: 50px;
-            left: 25%;
             background-color: #ff6d4d;
             width: 700px;
             height: 500px;
             border-radius: 4%;
             color: #ffeb99;
-
-
+            font-weight: 400; /*Aumenta grosor texto*/
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            margin: 30px auto;
         }
 
         .content {
@@ -22,19 +33,19 @@
         }
 
         .logo {
-            position: relative;
+            display: flex;
             height: auto;
             width: 400px;
-            left: 150px;
+            left: 50px;
             bottom: 20px;
-            position: center;
-
+            flex-direction: column;
+            align-items: center;
         }
 
 
         .text-account-recovery {
             position: relative;
-            top: 115px;
+            top: 205px;
             left: 20px;
             font-size: 40px;
 
@@ -42,14 +53,14 @@
 
         .caja-info {
             position: relative;
-            top: 20px;
+            top: 200px;
 
         }
 
 
         .text-box-account-recovery {
             position: relative;
-            top: 80px;
+            top: 60px;
             left: 25px;
             width: 640px;
             height: 45px;
@@ -76,7 +87,7 @@
 
             position: relative;
             font-size: 30px;
-            top:95px;
+            top:50px;
             left: 26px;
             color: #ffeb99;
 

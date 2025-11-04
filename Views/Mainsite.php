@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Microgames Studio</title>
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
     <link rel="shortcut icon">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
@@ -17,7 +17,7 @@
 <?php
 $section = isset($_GET['section']) ? $_GET['section'] : 'home';
 
-$allowed = ['home', 'about', 'help', 'user', 'selectedgame', 'login', 'register'];
+$allowed = ['home', 'about', 'help', 'user', 'selectedgame', 'login', 'register', 'selectedgame', 'crud'];
 if (!in_array($section, $allowed)) {
     $section = 'home';
 }
@@ -43,7 +43,7 @@ require_once $section . '.php';
 <?php elseif ($section === 'selectedgame'): ?>
     <link rel="stylesheet" href="../CSS/selectedgame.css">
 <?php elseif ($section === 'crud'): ?>
-    <link rel="stylesheet" href="../CSS/crud.css">
+    <link rel="stylesheet" href="../CSS/crud.css"> 
 <?php endif; ?>
 
 </body>
