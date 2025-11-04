@@ -35,17 +35,17 @@
     </a>
     <a href="Mainsite.php?section=selectedgame&id=2">
       <div class="juegoCatalogo">
-        <img src="../IMG/JuegoRandom2.webp" alt="Juego 2">
+        <img src="../IMG/JuegoRandom.webp" alt="Juego 2">
       </div>
     </a>
     <a href="Mainsite.php?section=selectedgame&id=3">
       <div class="juegoCatalogo">
-        <img src="../IMG/JuegoRandom3.jpg" alt="Juego 3">
+        <img src="../IMG/JuegoRandom2.webp" alt="Juego 3">
       </div>
     </a>
     <a href="Mainsite.php?section=selectedgame&id=4">
       <div class="juegoCatalogo">
-        <img src="../IMG/JuegoRandom4.avif" alt="Juego 4">
+        <img src="../IMG/JuegoRandom3.jpg" alt="Juego 4">
       </div>
     </a>
     <a href="Mainsite.php?section=selectedgame&id=5">
