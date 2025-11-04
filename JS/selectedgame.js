@@ -1,3 +1,65 @@
+async function aumentar(like, idjuego, idusuario, dislike){
+  console.log(like, idjuego, idusuario, dislike);
+
+  let datos = { cantidadLike: like, juegoID: idjuego, usuarioID: idusuario, cantidadDislike: dislike };
+  try {
+    let respuesta = await fetch('../Database/like.php', {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(datos),
+    });
+
+    if (!respuesta.ok) {
+      // usar backticks para interpolar
+      throw new Error(`HTTP error! status: ${respuesta.status}`);
+    }
+
+    // evitar redeclarar 'datos' — darle otro nombre
+    let respuestaServidor = await respuesta.json();
+    console.log('respuesta del servidor:', respuestaServidor);
+    document.getElementById('likes').textContent = respuestaServidor.likeCantidad;
+    document.getElementById('dislike').textContent = respuestaServidor.dislikeCantidad;
+    
+
+  } catch (error) {
+    console.log("hubo un problema con la peticion:", error);
+  }
+}
+
+async function disminuir(dislike, idjuego, idusuario, like){
+  console.log(dislike, idjuego, idusuario, like);
+
+  let datos2 = { cantidadDislike: dislike, juegoID: idjuego, usuarioID: idusuario, cantidadLike: like };
+  try {
+    let respuesta2 = await fetch('../Database/dislike.php', {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(datos2),
+    });
+
+    if (!respuesta2.ok) {
+      // usar backticks para interpolar
+      throw new Error(`HTTP error! status: ${respuesta2.status}`);
+    }
+
+    // evitar redeclarar 'datos' — darle otro nombre
+    let respuestaServidor2 = await respuesta2.json();
+    console.log('respuesta del servidor:', respuestaServidor2);
+    document.getElementById('dislike').textContent = respuestaServidor2.dislikeCantidad;
+    document.getElementById('likes').textContent = respuestaServidor2.cantidadLike;
+    
+
+  } catch (error) {
+    console.log("hubo un problema con la peticion:", error);
+  }
+}
+
+
+
 const IDjuego = new URLSearchParams(window.location.search).get('id');
 
 function cargarComentarios() {

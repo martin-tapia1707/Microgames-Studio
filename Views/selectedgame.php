@@ -38,9 +38,9 @@ if (isset($_GET['id'])) {
 
   <div class="acciones">
     <span class="count" id="likes"><?= $like ?></span>
-    <button class="like" onclick="aumentar()"><i class='bx bxs-like'></i></button>
-    <button class="dislike"><i class='bx bxs-dislike'></i></button>
-    <span class="count" id="likes"><?= $dislike ?></span>
+    <button class="like" onclick="aumentar(<?= $like ?>, <?= $idJuego ?>, <?= $_SESSION['id'] ?>, <?= $dislike ?>  )"><i class='bx bxs-like'></i></button>
+    <button class="dislike" onclick="disminuir(<?= $dislike ?>, <?= $idJuego ?>, <?= $_SESSION['id'] ?>, <?= $like ?>)"><i class='bx bxs-dislike'></i></button>
+    <span class="count" id="dislike"><?= $dislike ?></span>
   </div>
 
 <div class="publicidad">
