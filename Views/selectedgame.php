@@ -1,5 +1,6 @@
 <?php
   require_once '../Includes/Config.php';
+  
 
 if (isset($_GET['id'])) {
     $idJuego = $_GET['id'];
@@ -22,7 +23,7 @@ if (isset($_GET['id'])) {
         $direccion = $row['direccion'];
         $like = $row['siLike'];
         $dislike = $row['noLike'];
-        $id = $_SESSION['id'];
+        $id = $_SESSION['id'] ?? null;
     } else {
         // Si no existe el ID
         $nombre = "Juego no encontrado";
@@ -43,7 +44,7 @@ if (isset($_GET['id'])) {
     <span class="count" id="dislike"><?= $dislike ?></span>
   </div>
   <?php endif; ?>
-  <?php if (!$id): ?>
+  <?php if (is_null($id)): ?>
   <div class="acciones">
     <span class="count" id="likes"><?= $like ?></span>
     <button class="like" onclick="nosesion()"><i class='bx bxs-like'></i></button>
