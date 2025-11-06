@@ -1,7 +1,7 @@
-async function aumentar(like, idjuego, idusuario, dislike){
-  console.log(like, idjuego, idusuario, dislike);
+async function aumentar(idjuego, idusuario){
+  console.log(idjuego, idusuario, dislike);
 
-  let datos = { cantidadLike: like, juegoID: idjuego, usuarioID: idusuario, cantidadDislike: dislike };
+  let datos = {juegoID: idjuego, usuarioID: idusuario};
   try {
     let respuesta = await fetch('../Database/like.php', {
       method: "POST",
@@ -19,6 +19,7 @@ async function aumentar(like, idjuego, idusuario, dislike){
     // evitar redeclarar 'datos' — darle otro nombre
     let respuestaServidor = await respuesta.json();
     console.log('respuesta del servidor:', respuestaServidor);
+    console.log(respuestaServidor.likeCantidad);
     document.getElementById('likes').textContent = respuestaServidor.likeCantidad;
     document.getElementById('dislike').textContent = respuestaServidor.dislikeCantidad;
     
@@ -28,10 +29,10 @@ async function aumentar(like, idjuego, idusuario, dislike){
   }
 }
 
-async function disminuir(dislike, idjuego, idusuario, like){
-  console.log(dislike, idjuego, idusuario, like);
+async function disminuir(idjuego, idusuario){
+  console.log(idjuego, idusuario);
 
-  let datos2 = { cantidadDislike: dislike, juegoID: idjuego, usuarioID: idusuario, cantidadLike: like };
+  let datos2 = {juegoID: idjuego, usuarioID: idusuario };
   try {
     let respuesta2 = await fetch('../Database/dislike.php', {
       method: "POST",
@@ -58,6 +59,9 @@ async function disminuir(dislike, idjuego, idusuario, like){
   }
 }
 
+function nosesion(){
+  alert("inicia sesion para dar like o dislike");
+}
 
 
 const IDjuego = new URLSearchParams(window.location.search).get('id');

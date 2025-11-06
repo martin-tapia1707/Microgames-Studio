@@ -1,7 +1,6 @@
 <?php
   require_once '../Includes/Config.php';
 
-
 if (isset($_GET['id'])) {
     $idJuego = $_GET['id'];
     echo "<script>console.log('$idJuego')</script>";
@@ -23,6 +22,7 @@ if (isset($_GET['id'])) {
         $direccion = $row['direccion'];
         $like = $row['siLike'];
         $dislike = $row['noLike'];
+        $id = $_SESSION['id'];
     } else {
         // Si no existe el ID
         $nombre = "Juego no encontrado";
@@ -35,13 +35,22 @@ if (isset($_GET['id'])) {
   <h1><?= htmlspecialchars($nombre) ?></h1>
   <div class="screen"><iframe src="<?= $direccion ?>" height="480px" width= "100%"></iframe></div>
 
-
-  <div class="acciones">
+  <?php if ($id): ?>
+    <div class="acciones">
     <span class="count" id="likes"><?= $like ?></span>
-    <button class="like" onclick="aumentar(<?= $like ?>, <?= $idJuego ?>, <?= $_SESSION['id'] ?>, <?= $dislike ?>  )"><i class='bx bxs-like'></i></button>
-    <button class="dislike" onclick="disminuir(<?= $dislike ?>, <?= $idJuego ?>, <?= $_SESSION['id'] ?>, <?= $like ?>)"><i class='bx bxs-dislike'></i></button>
+    <button class="like" onclick="aumentar(<?= $idJuego ?>, <?= $id ?>)"><i class='bx bxs-like'></i></button>
+    <button class="dislike" onclick="disminuir(<?= $idJuego ?>, <?= $id ?>)"><i class='bx bxs-dislike'></i></button>
     <span class="count" id="dislike"><?= $dislike ?></span>
   </div>
+  <?php endif; ?>
+  <?php if (!$id): ?>
+  <div class="acciones">
+    <span class="count" id="likes"><?= $like ?></span>
+    <button class="like" onclick="nosesion()"><i class='bx bxs-like'></i></button>
+    <button class="dislike" onclick="nosesion()"><i class='bx bxs-dislike'></i></button>
+    <span class="count" id="dislike"><?= $dislike ?></span>
+  </div>
+  <?php endif; ?>
 
 <div class="publicidad">
   <img id="anuncio" src="" alt="Publicidad lateral">

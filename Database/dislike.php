@@ -6,10 +6,12 @@ $json_input = file_get_contents('php://input');
 $datos2 = json_decode($json_input, true);
 
 if ($datos2 && json_last_error() === JSON_ERROR_NONE) {
-    $cantidadDislike = $datos2['cantidadDislike'] ?? null;
     $juegoID = $datos2['juegoID'] ?? null;
     $usuarioID = $datos2['usuarioID'] ?? null;
-    $cantidadLike = $datos2['cantidadLike'] ?? null;
+    $consulta = mysqli_query($conexion, "SELECT * FROM juegos WHERE IDjuego = '$juegoID'");
+    $likes = mysqli_fetch_array($consulta);
+    $cantidadLike = $likes['siLike'];
+    $cantidadDislike = $likes['noLike'];
 
     // Aquí procesarías la actualización en la base de datos...
 
@@ -17,9 +19,9 @@ if ($datos2 && json_last_error() === JSON_ERROR_NONE) {
 
     $verificacionPulgar = mysqli_query($conexion, "SELECT * FROM informacion WHERE IDjuego = '$juegoID' AND IDusuario = '$usuarioID'");
     $filas = mysqli_num_rows($verificacionPulgar);
-    $valores = mysqli_fetch_array($verificacionPulgar);
-    $valorPulgar = $valores['Pulgar'];
     if($filas == 1){
+        $valores = mysqli_fetch_array($verificacionPulgar);
+        $valorPulgar = $valores['Pulgar'];
             if(is_null($valorPulgar)){
                 $lqs = ("UPDATE informacion SET Pulgar = 0 WHERE IDjuego = '$juegoID' AND IDusuario = '$usuarioID'");
                 mysqli_query($conexion, $lqs);
@@ -30,12 +32,13 @@ if ($datos2 && json_last_error() === JSON_ERROR_NONE) {
                 $lqs = ("UPDATE informacion SET Pulgar = 0 WHERE IDjuego = '$juegoID' AND IDusuario = '$usuarioID'");
                 mysqli_query($conexion, $lqs);
                 $cantidadDislike += 1;
+                $cantidadLike += -1;
                 $actualizacionDislike = ("UPDATE juegos SET noLike = '$cantidadDislike', siLike = '$cantidadLike'  WHERE IDjuego = '$juegoID'");
                 mysqli_query($conexion, $actualizacionDislike);
             }elseif($valorPulgar == 0){
                 $lqs = ("UPDATE informacion SET Pulgar = NULL WHERE IDjuego = '$juegoID' AND IDusuario = '$usuarioID'");
                 mysqli_query($conexion, $lqs);
-                $cantidadDislike += 0;
+                $cantidadDislike += -1;
                 $actualizacionDislike = ("UPDATE juegos SET noLike = '$cantidadDislike' WHERE IDjuego = '$juegoID'");
                 mysqli_query($conexion, $actualizacionDislike);
             }
