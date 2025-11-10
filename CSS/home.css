@@ -6,25 +6,30 @@ body {
   padding: 0;
 }
 
-/* === CARRUSEL DE JUEGOS DESTACADOS === */
-.contenedorPrincipal {
+/* === juegos destacados / populares === */
+
+.contenedorPopulares {
   display: flex;
+  position: relative;
   justify-content: center;
   align-items: center;
   padding: 40px 20px;
-  position: relative;
+  margin-left: 90px;
+  margin-right: 30px;
+  margin-top: 30px;
+  background-color: #ffffff;
+  border-radius: 25px;
   overflow: hidden;
-  margin-left: 60px;
 }
 
 .carrusel {
   display: flex;
   gap: 40px;
-  overflow: hidden;
   width: calc(100% - 60px);
   scroll-behavior: smooth;
   transition: transform 0.6s ease-in-out;
   flex-shrink: 0;
+  overflow:hidden;
 }
 
 .juego {
@@ -41,22 +46,23 @@ body {
 
 .juego:hover {
   transform: scale(1.03);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.3), inset 0 -100px 45px -15px rgba(0, 0, 0, 0.4);
 }
 
 /* Botones del carrusel */
 .btn-carrusel {
   position: absolute;
   top: 50%;
+  margin-left: -60px;
   transform: translateY(-50%);
-  background: rgba(255, 218, 106, 0.8);
+  background: rgba(245, 192, 33, 0.87);
   border: none;
   font-size: 2.5rem;
   color: #333;
   cursor: pointer;
-  border-radius: 50%;
+  border-radius: 15%;
   width: 50px;
-  height: 50px;
+  height: 150px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -70,6 +76,17 @@ body {
   transform: translateY(-50%) scale(1.1);
 }
 
+.title-popular-games{
+  position: absolute;
+  top: 10px;     
+  left: 20px;   
+  font-size: 28px;
+  color: #333;
+  font-weight: bold;
+  z-index: 6;    
+  pointer-events: none; 
+}
+
 .prev { 
   left: 80px; 
 }
@@ -81,20 +98,30 @@ h1 {
   margin-left: 90px; 
 }
 
-/* === CATÁLOGO DE JUEGOS === */
-.MasJuegos {
-  margin: 40px 60px;
+/* === juegos de accion === */
+.JuegosCatalogo {
+  margin: 25px;
+  background-color: white;
+  margin-left: 90px;
+  margin-right: 30px;
+  border-radius: 25px;
+}
+
+.title-action-games {
+  margin-left: 75px;
 }
 
 .contenedorCatalogo {
+  margin: 20px;
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
-  margin-left: 60px;
-  padding: -20px 0px;
+  gap: 10px;
+  margin-left: 50px;
+  padding: 20px;
 }
 
 .juegoCatalogo {
+  position: relative;
   width: 180px;
   height: 180px;
   border-radius: 12px;
@@ -102,19 +129,56 @@ h1 {
   cursor: pointer;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   flex-shrink: 0;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.juegoCatalogo::after {
+  content: "";  /*se lo usa en el after o before, y hace que aparezca el cotenido en la clase*/
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.5), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 1;   /*hace que el sombreado este en la imagen*/
+}
+
+.juegoCatalogo:hover::after {
+  opacity: 1;
 }
 
 .juegoCatalogo:hover {
   transform: scale(1.05);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3), inset 0 -60px 25px -10px rgba(0, 0, 0, 0.4); 
 }
 
+/* Imagen del juego */
 .juegoCatalogo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+/* Texto centrado, oculto por defecto */
+.name-game {
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 2;    /*hace que no afecte el sombreado al texto*/
+}
+
+/* Aparece el texto pasar el cursor */
+.juegoCatalogo:hover .name-game { 
+  opacity: 1;  
 }
 
 @media (max-width: 1300px) {
