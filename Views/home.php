@@ -62,7 +62,7 @@
     </a>
     <a href="Mainsite.php?section=selectedgame&id=7">
       <div class="juegoCatalogo">
-        <img src="#" alt="Golf">
+        <img src="../Godot/StickFight/StickFight.icon.png" alt="StickFight">
       </div>
     </a>
     <!-- <button class="carruselPopulares2">❯</button> -->
@@ -107,7 +107,7 @@
     </a>
     <a href="Mainsite.php?section=selectedgame&id=7">
       <div class="juegoCatalogo">
-        <img src="#" alt="Golf">
+        <img src="../Godot/StickFight/StickFight.icon.png" alt="StickFight">
       </div>
     </a>
     <!-- <button class="carruselPopulares2">❯</button> -->
