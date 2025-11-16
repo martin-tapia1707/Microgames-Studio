@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-11-2025 a las 05:20:21
+-- Tiempo de generación: 16-11-2025 a las 01:30:34
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -35,6 +35,13 @@ CREATE TABLE `comentario` (
   `valorLike` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `comentario`
+--
+
+INSERT INTO `comentario` (`IDcomentario`, `texto`, `fecha`, `IDusuario`, `valorLike`) VALUES
+(1, 'hola', '2025-11-15', 15, NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -58,7 +65,8 @@ INSERT INTO `informacion` (`IDusuario`, `IDjuego`, `PuntajeMax`, `Pulgar`) VALUE
 (2, 1, 200, 1),
 (3, 2, 100, NULL),
 (4, 2, 800, NULL),
-(4, 3, 200, 0);
+(4, 3, 200, 0),
+(15, 5, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -73,20 +81,21 @@ CREATE TABLE `juegos` (
   `QueHacer` varchar(255) DEFAULT NULL,
   `direccion` varchar(255) DEFAULT NULL,
   `siLike` int(11) DEFAULT 0,
-  `noLike` int(11) DEFAULT 0
+  `noLike` int(11) DEFAULT 0,
+  `Controles` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `juegos`
 --
 
-INSERT INTO `juegos` (`IDjuego`, `Nombre`, `ComoJugar`, `QueHacer`, `direccion`, `siLike`, `noLike`) VALUES
-(1, 'SpaceShip', NULL, NULL, NULL, 0, 0),
-(2, 'Minecraft vs Roblox', NULL, NULL, NULL, 0, 0),
-(3, 'Dodge', NULL, NULL, NULL, 0, 0),
-(4, 'Solitario', NULL, NULL, NULL, 0, 0),
-(5, 'Station Defenders', 'Elimina a la naves enemigas clickeando en dirección a las mismas para eliminarlas, cada vez el enemigo cobrara mas fuerza, resiste el mayor tiempo posible a sus ataques', 'Defenderte de naves enemigas que tratarán de atacarte, intentando irrumpir en tu estación espacial', '../Godot/Space/StationDefenders.html', 0, 0),
-(7, 'StickFight', 'Pone la descripcion tapia', 'Lo mismo', '../Godot/StickFight/StickFight.html', 0, 0);
+INSERT INTO `juegos` (`IDjuego`, `Nombre`, `ComoJugar`, `QueHacer`, `direccion`, `siLike`, `noLike`, `Controles`) VALUES
+(1, 'SpaceShip', NULL, NULL, NULL, 0, 0, ''),
+(2, 'Minecraft vs Roblox', NULL, NULL, NULL, 0, 0, ''),
+(3, 'Dodge', NULL, NULL, NULL, 0, 0, ''),
+(4, 'Solitario', NULL, NULL, NULL, 0, 0, ''),
+(5, 'Station Defenders', 'Elimina a la naves enemigas clickeando en dirección a las mismas para eliminarlas, cada vez el enemigo cobrara mas fuerza, resiste el mayor tiempo posible a sus ataques', 'Defenderte de naves enemigas que tratarán de atacarte, intentando irrumpir en tu estación espacial', '../Godot/Space/StationDefenders.html', 1, 0, 'Click = Disparar\r\nCursor = Mover nave '),
+(7, 'StickFight', 'Para controlar al Stickman utiliza WASD para moverte y Espacio para atacar, tendrás dos modos, el Singleplayer donde superaras los dos niveles disponibles y el multijugador, donde combatiras con un jugador a parte en una batalla al mas estilo clasico de M', 'Sos un Stickman que lucha contra enemigos durante tu travesía, tenes que superar los niveles que se presentarán y en tu camino venceras a tus enemigos y abriras puertas', '../Godot/StickFight/StickFight.html', 0, 0, 'W = Saltar\r\nA = Izquierda\r\nS = Agacharse\r\nD = Derecha\r\nEspacio = Atacar');
 
 -- --------------------------------------------------------
 
@@ -98,6 +107,13 @@ CREATE TABLE `opiniones` (
   `IDcomentario` int(11) NOT NULL,
   `IDjuego` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `opiniones`
+--
+
+INSERT INTO `opiniones` (`IDcomentario`, `IDjuego`) VALUES
+(1, 5);
 
 -- --------------------------------------------------------
 
@@ -210,7 +226,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `comentario`
 --
 ALTER TABLE `comentario`
-  MODIFY `IDcomentario` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `IDcomentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `juegos`

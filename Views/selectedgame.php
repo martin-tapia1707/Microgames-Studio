@@ -23,6 +23,7 @@ if (isset($_GET['id'])) {
         $direccion = $row['direccion'];
         $like = $row['siLike'];
         $dislike = $row['noLike'];
+        $controles = $row['Controles'];
         $id = $_SESSION['id'] ?? null;
     } else {
         // Si no existe el ID
@@ -53,10 +54,45 @@ if (isset($_GET['id'])) {
   </div>
   <?php endif; ?>
 
-<div class="publicidad">
-  <img id="anuncio" src="" alt="Publicidad lateral">
-</div>
+  <!-- PUBLICIDAD -->
+
+    <div class="publicidad">
+      <img id="anuncio" src="" alt="Publicidad lateral">
+    </div>
 </div> 
+
+<div class="guiaControles">
+  <h2>Controles</h2>
+
+  <?php 
+    if (!empty($controles)) {
+        $lineas = preg_split('/\r\n|\r|\n/', $controles);
+        echo "<div class='listaControles'>";
+        foreach ($lineas as $linea) {
+            $linea = trim($linea);
+            if ($linea !== "") {
+
+                // Detectar si tiene formato "TECLA = ACCIÓN"
+                if (strpos($linea, "=") !== false) {
+                    list($tecla, $accion) = array_map('trim', explode("=", $linea));
+                } else {
+                    $tecla = $linea;
+                    $accion = "";
+                }
+
+                echo "
+                <div class='controlItem'>
+                    <div class='teclaVisual'>" . htmlspecialchars($tecla) . "</div>
+                    <div class='accionVisual'>" . htmlspecialchars($accion) . "</div>
+                </div>";
+            }
+        }
+        echo "</div>";
+    } else {
+        echo "<p>No hay controles definidos.</p>";
+    }
+  ?>
+</div>
 
 <!-- JS con publicidad random -->
 
