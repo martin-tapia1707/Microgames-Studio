@@ -16,7 +16,7 @@ main {
 
 /* === CONTENEDOR DEL JUEGO === */
 .contenedorJuego {
-    background: #ffda6a;
+    background: #ffffff;
     border-width: 7px;
     padding: 25px 30px;
     margin: 0 auto 70px auto; /* centrado */
@@ -25,6 +25,10 @@ main {
     text-align: center;
     position: relative;
     margin-top: 30px;
+    border-top: 2px solid #000; /* Borde superior claro para luz */
+    border-left: 2px solid #000; /* Borde izquierdo claro */
+    border-bottom: 5px solid #000; /* Borde inferior oscuro para sombra */
+    border-right: 5px solid #000; /* Borde derecho oscuro */
 }
 
 /* Título del juego */
@@ -50,7 +54,7 @@ main {
 /* === PUBLICIDAD LATERAL === */
 .publicidad {
     position: absolute;
-    top: 75px; 
+    top: 35px; 
     right: -230px; 
     height: 600px;
     width: 160px;
@@ -60,7 +64,11 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 7px solid #ffda6a;
+    border-top: 2px solid #000; /* Borde superior claro para luz */
+    border-left: 2px solid #000; /* Borde izquierdo claro */
+    border-bottom: 5px solid #000; /* Borde inferior oscuro para sombra */
+    border-right: 5px solid #000; /* Borde derecho oscuro */
+    background: #ffda6a;
 }
 
 .publicidad img {
@@ -85,7 +93,7 @@ main {
 }
 
 .acciones button {
-    background: #ffda6a;
+    background: #ffffff;
     border: none;
     font-size: 30px;
     cursor: pointer;
@@ -100,7 +108,7 @@ main {
 
 .acciones button:hover {
     transform: scale(1.05);
-    background: #ffda6a;
+    background: #ffe28a;
 }
 
 .acciones :active {
@@ -108,21 +116,24 @@ main {
 }
 
 .like {
-    color: #000000;
+    color: #22722d;
 }
 
 .dislike {
-    color: #000000;
+    color: #ff0000;
 }
 
 /* === SECCIÓN DE DESCRIPCIÓN === */
 .contenedorTutorial {
-    background: #fff;
-    border: 4px solid #ffda6a;
+    background: #ffffff;
     padding: 30px;
     margin: 0 auto 60px auto;
     max-width: 850px;
     box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+    border-top: 2px solid #000; /* Borde superior claro para luz */
+    border-left: 2px solid #000; /* Borde izquierdo claro */
+    border-bottom: 5px solid #000; /* Borde inferior oscuro para sombra */
+    border-right: 5px solid #000; /* Borde derecho oscuro */
 }
 
 .contenedorTutorial h1 {
@@ -143,8 +154,11 @@ main {
 
 /* === SECCIÓN DE COMENTARIOS === */
 .apartadoComentarios {
-    background: #fff;
-    border: 4px solid #ffda6a;
+    border-top: 2px solid #000; /* Borde superior claro para luz */
+    border-left: 2px solid #000; /* Borde izquierdo claro */
+    border-bottom: 5px solid #000; /* Borde inferior oscuro para sombra */
+    border-right: 5px solid #000; /* Borde derecho oscuro */
+    background: #ffffff;
     padding: 25px 30px;
     margin: 0 auto 50px auto;
     max-width: 850px;
@@ -166,15 +180,17 @@ main {
     font-size: 16px;
     padding: 10px 15px; 
     resize: vertical; 
-    border: 2px solid #ddd;
+    border: 2px solid #000000;
     font-family: inherit;
     line-height: 1.4;
     transition: all 0.2s ease;
     font-family: "Acme", sans-serif;
+    border-color: 4px solid #000;
+    background: #ffffff;
 }
 
 .comentar:focus {
-    border-color: #ffda6a;
+    border-color: #000000;
     outline: none;
     box-shadow: 0 0 8px rgba(255,218,106,0.4);
 }
@@ -184,10 +200,13 @@ main {
     width: 130px;
     height: 42px;
     border: none;
+    border-top: 2px solid #000; /* Borde superior claro para luz */
+    border-left: 2px solid #000; /* Borde izquierdo claro */
+    border-bottom: 5px solid #000; /* Borde inferior oscuro para sombra */
+    border-right: 5px solid #000; /* Borde derecho oscuro */
     background: #ffda6a;
     color: #333;
     font-weight: bold;
-    border: 3px solid #070706;
     cursor: pointer;
     transition: all 0.25s ease;
     margin-right: 10px;
@@ -196,7 +215,7 @@ main {
 
 .publicar:hover {
     transform: scale(1.05);
-    background: #f5c927;
+    background: #f8ba48;
 }
 
 /* Comentarios individuales */
@@ -208,6 +227,10 @@ main {
   padding: 10px;
   margin: 10px 0;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-top: 2px solid #000; /* Borde superior claro para luz */
+    border-left: 2px solid #000; /* Borde izquierdo claro */
+    border-bottom: 5px solid #000; /* Borde inferior oscuro para sombra */
+    border-right: 5px solid #000; /* Borde derecho oscuro */
 }
 
 .fotoPerfil {
@@ -238,7 +261,7 @@ main {
 }
 
 .nombreRol .rol {
-  color: #3da9fc; 
+  color: #3f9ce4; 
   font-weight: normal;
   margin-left: 2px; 
 }
@@ -265,12 +288,16 @@ main {
     position: absolute;
     top: 150px;
     width: 180px;
-    background: #fff;
     padding: 18px;
-    border: 4px solid #ffda6a;
     box-shadow: 0 6px 14px rgba(0,0,0,0.15);
     text-align: center;
     margin-left: 50px;
+    left: 75px;
+    border-top: 2px solid #000; /* Borde superior claro para luz */
+    border-left: 2px solid #000; /* Borde izquierdo claro */
+    border-bottom: 5px solid #000; /* Borde inferior oscuro para sombra */
+    border-right: 5px solid #000; /* Borde derecho oscuro */
+    background: #ffffff;
 }
 
 .guiaControles h2 {
@@ -297,16 +324,17 @@ main {
 
 /* Visual de tecla */
 .teclaVisual {
-    background: #fafafa;
-    border: 2px solid #ffda6a;
     padding: 10px 15px;
     border-radius: 12px;
     font-weight: bold;
     font-size: 1.1rem;
-    box-shadow: inset 0 -2px 4px rgba(0,0,0,0.2),
-                0 3px 6px rgba(0,0,0,0.15);
     min-width: 60px;
     text-align: center;
+    border-top: 2px solid #000; /* Borde superior claro para luz */
+    border-left: 2px solid #000; /* Borde izquierdo claro */
+    border-bottom: 5px solid #000; /* Borde inferior oscuro para sombra */
+    border-right: 5px solid #000; /* Borde derecho oscuro */
+    background: #ffda6a;
 }
 
 /* Acción descriptiva */
