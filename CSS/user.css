@@ -5,8 +5,7 @@
 }
 
 /* CONTENIDO PRINCIPAL */
-.contenido {
-    margin-left: 60px;
+.contenido-game {
     padding: 0;
     background: #fff9c4;
     min-height: 100vh;

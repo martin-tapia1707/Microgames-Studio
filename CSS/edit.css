@@ -20,9 +20,7 @@ html, body {
     padding: 0;
     background: #fff9c4;
     min-height: 100vh;
-    /** que mierda???*/
     transition: margin-left 0.75s ease;
-    /**QUE MIERDA???? */
     width: 100%;
     display: flex;
     align-items: center;
@@ -33,9 +31,9 @@ html, body {
     display: flex;
     transform: scale(1.4); /* Aumenta el tamaño del todo el contenido */
     align-items: center;
-    gap: 20px;
+    justify-content: center;
+    margin: 0 auto;
     margin-top: 350px;
-
 }
 
 
@@ -145,7 +143,6 @@ html, body {
     font-size: 25px;
     color: #690013;
     bottom: 10px;
-    left: 30px;
     font-family: "Acme", sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -153,7 +150,6 @@ html, body {
 
 .text-box-name-user {
     position: relative;
-    left: 25px;
     width: 750px;
     height: 45px;
     font-size: 25px;
@@ -182,7 +178,6 @@ html, body {
     font-size: 25px;
     color: #690013;
     top: 25px;
-    left: 30px;
     font-family: "Acme", sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -191,7 +186,6 @@ html, body {
 .text-box-password {
     position: relative;
     top: 35px;
-    left: 25px;
     width: 750px;
     height: 45px;
     font-size: 25px;
@@ -221,7 +215,6 @@ html, body {
     font-size: 25px;
     color: #690013;
     top: 60px;
-    left: 30px;
     font-family: "Acme", sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -230,7 +223,6 @@ html, body {
 .text-box-repeat-password {
     position: relative;
     top: 70px;
-    left: 25px;
     width: 750px;
     height: 45px;
     font-size: 25px;
@@ -259,7 +251,6 @@ html, body {
     font-size: 25px;
     color: #690013;
     top: 95px;
-    left: 30px;
     font-family: "Acme", sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -267,7 +258,6 @@ html, body {
 
 .text-box-mail {
     position: relative;
-    left: 25px;
     top: 100px;
     width: 750px;
     height: 45px;
@@ -296,7 +286,6 @@ html, body {
     font-size: 25px;
     color: #690013;
     top: 125px;
-    left: 30px;
     font-family: "Acme", sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -304,7 +293,6 @@ html, body {
 
 .text-box-pic {
     position: relative;
-    left: 25px;
     top: 130px;
     width: 750px;
     height: 45px;
@@ -331,7 +319,6 @@ html, body {
     position: relative;
     font-size: 25px;
     top: 150px;
-    left: 30px;
     color: #690013;
     font-family: "Acme", sans-serif;
     font-weight: 400;
@@ -342,7 +329,6 @@ html, body {
 .text-box-description {
     position: relative;
     top: 160px;
-    left: 25px;
     width: 750px;
     height: 120px;
     font-size: 25px;
@@ -409,11 +395,11 @@ textarea::-webkit-scrollbar-track {
 
 
 .pass-button {
-    position: relative;
+    position: absolute;
     display: inline-block;
     padding-right: 50px; /* espacio abajo para el botón */
-    right: 15px;
-    top: 32px;
+    right: 55px;
+    top: 855px;
     border: none;
     background-color: #690013;
     color: #ffeb99;
@@ -423,11 +409,11 @@ textarea::-webkit-scrollbar-track {
 }
 
 .repeat-button {
-    position: relative;
+    position: absolute;
     display: inline-block;
     padding-right: 50px; /* espacio abajo para el botón */
-    right: 15px;
-    top: 67px;
+    right: 55px;
+    top: 966px;
     border: none;
     background-color: #690013;
     color: #ffeb99;
@@ -435,3 +421,64 @@ textarea::-webkit-scrollbar-track {
     cursor: pointer;
     border-radius: 3px;
 }
+
+@media (max-width: 1200px) {
+
+.sidebar{
+    display:none;
+}
+
+.todo {
+    transform: scale(1); /* ← vuelve a tamaño normal */
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 50px;
+} 
+
+.changes-info{
+    width: 100%;
+    margin-top: 40px;
+}
+
+.text-box-description, .text-box-mail,
+.text-box-name-user, .text-box-password,
+.text-box-pic, .text-box-repeat-password {
+    width: 100%;
+    left: 0;
+    top: 0;
+    max-width: 800px;
+    margin: 15px auto;
+}
+
+.user, .password, .repeat-password,
+.mail, .pic, .description {
+    position: static; /* se quita el moverse raro absoluto */
+    margin-top: 20px;
+    margin-left: 5px;
+}
+
+.pass-button {
+        position: absolute; /* reemplazamos relative porque me entero que no se aplicaaaa */
+        right: 65px;
+        margin-top: -33px;
+    }
+
+.repeat-button{
+    position: absolute;
+    right:65px;
+    margin-top: -17px;
+}
+
+    /* Área de texto */
+    .text-box-description {
+        height: 120px;
+    }
+
+    /* Botón actualizar */
+    .edit-profile-button {
+        margin: 40px auto;
+        display: block;
+        font-size: 20px;
+    }
+}
+

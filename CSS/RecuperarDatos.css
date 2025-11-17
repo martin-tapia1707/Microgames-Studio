@@ -15,7 +15,7 @@
         .header-info {
             background-color: #ff6d4d;
             width: 700px;
-            height: 500px;
+            height: 600px;
             border-radius: 4%;
             color: #ffeb99;
             font-weight: 400; /*Aumenta grosor texto*/
@@ -34,10 +34,10 @@
 
         .logo {
             display: flex;
-            height: auto;
+            height: 200px;
             width: 400px;
-            left: 50px;
-            bottom: 20px;
+            margin-left: 0px;
+            margin-bottom: 20px;
             flex-direction: column;
             align-items: center;
         }
@@ -107,3 +107,46 @@
 
 
         }
+
+        @media (max-width: 768px) {
+
+    .sidebar{
+        display:none;
+    }
+
+    .header-info {
+    width: 80%;
+    height: 560px;
+    padding-bottom: 40px; 
+    padding-left: 10px;
+    padding-right: 10px;
+
+
+    }
+
+    .content{
+    position: relative;
+    left: 0px;
+    bottom: 215px;
+    }
+
+    .logo{
+        width: 80%
+    }
+    
+
+    .text-box-account-recovery{
+        width: 100%;
+        left: 0;
+    }
+
+    .mail {
+        left: 5%;
+    }
+
+    .recover {
+        width: 80%;
+        left: 10%;
+        top: 100px;
+    }
+}

@@ -16,11 +16,12 @@
  .header-info {
      background-color: #ff6d4d;
      width: 700px;
-     height: 600px;
+     height: 620px;
      border-radius: 4%;
      color: #ffeb99;
      font-family: "Acme", sans-serif;
      font-weight: 400;
+     display:flex;
      flex-direction: column;
      align-items: center;
      justify-content: flex-start;
@@ -30,7 +31,8 @@
 
  .content-login {
      position: relative;
-     bottom: 175px;
+     bottom: 155px;
+     right: 30px;
  }
 
 
@@ -38,8 +40,8 @@
      display: flex;
      height: 200px;
      width: 400px;
-     margin-left: 145px;
-     margin-bottom: 21px;
+     margin-left: 0px;
+     margin-bottom: 20px;
      flex-direction: column;
      align-items: center;
  }
@@ -47,7 +49,7 @@
 
  .text-log-in {
      position: relative;
-     top: 100px;
+     top: 95px;
      left: 20px;
      font-size: 40px;
  }
@@ -135,7 +137,7 @@
      position: relative;
      width: 550px;
      height: 80px;
-     left: 45px;
+     left: 68px;
      top: 85px;
      font-size: 20px;
      color: #ffeb99;
@@ -146,18 +148,18 @@
 
 
  .sign-in {
-     position: relative;
-     top: 65px;
-     left: 235px;
-     font-size: 17px;
-     color: #fff4c3e0;
+    position: absolute;
+    top: 395px;
+    left: 235px;
+    font-size: 17px;
+    color: #fff4c3e0;
  }
 
  .password-button {
-     position: relative;
+     position: absolute;
      display: inline-block;
      left: 620px;
-     bottom: 29px;
+     top: 215px;
      border: none;
      background-color: #ffeb99;
      color: #690013;
@@ -165,3 +167,69 @@
      cursor: pointer;
      border-radius: 3px;
  }
+
+ @media (max-width: 768px) {
+
+    .sidebar{
+        display:none;
+    }
+
+    .header-info {
+    width: 80%;
+    height: auto;
+    padding-bottom: 40px; 
+    padding-left: 10px;
+    padding-right: 10px;
+    }
+
+    .content-login {
+    position: relative;
+    right: 0px;
+    bottom: 130px;
+    }
+
+    .logo{
+        width: 80%
+    }
+
+    .text-log-in{
+        top: 80px;
+    }
+
+    .forgot{
+     top: 40px;
+     left: 200px;
+     font-size: 17px;
+     color: #fff4c3e0;        
+    }
+    
+
+    .sign-in {
+     top: 395px;
+     left: 95px;
+     font-size: 17px;
+     color: #fff4c3e0;
+}
+
+    .text-box-name-user,
+    .text-box-password{
+        width: 100%;
+        left: 0;
+    }
+
+    .user,
+    .password {
+        left: 5%;
+    }
+
+.password-button {
+    left: auto;
+    right: 15px;
+    top: 215px;  
+}
+
+    .make {
+        width: 80%;
+        left: 10%;
+    }
+}

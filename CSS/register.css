@@ -14,7 +14,7 @@ html {
 .header-info {
 
     background-color: #ff6d4d;
-    width: 700px;
+    width: 750px;
     height: 810px;
     border-radius: 4%;
     color: #ffeb99;
@@ -25,6 +25,7 @@ html {
     align-items: center; /* centra la caja */
     justify-content: flex-start; /* Se cente mejor, estando todo centrado */
     margin: 30px auto; /*centra todo, al maximizar no va para algun lado*/
+    
 
 
 }
@@ -32,6 +33,7 @@ html {
 .content-register {
     position: relative;
     bottom: 145px;
+    right: 30px;
 
 }
 
@@ -52,15 +54,15 @@ html {
 
 .text-register {
     position: relative;
-    top: 95px;
+    top: 115px;
     left: 20px;
     font-size: 40px;
 
 }
 
 .sign-up {
-    position: relative;
-    top: 45px;
+    position: absolute;
+    top: 25px;
     left: 365px;
     font-size: 17px;
     color: #fff4c3e0;
@@ -69,7 +71,7 @@ html {
 
 .caja-info {
     position: relative;
-    top: 20px;
+    top: 60px;
 
 }
 
@@ -216,10 +218,10 @@ html {
 }
 
 .password-button {
-    position: relative;
+    position: absolute;
     display: inline-block;
-    right: 15px;
-    top: 55px;
+    left: 620px;
+    top:239px;
     border: none;
     background-color: #ffeb99;
     color: #690013;
@@ -229,14 +231,78 @@ html {
 }
 
 .repeat-password-button {
-    position: relative;
+    position: absolute;
     display: inline-block;
-    right: 15px;
-    top: 65px;
+    left: 620px;
+    top: 346px;
     border: none;
     background-color: #ffeb99;
     color: #690013;
     padding: 5px 10px;
     cursor: pointer;
     border-radius: 3px;
+}
+
+@media (max-width: 768px) {
+
+    .sidebar{
+        display:none;
+    }
+
+    .header-info {
+    width: 80%;
+    height: auto;
+    padding-bottom: 40px; 
+    padding-left: 10px;
+    padding-right: 10px;
+    }
+
+    .content-register {
+    position: relative;
+    right: 0px;
+    }
+
+    .logo{
+        width: 80%
+    }
+
+    .sign-up {
+    position: absolute;
+    top: 25px;
+    left: 240px;
+    font-size: 14px;
+    color: #fff4c3e0;
+}
+
+    .text-box-name-user,
+    .text-box-password,
+    .text-box-repeat-password,
+    .text-box-mail {
+        width: 100%;
+        left: 0;
+    }
+
+    .user,
+    .password,
+    .repeat,
+    .mail {
+        left: 5%;
+    }
+
+.password-button {
+    left: auto;
+    right: 15px;
+    top: 239px;  
+}
+
+.repeat-password-button {
+    left: auto;
+    right: 15px;
+    top: 346px; 
+}
+    .make {
+        width: 80%;
+        left: 10%;
+    }
+
 }

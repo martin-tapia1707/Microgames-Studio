@@ -13,38 +13,16 @@
 
 
 <body>
+    <div id="overlay"></div>  <!---TAPAR AL APARECER LA VENTANA----->
 
-
-</body>
-
-
-</html>
-
-
-
-
-
-
-
+<div class="main-content">
 
 <!-- INFORMACION DE LA EMPRESA -->
 
-
-
-
-
+<section class="about-section">
 
 <div class="cajasub">
     <h1 class="subtitle">ACERCA DE</h1>
-</div>
-
-
-
-
-
-
-
-
 
 <p class="who-we-are-text">¡¡Hola querido usuario!! nosotros nos presentamos como Microgames-Studio, en la cual somos una compania para páginas o productos simples sin tanta dificultad de interactuar para el usuario, en donde nos encargamos de que ustedes tengan una buena y linda experiencia pasando por nuestro proyecto actual "RODENTGAMES", una página de juegos casuales y para pasar el buen rato. Además van a observar lo que podemos llegar a hacer con nuestros conocimientos siendo alumnos, motivando a chicos, grandes y principiantes interesados en el apartado de la infórmatica, brindandoles la bienvenida con este simple y entretenido proyecto. Que lo disfruten.
 </p>
@@ -52,20 +30,15 @@
 
 
 
+
 <img class="companylogo" src="../IMG/LogoEmpresa.png">
-
-
-
-
-
-
-
+</div>
 
 
 <!-- APARTADO MIEMBROS -->
 
 
-
+<div classroom="members-zone">
 
 <h2 class="sub">LOS MIEMBROS</h2>
 
@@ -77,10 +50,10 @@
 
 
 
+</div>
 
-
-
-
+</section>
+</div>
 
 <!---    TARJETAS DE LOS MIEMBROS      --->
 
@@ -98,7 +71,6 @@
 
         <div class="member-profile">
             <p class="member-name"><strong>Devin Segovia</strong></p>
-            <p class="member-mail"></p>
         </div>
 
 
@@ -107,15 +79,7 @@
 
 
 
-    <div class="boxA">
-        <div id="buttonA" onclick="infoAg()" class="agusprofile"></div>
-
-
-        <div class="member-profile">
-            <p class="member-name"><strong>Agustin Escobar</strong></p>
-            <p class="member-mail"></p>
-        </div>
-    </div>
+    
 
 
 
@@ -126,7 +90,16 @@
 
         <div class="member-profile">
             <p class="member-name"><strong>Martin Tapia</strong></p>
-            <p class="member-mail"></p>
+        </div>
+    </div>
+
+
+    <div class="boxA">
+        <div id="buttonA" onclick="infoAg()" class="agusprofile"></div>
+
+
+        <div class="member-profile">
+            <p class="member-name"><strong>Agustin Escobar</strong></p>
         </div>
     </div>
 
@@ -139,7 +112,6 @@
 
         <div class="member-profile">
             <p class="member-name"><strong>Nilton Bueno</strong></p>
-            <p class="member-mail"></p>
         </div>
     </div>
 
@@ -152,7 +124,6 @@
 
         <div class="member-profile">
             <p class="member-name"><strong>Dianiel Patiño</strong></p>
-            <p class="member-mail"></p>
         </div>
     </div>
 
@@ -165,7 +136,6 @@
 
         <div class="member-profile">
             <p class="member-name"><strong>Zaid Casimiro</strong></p>
-            <p class="member-mail"></p>
         </div>
     </div>
 
@@ -206,12 +176,6 @@
             <div class="info-section">
                 <p class="text-box-section">Apartado: Front-End</p>
             </div>
-            <div class="charge-of">
-                <p class="text-box-charge-of">Encargado de: Programación.</p>
-            </div>
-
-
-
 
         </div>
     </div>
@@ -243,13 +207,6 @@
             <div class="info-section">
                 <p class="text-box-section">Apartado: Front-End - Back-End - Base de Datos</p>
             </div>
-            <div class="charge-of">
-                <p class="text-box-charge-of">Encargado de: Coordinación y Programación.
-                </p>
-            </div>
-
-
-
 
         </div>
     </div>
@@ -279,16 +236,12 @@
             <div class="info-section">
                 <p class="text-box-section">Apartado: Back-End - Base de Datos</p>
             </div>
-            <div class="charge-of">
-                <p class="text-box-charge-of">Encargado de: Programación y Arquitectura de carpetas.</p>
-            </div>
 
 
         </div>
     </div>
 
 
-</div>
 
 
 
@@ -317,11 +270,6 @@
         <div class="info-section">
             <p class="text-box-section">Apartado: Diseño y Back-End</p>
         </div>
-        <div class="charge-of">
-            <p class="text-box-charge-of">Encargado de: Diseño y Programación.</p>
-        </div>
-
-
 
 
     </div>
@@ -356,12 +304,6 @@
         <div class="info-section">
             <p class="text-box-section">Apartado: Videojuegos</p>
         </div>
-        <div class="charge-of">
-            <p class="text-box-charge-of">Encargado de: Sprites.</p>
-        </div>
-
-
-
 
     </div>
 
@@ -403,9 +345,11 @@
     </div>
 
 
-
-
+  </div>
+  
 </div>
 
-
 <script src="../JS/about.js"></script>
+
+</body>
+</html>
