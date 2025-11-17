@@ -16,10 +16,8 @@ main {
 
 /* === CONTENEDOR DEL JUEGO === */
 .contenedorJuego {
-    background: #fff;
+    background: #ffda6a;
     border-width: 7px;
-    border-style: solid;
-    border-color: #f5c927;
     padding: 25px 30px;
     margin: 0 auto 70px auto; /* centrado */
     max-width: 850px;
@@ -46,7 +44,6 @@ main {
     background: radial-gradient(circle at center, #2c2c2c 0%, #1a1a1a 100%);
     position: relative;
     box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-    border: 4px solid #ffda6a;
     display: inline-block;
 }
 
@@ -93,7 +90,10 @@ main {
     font-size: 30px;
     cursor: pointer;
     padding: 12px;
-    border: 4px solid #141414;
+    border-top: 2px solid #000; /* Borde superior claro para luz */
+    border-left: 2px solid #000; /* Borde izquierdo claro */
+    border-bottom: 5px solid #000; /* Borde inferior oscuro para sombra */
+    border-right: 5px solid #000; /* Borde derecho oscuro */
     box-shadow: 0 4px 6px rgba(0,0,0,0.15);
     transition: transform 0.25s, background 0.25s;
 }
