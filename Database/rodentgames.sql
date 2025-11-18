@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-11-2025 a las 01:30:34
+-- Tiempo de generación: 18-11-2025 a las 04:45:39
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -95,7 +95,12 @@ INSERT INTO `juegos` (`IDjuego`, `Nombre`, `ComoJugar`, `QueHacer`, `direccion`,
 (3, 'Dodge', NULL, NULL, NULL, 0, 0, ''),
 (4, 'Solitario', NULL, NULL, NULL, 0, 0, ''),
 (5, 'Station Defenders', 'Elimina a la naves enemigas clickeando en dirección a las mismas para eliminarlas, cada vez el enemigo cobrara mas fuerza, resiste el mayor tiempo posible a sus ataques', 'Defenderte de naves enemigas que tratarán de atacarte, intentando irrumpir en tu estación espacial', '../Godot/Space/StationDefenders.html', 1, 0, 'Click = Disparar\r\nCursor = Mover nave '),
-(7, 'StickFight', 'Para controlar al Stickman utiliza WASD para moverte y Espacio para atacar, tendrás dos modos, el Singleplayer donde superaras los dos niveles disponibles y el multijugador, donde combatiras con un jugador a parte en una batalla al mas estilo clasico de M', 'Sos un Stickman que lucha contra enemigos durante tu travesía, tenes que superar los niveles que se presentarán y en tu camino venceras a tus enemigos y abriras puertas', '../Godot/StickFight/StickFight.html', 0, 0, 'W = Saltar\r\nA = Izquierda\r\nS = Agacharse\r\nD = Derecha\r\nEspacio = Atacar');
+(7, 'StickFight', 'Para controlar al Stickman utiliza WASD para moverte y Espacio para atacar, tendrás dos modos, el Singleplayer donde superaras los dos niveles disponibles y el multijugador, donde combatiras con un jugador a parte en una batalla al mas estilo clasico de M', 'Sos un Stickman que lucha contra enemigos durante tu travesía, tenes que superar los niveles que se presentarán y en tu camino venceras a tus enemigos y abriras puertas', '../Godot/StickFight/StickFight.html', 0, 0, 'W = Saltar\r\nA = Izquierda\r\nS = Agacharse\r\nD = Derecha\r\nEspacio = Atacar'),
+(8, 'NokiaBird', 'Poner la descripcion', 'Poner que hacer', '../Godot/NokiaBird/NokiaBird.html', 0, 0, 'poner controles'),
+(9, 'FishBall', 'Poner la descripcion', 'Poner que hacer', '../Godot/FishBall/FishBall.html', 0, 0, 'poner controles'),
+(10, 'SpacePong', 'Poner la descripcion', 'Poner que hacer', '../Godot/SpacePong/SpacePong.html', 0, 0, 'poner controles'),
+(11, 'CarCat', 'Poner la descripcion', 'Poner que hacer', '../Godot/CarCat/CarCat.html', 0, 0, 'poner controles'),
+(12, 'HateCube', 'Poner la descripcion', 'Poner que hacer', '../Godot/HateCube/HateCube.html', 0, 0, 'poner controles');
 
 -- --------------------------------------------------------
 
@@ -232,7 +237,7 @@ ALTER TABLE `comentario`
 -- AUTO_INCREMENT de la tabla `juegos`
 --
 ALTER TABLE `juegos`
-  MODIFY `IDjuego` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `IDjuego` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `roles`

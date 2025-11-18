@@ -25,7 +25,7 @@
   </div>
 </div>
 
-<!-- Juegos de accion papa -->
+<!-- Juegos de accion papa "si ya se que soy su papa tapia"-->
 <div class="JuegosCatalogo">
   <h1 class="title-action-games">Juegos de acción</h1>
   <!-- <button class="carruselPopulares1">❮</button> -->
