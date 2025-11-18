@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-11-2025 a las 04:45:39
+-- Tiempo de generación: 18-11-2025 a las 07:33:29
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -91,16 +91,16 @@ CREATE TABLE `juegos` (
 
 INSERT INTO `juegos` (`IDjuego`, `Nombre`, `ComoJugar`, `QueHacer`, `direccion`, `siLike`, `noLike`, `Controles`) VALUES
 (1, 'SpaceShip', NULL, NULL, NULL, 0, 0, ''),
-(2, 'Minecraft vs Roblox', NULL, NULL, NULL, 0, 0, ''),
+(2, 'Minecraft vs Roblox', 'Es un juego de lucha con dos personajes elegibles por el momento, deberás derrotar a tu oponente', 'Para derrotar a tu oponente deberás utilizar los movimientos del personaje elegido, sean movimientos especiales o ataques potentes, deberás reducir su vida a 0', NULL, 0, 0, 'WASD = Movimiento\r\nFlechas = Movimiento'),
 (3, 'Dodge', NULL, NULL, NULL, 0, 0, ''),
 (4, 'Solitario', NULL, NULL, NULL, 0, 0, ''),
-(5, 'Station Defenders', 'Elimina a la naves enemigas clickeando en dirección a las mismas para eliminarlas, cada vez el enemigo cobrara mas fuerza, resiste el mayor tiempo posible a sus ataques', 'Defenderte de naves enemigas que tratarán de atacarte, intentando irrumpir en tu estación espacial', '../Godot/Space/StationDefenders.html', 1, 0, 'Click = Disparar\r\nCursor = Mover nave '),
-(7, 'StickFight', 'Para controlar al Stickman utiliza WASD para moverte y Espacio para atacar, tendrás dos modos, el Singleplayer donde superaras los dos niveles disponibles y el multijugador, donde combatiras con un jugador a parte en una batalla al mas estilo clasico de M', 'Sos un Stickman que lucha contra enemigos durante tu travesía, tenes que superar los niveles que se presentarán y en tu camino venceras a tus enemigos y abriras puertas', '../Godot/StickFight/StickFight.html', 0, 0, 'W = Saltar\r\nA = Izquierda\r\nS = Agacharse\r\nD = Derecha\r\nEspacio = Atacar'),
-(8, 'NokiaBird', 'Poner la descripcion', 'Poner que hacer', '../Godot/NokiaBird/NokiaBird.html', 0, 0, 'poner controles'),
-(9, 'FishBall', 'Poner la descripcion', 'Poner que hacer', '../Godot/FishBall/FishBall.html', 0, 0, 'poner controles'),
-(10, 'SpacePong', 'Poner la descripcion', 'Poner que hacer', '../Godot/SpacePong/SpacePong.html', 0, 0, 'poner controles'),
-(11, 'CarCat', 'Poner la descripcion', 'Poner que hacer', '../Godot/CarCat/CarCat.html', 0, 0, 'poner controles'),
-(12, 'HateCube', 'Poner la descripcion', 'Poner que hacer', '../Godot/HateCube/HateCube.html', 0, 0, 'poner controles');
+(5, 'Station Defenders', 'Elimina a la naves enemigas clickeando en dirección a las mismas para eliminarlas, cada vez el enemigo cobrara mas fuerza, resiste el mayor tiempo posible a sus ataques', 'Defenderte de naves enemigas que tratarán de atacarte, intentando irrumpir en tu estación espacial', '../Godot/Space/StationDefenders.html', 1, 0, 'Click = Disparar\r\nCursor = Mover cañon '),
+(7, 'StickFight', 'Para controlar la Silueta utiliza WASD para moverte y Espacio para atacar, tendrás dos modos, el Singleplayer donde superaras los dos niveles disponibles y el multijugador, donde combatiras con un jugador a parte en una batalla al mas estilo clasico de Mo', 'Sos una Silueta que lucha contra enemigos durante tu travesía, tenes que superar los niveles que se presentarán y en tu camino venceras a tus enemigos y abriras puertas', '../Godot/StickFight/StickFight.html', 0, 0, 'W = Saltar\r\nA = Izquierda\r\nS = Agacharse\r\nD = Derecha\r\nEspacio = Atacar'),
+(8, 'NokiaBird', 'Es una recreación de el  mítico juego FlappyBird solo que en la perspectiva de un Nokia antiguo\r\nLa cosa es facil, deberás sumar el mayor puntaje posible evitando chocar con las tuberías!', 'Apretando espacio el pájaro irá avanzando por lo que deberás sobrevivir evitando chocar con las tuberías', '../Godot/NokiaBird/NokiaBird.html', 0, 0, 'Espacio = Saltar'),
+(9, 'FishBall', 'Esto es simple, es por asi decirlo un Futbol Acuático en el cual deberás meter gol a el pez rival empujando la pelota hacia su area', 'Deberás apretar las teclas W y S para moverte arriba y abajo, en caso de ser jugador 2 apretaras las respectivas flechas', '../Godot/FishBall/FishBall.html', 0, 0, 'W = Arriba\r\nS = Abajo\r\nArrowUp = Arriba\r\nArrowDown = Abajo'),
+(10, 'SpacePong', 'La temática es un Pong ambientado en el espacio y tu personaje es una nave espacial, esta mezclado con el Futbol ya que tendrás arcos pero la pelota tendrá las físicas del Pong.', 'Te enfrentarás a 3 naves que intentaran meter la pelota en tu arco, deberás evitarlas y de paso intentar meter gol', '../Godot/SpacePong/SpacePong.html', 0, 0, 'W = Arriba\r\nA = Izquierda\r\nS = Abajo\r\nD = Derecha'),
+(11, 'CarCat', 'Deberas avanzar lo mas que puedas sin que se caiga el Gato!', 'Tenés que avanzar cuidadosamente evitando los obstáculos que se irán presentando a medida que logres avanzar y sumar el mayor puntaje posible', '../Godot/CarCat/CarCat.html', 0, 0, 'D = Avanzar\r\nArrowRight = Avanzar'),
+(12, 'HateCube', 'Deberas hacer desaparecer el cubo antes de que se termine el contador que aparecerá en pantalla', 'Es una prueba de agilidad, tenés que clickeas el cubo rapido para ir eliminando sus fragmentos y eliminarlo por completo antes de que el contador llegue a 0', '../Godot/HateCube/HateCube.html', 0, 0, 'Click = Eliminar cuadrado');
 
 -- --------------------------------------------------------
 
