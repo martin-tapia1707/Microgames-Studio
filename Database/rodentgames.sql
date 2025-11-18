@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 18-11-2025 a las 07:33:29
--- Versión del servidor: 10.4.32-MariaDB
--- Versión de PHP: 8.2.12
+-- Host: 127.0.0.1
+-- Generation Time: Nov 18, 2025 at 03:21 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `rodentgames`
+-- Database: `rodentgames`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `comentario`
+-- Table structure for table `comentario`
 --
 
 CREATE TABLE `comentario` (
@@ -36,16 +36,17 @@ CREATE TABLE `comentario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `comentario`
+-- Dumping data for table `comentario`
 --
 
 INSERT INTO `comentario` (`IDcomentario`, `texto`, `fecha`, `IDusuario`, `valorLike`) VALUES
-(1, 'hola', '2025-11-15', 15, NULL);
+(1, 'hola', '2025-11-15', 15, NULL),
+(2, 'SADASDAS', '2025-11-18', 1, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `informacion`
+-- Table structure for table `informacion`
 --
 
 CREATE TABLE `informacion` (
@@ -56,7 +57,7 @@ CREATE TABLE `informacion` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `informacion`
+-- Dumping data for table `informacion`
 --
 
 INSERT INTO `informacion` (`IDusuario`, `IDjuego`, `PuntajeMax`, `Pulgar`) VALUES
@@ -71,7 +72,7 @@ INSERT INTO `informacion` (`IDusuario`, `IDjuego`, `PuntajeMax`, `Pulgar`) VALUE
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `juegos`
+-- Table structure for table `juegos`
 --
 
 CREATE TABLE `juegos` (
@@ -86,7 +87,7 @@ CREATE TABLE `juegos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `juegos`
+-- Dumping data for table `juegos`
 --
 
 INSERT INTO `juegos` (`IDjuego`, `Nombre`, `ComoJugar`, `QueHacer`, `direccion`, `siLike`, `noLike`, `Controles`) VALUES
@@ -105,7 +106,7 @@ INSERT INTO `juegos` (`IDjuego`, `Nombre`, `ComoJugar`, `QueHacer`, `direccion`,
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `opiniones`
+-- Table structure for table `opiniones`
 --
 
 CREATE TABLE `opiniones` (
@@ -114,16 +115,17 @@ CREATE TABLE `opiniones` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `opiniones`
+-- Dumping data for table `opiniones`
 --
 
 INSERT INTO `opiniones` (`IDcomentario`, `IDjuego`) VALUES
-(1, 5);
+(1, 5),
+(2, 5);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `roles`
+-- Table structure for table `roles`
 --
 
 CREATE TABLE `roles` (
@@ -132,7 +134,7 @@ CREATE TABLE `roles` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `roles`
+-- Dumping data for table `roles`
 --
 
 INSERT INTO `roles` (`IDrol`, `rol`) VALUES
@@ -145,7 +147,7 @@ INSERT INTO `roles` (`IDrol`, `rol`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `usuario`
+-- Table structure for table `usuario`
 --
 
 CREATE TABLE `usuario` (
@@ -159,7 +161,7 @@ CREATE TABLE `usuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `usuario`
+-- Dumping data for table `usuario`
 --
 
 INSERT INTO `usuario` (`IDusuario`, `Nombre`, `Correo`, `Foto`, `Contraseña`, `Descripcion`, `IDrol`) VALUES
@@ -178,44 +180,44 @@ INSERT INTO `usuario` (`IDusuario`, `Nombre`, `Correo`, `Foto`, `Contraseña`, `
 (34, 'vepe', 'vepeyo3644@keevle.com', '../IMGU/defaulPerfil.jpg', '12345', 'Descrpcion aqui', 3);
 
 --
--- Índices para tablas volcadas
+-- Indexes for dumped tables
 --
 
 --
--- Indices de la tabla `comentario`
+-- Indexes for table `comentario`
 --
 ALTER TABLE `comentario`
   ADD PRIMARY KEY (`IDcomentario`),
   ADD KEY `FK_comentario_usuario` (`IDusuario`);
 
 --
--- Indices de la tabla `informacion`
+-- Indexes for table `informacion`
 --
 ALTER TABLE `informacion`
   ADD PRIMARY KEY (`IDusuario`,`IDjuego`),
   ADD KEY `fk_TenerPuntos_juegos` (`IDjuego`);
 
 --
--- Indices de la tabla `juegos`
+-- Indexes for table `juegos`
 --
 ALTER TABLE `juegos`
   ADD PRIMARY KEY (`IDjuego`);
 
 --
--- Indices de la tabla `opiniones`
+-- Indexes for table `opiniones`
 --
 ALTER TABLE `opiniones`
   ADD PRIMARY KEY (`IDcomentario`,`IDjuego`),
   ADD KEY `FK_opiniones_juegos` (`IDjuego`);
 
 --
--- Indices de la tabla `roles`
+-- Indexes for table `roles`
 --
 ALTER TABLE `roles`
   ADD PRIMARY KEY (`IDrol`);
 
 --
--- Indices de la tabla `usuario`
+-- Indexes for table `usuario`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`IDusuario`),
@@ -224,59 +226,59 @@ ALTER TABLE `usuario`
   ADD KEY `FK_usuario_roles` (`IDrol`);
 
 --
--- AUTO_INCREMENT de las tablas volcadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de la tabla `comentario`
+-- AUTO_INCREMENT for table `comentario`
 --
 ALTER TABLE `comentario`
-  MODIFY `IDcomentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `IDcomentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT de la tabla `juegos`
+-- AUTO_INCREMENT for table `juegos`
 --
 ALTER TABLE `juegos`
   MODIFY `IDjuego` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT de la tabla `roles`
+-- AUTO_INCREMENT for table `roles`
 --
 ALTER TABLE `roles`
   MODIFY `IDrol` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT de la tabla `usuario`
+-- AUTO_INCREMENT for table `usuario`
 --
 ALTER TABLE `usuario`
   MODIFY `IDusuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
--- Restricciones para tablas volcadas
+-- Constraints for dumped tables
 --
 
 --
--- Filtros para la tabla `comentario`
+-- Constraints for table `comentario`
 --
 ALTER TABLE `comentario`
   ADD CONSTRAINT `FK_comentario_usuario` FOREIGN KEY (`IDusuario`) REFERENCES `usuario` (`IDusuario`);
 
 --
--- Filtros para la tabla `informacion`
+-- Constraints for table `informacion`
 --
 ALTER TABLE `informacion`
   ADD CONSTRAINT `fk_TenerPuntos_juegos` FOREIGN KEY (`IDjuego`) REFERENCES `juegos` (`IDjuego`),
   ADD CONSTRAINT `fk_TenerPuntos_usuario` FOREIGN KEY (`IDusuario`) REFERENCES `usuario` (`IDusuario`);
 
 --
--- Filtros para la tabla `opiniones`
+-- Constraints for table `opiniones`
 --
 ALTER TABLE `opiniones`
   ADD CONSTRAINT `FK_opiniones_comentarios` FOREIGN KEY (`IDcomentario`) REFERENCES `comentario` (`IDcomentario`),
   ADD CONSTRAINT `FK_opiniones_juegos` FOREIGN KEY (`IDjuego`) REFERENCES `juegos` (`IDjuego`);
 
 --
--- Filtros para la tabla `usuario`
+-- Constraints for table `usuario`
 --
 ALTER TABLE `usuario`
   ADD CONSTRAINT `FK_usuario_roles` FOREIGN KEY (`IDrol`) REFERENCES `roles` (`IDrol`);

@@ -27,11 +27,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const juegos = document.querySelectorAll('.juegoCatalogo');
 
   juegos.forEach(juego => {
-    const img = juego.querySelector('img');
-    const texto = document.createElement('div');
+    const img = juego.querySelector('img'); 
+    const texto = document.createElement('div'); // crea un div (alt)
     texto.classList.add('name-game');
     texto.textContent = img.alt; // usa el alt como texto visible
-    juego.appendChild(texto);
+    juego.appendChild(texto); // al pasar el cursor se muestran sombras del hover mas el nombre del juego
   });
 });
 

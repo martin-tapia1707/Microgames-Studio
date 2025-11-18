@@ -79,18 +79,18 @@ function cargarComentarios() {
 window.addEventListener("DOMContentLoaded", cargarComentarios);
 
 document.getElementById("publicacion").addEventListener("click", function() {
-  const textoComentario = document.getElementById("texto").value.trim();
+  const textoComentario = document.getElementById("texto").value.trim(); // agarra el texto del comentario escrito
 
   if (textoComentario === "") {
     alert("Por favor escribí un comentario antes de publicar.");
     return;
-  }
+  } // si esta vacio el comentario y se intenta publicar tira mensaje de error
 
   fetch("../agregarComentario.php", {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: "texto=" + encodeURIComponent(textoComentario) +
-          "&IDjuego=" + encodeURIComponent(IDjuego),
+    body: "texto=" + encodeURIComponent(textoComentario) + // envia texto de comentario a php
+          "&IDjuego=" + encodeURIComponent(IDjuego), // envia id juego a php
     credentials: "include"
   })
   .then(response => response.json())
@@ -104,10 +104,10 @@ document.getElementById("publicacion").addEventListener("click", function() {
     }
   })
   .catch(error => {
-    console.error("Error al enviar el comentario:", error);
+    console.error("Error al enviar el comentario:", error); // si hubo un inconveniente con el envio del fetch tira error
   });
 });
 
 document.getElementById("descartacion").addEventListener("click", function() {
  const borrarTexto = document.getElementById("texto").value = "";
-})
+}) // boton descartar, apretas y borra el contenido del text area

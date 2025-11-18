@@ -16,15 +16,15 @@ if (isset($_GET['id'])) {
     $resultado = $stmt->get_result();
 
 
-    if ($row = $resultado->fetch_assoc()) {
+    if ($row = $resultado->fetch_assoc()) { // llama a los datos
         $nombre = $row['Nombre'];
         $comoJugar = $row['ComoJugar'];
         $queHacer = $row['QueHacer'];
-        $direccion = $row['direccion'];
+        $direccion = $row['direccion']; // llama al juego y lo guarda en variable $direccion
         $like = $row['siLike'];
         $dislike = $row['noLike'];
         $controles = $row['Controles'];
-        $id = $_SESSION['id'] ?? null;
+        $id = $_SESSION['id'] ?? null; // saca el id del juego
     } else {
         // Si no existe el ID
         $nombre = "Juego no encontrado";
@@ -35,7 +35,7 @@ if (isset($_GET['id'])) {
 
 <div class="contenedorJuego">
   <h1><?= htmlspecialchars($nombre) ?></h1>
-  <div class="screen"><iframe src="<?= $direccion ?>" height="480px" width= "100%"></iframe></div>
+  <div class="screen"><iframe src="<?= $direccion ?>" height="480px" width= "100%"></iframe></div> <!-- dependiendo el id juego, pone cierto juego -->
 
   <?php if ($id): ?>
     <div class="acciones">
@@ -61,38 +61,7 @@ if (isset($_GET['id'])) {
     </div>
 </div> 
 
-<div class="guiaControles">
-  <h2>Controles</h2>
 
-  <?php 
-    if (!empty($controles)) {
-        $lineas = preg_split('/\r\n|\r|\n/', $controles);
-        echo "<div class='listaControles'>";
-        foreach ($lineas as $linea) {
-            $linea = trim($linea);
-            if ($linea !== "") {
-
-                // Detectar si tiene formato "TECLA = ACCIÓN"
-                if (strpos($linea, "=") !== false) {
-                    list($tecla, $accion) = array_map('trim', explode("=", $linea));
-                } else {
-                    $tecla = $linea;
-                    $accion = "";
-                }
-
-                echo "
-                <div class='controlItem'>
-                    <div class='teclaVisual'>" . htmlspecialchars($tecla) . "</div>
-                    <div class='accionVisual'>" . htmlspecialchars($accion) . "</div>
-                </div>";
-            }
-        }
-        echo "</div>";
-    } else {
-        echo "<p>No hay controles definidos.</p>";
-    }
-  ?>
-</div>
 
 <!-- JS con publicidad random -->
 
@@ -103,20 +72,20 @@ const imagenes = [
   "../IMG/publicidad3.png",
   "../IMG/publicidad4.jpg",
   "../IMG/publicidad5.png",
-]
+] // array publicidades posibles
 
-const publicidadRandom = Math.floor(Math.random() * imagenes.length);
+const publicidadRandom = Math.floor(Math.random() * imagenes.length); // hace el random
 
-const publicidadSeleccionada = imagenes[publicidadRandom];
+const publicidadSeleccionada = imagenes[publicidadRandom]; // selecciona imagen random
 
-document.getElementById("anuncio").src = publicidadSeleccionada;
+document.getElementById("anuncio").src = publicidadSeleccionada; // muestra la publicidad seleccionada
 </script>
 
 <!-- descripcion de los juegos -->
 
 <div class="contenedorTutorial">
   <h1>¿Como jugar?</h1>
-  <p><?= nl2br(htmlspecialchars($comoJugar)) ?></p>
+  <p><?= nl2br(htmlspecialchars($comoJugar)) ?></p> 
 
 
   <h1>¿Qué hacer?</h1>

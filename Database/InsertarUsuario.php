@@ -25,22 +25,22 @@
                 $verificacion = mysqli_query($conexion, "SELECT * FROM `usuario` WHERE Nombre = '$nombre' OR Correo = '$correo'");
                 $filas = mysqli_num_rows($verificacion);
                 if($filas > 0){
-                    $repetido = mysqli_fetch_array($verificacion);
+                    $repetido = mysqli_fetch_array($verificacion); 
                     $nombreRepetido = $repetido["Nombre"];
                     $correoRepetido = $repetido["Correo"];
                     if($nombreRepetido == $nombre){
                         $_SESSION["error"] = "<p style='text-indent: 10px;'>El usuario ya existe</p>";
-                        header("location: ../Views/Mainsite.php?section=register");
+                        header("location: ../Views/Mainsite.php?section=register"); // error si el usuario ya existe
                     }elseif($correoRepetido == $correo){
                         $_SESSION["error"] = "<p style='text-indent: 10px;'>El correo ya existe</p>";
-                        header("location: ../Views/Mainsite.php?section=register");
+                        header("location: ../Views/Mainsite.php?section=register"); // error si ya existe el mail
                     }
                 }else{
                 $sql = "INSERT INTO usuario(Nombre, Correo, Contraseña) 
-                        VALUES ('$nombre', '$correo', '$contraseña')";
+                        VALUES ('$nombre', '$correo', '$contraseña')"; // registra al usuario a la pagina
                 mysqli_query($conexion, $sql);
                 $lqs = $conexion->query("SELECT * FROM usuario u INNER JOIN roles r ON u.IDrol = r.IDrol WHERE Nombre = '$nombre' AND Contraseña = '$contraseña'");
-                if($datos=$lqs->fetch_object()){
+                if($datos=$lqs->fetch_object()){ 
                     $_SESSION["id"]=$datos->IDusuario;
                     $_SESSION["usuario"]=$datos->Nombre;
                     $_SESSION["email"]=$datos->Correo;
@@ -50,14 +50,14 @@
                     $_SESSION["rol"]=$datos->rol;
                     $_SESSION["idrol"]=$datos->IDrol;
                     $_SESSION["error"] = "";
-                    header("location: ../Views/Mainsite.php?section=home");
+                    header("location: ../Views/Mainsite.php?section=home"); // guarda esos datos en SESSION
                 }
                 }
             }
         }elseif($contraseña != $contraseñaRep){
             $_SESSION["error"] = "<p style='text-indent: 10px;'>Las contraseñas no coinciden</p>";
             header("location: ../Views/Mainsite.php?section=register");
-        }
+        } // si no coinciden las contraseñas tira error
     }
     mysqli_close($conexion);
 ?>

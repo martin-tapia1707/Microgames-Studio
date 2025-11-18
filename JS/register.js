@@ -6,10 +6,10 @@ function view(){
 
     if(input.type === 'password'){
         input.type = 'text';
-        button.textContent = 'O';
+        button.textContent = 'O'; // si apretas O se vuelve tipo contraseña
     } else{
         input.type = 'password';
-        button.textContent = 'X'
+        button.textContent = 'X' // si apretas X se vuelve tipo texto
     } 
 }
 

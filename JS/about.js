@@ -2,7 +2,7 @@ function infoDe() {
 
 
     document.getElementById('devinfo').style.display = 'block';
-    const overlay = document.getElementById('overlay').style.display ='block';
+    const overlay = document.getElementById('overlay').style.display ='block'; // display block muestra menu al hacer click en la foto
 
 
 }

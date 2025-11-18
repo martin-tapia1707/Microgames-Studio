@@ -282,74 +282,7 @@ main {
   margin-top: 20px;
 }
 
-/* === GUÍA DE CONTROLES === */
 
-.guiaControles {
-    position: absolute;
-    top: 150px;
-    width: 180px;
-    padding: 18px;
-    box-shadow: 0 6px 14px rgba(0,0,0,0.15);
-    text-align: center;
-    margin-left: 50px;
-    left: 75px;
-    border-top: 2px solid #000; /* Borde superior claro para luz */
-    border-left: 2px solid #000; /* Borde izquierdo claro */
-    border-bottom: 5px solid #000; /* Borde inferior oscuro para sombra */
-    border-right: 5px solid #000; /* Borde derecho oscuro */
-    background: #ffffff;
-}
-
-.guiaControles h2 {
-    font-size: 1.3rem;
-    margin-bottom: 12px;
-    border-left: 6px solid #ffda6a;
-    padding-left: 8px;
-    color: #222;
-}
-
-/* Contenedor vertical */
-.listaControles {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-/* Cada control */
-.controlItem {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* Visual de tecla */
-.teclaVisual {
-    padding: 10px 15px;
-    border-radius: 12px;
-    font-weight: bold;
-    font-size: 1.1rem;
-    min-width: 60px;
-    text-align: center;
-    border-top: 2px solid #000; /* Borde superior claro para luz */
-    border-left: 2px solid #000; /* Borde izquierdo claro */
-    border-bottom: 5px solid #000; /* Borde inferior oscuro para sombra */
-    border-right: 5px solid #000; /* Borde derecho oscuro */
-    background: #ffda6a;
-}
-
-/* Acción descriptiva */
-.accionVisual {
-    font-size: 0.85rem;
-    color: #444;
-    margin-top: 4px;
-}
-
-/* Teclas largas (como “Espacio”) */
-.teclaVisual.large {
-    min-width: 120px !important;
-    padding-left: 20px;
-    padding-right: 20px;
-}
 
 @media (max-width: 1200px) {
 
