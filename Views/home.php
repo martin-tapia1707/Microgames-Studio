@@ -25,14 +25,14 @@
   </div>
 </div>
 
-<!-- Juegos de accion papa "si ya se que soy su papa tapia"-->
+<!-- Juegos de accion papa "escobar mi hijo eterno en haxball"-->
 <div class="JuegosCatalogo">
-  <h1 class="title-action-games">Juegos de acción</h1>
+  <h1 class="title-action-games">Juegos casuales</h1>
   <!-- <button class="carruselPopulares1">❮</button> -->
   <div class="contenedorCatalogo">
-    <a href="Mainsite.php?section=selectedgame&id=5">
+    <a href="Mainsite.php?section=selectedgame&id=11">
       <div class="juegoCatalogo">
-        <img src="../IMG/IconoJuego.jpg" alt="Station Defenders">
+        <img src="../Godot/CarCat/CarCat.icon.png" alt="CarCat">
       </div>
     </a>
     <a href="Mainsite.php?section=selectedgame&id=2">
@@ -47,22 +47,17 @@
     </a>
     <a href="Mainsite.php?section=selectedgame&id=7">
       <div class="juegoCatalogo">
-        <img src="../Godot/StickFight/StickFight.icon.png" alt="StickFight">
+        <img src="../Godot/StickFight/StickFight.icon.png" alt="Silhouette Showdown">
       </div>
     </a>
-    <a href="Mainsite.php?section=selectedgame&id=5">
+    <a href="Mainsite.php?section=selectedgame&id=12">
       <div class="juegoCatalogo">
-        <img src="#" alt="Spaceship">
+        <img src="../Godot/HateCube/HateCube.icon.png" alt="We hate this Cube!">
       </div>
     </a>
-    <a href="Mainsite.php?section=selectedgame&id=6">
+    <a href="Mainsite.php?section=selectedgame&id=9">
       <div class="juegoCatalogo">
-        <img src="#" alt="Pong">
-      </div>
-    </a>
-    <a href="Mainsite.php?section=selectedgame&id=7">
-      <div class="juegoCatalogo">
-        <img src="#" alt="JuegoADecidir">
+        <img src="../Godot/FishBall/FishBall.icon.png" alt="FishBall">
       </div>
     </a>
     <!-- <button class="carruselPopulares2">❯</button> -->
@@ -72,42 +67,31 @@
 <!-- Juegos de agilidad -->
 
 <div class="JuegosCatalogo">
-  <h1 class="title-action-games">Juegos para pensar</h1>
+  <h1 class="title-action-games">Juegos de agilidad</h1>
   <!-- <button class="carruselPopulares1">❮</button> -->
   <div class="contenedorCatalogo">
-    <a href="Mainsite.php?section=selectedgame&id=1">
+    <a href="Mainsite.php?section=selectedgame&id=12">
       <div class="juegoCatalogo">
-        <img src="../IMG/JuegoRandom1.webp" alt="Truco">
+        <img src="../Godot/HateCube/HateCube.icon.png" alt="We hate this Cube!">
       </div>
     </a>
-    <a href="Mainsite.php?section=selectedgame&id=2">
+    <a href="Mainsite.php?section=selectedgame&id=8">
       <div class="juegoCatalogo">
-        <img src="../IMG/JuegoRandom7.png" alt="Ajedrez">
-      </div>
-    </a>
-    <a href="Mainsite.php?section=selectedgame&id=3">
-      <div class="juegoCatalogo">
-        <img src="#" alt="Find The Character">
-      </div>
-    </a>
-    <a href="Mainsite.php?section=selectedgame&id=7">
-      <div class="juegoCatalogo">
-        <img src="#" alt="jaja">
+        <img src="../Godot/NokiaBird/NokiaBird.icon.png" alt="NokiaBird">
       </div>
     </a>
     <a href="Mainsite.php?section=selectedgame&id=5">
       <div class="juegoCatalogo">
-        <img src="#" alt="Spaceship">
+        <img src="../IMG/IconoJuego.jpg" alt="Station Defenders">
       </div>
-    </a>
-    <a href="Mainsite.php?section=selectedgame&id=6">
+    <a href="Mainsite.php?section=selectedgame&id=10">
       <div class="juegoCatalogo">
-        <img src="#" alt="Pong">
+        <img src="../IMG/JuegoRandom5.webp" alt="SpacePong">
       </div>
     </a>
     <a href="Mainsite.php?section=selectedgame&id=7">
       <div class="juegoCatalogo">
-        <img src="#" alt="StickFight">
+        <img src="../Godot/StickFight/StickFight.icon.png" alt="Silhouette Showdown">
       </div>
     </a>
     <!-- <button class="carruselPopulares2">❯</button> -->
@@ -148,11 +132,6 @@
     <a href="Mainsite.php?section=selectedgame&id=6">
       <div class="juegoCatalogo">
         <img src="../IMG/JuegoRandom10.jpeg" alt="Poker">
-      </div>
-    </a>
-    <a href="Mainsite.php?section=selectedgame&id=7">
-      <div class="juegoCatalogo">
-        <img src="#" alt="Ajedrez">
       </div>
     </a>
     <!-- <button class="carruselPopulares2">❯</button> -->
