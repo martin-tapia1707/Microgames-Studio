@@ -24,6 +24,8 @@ if (isset($_GET['id'])) {
         $like = $row['siLike'];
         $dislike = $row['noLike'];
         $controles = $row['Controles'];
+        $creador = $row['Creador'];
+        $linkPagina = $row['Pagina'];
         $id = $_SESSION['id'] ?? null; // saca el id del juego
     } else {
         // Si no existe el ID
@@ -90,6 +92,10 @@ document.getElementById("anuncio").src = publicidadSeleccionada; // muestra la p
 
   <h1>¿Qué hacer?</h1>
   <p><?= nl2br(htmlspecialchars($queHacer)) ?></p>
+
+  <h1>Creditos</h1>
+  <p> Autor: <?= nl2br(htmlspecialchars($creador)) ?></p>
+  <p>Link del Juego: <a href="<?= nl2br(htmlspecialchars($linkPagina)) ?>"><?= nl2br(htmlspecialchars($linkPagina))?></a></p>
 </div>
 
 

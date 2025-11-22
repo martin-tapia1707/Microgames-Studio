@@ -25,7 +25,7 @@
   </div>
 </div>
 
-<!-- Juegos de accion papa "escobar mi hijo eterno en haxball"-->
+<!-- Juegos de accion papa "ya se tapia que es mi hijo no hace falta decirlo"-->
 <div class="JuegosCatalogo">
   <h1 class="title-action-games">Juegos casuales</h1>
   <!-- <button class="carruselPopulares1">❮</button> -->
@@ -58,6 +58,31 @@
     <a href="Mainsite.php?section=selectedgame&id=9">
       <div class="juegoCatalogo">
         <img src="../Godot/FishBall/FishBall.icon.png" alt="FishBall">
+      </div>
+    </a>
+    <a href="Mainsite.php?section=selectedgame&id=13">
+      <div class="juegoCatalogo">
+        <img src="../Godot/KeySpace/KeySpace.icon.png" alt="KeySpace">
+      </div>
+    </a>
+    <a href="Mainsite.php?section=selectedgame&id=14">
+      <div class="juegoCatalogo">
+        <img src="../Godot/TooFast/TooFast.icon.png" alt="TooFast">
+      </div>
+    </a>
+    <a href="Mainsite.php?section=selectedgame&id=15">
+      <div class="juegoCatalogo">
+        <img src="../Godot/Rubblar/Rubblar.icon.png" alt="Rubblar">
+      </div>
+    </a>
+    <a href="Mainsite.php?section=selectedgame&id=16">
+      <div class="juegoCatalogo">
+        <img src="../Godot/CursorDrifter/CursorDrifter.icon.png" alt="CursorDrifter">
+      </div>
+    </a>
+    <a href="Mainsite.php?section=selectedgame&id=17">
+      <div class="juegoCatalogo">
+        <img src="../Godot/SokoStriker/SokoStriker.icon.png" alt="Soko Striker">
       </div>
     </a>
     <!-- <button class="carruselPopulares2">❯</button> -->
