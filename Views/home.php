@@ -162,3 +162,37 @@
     <!-- <button class="carruselPopulares2">❯</button> -->
   </div>
 </div>
+  
+<!--Juegos cristianos "Ame"-->
+<div class="JuegosCatalogo">
+  <h1 class="title-action-games">Juegos Cristianos🙏✟</h1>
+  <!-- <button class="carruselPopulares1">❮</button> -->
+  <div class="contenedorCatalogo">
+    <a href="Mainsite.php?section=selectedgame&id=18">
+      <div class="juegoCatalogo">
+        <img src="../IMG/tocinoCristo.jpg" alt="jesusYtocino">  <!--../Godot/Cairn/Cairn.icon.png -->
+      </div>
+    </a>
+    <a href="Mainsite.php?section=selectedgame&id=19">
+      <div class="juegoCatalogo">
+        <img src="../IMG/MatysitoJose.png" alt="Juicio Haitiano">  <!-- ../Godot/Starcatcher/Starcatcher.png-->
+      </div>
+    </a>
+    <a href="Mainsite.php?section=selectedgame&id=20">
+      <div class="juegoCatalogo">
+        <img src="../IMG/TapiaEmo.png" alt="El Camino hacia Dios">  <!-- ../Godot/SunsetShaped/SunsetShaped.icon.png -->
+      </div>
+    </a>
+    <a href="Mainsite.php?section=selectedgame&id=21">
+      <div class="juegoCatalogo">
+        <img src="../IMG/PomniJesus.png " alt="digital=diablo circus=maldad">  <!--  ../Godot/SuperTux/index.icon.png-->
+      </div>
+    </a>
+    <a href="Mainsite.php?section=selectedgame&id=22">
+      <div class="juegoCatalogo">
+        <img src="../IMG/JesusvsDiablo.jpg" alt="JesusvsSatanas">  <!--  ../Godot/Reincarnage/Reincarnage.icon.png-->
+      </div>
+    </a>
+    <!-- <button class="carruselPopulares2">❯</button> -->
+  </div>
+</div>

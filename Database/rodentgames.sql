@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-11-2025 a las 06:12:41
+-- Tiempo de generación: 23-11-2025 a las 22:02:32
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -41,7 +41,11 @@ CREATE TABLE `comentario` (
 
 INSERT INTO `comentario` (`IDcomentario`, `texto`, `fecha`, `IDusuario`, `valorLike`) VALUES
 (1, 'hola', '2025-11-15', 15, NULL),
-(2, 'SADASDAS', '2025-11-18', 1, NULL);
+(2, 'SADASDAS', '2025-11-18', 1, NULL),
+(3, 'Baggen es el hijo de escobar', '2025-11-23', 1, NULL),
+(4, 'Hijito ponga la descripcion', '2025-11-23', 16, NULL),
+(5, 'Nigga', '2025-11-23', 16, NULL),
+(6, 'Fuerza Scrum master', '2025-11-23', 16, NULL);
 
 -- --------------------------------------------------------
 
@@ -108,7 +112,12 @@ INSERT INTO `juegos` (`IDjuego`, `Nombre`, `ComoJugar`, `QueHacer`, `direccion`,
 (14, 'TooFast', 'Descripcion NIGGA', 'Otra descripcion Nigga', '../Godot/TooFast/TooFast.html', 0, 0, 'controles NIGGA', 'Play Don\'t Tell', 'https://playdonttell.itch.io/too-fast'),
 (15, 'Rubblar', 'Descripcion NIGGA', 'Otra descripcion Nigga', '../Godot/Rubblar/Rubblar.html', 0, 0, 'controles NIGGA', 'Sander Vanhove, Tibo', 'https://sandervanhove.itch.io/rubblar'),
 (16, 'TooFast', 'Como me hace laburar mi hijo', 'Wolf Lore >>> Breaking Bad', '../Godot/CursorDrifter/CursorDrifter.html', 0, 0, 'controles NIGGA', 'Semyon Kotelnikov', 'https://soffu.itch.io/cursor-drifter'),
-(17, 'SokoStriker', 'Como me hace laburar este hdp', 'Lo peor que los demas son todos seca nucas', '../Godot/SokoStriker/SokoStriker.html', 0, 0, 'controles NIGGA', 'Axylaric', 'https://axylaric.itch.io/soko-striker');
+(17, 'SokoStriker', 'Como me hace laburar este hdp', 'Lo peor que los demas son todos seca nucas', '../Godot/SokoStriker/SokoStriker.html', 0, 0, 'controles NIGGA', 'Axylaric', 'https://axylaric.itch.io/soko-striker'),
+(18, 'Cairn', 'Bear lore >>> fishmierda', 'Wolf lore >>> Better caul saul', '../Godot/Cairn/cairn.html', 0, 0, 'controles NIGGA(tapia)', 'rubic, torcado, Camelot, Kavol', 'https://rubic.itch.io/cairn'),
+(19, 'starcatcher', 'Descripcion NIGGA', 'Otra descripcion Nigga', '../Godot/starcatcher/starcatcher.html', 0, 0, 'controles NIGGA', 'Escada Games', 'https://escada-games.itch.io/starcatcher'),
+(20, 'Sunset Shaped', 'Descripcion NIGGA', 'Otra descripcion Nigga', '../Godot/../Godot/SunsetShaped/SunsetShaped.html', 0, 0, 'controles NIGGA', 'bucketfish', 'https://bucketfish.itch.io/sunset-shaped'),
+(21, 'SuperTux', 'Descripcion NIGGA', 'Otra descripcion Nigga', '../Godot/SuperTux/index.html', 0, 0, 'controles NIGGA', 'Alzter', 'https://alzter-s.itch.io/supertux-classic'),
+(22, 'Reincarnage', 'Descripcion NIGGA', 'Otra descripcion Nigga', '../Godot/Reincarnage/Reincarnage.html', 0, 0, 'controles NIGGA', 'Paper Hat Projects', 'https://paperhatprojects.itch.io/reincarnage');
 
 -- --------------------------------------------------------
 
@@ -127,7 +136,11 @@ CREATE TABLE `opiniones` (
 
 INSERT INTO `opiniones` (`IDcomentario`, `IDjuego`) VALUES
 (1, 5),
-(2, 5);
+(2, 5),
+(3, 5),
+(4, 18),
+(5, 18),
+(6, 20);
 
 -- --------------------------------------------------------
 
@@ -240,13 +253,13 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `comentario`
 --
 ALTER TABLE `comentario`
-  MODIFY `IDcomentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `IDcomentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `juegos`
 --
 ALTER TABLE `juegos`
-  MODIFY `IDjuego` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `IDjuego` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT de la tabla `roles`
