@@ -26,8 +26,6 @@ html {
     justify-content: flex-start; /* Se cente mejor, estando todo centrado */
     margin: 30px auto; /*centra todo, al maximizar no va para algun lado*/
     
-
-
 }
 
 .content-register {
@@ -66,8 +64,13 @@ html {
     left: 365px;
     font-size: 17px;
     color: #fff4c3e0;
+    transition: all 0.25s ease;
 }
 
+.sign-up:hover {
+    color: #fae99dcc;
+    transition: all 0.25s ease;
+}
 
 .caja-info {
     position: relative;
@@ -213,7 +216,15 @@ html {
     border-radius: 10px;
     background-color: #690013;
     cursor: pointer;
+    border:none;
+    transition: all 0.25s ease;
+}
 
+.make:hover {
+    background-color: rgb(128, 6, 35);
+    color:#faecb2;
+    transform: translateY(-1.5px);
+    transition: all 0.25s ease;
 
 }
 
@@ -228,6 +239,13 @@ html {
     padding: 5px 10px;
     cursor: pointer;
     border-radius: 3px;
+    transition: all 0.25s ease;
+}
+
+.password-button:hover {
+    background-color:#ffbe6a;
+    color:rgb(185, 9, 50);
+    transition: all 0.75s ease;
 }
 
 .repeat-password-button {
@@ -241,6 +259,13 @@ html {
     padding: 5px 10px;
     cursor: pointer;
     border-radius: 3px;
+    transition: all 0.25s ease;
+}
+
+.repeat-password-button:hover {
+    background-color:#ffbe6a;
+    color:rgb(185, 9, 50);
+    transition: all 0.75s ease;
 }
 
 @media (max-width: 768px) {

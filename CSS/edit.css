@@ -16,7 +16,7 @@ html, body {
 /* BACKGROUND */
 
 
-.contenido {
+.contenido-edit {
     padding: 0;
     background: #fff9c4;
     min-height: 100vh;
@@ -25,6 +25,7 @@ html, body {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-left: 30px;
 }
 
 .todo {
@@ -385,12 +386,15 @@ textarea::-webkit-scrollbar-track {
     display: block;
     margin-top: 200px;
     margin-left: 250px;
+    transition: transform 0.25s ease;
 
 }
 
 .edit-profile-button:hover {
     background-color: #ff4920;
     color: #fffbb6;
+    transform: translateY(-1.5px);
+    transition:all 0.15s ease;
 }
 
 
@@ -398,28 +402,42 @@ textarea::-webkit-scrollbar-track {
     position: absolute;
     display: inline-block;
     padding-right: 50px; /* espacio abajo para el botón */
-    right: 55px;
-    top: 855px;
+    right: 40px;
+    top: 834px;
     border: none;
     background-color: #690013;
     color: #ffeb99;
     padding: 5px 10px;
     cursor: pointer;
-    border-radius: 3px;
+    border-radius: 5px;
+    transition: all 0.25s ease;
 }
 
-.repeat-button {
+.repeat-button{
     position: absolute;
     display: inline-block;
     padding-right: 50px; /* espacio abajo para el botón */
-    right: 55px;
-    top: 966px;
+    right: 40px;
+    top: 946px;
     border: none;
     background-color: #690013;
     color: #ffeb99;
     padding: 5px 10px;
     cursor: pointer;
-    border-radius: 3px;
+    border-radius: 5px;
+    transition: all 0.25s ease;
+}
+
+.repeat-button:hover{
+    background-color:#ffbe6a;
+    color:rgb(185, 9, 50);
+    transition: all 0.75s ease;
+}
+
+.pass-button:hover{
+    background-color:#ffbe6a;
+    color:rgb(185, 9, 50);
+    transition: all 0.75s ease;
 }
 
 @media (max-width: 1200px) {
@@ -428,8 +446,12 @@ textarea::-webkit-scrollbar-track {
     display:none;
 }
 
+.contenido-edit{
+    margin-left:0px;
+}
+
 .todo {
-    transform: scale(1); /* ← vuelve a tamaño normal */
+    transform: scale(1); /*vuelve a tamaño normal */
     padding-left: 10px;
     padding-right: 10px;
     margin-top: 50px;
@@ -459,14 +481,15 @@ textarea::-webkit-scrollbar-track {
 
 .pass-button {
         position: absolute; /* reemplazamos relative porque me entero que no se aplicaaaa */
-        right: 65px;
-        margin-top: -33px;
+        right: 45px;
+        margin-top: -34px;
     }
 
 .repeat-button{
     position: absolute;
-    right:65px;
-    margin-top: -17px;
+    right:45px;
+    margin-top: -18px;
+
 }
 
     /* Área de texto */

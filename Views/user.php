@@ -26,7 +26,7 @@ if (session_status() === PHP_SESSION_NONE) {
 ?>
 
     <!-- Contenido principal, avatar y descripcion sobre el -->
-    <div class="contenido">
+    <div class="contenido-game">
         <section class="profile-content">
             <div class="perfil-cabecera">
                 <img class="profile-avatar"
@@ -34,8 +34,15 @@ if (session_status() === PHP_SESSION_NONE) {
                 <div class="profile-info">
                     <p class="user-name"><?php echo $_SESSION['usuario']; ?></p>
                     <p class="user-rol"><?php echo $_SESSION['rol']; ?></p>
+                    <p class="user-date">unido desde ##/##/##</p>
                 </div>
             </div>
+
+             <!-- Cambiar datos, da a la siguiente pagina-->
+            <div class="edit-profile">
+                <a href="edit.php" class="edit-profile-link">Editar perfil</a>
+            </div>
+
             <div class="perfil-detalles">
                 <div class="user-desc">
                     <h2 class="about-me">Sobre mí:</h2>
@@ -44,33 +51,17 @@ if (session_status() === PHP_SESSION_NONE) {
                 <!-- Historial del usuario -->
             </div>
             <div class="profile-history">
-                <h2 class="your-register">Registro:</h2>
-                <div class="first-game-info">
-                    <p class="game-title">Juego 1:</p>
-                    <p class="info-game">PuntuajeMax: </p>
-                    <p class="info-game">Horas activo: </p>
-                </div>
-                <div class="second-game-info">
-                    <p class="game-title">Juego 2:</p>
-                    <p class="info-game">PuntuajeMax: </p>
-                    <p class="info-game">Horas activo: </p>
-                </div>
-                <div class="third-game-info">
-                    <p class="game-title">Juego 3:</p>
-                    <p class="info-game">PuntuajeMax: </p>
-                    <p class="info-game">Horas activo: </p>
-                </div>
-                <a href="../Database/Controlador_CerrarLogin.php" class="log-out-link" >Cerrar sesion</a>
-
+                <h2 class="your-register">Juegos que me gustan</h2>
+            <div class="void-list">
+                <h2 class="tuto-list">Está es la lista de tus juegos favoritos</h2>
+                <p  class="how-list">Solo dale me gusta a cualquier juego que te guste.. ¡y aparecerá acá!</p>
             </div>
 
-            <!-- Cambiar datos, da a la siguiente pagina-->
-
-            <div class="changes-info">
-
-                <a href="edit.php" class="edit-profile-link">Editar perfil</a>
-
             </div>
+            <div class="log-out">
+            <a href="../Database/Controlador_CerrarLogin.php" class="log-out-link" >Cerrar sesion</a>
+            </div>
+
 
 
 

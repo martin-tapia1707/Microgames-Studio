@@ -25,7 +25,7 @@
 ?>
 
     <!-- Contenido principal, avatar y descripcion sobre el -->
-    <div class="contenido">
+    <div class="contenido-edit">
         <div class="todo">
             <section class="profile-content">
                 <div class="perfil-cabecera">
