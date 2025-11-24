@@ -170,6 +170,7 @@ nav {
     background-position: center;
     position: static !important;
     cursor: pointer;
+    
 }
 
 
@@ -677,12 +678,12 @@ nav {
     background-color: #ff6d4d;
     width: 1000px;
     height: 700px;
-    border-radius: 4%;
+    border-radius: 15px;
     color: #ffeb99;
     z-index: 10000;
     font-family: "Acme", sans-serif;
     font-weight: 400;
-    font-style: normal;
+    font-style: normal;   
 }
 
 .header-info {animation: fadeInfo 0.7s ease;} /*Animacion de transicion*/
@@ -695,6 +696,21 @@ nav {
 @keyframes fadeIn{
     0% {opacity: 0;}
     100% {opacity: 0.3;}
+}
+
+.header-info::-webkit-scrollbar {
+    width: 8px;
+}
+
+.header-info::-webkit-scrollbar-thumb {
+    background-color: #690013;
+    border-radius: 4px;
+
+}
+
+.header-info::-webkit-scrollbar-track {
+    background-color: #ff6d4d;
+    border-radius: 15px;
 }
 
 .content-header-info {
@@ -836,6 +852,10 @@ nav {
         width: 700px;
         font-size: 27px;
     }
+            .header-info{
+        transform: translateY(-5%);
+        overflow-x: hidden;  /*ocultar scrollbar de abajo*/
+    }
 }
 
 
@@ -879,6 +899,11 @@ nav {
 
         .header-info{
         transform: translateY(-10%);
+        width: 90vw;            /*maneja la ventana*/
+        max-width: 1000px;     
+        max-height: 80vh;       /* scroll auto*/
+        overflow-y: auto;       /*acomoda la scrollbar*/
+        overflow-x: hidden;
     }
 
 }
@@ -926,11 +951,14 @@ nav {
         margin: 0 auto 200px;
         text-align: center;
     }
-            .header-info{
+    .header-info{
         transform: translateY(-10%);
+        width: 90vw;            /*hace responsive o se adapte a la pantalla*/
+        max-width: 1000px;      
+        max-height: 80vh;       
+        overflow-y: auto;
+        overflow-x: hidden;
     }
-
-    
 }
 
 /*    CAJA DE MIEMBROS RESPONSIVE */
