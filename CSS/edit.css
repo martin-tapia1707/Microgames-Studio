@@ -431,13 +431,13 @@ textarea::-webkit-scrollbar-track {
 .repeat-button:hover{
     background-color:#ffbe6a;
     color:rgb(185, 9, 50);
-    transition: all 0.75s ease;
+    transition: all 0.25s ease;
 }
 
 .pass-button:hover{
     background-color:#ffbe6a;
     color:rgb(185, 9, 50);
-    transition: all 0.75s ease;
+    transition: all 0.25s ease;
 }
 
 @media (max-width: 1200px) {
