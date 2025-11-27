@@ -25,174 +25,27 @@
   </div>
 </div>
 
-<!-- Juegos de accion papa "ya se tapia que es mi hijo no hace falta decirlo"-->
+<!-- catalogo dividido en categorias -->
 <div class="JuegosCatalogo">
   <h1 class="title-action-games">Juegos casuales</h1>
-  <!-- <button class="carruselPopulares1">❮</button> -->
   <div class="contenedorCatalogo">
     <a href="Mainsite.php?section=selectedgame&id=11">
-      <div class="juegoCatalogo">
-        <img src="../Godot/CarCat/CarCat.icon.png" alt="CarCat">
-      </div>
-    </a>
-    <a href="Mainsite.php?section=selectedgame&id=2">
-      <div class="juegoCatalogo">
-        <img src="../IMG/JuegoRandom.webp" alt="Minecraft vs Roblox">
-      </div>
-    </a>
-    <a href="Mainsite.php?section=selectedgame&id=3">
-      <div class="juegoCatalogo">
-        <img src="../IMG/JuegoRandom2.webp" alt="Esquivar">
-      </div>
-    </a>
-    <a href="Mainsite.php?section=selectedgame&id=7">
-      <div class="juegoCatalogo">
-        <img src="../Godot/StickFight/StickFight.icon.png" alt="Silhouette Showdown">
-      </div>
-    </a>
-    <a href="Mainsite.php?section=selectedgame&id=12">
-      <div class="juegoCatalogo">
-        <img src="../Godot/HateCube/HateCube.icon.png" alt="We hate this Cube!">
-      </div>
-    </a>
-    <a href="Mainsite.php?section=selectedgame&id=9">
-      <div class="juegoCatalogo">
-        <img src="../Godot/FishBall/FishBall.icon.png" alt="FishBall">
-      </div>
-    </a>
-    <a href="Mainsite.php?section=selectedgame&id=13">
-      <div class="juegoCatalogo">
-        <img src="../Godot/KeySpace/KeySpace.icon.png" alt="KeySpace">
-      </div>
-    </a>
-    <a href="Mainsite.php?section=selectedgame&id=14">
-      <div class="juegoCatalogo">
-        <img src="../Godot/TooFast/TooFast.icon.png" alt="TooFast">
-      </div>
-    </a>
-    <a href="Mainsite.php?section=selectedgame&id=15">
-      <div class="juegoCatalogo">
-        <img src="../Godot/Rubblar/Rubblar.icon.png" alt="Rubblar">
-      </div>
-    </a>
-    <a href="Mainsite.php?section=selectedgame&id=16">
-      <div class="juegoCatalogo">
-        <img src="../Godot/CursorDrifter/CursorDrifter.icon.png" alt="CursorDrifter">
-      </div>
-    </a>
-    <a href="Mainsite.php?section=selectedgame&id=17">
-      <div class="juegoCatalogo">
-        <img src="../Godot/SokoStriker/SokoStriker.icon.png" alt="Soko Striker">
-      </div>
-    </a>
-    <!-- <button class="carruselPopulares2">❯</button> -->
-  </div>
-</div>
+ <?php
 
-<!-- Juegos de agilidad -->
+  include "../Includes/Config.php"; 
 
-<div class="JuegosCatalogo">
-  <h1 class="title-action-games">Juegos de agilidad</h1>
-  <!-- <button class="carruselPopulares1">❮</button> -->
-  <div class="contenedorCatalogo">
-    <a href="Mainsite.php?section=selectedgame&id=12">
-      <div class="juegoCatalogo">
-        <img src="../Godot/HateCube/HateCube.icon.png" alt="We hate this Cube!">
-      </div>
-    </a>
-    <a href="Mainsite.php?section=selectedgame&id=8">
-      <div class="juegoCatalogo">
-        <img src="../Godot/NokiaBird/NokiaBird.icon.png" alt="NokiaBird">
-      </div>
-    </a>
-    <a href="Mainsite.php?section=selectedgame&id=5">
-      <div class="juegoCatalogo">
-        <img src="../IMG/IconoJuego.jpg" alt="Station Defenders">
-      </div>
-    <a href="Mainsite.php?section=selectedgame&id=10">
-      <div class="juegoCatalogo">
-        <img src="../IMG/JuegoRandom5.webp" alt="SpacePong">
-      </div>
-    </a>
-    <a href="Mainsite.php?section=selectedgame&id=7">
-      <div class="juegoCatalogo">
-        <img src="../Godot/StickFight/StickFight.icon.png" alt="Silhouette Showdown">
-      </div>
-    </a>
-    <!-- <button class="carruselPopulares2">❯</button> -->
-  </div>
-</div>
+  $infoJuegos = mysqli_query($conexion, "SELECT * FROM juegos");
 
-<!-- Juegos de Mesa -->
-
-<div class="JuegosCatalogo">
-  <h1 class="title-action-games">Juegos de mesa</h1>
-  <!-- <button class="carruselPopulares1">❮</button> -->
-  <div class="contenedorCatalogo">
-    <a href="Mainsite.php?section=selectedgame&id=1">
+while($juego = mysqli_fetch_assoc($infoJuegos)) {
+?>
+    <a href="Mainsite.php?section=selectedgame&id=<?=$juego['IDjuego']?>">
       <div class="juegoCatalogo">
-        <img src="../IMG/JuegoRandom1.webp" alt="Truco">
+        <img src="<?=$juego['imagen']?>" alt="<?=$juego['Nombre']?>">
       </div>
     </a>
-    <a href="Mainsite.php?section=selectedgame&id=2">
-      <div class="juegoCatalogo">
-        <img src="../IMG/JuegoRandom8.png" alt="Ludo">
+    <?php
+  } ?>
       </div>
     </a>
-    <a href="Mainsite.php?section=selectedgame&id=3">
-      <div class="juegoCatalogo">
-        <img src="../IMG/JuegoRandom3.jpg" alt="Solitario">
-      </div>
-    </a>
-    <a href="Mainsite.php?section=selectedgame&id=7">
-      <div class="juegoCatalogo">
-        <img src="../IMG/JuegoRandom7.png" alt="Ajedrez">
-      </div>
-    </a>
-    <a href="Mainsite.php?section=selectedgame&id=5">
-      <div class="juegoCatalogo">
-        <img src="../IMG/JuegoRandom9.png" alt="Damas">
-      </div>
-    </a>
-    <a href="Mainsite.php?section=selectedgame&id=6">
-      <div class="juegoCatalogo">
-        <img src="../IMG/JuegoRandom10.jpeg" alt="Poker">
-      </div>
-    </a>
-    <!-- <button class="carruselPopulares2">❯</button> -->
-  </div>
-</div>
-  
-<!--Juegos cristianos "Ame"-->
-<div class="JuegosCatalogo">
-  <h1 class="title-action-games">Juegos Cristianos🙏✟</h1>
-  <!-- <button class="carruselPopulares1">❮</button> -->
-  <div class="contenedorCatalogo">
-    <a href="Mainsite.php?section=selectedgame&id=18">
-      <div class="juegoCatalogo">
-        <img src="../IMG/tocinoCristo.jpg" alt="jesusYtocino">  <!--../Godot/Cairn/Cairn.icon.png -->
-      </div>
-    </a>
-    <a href="Mainsite.php?section=selectedgame&id=19">
-      <div class="juegoCatalogo">
-        <img src="../IMG/MatysitoJose.png" alt="Juicio Haitiano">  <!-- ../Godot/Starcatcher/Starcatcher.png-->
-      </div>
-    </a>
-    <a href="Mainsite.php?section=selectedgame&id=20">
-      <div class="juegoCatalogo">
-        <img src="../IMG/TapiaEmo.png" alt="El Camino hacia Dios">  <!-- ../Godot/SunsetShaped/SunsetShaped.icon.png -->
-      </div>
-    </a>
-    <a href="Mainsite.php?section=selectedgame&id=21">
-      <div class="juegoCatalogo">
-        <img src="../IMG/PomniJesus.png " alt="digital=diablo circus=maldad">  <!--  ../Godot/SuperTux/index.icon.png-->
-      </div>
-    </a>
-    <a href="Mainsite.php?section=selectedgame&id=22">
-      <div class="juegoCatalogo">
-        <img src="../IMG/JesusvsDiablo.jpg" alt="JesusvsSatanas">  <!--  ../Godot/Reincarnage/Reincarnage.icon.png-->
-      </div>
-    </a>
-    <!-- <button class="carruselPopulares2">❯</button> -->
   </div>
 </div>
