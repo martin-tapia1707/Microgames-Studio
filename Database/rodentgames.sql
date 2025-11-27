@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-11-2025 a las 22:02:32
+-- Tiempo de generación: 27-11-2025 a las 01:54:53
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -20,6 +20,31 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `rodentgames`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `categorias`
+--
+
+CREATE TABLE `categorias` (
+  `IDcategoria` int(11) NOT NULL,
+  `nombre` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `categorias`
+--
+
+INSERT INTO `categorias` (`IDcategoria`, `nombre`) VALUES
+(1, 'acción'),
+(2, 'puzzle'),
+(3, 'ritmo'),
+(4, 'agilidad'),
+(5, 'populares'),
+(6, 'casual'),
+(7, '2 jugadores'),
+(8, 'plataformeros');
 
 -- --------------------------------------------------------
 
@@ -65,12 +90,6 @@ CREATE TABLE `informacion` (
 --
 
 INSERT INTO `informacion` (`IDusuario`, `IDjuego`, `PuntajeMax`, `Pulgar`) VALUES
-(1, 1, 500, 1),
-(1, 2, 700, 0),
-(2, 1, 200, 1),
-(3, 2, 100, NULL),
-(4, 2, 800, NULL),
-(4, 3, 200, 0),
 (15, 5, 0, 1);
 
 -- --------------------------------------------------------
@@ -89,35 +108,59 @@ CREATE TABLE `juegos` (
   `noLike` int(11) DEFAULT 0,
   `Controles` text NOT NULL,
   `Creador` varchar(255) DEFAULT NULL,
-  `Pagina` text DEFAULT NULL
+  `Pagina` text DEFAULT NULL,
+  `imagen` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `juegos`
 --
 
-INSERT INTO `juegos` (`IDjuego`, `Nombre`, `ComoJugar`, `QueHacer`, `direccion`, `siLike`, `noLike`, `Controles`, `Creador`, `Pagina`) VALUES
-(1, 'SpaceShip', NULL, NULL, NULL, 0, 0, '', 'El duo PE', 'https://es.wikipedia.org/wiki/Per%C3%BA'),
-(2, 'Minecraft vs Roblox', 'Es un juego de lucha con dos personajes elegibles por el momento, deberás derrotar a tu oponente', 'Para derrotar a tu oponente deberás utilizar los movimientos del personaje elegido, sean movimientos especiales o ataques potentes, deberás reducir su vida a 0', NULL, 0, 0, 'WASD = Movimiento\r\nFlechas = Movimiento', 'El juego que nos perdimos', 'https://es.wikipedia.org/wiki/Claudio_Tapia'),
-(3, 'Dodge', NULL, NULL, NULL, 0, 0, '', 'Pomni', 'https://tadc.fandom.com/es/wiki/Pomni#:~:text=En%20ruso%2C%20%22Pomni%22%20(,hab%C3%ADa%20en%20ese%20video%20tutorial%22.'),
-(4, 'Solitario', NULL, NULL, NULL, 0, 0, '', 'Tapia', 'Como vas a poner la baraja francesa'),
-(5, 'Station Defenders', 'Elimina a la naves enemigas clickeando en dirección a las mismas para eliminarlas, cada vez el enemigo cobrara mas fuerza, resiste el mayor tiempo posible a sus ataques', 'Defenderte de naves enemigas que tratarán de atacarte, intentando irrumpir en tu estación espacial', '../Godot/Space/StationDefenders.html', 1, 0, 'Click = Disparar\r\nCursor = Mover cañon ', 'Otra vez el duo pe', 'Marcelo vs Nilton '),
-(7, 'StickFight', 'Para controlar la Silueta utiliza WASD para moverte y Espacio para atacar, tendrás dos modos, el Singleplayer donde superaras los dos niveles disponibles y el multijugador, donde combatiras con un jugador a parte en una batalla al mas estilo clasico de Mo', 'Sos una Silueta que lucha contra enemigos durante tu travesía, tenes que superar los niveles que se presentarán y en tu camino venceras a tus enemigos y abriras puertas', '../Godot/StickFight/StickFight.html', 0, 0, 'W = Saltar\r\nA = Izquierda\r\nS = Agacharse\r\nD = Derecha\r\nEspacio = Atacar', 'Weenter', 'https://weentermakesgames.itch.io/silhouette-showdown'),
-(8, 'NokiaBird', 'Es una recreación de el  mítico juego FlappyBird solo que en la perspectiva de un Nokia antiguo\r\nLa cosa es facil, deberás sumar el mayor puntaje posible evitando chocar con las tuberías!', 'Apretando espacio el pájaro irá avanzando por lo que deberás sobrevivir evitando chocar con las tuberías', '../Godot/NokiaBird/NokiaBird.html', 0, 0, 'Espacio = Saltar', 'Skinner Space', 'https://skinner-space.itch.io/nokia-bird-3310'),
-(9, 'FishBall', 'Esto es simple, es por asi decirlo un Futbol Acuático en el cual deberás meter gol a el pez rival empujando la pelota hacia su area', 'Deberás apretar las teclas W y S para moverte arriba y abajo, en caso de ser jugador 2 apretaras las respectivas flechas', '../Godot/FishBall/FishBall.html', 0, 0, 'W = Arriba\r\nS = Abajo\r\nArrowUp = Arriba\r\nArrowDown = Abajo', 'PossiblyAxolotl', 'https://possiblyaxolotl.itch.io/fishball'),
-(10, 'SpacePong', 'La temática es un Pong ambientado en el espacio y tu personaje es una nave espacial, esta mezclado con el Futbol ya que tendrás arcos pero la pelota tendrá las físicas del Pong.', 'Te enfrentarás a 3 naves que intentaran meter la pelota en tu arco, deberás evitarlas y de paso intentar meter gol', '../Godot/SpacePong/SpacePong.html', 0, 0, 'W = Arriba\r\nA = Izquierda\r\nS = Abajo\r\nD = Derecha', 'Kiwi', 'https://kiwigamedev.itch.io/space-pong'),
-(11, 'CarCat', 'Deberas avanzar lo mas que puedas sin que se caiga el Gato!', 'Tenés que avanzar cuidadosamente evitando los obstáculos que se irán presentando a medida que logres avanzar y sumar el mayor puntaje posible', '../Godot/CarCat/CarCat.html', 0, 0, 'D = Avanzar\r\nArrowRight = Avanzar', 'Lazy Toad Studios', 'https://lazy-toad-studios.itch.io/cat-in-a-wagon'),
-(12, 'HateCube', 'Deberas hacer desaparecer el cubo antes de que se termine el contador que aparecerá en pantalla', 'Es una prueba de agilidad, tenés que clickeas el cubo rapido para ir eliminando sus fragmentos y eliminarlo por completo antes de que el contador llegue a 0', '../Godot/HateCube/HateCube.html', 0, 0, 'Click = Eliminar cuadrado', 'Sol, FmladGames, Crosp', 'https://solroo.itch.io/we-hate-this-cube'),
-(13, 'KeySpace', 'Poner la descripcion', 'poner descripcion nigga', '../Godot/KeySpace/KeySpace.html', 0, 0, 'Wolf lore', 'Jon Topielski', 'https://jontopielski.itch.io/keyspace'),
-(14, 'TooFast', 'Descripcion NIGGA', 'Otra descripcion Nigga', '../Godot/TooFast/TooFast.html', 0, 0, 'controles NIGGA', 'Play Don\'t Tell', 'https://playdonttell.itch.io/too-fast'),
-(15, 'Rubblar', 'Descripcion NIGGA', 'Otra descripcion Nigga', '../Godot/Rubblar/Rubblar.html', 0, 0, 'controles NIGGA', 'Sander Vanhove, Tibo', 'https://sandervanhove.itch.io/rubblar'),
-(16, 'TooFast', 'Como me hace laburar mi hijo', 'Wolf Lore >>> Breaking Bad', '../Godot/CursorDrifter/CursorDrifter.html', 0, 0, 'controles NIGGA', 'Semyon Kotelnikov', 'https://soffu.itch.io/cursor-drifter'),
-(17, 'SokoStriker', 'Como me hace laburar este hdp', 'Lo peor que los demas son todos seca nucas', '../Godot/SokoStriker/SokoStriker.html', 0, 0, 'controles NIGGA', 'Axylaric', 'https://axylaric.itch.io/soko-striker'),
-(18, 'Cairn', 'Bear lore >>> fishmierda', 'Wolf lore >>> Better caul saul', '../Godot/Cairn/cairn.html', 0, 0, 'controles NIGGA(tapia)', 'rubic, torcado, Camelot, Kavol', 'https://rubic.itch.io/cairn'),
-(19, 'starcatcher', 'Descripcion NIGGA', 'Otra descripcion Nigga', '../Godot/starcatcher/starcatcher.html', 0, 0, 'controles NIGGA', 'Escada Games', 'https://escada-games.itch.io/starcatcher'),
-(20, 'Sunset Shaped', 'Descripcion NIGGA', 'Otra descripcion Nigga', '../Godot/../Godot/SunsetShaped/SunsetShaped.html', 0, 0, 'controles NIGGA', 'bucketfish', 'https://bucketfish.itch.io/sunset-shaped'),
-(21, 'SuperTux', 'Descripcion NIGGA', 'Otra descripcion Nigga', '../Godot/SuperTux/index.html', 0, 0, 'controles NIGGA', 'Alzter', 'https://alzter-s.itch.io/supertux-classic'),
-(22, 'Reincarnage', 'Descripcion NIGGA', 'Otra descripcion Nigga', '../Godot/Reincarnage/Reincarnage.html', 0, 0, 'controles NIGGA', 'Paper Hat Projects', 'https://paperhatprojects.itch.io/reincarnage');
+INSERT INTO `juegos` (`IDjuego`, `Nombre`, `ComoJugar`, `QueHacer`, `direccion`, `siLike`, `noLike`, `Controles`, `Creador`, `Pagina`, `imagen`) VALUES
+(0, 'Cairn', 'Bear lore >>> fishmierda', 'Wolf lore >>> Better caul saul', '../Godot/Cairn/cairn.html', 0, 0, 'controles NIGGA(tapia)', 'rubic, torcado, Camelot, Kavol', 'https://rubic.itch.io/cairn', '../Godot/Cairn/Cairn.icon.png'),
+(5, 'Station Defenders', 'Elimina a la naves enemigas clickeando en dirección a las mismas para eliminarlas, cada vez el enemigo cobrara mas fuerza, resiste el mayor tiempo posible a sus ataques', 'Defenderte de naves enemigas que tratarán de atacarte, intentando irrumpir en tu estación espacial', '../Godot/Space/StationDefenders.html', 1, 0, 'Click = Disparar\r\nCursor = Mover cañon ', 'Otra vez el duo pe', 'Marcelo vs Nilton ', '../IMG/IconoJuego.jpg'),
+(7, 'Silhouette Showdown', 'Para controlar la Silueta utiliza WASD para moverte y Espacio para atacar, tendrás dos modos, el Singleplayer donde superaras los dos niveles disponibles y el multijugador, donde combatiras con un jugador a parte en una batalla al mas estilo clasico de Mo', 'Sos una Silueta que lucha contra enemigos durante tu travesía, tenes que superar los niveles que se presentarán y en tu camino venceras a tus enemigos y abriras puertas', '../Godot/StickFight/StickFight.html', 0, 0, 'W = Saltar\r\nA = Izquierda\r\nS = Agacharse\r\nD = Derecha\r\nEspacio = Atacar', 'Weenter', 'https://weentermakesgames.itch.io/silhouette-showdown', '../Godot/StickFight/StickFight.icon.png'),
+(8, 'Nokia Bird 3310', 'Es una recreación de el  mítico juego FlappyBird solo que en la perspectiva de un Nokia antiguo\r\nLa cosa es facil, deberás sumar el mayor puntaje posible evitando chocar con las tuberías!', 'Apretando espacio el pájaro irá avanzando por lo que deberás sobrevivir evitando chocar con las tuberías', '../Godot/NokiaBird/NokiaBird.html', 0, 0, 'Espacio = Saltar', 'Skinner Space', 'https://skinner-space.itch.io/nokia-bird-3310', '../Godot/NokiaBird/NokiaBird.icon.png'),
+(9, 'FishBall', 'Esto es simple, es por asi decirlo un Futbol Acuático en el cual deberás meter gol a el pez rival empujando la pelota hacia su area', 'Deberás apretar las teclas W y S para moverte arriba y abajo, en caso de ser jugador 2 apretaras las respectivas flechas', '../Godot/FishBall/FishBall.html', 0, 0, 'W = Arriba\r\nS = Abajo\r\nArrowUp = Arriba\r\nArrowDown = Abajo', 'PossiblyAxolotl', 'https://possiblyaxolotl.itch.io/fishball', '../Godot/FishBall/FishBall.icon.png'),
+(10, 'SpacePong', 'La temática es un Pong ambientado en el espacio y tu personaje es una nave espacial, esta mezclado con el Futbol ya que tendrás arcos pero la pelota tendrá las físicas del Pong.', 'Te enfrentarás a 3 naves que intentaran meter la pelota en tu arco, deberás evitarlas y de paso intentar meter gol', '../Godot/SpacePong/SpacePong.html', 0, 0, 'W = Arriba\r\nA = Izquierda\r\nS = Abajo\r\nD = Derecha', 'Kiwi', 'https://kiwigamedev.itch.io/space-pong', '../Godot/SpacePong/SpacePong.icon.png'),
+(11, 'Cat in a Wagon!', 'Deberas avanzar lo mas que puedas sin que se caiga el Gato!', 'Tenés que avanzar cuidadosamente evitando los obstáculos que se irán presentando a medida que logres avanzar y sumar el mayor puntaje posible', '../Godot/CarCat/CarCat.html', 0, 0, 'D = Avanzar\r\nArrowRight = Avanzar', 'Lazy Toad Studios', 'https://lazy-toad-studios.itch.io/cat-in-a-wagon', '../Godot/CarCat/CarCat.icon.png'),
+(12, 'We hate this Cube!', 'Deberas hacer desaparecer el cubo antes de que se termine el contador que aparecerá en pantalla', 'Es una prueba de agilidad, tenés que clickeas el cubo rapido para ir eliminando sus fragmentos y eliminarlo por completo antes de que el contador llegue a 0', '../Godot/HateCube/HateCube.html', 0, 0, 'Click = Eliminar cuadrado', 'Sol, FmladGames, Crosp', 'https://solroo.itch.io/we-hate-this-cube', '../Godot/HateCube/HateCube.icon.png'),
+(13, 'KeySpace', 'Poner la descripcion', 'poner descripcion nigga', '../Godot/KeySpace/KeySpace.html', 0, 0, 'Wolf lore', 'Jon Topielski', 'https://jontopielski.itch.io/keyspace', '../Godot/KeySpace/KeySpace.icon.png'),
+(14, 'TooFast', 'Descripcion NIGGA', 'Otra descripcion Nigga', '../Godot/TooFast/TooFast.html', 0, 0, 'controles NIGGA', 'Play Don\'t Tell', 'https://playdonttell.itch.io/too-fast', '../Godot/TooFast/TooFast.icon.png'),
+(15, 'Rubblar', 'Descripcion NIGGA', 'Otra descripcion Nigga', '../Godot/Rubblar/Rubblar.html', 0, 0, 'controles NIGGA', 'Sander Vanhove, Tibo', 'https://sandervanhove.itch.io/rubblar', '../Godot/Rubblar/Rubblar.icon.png'),
+(16, 'Cursor Drifter', 'Como me hace laburar mi hijo', 'Wolf Lore >>> Breaking Bad', '../Godot/CursorDrifter/CursorDrifter.html', 0, 0, 'controles NIGGA', 'Semyon Kotelnikov', 'https://soffu.itch.io/cursor-drifter', '../Godot/CursorDrifter/CursorDrifter.icon.png'),
+(17, 'SokoStriker', 'Como me hace laburar este hdp', 'Lo peor que los demas son todos seca nucas', '../Godot/SokoStriker/SokoStriker.html', 0, 0, 'controles NIGGA', 'Axylaric', 'https://axylaric.itch.io/soko-striker', '../Godot/SokoStriker/SokoStriker.icon.png'),
+(19, 'starcatcher', 'Descripcion NIGGA', 'Otra descripcion Nigga', '../Godot/starcatcher/starcatcher.html', 0, 0, 'controles NIGGA', 'Escada Games', 'https://escada-games.itch.io/starcatcher', '../Godot/starcatcher/starcatcher.icon.png'),
+(20, 'Sunset Shaped', 'Descripcion NIGGA', 'Otra descripcion Nigga', '../Godot/../Godot/SunsetShaped/SunsetShaped.html', 0, 0, 'controles NIGGA', 'bucketfish', 'https://bucketfish.itch.io/sunset-shaped', '../Godot/SunsetShaped/SunsetShaped.icon.png'),
+(21, 'SuperTux', 'Descripcion NIGGA', 'Otra descripcion Nigga', '../Godot/SuperTux/index.html', 0, 0, 'controles NIGGA', 'Alzter', 'https://alzter-s.itch.io/supertux-classic', '../Godot/SuperTux/index.icon.png'),
+(22, 'Reincarnage', 'Descripcion NIGGA', 'Otra descripcion Nigga', '../Godot/Reincarnage/Reincarnage.html', 0, 0, 'controles NIGGA', 'Paper Hat Projects', 'https://paperhatprojects.itch.io/reincarnage', '../Godot/Reincarnage/Reincarnage.icon.png');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `juego_categoria`
+--
+
+CREATE TABLE `juego_categoria` (
+  `IDjuego` int(11) NOT NULL,
+  `IDcategoria` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `juego_categoria`
+--
+
+INSERT INTO `juego_categoria` (`IDjuego`, `IDcategoria`) VALUES
+(5, 4),
+(7, 4),
+(8, 4),
+(9, 6),
+(10, 4),
+(11, 6),
+(12, 4),
+(13, 6),
+(15, 6),
+(21, 8);
 
 -- --------------------------------------------------------
 
@@ -129,18 +172,6 @@ CREATE TABLE `opiniones` (
   `IDcomentario` int(11) NOT NULL,
   `IDjuego` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `opiniones`
---
-
-INSERT INTO `opiniones` (`IDcomentario`, `IDjuego`) VALUES
-(1, 5),
-(2, 5),
-(3, 5),
-(4, 18),
-(5, 18),
-(6, 20);
 
 -- --------------------------------------------------------
 
@@ -204,6 +235,12 @@ INSERT INTO `usuario` (`IDusuario`, `Nombre`, `Correo`, `Foto`, `Contraseña`, `
 --
 
 --
+-- Indices de la tabla `categorias`
+--
+ALTER TABLE `categorias`
+  ADD PRIMARY KEY (`IDcategoria`);
+
+--
 -- Indices de la tabla `comentario`
 --
 ALTER TABLE `comentario`
@@ -222,6 +259,13 @@ ALTER TABLE `informacion`
 --
 ALTER TABLE `juegos`
   ADD PRIMARY KEY (`IDjuego`);
+
+--
+-- Indices de la tabla `juego_categoria`
+--
+ALTER TABLE `juego_categoria`
+  ADD PRIMARY KEY (`IDjuego`,`IDcategoria`),
+  ADD KEY `IDcategoria` (`IDcategoria`);
 
 --
 -- Indices de la tabla `opiniones`
@@ -248,6 +292,12 @@ ALTER TABLE `usuario`
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
+
+--
+-- AUTO_INCREMENT de la tabla `categorias`
+--
+ALTER TABLE `categorias`
+  MODIFY `IDcategoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `comentario`
@@ -289,6 +339,13 @@ ALTER TABLE `comentario`
 ALTER TABLE `informacion`
   ADD CONSTRAINT `fk_TenerPuntos_juegos` FOREIGN KEY (`IDjuego`) REFERENCES `juegos` (`IDjuego`),
   ADD CONSTRAINT `fk_TenerPuntos_usuario` FOREIGN KEY (`IDusuario`) REFERENCES `usuario` (`IDusuario`);
+
+--
+-- Filtros para la tabla `juego_categoria`
+--
+ALTER TABLE `juego_categoria`
+  ADD CONSTRAINT `juego_categoria_ibfk_1` FOREIGN KEY (`IDjuego`) REFERENCES `juegos` (`IDjuego`) ON DELETE CASCADE,
+  ADD CONSTRAINT `juego_categoria_ibfk_2` FOREIGN KEY (`IDcategoria`) REFERENCES `categorias` (`IDcategoria`) ON DELETE CASCADE;
 
 --
 -- Filtros para la tabla `opiniones`
