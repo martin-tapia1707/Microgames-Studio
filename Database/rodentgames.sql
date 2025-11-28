@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-11-2025 a las 03:45:38
+-- Tiempo de generación: 28-11-2025 a las 07:47:37
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -41,7 +41,6 @@ INSERT INTO `categorias` (`IDcategoria`, `nombre`) VALUES
 (2, 'puzzle'),
 (3, 'ritmo'),
 (4, 'agilidad'),
-(5, 'populares'),
 (6, 'casual'),
 (7, '2 jugadores'),
 (8, 'plataformeros');
@@ -154,25 +153,21 @@ CREATE TABLE `juego_categoria` (
 INSERT INTO `juego_categoria` (`IDjuego`, `IDcategoria`) VALUES
 (5, 3),
 (5, 4),
-(5, 5),
 (7, 1),
 (7, 4),
 (7, 7),
 (8, 4),
 (8, 6),
-(9, 5),
 (9, 6),
 (9, 7),
 (10, 4),
 (10, 6),
 (11, 6),
 (12, 4),
-(12, 5),
 (13, 2),
 (13, 6),
 (13, 8),
 (14, 4),
-(14, 5),
 (14, 6),
 (15, 4),
 (15, 6),
@@ -180,24 +175,18 @@ INSERT INTO `juego_categoria` (`IDjuego`, `IDcategoria`) VALUES
 (16, 6),
 (17, 2),
 (17, 6),
-(18, 5),
 (18, 6),
 (18, 8),
 (19, 2),
 (19, 4),
-(19, 5),
 (20, 4),
 (20, 8),
 (21, 4),
-(21, 5),
 (21, 8),
 (22, 1),
-(22, 5),
 (22, 6),
 (23, 2),
-(23, 5),
 (23, 6),
-(24, 5),
 (24, 6),
 (24, 7),
 (25, 7),

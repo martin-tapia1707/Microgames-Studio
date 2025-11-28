@@ -29,19 +29,27 @@
   <!-- aca un while para mostrar las categorias ?-->
 
 <?php
-$categorias = mysqli_query($conexion, "SELECT IDCategoria FROM categorias");
+$categorias = mysqli_query($conexion, "SELECT * FROM categorias ORDER BY nombre ASC"); // guarda categorias
 
-while($categoria = mysqli_fetch_assoc($categorias)) {
+while($categoria = mysqli_fetch_assoc($categorias)) { // while para recorrer todas las categorias
+
+  $idCategoria = $categoria['IDcategoria'];
+  $nombreCat = $categoria['nombre']; //mi bombo
+
 ?>
 
 <!-- catalogo dividido en categorias -->
 <div class="JuegosCatalogo">
-  <h1 class="title-action-games">Juegos (categoria)</h1>
+  <h1 class="title-action-games">Juegos de <?=$nombreCat?></h1> <!-- html basico -->
   <div class="contenedorCatalogo">
     <a href="Mainsite.php?section=selectedgame&id=11">
  <?php
- // muestra todos los juegos de esta categoria
-  $infoJuegos = mysqli_query($conexion, "SELECT * FROM juegos");
+ // muestra todos los juegos de la categoria
+  $infoJuegos = mysqli_query($conexion, "SELECT j.* FROM juegos j 
+              JOIN juego_categoria jc ON j.IDjuego = jc.IDjuego
+              WHERE jc.IDcategoria = $idCategoria");
+
+        if (mysqli_num_rows($infoJuegos) > 0) { // loss muestra unicamente si hay juegos en esa categoria
 
 while($juego = mysqli_fetch_assoc($infoJuegos)) {
 ?>
@@ -54,10 +62,16 @@ while($juego = mysqli_fetch_assoc($infoJuegos)) {
   } ?>
       </div>
     </a>
+
+<?php // en caso de que no hayan juegos! (hola fiscella)
+        } else {
+          echo "<p style='margin-left:50px;'>No hay juegos en esta categoría.</p>";
+        }
+?>
+    
   </div>
 </div>
 
 <?php
 }
 ?>
-
