@@ -51,8 +51,8 @@ if (isset($_GET['id'])) {
     <button class="like" onclick="aumentar(<?= $idJuego ?>, <?= $id ?>)"><i class='bx bxs-like'></i></button>
     <button class="dislike" onclick="disminuir(<?= $idJuego ?>, <?= $id ?>)"><i class='bx bxs-dislike'></i></button>
     <span class="count" id="dislike"><?= $dislike ?></span>
-  </div>
   <?php endif; ?>
+  </div>
   <?php if (is_null($id)): ?>
   <div class="acciones">
     <span class="count" id="likes"><?= $like ?></span>
