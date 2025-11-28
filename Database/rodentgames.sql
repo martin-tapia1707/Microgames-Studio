@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-11-2025 a las 01:54:53
+-- Tiempo de generación: 28-11-2025 a las 03:45:38
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -66,11 +66,7 @@ CREATE TABLE `comentario` (
 
 INSERT INTO `comentario` (`IDcomentario`, `texto`, `fecha`, `IDusuario`, `valorLike`) VALUES
 (1, 'hola', '2025-11-15', 15, NULL),
-(2, 'SADASDAS', '2025-11-18', 1, NULL),
-(3, 'Baggen es el hijo de escobar', '2025-11-23', 1, NULL),
-(4, 'Hijito ponga la descripcion', '2025-11-23', 16, NULL),
-(5, 'Nigga', '2025-11-23', 16, NULL),
-(6, 'Fuerza Scrum master', '2025-11-23', 16, NULL);
+(2, 'SADASDAS', '2025-11-18', 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -90,7 +86,8 @@ CREATE TABLE `informacion` (
 --
 
 INSERT INTO `informacion` (`IDusuario`, `IDjuego`, `PuntajeMax`, `Pulgar`) VALUES
-(15, 5, 0, 1);
+(15, 5, 0, 1),
+(25, 16, 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -101,8 +98,8 @@ INSERT INTO `informacion` (`IDusuario`, `IDjuego`, `PuntajeMax`, `Pulgar`) VALUE
 CREATE TABLE `juegos` (
   `IDjuego` int(11) NOT NULL,
   `Nombre` varchar(40) NOT NULL,
-  `ComoJugar` varchar(255) DEFAULT NULL,
-  `QueHacer` varchar(255) DEFAULT NULL,
+  `ComoJugar` text DEFAULT NULL,
+  `QueHacer` text DEFAULT NULL,
   `direccion` varchar(255) DEFAULT NULL,
   `siLike` int(11) DEFAULT 0,
   `noLike` int(11) DEFAULT 0,
@@ -117,12 +114,11 @@ CREATE TABLE `juegos` (
 --
 
 INSERT INTO `juegos` (`IDjuego`, `Nombre`, `ComoJugar`, `QueHacer`, `direccion`, `siLike`, `noLike`, `Controles`, `Creador`, `Pagina`, `imagen`) VALUES
-(0, 'Cairn', 'Bear lore >>> fishmierda', 'Wolf lore >>> Better caul saul', '../Godot/Cairn/cairn.html', 0, 0, 'controles NIGGA(tapia)', 'rubic, torcado, Camelot, Kavol', 'https://rubic.itch.io/cairn', '../Godot/Cairn/Cairn.icon.png'),
 (5, 'Station Defenders', 'Elimina a la naves enemigas clickeando en dirección a las mismas para eliminarlas, cada vez el enemigo cobrara mas fuerza, resiste el mayor tiempo posible a sus ataques', 'Defenderte de naves enemigas que tratarán de atacarte, intentando irrumpir en tu estación espacial', '../Godot/Space/StationDefenders.html', 1, 0, 'Click = Disparar\r\nCursor = Mover cañon ', 'Otra vez el duo pe', 'Marcelo vs Nilton ', '../IMG/IconoJuego.jpg'),
 (7, 'Silhouette Showdown', 'Para controlar la Silueta utiliza WASD para moverte y Espacio para atacar, tendrás dos modos, el Singleplayer donde superaras los dos niveles disponibles y el multijugador, donde combatiras con un jugador a parte en una batalla al mas estilo clasico de Mo', 'Sos una Silueta que lucha contra enemigos durante tu travesía, tenes que superar los niveles que se presentarán y en tu camino venceras a tus enemigos y abriras puertas', '../Godot/StickFight/StickFight.html', 0, 0, 'W = Saltar\r\nA = Izquierda\r\nS = Agacharse\r\nD = Derecha\r\nEspacio = Atacar', 'Weenter', 'https://weentermakesgames.itch.io/silhouette-showdown', '../Godot/StickFight/StickFight.icon.png'),
 (8, 'Nokia Bird 3310', 'Es una recreación de el  mítico juego FlappyBird solo que en la perspectiva de un Nokia antiguo\r\nLa cosa es facil, deberás sumar el mayor puntaje posible evitando chocar con las tuberías!', 'Apretando espacio el pájaro irá avanzando por lo que deberás sobrevivir evitando chocar con las tuberías', '../Godot/NokiaBird/NokiaBird.html', 0, 0, 'Espacio = Saltar', 'Skinner Space', 'https://skinner-space.itch.io/nokia-bird-3310', '../Godot/NokiaBird/NokiaBird.icon.png'),
 (9, 'FishBall', 'Esto es simple, es por asi decirlo un Futbol Acuático en el cual deberás meter gol a el pez rival empujando la pelota hacia su area', 'Deberás apretar las teclas W y S para moverte arriba y abajo, en caso de ser jugador 2 apretaras las respectivas flechas', '../Godot/FishBall/FishBall.html', 0, 0, 'W = Arriba\r\nS = Abajo\r\nArrowUp = Arriba\r\nArrowDown = Abajo', 'PossiblyAxolotl', 'https://possiblyaxolotl.itch.io/fishball', '../Godot/FishBall/FishBall.icon.png'),
-(10, 'SpacePong', 'La temática es un Pong ambientado en el espacio y tu personaje es una nave espacial, esta mezclado con el Futbol ya que tendrás arcos pero la pelota tendrá las físicas del Pong.', 'Te enfrentarás a 3 naves que intentaran meter la pelota en tu arco, deberás evitarlas y de paso intentar meter gol', '../Godot/SpacePong/SpacePong.html', 0, 0, 'W = Arriba\r\nA = Izquierda\r\nS = Abajo\r\nD = Derecha', 'Kiwi', 'https://kiwigamedev.itch.io/space-pong', '../Godot/SpacePong/SpacePong.icon.png'),
+(10, 'SpacePong', 'La temática es un Pong ambientado en el espacio y tu personaje es una nave espacial, esta mezclado con el Futbol ya que tendrás arcos pero la pelota tendrá las físicas del Pong.', 'Te enfrentarás a 3 naves que intentaran meter la pelota en tu arco, deberás evitarlas y de paso intentar meter gol', '../Godot/SpacePong/SpacePong.html', 0, 0, 'W = Arriba\r\nA = Izquierda\r\nS = Abajo\r\nD = Derecha', 'Kiwi', 'https://kiwigamedev.itch.io/space-pong', '../Godot/SpacePong/SpacePong.png'),
 (11, 'Cat in a Wagon!', 'Deberas avanzar lo mas que puedas sin que se caiga el Gato!', 'Tenés que avanzar cuidadosamente evitando los obstáculos que se irán presentando a medida que logres avanzar y sumar el mayor puntaje posible', '../Godot/CarCat/CarCat.html', 0, 0, 'D = Avanzar\r\nArrowRight = Avanzar', 'Lazy Toad Studios', 'https://lazy-toad-studios.itch.io/cat-in-a-wagon', '../Godot/CarCat/CarCat.icon.png'),
 (12, 'We hate this Cube!', 'Deberas hacer desaparecer el cubo antes de que se termine el contador que aparecerá en pantalla', 'Es una prueba de agilidad, tenés que clickeas el cubo rapido para ir eliminando sus fragmentos y eliminarlo por completo antes de que el contador llegue a 0', '../Godot/HateCube/HateCube.html', 0, 0, 'Click = Eliminar cuadrado', 'Sol, FmladGames, Crosp', 'https://solroo.itch.io/we-hate-this-cube', '../Godot/HateCube/HateCube.icon.png'),
 (13, 'KeySpace', 'Poner la descripcion', 'poner descripcion nigga', '../Godot/KeySpace/KeySpace.html', 0, 0, 'Wolf lore', 'Jon Topielski', 'https://jontopielski.itch.io/keyspace', '../Godot/KeySpace/KeySpace.icon.png'),
@@ -130,10 +126,15 @@ INSERT INTO `juegos` (`IDjuego`, `Nombre`, `ComoJugar`, `QueHacer`, `direccion`,
 (15, 'Rubblar', 'Descripcion NIGGA', 'Otra descripcion Nigga', '../Godot/Rubblar/Rubblar.html', 0, 0, 'controles NIGGA', 'Sander Vanhove, Tibo', 'https://sandervanhove.itch.io/rubblar', '../Godot/Rubblar/Rubblar.icon.png'),
 (16, 'Cursor Drifter', 'Como me hace laburar mi hijo', 'Wolf Lore >>> Breaking Bad', '../Godot/CursorDrifter/CursorDrifter.html', 0, 0, 'controles NIGGA', 'Semyon Kotelnikov', 'https://soffu.itch.io/cursor-drifter', '../Godot/CursorDrifter/CursorDrifter.icon.png'),
 (17, 'SokoStriker', 'Como me hace laburar este hdp', 'Lo peor que los demas son todos seca nucas', '../Godot/SokoStriker/SokoStriker.html', 0, 0, 'controles NIGGA', 'Axylaric', 'https://axylaric.itch.io/soko-striker', '../Godot/SokoStriker/SokoStriker.icon.png'),
+(18, 'Cairn', 'Bear lore >>> fishmierda', 'Wolf lore >>> Better caul saul', '../Godot/Cairn/cairn.html', 0, 0, 'controles NIGGA(tapia)', 'rubic, torcado, Camelot, Kavol', 'https://rubic.itch.io/cairn', '../Godot/Cairn/Cairn.icon.png'),
 (19, 'starcatcher', 'Descripcion NIGGA', 'Otra descripcion Nigga', '../Godot/starcatcher/starcatcher.html', 0, 0, 'controles NIGGA', 'Escada Games', 'https://escada-games.itch.io/starcatcher', '../Godot/starcatcher/starcatcher.icon.png'),
 (20, 'Sunset Shaped', 'Descripcion NIGGA', 'Otra descripcion Nigga', '../Godot/../Godot/SunsetShaped/SunsetShaped.html', 0, 0, 'controles NIGGA', 'bucketfish', 'https://bucketfish.itch.io/sunset-shaped', '../Godot/SunsetShaped/SunsetShaped.icon.png'),
 (21, 'SuperTux', 'Descripcion NIGGA', 'Otra descripcion Nigga', '../Godot/SuperTux/index.html', 0, 0, 'controles NIGGA', 'Alzter', 'https://alzter-s.itch.io/supertux-classic', '../Godot/SuperTux/index.icon.png'),
-(22, 'Reincarnage', 'Descripcion NIGGA', 'Otra descripcion Nigga', '../Godot/Reincarnage/Reincarnage.html', 0, 0, 'controles NIGGA', 'Paper Hat Projects', 'https://paperhatprojects.itch.io/reincarnage', '../Godot/Reincarnage/Reincarnage.icon.png');
+(22, 'Reincarnage', 'Descripcion NIGGA', 'Otra descripcion Nigga', '../Godot/Reincarnage/Reincarnage.html', 0, 0, 'controles NIGGA', 'Paper Hat Projects', 'https://paperhatprojects.itch.io/reincarnage', '../Godot/Reincarnage/Reincarnage.icon.png'),
+(23, 'Meticulous Collector', 'Tenes que agarrar todos los objetos del mapa pensando en cada paso ya que si pasas el numero 0 tendras que reiniciar', 'Muevete usando las flechas del teclado o WASD. Tambien vas a poder usar varios \"poderes\" mediante shift o con E segun lo que indica el mapa', '../Godot/MeticulousCollector/MeticulousCollector.html', 0, 0, 'controles NIGGA', 'The default team', 'https://the-default-team.itch.io/meticulous-collector', '../Godot/MeticulousCollector/MeticulousCollector.icon.png'),
+(24, 'Super Ta Te Ti', 'El Super Ta-Te-Ti es una versión ampliada del Ta-Te-Ti donde, en lugar de un solo tablero, jugás en 9 tableros pequeños que forman un tablero grande. Cada tablero funciona como un Ta-Te-Ti normal Tu oponente decide a qué tablero pequeño vas a jugar, según la casilla que él elija.\n                                                                                                                                \nEjemplo: si tu rival coloca una X en la casilla arriba a la izquierda del tablero donde está jugando, vos tenés que jugar en el tablero pequeño que está arriba a la izquierda del tablero grande.\n                                                                                                                                \nSi ese tablero ya fue ganado o está lleno, entonces podés jugar en cualquier tablero. Se gana en el tablero grande consiguiendo tres tableros pequeños ganados en línea (horizontal, vertical o diagonal).', '1. Turnos:\n\nJuegan dos personas: X y O.\n\nSe alternan los turnos como en el Ta-Te-Ti común.\n\n2. Dónde podés jugar:\n\nTu oponente/vos decide a qué tablero pequeño vas a jugar, según la casilla que él/vos elija.\n\nEjemplo: si tu rival coloca una X en la casilla arriba a la izquierda del tablero donde está jugando, vos tenés que jugar en el tablero pequeño que está arriba a la izquierda del tablero grande.\n\nSi ese tablero ya fue ganado o está lleno, entonces podés jugar en cualquier tablero.\n\n3. Cómo se gana un tablero pequeño:\n\nComo siempre: completando una fila, columna o diagonal con un mismo signo\n\n4. Cómo se gana la partida:\n\nAl ganar varios tableros pequeños, tu símbolo aparece en el tablero grande.\n\nGana el primer jugador que logre tres tableros ganados en fila, columna o diagonal en el tablero grande.', '../Godot/SuperTaTeTi/SuperTaTeTi.html', 0, 0, 'controles NIGGA', 'TheBirb', 'https://thebirbo.itch.io/super-ticky-tacky', '../Godot/SuperTaTeTi/SuperTaTeTi.icon.png'),
+(25, 'Ta Te Ti', 'Descripcion NIGGA', 'Otra descripcion Nigga', '../Godot/TaTeTi/TaTeTi.html', 0, 0, 'controles NIGGA', 'Blakeles', 'https://blakeles.itch.io/tictactoe-godot', '../Godot/TaTeTi/TaTeTi.icon.png'),
+(26, 'Poki', 'Descripcion NIGGA', 'Otra descripcion Nigga', '../Godot/Poki/Poki.html', 0, 0, 'controles NIGGA', 'Slimewitch', 'https://slimewitch.itch.io/poki', '../Godot/Poki/Poki.icon.png');
 
 -- --------------------------------------------------------
 
@@ -151,16 +152,56 @@ CREATE TABLE `juego_categoria` (
 --
 
 INSERT INTO `juego_categoria` (`IDjuego`, `IDcategoria`) VALUES
+(5, 3),
 (5, 4),
+(5, 5),
+(7, 1),
 (7, 4),
+(7, 7),
 (8, 4),
+(8, 6),
+(9, 5),
 (9, 6),
+(9, 7),
 (10, 4),
+(10, 6),
 (11, 6),
 (12, 4),
+(12, 5),
+(13, 2),
 (13, 6),
+(13, 8),
+(14, 4),
+(14, 5),
+(14, 6),
+(15, 4),
 (15, 6),
-(21, 8);
+(16, 4),
+(16, 6),
+(17, 2),
+(17, 6),
+(18, 5),
+(18, 6),
+(18, 8),
+(19, 2),
+(19, 4),
+(19, 5),
+(20, 4),
+(20, 8),
+(21, 4),
+(21, 5),
+(21, 8),
+(22, 1),
+(22, 5),
+(22, 6),
+(23, 2),
+(23, 5),
+(23, 6),
+(24, 5),
+(24, 6),
+(24, 7),
+(25, 7),
+(26, 2);
 
 -- --------------------------------------------------------
 
@@ -309,7 +350,7 @@ ALTER TABLE `comentario`
 -- AUTO_INCREMENT de la tabla `juegos`
 --
 ALTER TABLE `juegos`
-  MODIFY `IDjuego` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `IDjuego` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT de la tabla `roles`

@@ -1,9 +1,9 @@
-async function aumentar(idjuego, idusuario){
+function aumentar(idjuego, idusuario){
   console.log(idjuego, idusuario, dislike);
 
   let datos = {juegoID: idjuego, usuarioID: idusuario};
   try {
-    let respuesta = await fetch('../Database/like.php', {
+    let respuesta = fetch('../Database/like.php', {
       method: "POST",
       headers: {
         'Content-Type': 'application/json',
@@ -11,13 +11,8 @@ async function aumentar(idjuego, idusuario){
       body: JSON.stringify(datos),
     });
 
-    if (!respuesta.ok) {
-      // usar backticks para interpolar
-      throw new Error(`HTTP error! status: ${respuesta.status}`);
-    }
-
     // evitar redeclarar 'datos' — darle otro nombre
-    let respuestaServidor = await respuesta.json();
+    let respuestaServidor = respuesta.json();
     console.log('respuesta del servidor:', respuestaServidor);
     console.log(respuestaServidor.likeCantidad);
     document.getElementById('likes').textContent = respuestaServidor.likeCantidad;
@@ -29,12 +24,12 @@ async function aumentar(idjuego, idusuario){
   }
 }
 
-async function disminuir(idjuego, idusuario){
+function disminuir(idjuego, idusuario){
   console.log(idjuego, idusuario);
 
   let datos2 = {juegoID: idjuego, usuarioID: idusuario };
   try {
-    let respuesta2 = await fetch('../Database/dislike.php', {
+    let respuesta2 = fetch('../Database/dislike.php', {
       method: "POST",
       headers: {
         'Content-Type': 'application/json',
@@ -42,13 +37,8 @@ async function disminuir(idjuego, idusuario){
       body: JSON.stringify(datos2),
     });
 
-    if (!respuesta2.ok) {
-      // usar backticks para interpolar
-      throw new Error(`HTTP error! status: ${respuesta2.status}`);
-    }
-
     // evitar redeclarar 'datos' — darle otro nombre
-    let respuestaServidor2 = await respuesta2.json();
+    let respuestaServidor2 = respuesta2.json();
     console.log('respuesta del servidor:', respuestaServidor2);
     document.getElementById('dislike').textContent = respuestaServidor2.dislikeCantidad;
     document.getElementById('likes').textContent = respuestaServidor2.cantidadLike;
