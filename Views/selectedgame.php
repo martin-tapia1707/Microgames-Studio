@@ -39,20 +39,20 @@ if (isset($_GET['id'])) {
   <h1><?= htmlspecialchars($nombre) ?></h1>
   <div class="screen">
 
-    <?php if ($id): ?>
+
     <iframe src="<?= $direccion ?>" height="480px" width= "100%"></iframe></div> <!-- dependiendo el id juego, pone cierto juego -->
 
     <button id="expandirPantalla" class="btnExpandir">
     <i class='bx bx-fullscreen'></i>
     </button> <!-- Sacar mas tarde PROTOTIPO-->
-
+    <?php if ($id): ?>
     <div class="acciones">
     <span class="count" id="likes"><?= $like ?></span>
     <button class="like" onclick="aumentar(<?= $idJuego ?>, <?= $id ?>)"><i class='bx bxs-like'></i></button>
     <button class="dislike" onclick="disminuir(<?= $idJuego ?>, <?= $id ?>)"><i class='bx bxs-dislike'></i></button>
     <span class="count" id="dislike"><?= $dislike ?></span>
   <?php endif; ?>
-  </div>
+    </div>
   <?php if (is_null($id)): ?>
   <div class="acciones">
     <span class="count" id="likes"><?= $like ?></span>
