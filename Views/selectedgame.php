@@ -38,13 +38,7 @@ if (isset($_GET['id'])) {
 <div class="contenedorJuego">
   <h1><?= htmlspecialchars($nombre) ?></h1>
   <div class="screen">
-
-
     <iframe src="<?= $direccion ?>" height="480px" width= "100%"></iframe></div> <!-- dependiendo el id juego, pone cierto juego -->
-
-    <button id="expandirPantalla" class="btnExpandir">
-    <i class='bx bx-fullscreen'></i>
-    </button> <!-- Sacar mas tarde PROTOTIPO-->
     <?php if ($id): ?>
     <div class="acciones">
     <span class="count" id="likes"><?= $like ?></span>
@@ -87,43 +81,6 @@ const publicidadSeleccionada = imagenes[publicidadRandom]; // selecciona imagen 
 document.getElementById("anuncio").src = publicidadSeleccionada; // muestra la publicidad seleccionada
 </script>
 
-<!-- GUIA DE CONTROLES SACARLA DESPUES DE LA EXPO-->
-
-<div class="guiaControles">
-  <h2>Controles</h2>
-
-  <?php 
-    if (!empty($controles)) {
-        $lineas = preg_split('/\r\n|\r|\n/', $controles);
-        echo "<div class='listaControles'>";
-        foreach ($lineas as $linea) {
-            $linea = trim($linea);
-            if ($linea !== "") {
-
-                // Detectar si tiene formato "TECLA = ACCIÓN"
-                if (strpos($linea, "=") !== false) {
-                    list($tecla, $accion) = array_map('trim', explode("=", $linea));
-                } else {
-                    $tecla = $linea;
-                    $accion = "";
-                }
-
-                echo "
-                <div class='controlItem'>
-                    <div class='teclaVisual'>" . htmlspecialchars($tecla) . "</div>
-                    <div class='accionVisual'>" . htmlspecialchars($accion) . "</div>
-                </div>";
-            }
-        }
-        echo "</div>";
-    } else {
-        echo "<p>No hay controles definidos.</p>";
-    }
-  ?>
-</div>
-
-<!-- FIN GUIA DE CONTROLES SACARLA DESPUES DE LA EXPO-->
-
 <!-- descripcion de los juegos -->
 
 <div class="contenedorTutorial">
@@ -155,30 +112,3 @@ document.getElementById("anuncio").src = publicidadSeleccionada; // muestra la p
 
 
 <script src="../JS/selectedgame.js"></script>
-
-<!-- SACAR DESPUES DE LA EXPO -->
-
-<div id="modalPantalla" class="modal">
-  <div class="modal-contenido">
-    <span id="cerrarModal" class="cerrar">&times;</span>
-    <iframe id="iframeGrande" src="<?= $direccion ?>"></iframe>
-  </div>
-</div>
-
-<script>
-const modal = document.getElementById("modalPantalla");
-const abrir = document.getElementById("expandirPantalla");
-const cerrar = document.getElementById("cerrarModal");
-
-abrir.onclick = () => {
-  modal.style.display = "flex";
-};
-
-cerrar.onclick = () => {
-  modal.style.display = "none";
-};
-
-window.onclick = (e) => {
-  if (e.target === modal) modal.style.display = "none";
-};
-</script>
