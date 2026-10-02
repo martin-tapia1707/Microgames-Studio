@@ -1,507 +1,372 @@
-html, body {
-    width: 100%;
-    height: 100%;
-    overflow-x: hidden; /*Elimina el scroll de al lado derecho */
-    background: #fff9c4;
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700&display=swap");
+
+/* === PALETA (la misma del home, selectedgame y perfil) === */
+:root {
+  --tinta: #1c1f3a;
+  --azul: #3b4cff;
+  --naranja: #ff7a1a;
+  --menta: #17b897;
+  --coral: #ff5a4d;
+  --crema: #fbefc9;
+  --blanco-calido: #fffcf3;
+  --suave: #5b5f86;
+  --borde: rgba(28, 31, 58, 0.12);
 }
 
+html { scroll-behavior: smooth; }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+body {
+  font-family: "Nunito", system-ui, sans-serif;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: var(--crema);
+  background-image: radial-gradient(rgba(28, 31, 58, 0.09) 1.5px, transparent 1.5px);
+  background-size: 22px 22px;
+  color: var(--tinta);
 }
 
+/* === LAYOUT: tarjeta de perfil a la izquierda, formulario a la derecha === */
+.editar {
+  display: grid;
+  grid-template-columns: 300px minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+  max-width: 1100px;
+  margin: 30px 30px 60px 90px; /* el margen izquierdo deja lugar a la barra lateral */
+}
 
-/* BACKGROUND */
+.editar *,
+.editar *::before,
+.editar *::after { box-sizing: border-box; }
 
+.editar :focus-visible {
+  outline: 3px solid var(--naranja);
+  outline-offset: 3px;
+}
 
-.contenido-edit {
-    padding: 0;
-    background: #fff9c4;
-    min-height: 100vh;
-    transition: margin-left 0.75s ease;
-    width: 100%;
-    display: flex;
-    align-items: center;
+.editar-tarjeta {
+  padding: 24px 26px 28px;
+  background: var(--blanco-calido);
+  border: 2px solid var(--borde);
+  border-radius: 28px;
+}
+
+/* === TARJETA DE PERFIL (vista previa) === */
+.editar-previa {
+  position: sticky;
+  top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.previa-avatar {
+  width: 170px;
+  height: 170px;
+  object-fit: cover;
+  border: 3px solid var(--tinta);
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 5px 0 var(--tinta);
+}
+
+.previa-nombre {
+  margin: 8px 0 0;
+  font-family: "Fredoka", sans-serif;
+  font-size: 1.7rem;
+  font-weight: 600;
+  line-height: 1.1;
+  overflow-wrap: anywhere;
+}
+
+.previa-rol {
+  padding: 2px 14px;
+  border-radius: 999px;
+  background: #e6e9ff;
+  color: var(--azul);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.previa-ayuda {
+  margin: 8px 0 0;
+  color: var(--suave);
+  font-size: 0.9rem;
+}
+
+/* === FORMULARIO === */
+.editar-titulo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 22px;
+  font-family: "Fredoka", sans-serif;
+  font-size: 1.7rem;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.editar-titulo::before {
+  content: "";
+  flex-shrink: 0;
+  width: 12px;
+  height: 30px;
+  border-radius: 6px;
+  background: var(--azul);
+}
+
+.editar-form {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+/* grupos con su marcador de color, como las secciones del sitio */
+.grupo {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 18px 20px 20px;
+  border: 2px dashed var(--borde);
+  border-radius: 20px;
+}
+
+.grupo:nth-of-type(3n + 1) { --acento: var(--azul); }
+.grupo:nth-of-type(3n + 2) { --acento: var(--naranja); }
+.grupo:nth-of-type(3n + 3) { --acento: var(--menta); }
+
+.grupo-titulo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  font-family: "Fredoka", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.grupo-titulo::before {
+  content: "";
+  width: 10px;
+  height: 22px;
+  border-radius: 5px;
+  background: var(--acento);
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.campo label {
+  font-family: "Fredoka", sans-serif;
+  font-size: 1.02rem;
+  font-weight: 500;
+}
+
+.campo-nota {
+  margin: 0;
+  color: var(--suave);
+  font-size: 0.88rem;
+}
+
+.campo input[type="text"],
+.campo input[type="email"],
+.campo input[type="password"],
+.campo textarea {
+  display: block;
+  width: 100%;
+  padding: 11px 14px;
+  border: 2px solid var(--tinta);
+  border-radius: 14px;
+  background: #fff;
+  color: var(--tinta);
+  font-family: "Nunito", sans-serif;
+  font-size: 1rem;
+  line-height: 1.4;
+  transition: box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.campo textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.campo input::placeholder,
+.campo textarea::placeholder { color: var(--suave); }
+
+.campo input:focus,
+.campo textarea:focus {
+  outline: none;
+  border-color: var(--azul);
+  box-shadow: 0 0 0 4px rgba(59, 76, 255, 0.18);
+}
+
+.campo input.invalido {
+  border-color: var(--coral);
+  box-shadow: 0 0 0 4px rgba(255, 90, 77, 0.18);
+}
+
+/* input de contraseña con el ojito adentro */
+.campo-pass { position: relative; }
+
+.campo-pass input { padding-right: 52px !important; }
+
+.ver-pass {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  transform: translateY(-50%);
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--suave);
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.ver-pass:hover,
+.ver-pass:focus-visible {
+  background: var(--tinta);
+  color: #fff;
+}
+
+/* selector de foto como botón con relieve */
+.campo-foto input[type="file"] {
+  width: 100%;
+  padding: 8px;
+  border: 2px dashed var(--tinta);
+  border-radius: 14px;
+  background: #fff;
+  color: var(--suave);
+  font-family: "Nunito", sans-serif;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.campo-foto input[type="file"]::file-selector-button {
+  margin-right: 12px;
+  padding: 7px 16px;
+  border: 2px solid var(--tinta);
+  border-radius: 999px;
+  background: var(--naranja);
+  color: #fff;
+  font-family: "Fredoka", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 3px 0 var(--tinta);
+}
+
+/* contador de caracteres */
+.contador {
+  align-self: flex-end;
+  color: var(--suave);
+  font-size: 0.88rem;
+  font-variant-numeric: tabular-nums;
+}
+.contador.cerca  { color: #b9480a; font-weight: 700; }
+.contador.lleno  { color: #d63a2e; font-weight: 700; }
+
+/* mensajes de error */
+.mensaje-error {
+  margin: 0;
+  padding: 10px 16px;
+  border: 2px solid var(--tinta);
+  border-radius: 14px;
+  background: #ffe6e2;
+  font-weight: 700;
+  box-shadow: 0 3px 0 var(--tinta);
+}
+
+.mensaje-error:empty { display: none; }
+
+/* === BOTONES === */
+.editar-acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.btn-editar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 28px;
+  border: 2px solid var(--tinta);
+  border-radius: 999px;
+  background: var(--blanco-calido);
+  color: var(--tinta);
+  font-family: "Fredoka", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.2;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 4px 0 var(--tinta);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn-guardar {
+  background: var(--azul);
+  color: #fff;
+}
+
+.btn-editar:hover,
+.btn-editar:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 var(--tinta);
+}
+
+.btn-editar:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 var(--tinta);
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 900px) {
+  .editar {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .editar-previa {
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
-    margin-left: 30px;
+    text-align: left;
+    gap: 16px;
+  }
+  .previa-avatar { width: 110px; height: 110px; }
+  .previa-ayuda { flex-basis: 100%; text-align: center; }
 }
 
-.todo {
-    display: flex;
-    transform: scale(1.4); /* Aumenta el tamaño del todo el contenido */
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    margin-top: 350px;
+@media (max-width: 600px) {
+  .editar {
+    gap: 18px;
+    margin: 20px 12px 40px 60px;
+  }
+  .editar-tarjeta {
+    padding: 18px 14px 20px;
+    border-radius: 22px;
+  }
+  .grupo { padding: 14px 12px 16px; }
+  .btn-editar { flex: 1; }
 }
 
-
-
-/*    APARTADO  DE  PERFIL */
-
-
-.profile-content {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    background: #fff9c4;
-    border-radius: 10px;
-    padding: 20px;
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .editar * { transition: none !important; }
 }
-
-
-.perfil-cabecera {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-
-.profile-avatar {
-    position: relative;
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-}
-
-
-.user-name {
-    font-size: 40px;
-    color: #333;
-    margin-top: 15px;
-
-}
-
-.user-mail {
-    font-size: 18px;
-    color: #555;
-    margin-bottom: 10px;
-}
-
-
-.user-desc {
-    max-width: 760px;
-    text-align: center;
-    font-size: 20px;
-    color: #333;
-    margin-top: 40px
-}
-
-
-/*   APARTADO SOBRE MI     */
-
-.perfil-detalles {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin-bottom: 10px;
-
-}
-
-.about-me {
-    font-size: 32px;
-    color: #ff6d4d;
-    font-family: "Acme", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    margin-bottom: 10px;
-}
-
-.desc {
-    max-width: 600px;
-    text-align: center;
-}
-
-
-
-
-
-/*   CAMBIOS DE USUARIO INCLUYE INPUTS  */
-
-
-.changes-info {
-    margin-top: 100px;
-
-}
-
-.title {
-    text-align: center;
-    margin-bottom: 40px;
-    font-size: 50px;
-    font-family: "Acme", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    color: #ff880d;
-
-}
-
-.user {
-    position: relative;
-    font-size: 25px;
-    color: #690013;
-    bottom: 10px;
-    font-family: "Acme", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-}
-
-.text-box-name-user {
-    position: relative;
-    width: 750px;
-    height: 45px;
-    font-size: 25px;
-    background-color: #ff6d4d;
-    border-radius: 15px;
-    border: none;
-    color: #ffeb99;
-    padding-left: 10px;
-    padding-right: 50px;
-
-
-}
-
-.text-box-name-user:focus {
-    border: 3px solid #aa1905;
-    outline: none;
-
-}
-
-.text-box-name-user::placeholder {
-    color: #690013;
-}
-
-.password {
-    position: relative;
-    font-size: 25px;
-    color: #690013;
-    top: 25px;
-    font-family: "Acme", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-}
-
-.text-box-password {
-    position: relative;
-    top: 35px;
-    width: 750px;
-    height: 45px;
-    font-size: 25px;
-    background-color: #ff6d4d;
-    border-radius: 15px;
-    border: none;
-    color: #ffeb99;
-    padding-left: 10px;
-    padding-right: 50px;
-
-
-}
-
-.text-box-password:focus {
-    border: 3px solid #aa1905;
-    outline: none;
-
-}
-
-.text-box-password::placeholder {
-    color: #690013;
-}
-
-
-.repeat-password {
-    position: relative;
-    font-size: 25px;
-    color: #690013;
-    top: 60px;
-    font-family: "Acme", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-}
-
-.text-box-repeat-password {
-    position: relative;
-    top: 70px;
-    width: 750px;
-    height: 45px;
-    font-size: 25px;
-    background-color: #ff6d4d;
-    border-radius: 15px;
-    border: none;
-    color: #ffeb99;
-    padding-left: 10px;
-    padding-right: 50px;
-
-
-}
-
-.text-box-repeat-password:focus {
-    border: 3px solid #aa1905;
-    outline: none;
-
-}
-
-.text-box-repeat-password::placeholder {
-    color: #690013;
-}
-
-.mail {
-    position: relative;
-    font-size: 25px;
-    color: #690013;
-    top: 95px;
-    font-family: "Acme", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-}
-
-.text-box-mail {
-    position: relative;
-    top: 100px;
-    width: 750px;
-    height: 45px;
-    font-size: 25px;
-    background-color: #ff6d4d;
-    border-radius: 15px;
-    border: none;
-    color: #ffeb99;
-    padding-left: 10px;
-    padding-right: 50px;
-
-}
-
-.text-box-mail:focus {
-    border: 3px solid #aa1905;
-    outline: none;
-}
-
-.text-box-mail::placeholder {
-    color: #690013;
-}
-
-
-.pic {
-    position: relative;
-    font-size: 25px;
-    color: #690013;
-    top: 125px;
-    font-family: "Acme", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-}
-
-.text-box-pic {
-    position: relative;
-    top: 130px;
-    width: 750px;
-    height: 45px;
-    font-size: 25px;
-    background-color: #ff6d4d;
-    border-radius: 15px;
-    border: none;
-    color: #ffeb99;
-    padding-left: 10px;
-    padding-right: 50px;
-}
-
-.text-box-pic:focus {
-    border: 3px solid #aa1905;
-    outline: none;
-}
-
-.text-box-pic::placeholder {
-    color: #690013;
-}
-
-
-.description {
-    position: relative;
-    font-size: 25px;
-    top: 150px;
-    color: #690013;
-    font-family: "Acme", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-
-}
-
-.text-box-description {
-    position: relative;
-    top: 160px;
-    width: 750px;
-    height: 120px;
-    font-size: 25px;
-    background-color: #ff6d4d;
-    border-radius: 15px;
-    border: none;
-    color: #ffeb99;
-    padding-left: 10px;
-
-}
-
-.text-box-description:focus {
-    border: 3px solid #aa1905;
-    outline: none;
-}
-
-.text-box-description::placeholder {
-    color: #690013;
-}
-
-/*          SCROLLBAR DE DESCRIPCION            */
-
-textarea {
-    resize: none;
-}
-
-textarea::-webkit-scrollbar {
-    width: 8px;
-}
-
-textarea::-webkit-scrollbar-thumb {
-    background-color: #690013;
-    border-radius: 4px;
-
-}
-
-textarea::-webkit-scrollbar-track {
-    background-color: #ffeb99;
-    border-radius: 15px;
-}
-
-
-/*  BOTON PARA CAMBIAR DATOS   */
-
-
-.edit-profile-button {
-    background-color: #690013;
-    color: #ffeb99;
-    padding: 15px 60px; /* modifica el tamaño/ubicación del boton */
-    font-size: 20px;
-    border-radius: 15px;
-    border: none;
-    cursor: pointer;
-    display: block;
-    margin-top: 200px;
-    margin-left: 250px;
-    transition: transform 0.25s ease;
-
-}
-
-.edit-profile-button:hover {
-    background-color: #ff4920;
-    color: #fffbb6;
-    transform: translateY(-1.5px);
-    transition:all 0.15s ease;
-}
-
-
-.pass-button {
-    position: absolute;
-    display: inline-block;
-    padding-right: 50px; /* espacio abajo para el botón */
-    right: 40px;
-    top: 834px;
-    border: none;
-    background-color: #690013;
-    color: #ffeb99;
-    padding: 5px 10px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: all 0.25s ease;
-}
-
-.repeat-button{
-    position: absolute;
-    display: inline-block;
-    padding-right: 50px; /* espacio abajo para el botón */
-    right: 40px;
-    top: 946px;
-    border: none;
-    background-color: #690013;
-    color: #ffeb99;
-    padding: 5px 10px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: all 0.25s ease;
-}
-
-.repeat-button:hover{
-    background-color:#ffbe6a;
-    color:rgb(185, 9, 50);
-    transition: all 0.25s ease;
-}
-
-.pass-button:hover{
-    background-color:#ffbe6a;
-    color:rgb(185, 9, 50);
-    transition: all 0.25s ease;
-}
-
-@media (max-width: 1200px) {
-
-.sidebar{
-    display:none;
-}
-
-.contenido-edit{
-    margin-left:0px;
-}
-
-.todo {
-    transform: scale(1); /*vuelve a tamaño normal */
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-top: 50px;
-} 
-
-.changes-info{
-    width: 100%;
-    margin-top: 40px;
-}
-
-.text-box-description, .text-box-mail,
-.text-box-name-user, .text-box-password,
-.text-box-pic, .text-box-repeat-password {
-    width: 100%;
-    left: 0;
-    top: 0;
-    max-width: 800px;
-    margin: 15px auto;
-}
-
-.user, .password, .repeat-password,
-.mail, .pic, .description {
-    position: static; /* se quita el moverse raro absoluto */
-    margin-top: 20px;
-    margin-left: 5px;
-}
-
-.pass-button {
-        position: absolute; /* reemplazamos relative porque me entero que no se aplicaaaa */
-        right: 45px;
-        margin-top: -34px;
-    }
-
-.repeat-button{
-    position: absolute;
-    right:45px;
-    margin-top: -18px;
-
-}
-
-    /* Área de texto */
-    .text-box-description {
-        height: 120px;
-    }
-
-    /* Botón actualizar */
-    .edit-profile-button {
-        margin: 40px auto;
-        display: block;
-        font-size: 20px;
-    }
-}
-

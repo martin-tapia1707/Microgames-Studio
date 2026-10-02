@@ -1,77 +1,90 @@
 <?php
-  include "../Includes/Config.php"; 
+  include "../Includes/Config.php";
+
+  // escapa texto antes de imprimirlo en el HTML
+  if (!function_exists('e')) {
+    function e($texto) {
+      return htmlspecialchars((string)$texto, ENT_QUOTES, 'UTF-8');
+    }
+  }
+
+  // los 5 juegos más likeados (el primero va grande)
+  $populares = mysqli_fetch_all(
+    mysqli_query($conexion, "SELECT IDjuego, Nombre, imagen, siLike FROM juegos ORDER BY siLike DESC LIMIT 5"),
+    MYSQLI_ASSOC
+  );
+
+  // categorías, una sola vez, para usarlas en los chips y en las secciones
+  $categorias = mysqli_fetch_all(
+    mysqli_query($conexion, "SELECT IDcategoria, nombre FROM categorias ORDER BY nombre ASC"),
+    MYSQLI_ASSOC
+  );
 ?>
-<!-- carrusel juegos populares -->
 
-<div class="JuegosPopulares">
-  <div class="contenedorPopulares">
-    <h1 class="title-popular-games">Juegos populares</h1>
+<div class="home">
 
-      <div class="content carrusel">
+  <?php if ($populares) { ?>
+  <section class="destacados" aria-labelledby="titulo-populares">
+    <h2 id="titulo-populares" class="seccion-titulo">Juegos populares</h2>
 
-        <button class="btn-carrusel prev">❮</button>
+    <div class="destacados-grid">
+      <?php foreach ($populares as $i => $juego) { ?>
+        <a class="destacado <?= $i === 0 ? 'destacado--principal' : '' ?>"
+          href="Mainsite.php?section=selectedgame&id=<?= (int)$juego['IDjuego'] ?>">
+          <img src="<?= e($juego['imagen']) ?>" alt="" <?= $i === 0 ? '' : 'loading="lazy"' ?>>
+          <?php if ($i === 0) { ?>
+            <span class="destacado-etiqueta">Más Likeado</span>
+          <?php } ?>
+          <span class="destacado-info">
+            <span class="destacado-nombre"><?= e($juego['Nombre']) ?></span>
+            <span class="destacado-likes">♥ <?= (int)$juego['siLike'] ?></span>
+          </span>
+        </a>
+      <?php } ?>
+    </div>
+  </section>
+  <?php } ?>
+
+  <!-- chips para saltar a cada categoría -->
+  <nav class="categorias-nav" aria-label="Categorías">
+    <?php foreach ($categorias as $categoria) { ?>
+      <a class="chip" href="#categoria-<?= (int)$categoria['IDcategoria'] ?>"><?= e($categoria['nombre']) ?></a>
+    <?php } ?>
+  </nav>
+
+  <!-- catálogo dividido en categorías -->
+  <div class="categorias">
     <?php
-      // while para sacar los juegos mas likeados (osea populares)
-      $juegosPopulares = mysqli_query($conexion, "SELECT * FROM juegos ORDER BY siLike DESC LIMIT 5");
-      while($juego = mysqli_fetch_assoc($juegosPopulares)) {
+    foreach ($categorias as $categoria) {
+      $idCategoria = (int)$categoria['IDcategoria'];
+
+      $juegos = mysqli_fetch_all(
+        mysqli_query($conexion, "SELECT j.IDjuego, j.Nombre, j.imagen FROM juegos j
+                                 JOIN juego_categoria jc ON j.IDjuego = jc.IDjuego
+                                 WHERE jc.IDcategoria = $idCategoria"),
+        MYSQLI_ASSOC
+      );
     ?>
-      <a href="Mainsite.php?section=selectedgame&id=<?=$juego['IDjuego']?>">
-        <div class="juego" style="background-image: url('<?=$juego['imagen']?>');"></div>
-      </a>
-      <?php
-    } ?>
-      </div>
-        <button class="btn-carrusel next">❯</button>
-    <script src="../JS/Inicio.js"></script>
+      <section class="categoria" id="categoria-<?= $idCategoria ?>" aria-labelledby="titulo-cat-<?= $idCategoria ?>">
+        <h2 class="categoria-titulo" id="titulo-cat-<?= $idCategoria ?>">
+          Juegos de <?= e($categoria['nombre']) ?>
+          <span class="categoria-cantidad"><?= count($juegos) ?></span>
+        </h2>
+
+        <?php if ($juegos) { ?>
+          <div class="catalogo-grid">
+            <?php foreach ($juegos as $juego) { ?>
+              <a class="tile" href="Mainsite.php?section=selectedgame&id=<?= (int)$juego['IDjuego'] ?>">
+                <img src="<?= e($juego['imagen']) ?>" alt="" loading="lazy">
+                <span class="tile-nombre"><?= e($juego['Nombre']) ?></span>
+              </a>
+            <?php } ?>
+          </div>
+        <?php } else { ?>
+          <p class="categoria-vacia">No hay juegos en esta categoría.</p>
+        <?php } ?>
+      </section>
+    <?php } ?>
   </div>
+
 </div>
-
-  <!-- aca un while para mostrar las categorias ?-->
-
-<?php
-$categorias = mysqli_query($conexion, "SELECT * FROM categorias ORDER BY nombre ASC"); // guarda categorias
-
-while($categoria = mysqli_fetch_assoc($categorias)) { // while para recorrer todas las categorias
-
-  $idCategoria = $categoria['IDcategoria'];
-  $nombreCat = $categoria['nombre']; //mi bombo
-
-?>
-
-<!-- catalogo dividido en categorias -->
-<div class="JuegosCatalogo">
-  <h1 class="title-action-games">Juegos de <?=$nombreCat?></h1> <!-- html basico -->
-  <div class="contenedorCatalogo">
-    <a href="Mainsite.php?section=selectedgame&id=11">
- <?php
- // muestra todos los juegos de la categoria
-  $infoJuegos = mysqli_query($conexion, "SELECT j.* FROM juegos j 
-              JOIN juego_categoria jc ON j.IDjuego = jc.IDjuego
-              WHERE jc.IDcategoria = $idCategoria");
-
-        if (mysqli_num_rows($infoJuegos) > 0) { // loss muestra unicamente si hay juegos en esa categoria
-
-while($juego = mysqli_fetch_assoc($infoJuegos)) {
-?>
-    <a href="Mainsite.php?section=selectedgame&id=<?=$juego['IDjuego']?>">
-      <div class="juegoCatalogo">
-        <img src="<?=$juego['imagen']?>" alt="<?=$juego['Nombre']?>">
-      </div>
-    </a>
-    <?php
-  } ?>
-      </div>
-    </a>
-
-<?php // en caso de que no hayan juegos! (hola fiscella)
-        } else {
-          echo "<p style='margin-left:50px;'>No hay juegos en esta categoría.</p>";
-        }
-?>
-    
-  </div>
-</div>
-
-<?php
-}
-?>

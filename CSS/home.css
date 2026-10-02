@@ -1,216 +1,406 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700&display=swap");
+ 
+/* === PALETA Y VARIABLES === */
+:root {
+  --tinta: #1c1f3a;
+  --azul: #3b4cff;
+  --naranja: #ff7a1a;
+  --menta: #17b897;
+  --crema: #fbefc9;        /* fondo de la página */
+  --blanco-calido: #fffcf3; /* fondo de cada categoría */
+  --suave: #5b5f86;
+}
+ 
 /* === ESTILO GENERAL === */
+html {
+  scroll-behavior: smooth;
+}
+ 
 body {
-  font-family: "Acme", sans-serif;
+  font-family: "Nunito", system-ui, sans-serif;
   margin: 0;
   padding: 0;
-  position: relative; /* necesario para el pseudo-elemento */
+  position: relative;
   min-height: 100vh;
-  overflow-x: hidden; /* previene scrolls laterales indeseados */
-  background: #fff7de; 
+  overflow-x: hidden;
+  background-color: var(--crema);
+  /* puntitos muy suaves, como papel de cuaderno / pantalla de arcade */
+  background-image: radial-gradient(rgba(28, 31, 58, 0.09) 1.5px, transparent 1.5px);
+  background-size: 22px 22px;
+  color: var(--tinta);
 }
-
-/* === juegos destacados / populares === */
-
-.contenedorPopulares {
-  display: flex;
+ 
+/* El margen izquierdo deja lugar a la barra lateral (90px como tenías) */
+.home {
+  margin: 30px 30px 60px 90px;
+}
+ 
+.home *,
+.home *::before,
+.home *::after {
+  box-sizing: border-box;
+}
+ 
+.home a {
+  color: inherit;
+  text-decoration: none;
+}
+ 
+.home :focus-visible {
+  outline: 3px solid var(--naranja);
+  outline-offset: 3px;
+}
+ 
+.seccion-titulo,
+.categoria-titulo {
+  font-family: "Fredoka", sans-serif;
+  margin: 0 0 16px;
+}
+ 
+.seccion-titulo {
+  font-size: 1.9rem;
+}
+ 
+/* === POPULARES: un juego grande + cuatro chicos === */
+.destacados {
+  padding: 24px 26px 28px;
+  background: var(--blanco-calido);
+  border: 2px solid rgba(28, 31, 58, 0.12);
+  border-radius: 28px;
+}
+ 
+.destacados-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: clamp(130px, 15vw, 200px);
+  gap: 14px;
+}
+ 
+.destacado {
   position: relative;
-  justify-content: center;
-  align-items: center;
-  padding: 40px 20px;
-  margin-left: 90px;
-  margin-right: 30px;
-  margin-top: 30px;
-  background-color: #ffffff;
-  border-radius: 25px;
+  display: block;
   overflow: hidden;
+  isolation: isolate;
+  border-radius: 16px;
+  background: var(--tinta);
+  color: #fff;
 }
-
-.carrusel {
-  display: flex;
-  gap: 40px;
-  width: calc(100% - 60px);
-  scroll-behavior: smooth;
-  transition: transform 0.6s ease-in-out;
-  flex-shrink: 0;
-  overflow:hidden;
+ 
+.destacado--principal {
+  grid-column: span 2;
+  grid-row: span 2;
+  border-radius: 20px;
 }
-
-.juego {
-  border-radius: 25px;
-  cursor: pointer;
-  background-size: cover;
-  background-position: center;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.25);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  flex-shrink: 0;
-  min-width: 700px;
-  height: 480px;
-}
-
-.juego:hover {
-  transform: scale(1.03);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.3), inset 0 -100px 45px -15px rgba(0, 0, 0, 0.4);
-}
-
-/* Botones del carrusel */
-.btn-carrusel {
-  position: absolute;
-  top: 50%;
-  margin-left: -60px;
-  transform: translateY(-50%);
-  background: rgba(245, 192, 33, 0.87);
-  border: none;
-  font-size: 2.5rem;
-  color: #333;
-  cursor: pointer;
-  border-radius: 15%;
-  width: 50px;
-  height: 150px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-  z-index: 10;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-
-.btn-carrusel:hover {
-  background: #ffd34a;
-  transform: translateY(-50%) scale(1.1);
-}
-
-.title-popular-games{
-  position: absolute;
-  top: 10px;     
-  left: 20px;   
-  font-size: 28px;
-  color: #333;
-  font-weight: bold;
-  z-index: 6;    
-  pointer-events: none; 
-}
-
-.prev { 
-  left: 80px; 
-}
-.next { 
-  right: 20px; 
-}
-
-h1 { 
-  margin-left: 90px; 
-}
-
-/* === juegos de accion === */
-.JuegosCatalogo {
-  margin: 25px;
-  background-color: white;
-  margin-left: 90px;
-  margin-right: 30px;
-  border-radius: 25px;
-}
-
-.title-action-games {
-  margin-left: 75px;
-}
-
-.contenedorCatalogo {
-  margin: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-left: 50px;
-  padding: 20px;
-}
-
-.juegoCatalogo {
-  position: relative;
-  width: 180px;
-  height: 180px;
-  border-radius: 12px;
-  overflow: hidden;
-  cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  flex-shrink: 0;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.juegoCatalogo::after {
-  content: "";  /*se lo usa en el after o before, y hace que aparezca el cotenido en la clase*/
+ 
+.destacado img {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.5), transparent 70%);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  pointer-events: none;
-  z-index: 1;   /*hace que el sombreado este en la imagen*/
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
 }
-
-.juegoCatalogo:hover::after {
-  opacity: 1;
+ 
+.destacado::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(to top, rgba(28, 31, 58, 0.88), transparent 55%);
 }
-
-.juegoCatalogo:hover {
+ 
+.destacado:hover img,
+.destacado:focus-visible img {
   transform: scale(1.05);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.3), inset 0 -60px 25px -10px rgba(0, 0, 0, 0.4); 
 }
-
-/* Imagen del juego */
-.juegoCatalogo img {
+ 
+.destacado-info {
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 12px;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 8px;
+}
+ 
+.destacado-nombre {
+  font-family: "Fredoka", sans-serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  line-height: 1.15;
+}
+ 
+.destacado--principal .destacado-nombre {
+  font-size: 1.9rem;
+}
+ 
+.destacado-likes {
+  flex-shrink: 0;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.2);
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+ 
+.destacado-etiqueta {
+  position: absolute;
+  top: 18px;
+  left: 14px;
+  z-index: 2;
+  padding: 5px 14px;
+  border: 2px solid var(--tinta);
+  border-radius: 999px;
+  background: var(--naranja);
+  box-shadow: 0 3px 0 var(--tinta);
+  transform: rotate(-4deg);
+  color: #fff;
+  font-family: "Fredoka", sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+ 
+/* === NAVEGACIÓN POR CATEGORÍAS === */
+.categorias-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 10px;
+  margin: 28px 0 0;
+  padding: 16px 22px 20px; /* abajo un poco más: lugar para la sombra de los chips */
+  background: var(--blanco-calido);
+  border: 2px solid rgba(28, 31, 58, 0.12);
+  border-radius: 24px;
+}
+ 
+/* Cada chip usa el mismo color de acento que su categoría (azul, naranja, menta) */
+.chip:nth-child(3n + 1) { --acento: var(--azul); }
+.chip:nth-child(3n + 2) { --acento: var(--naranja); }
+.chip:nth-child(3n + 3) { --acento: var(--menta); }
+ 
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 16px 7px 12px;
+  border: 2px solid var(--tinta);
+  border-radius: 999px;
+  background: var(--blanco-calido);
+  font-family: "Fredoka", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.2;
+  box-shadow: 0 3px 0 var(--tinta);
+  transition: transform 0.15s ease, box-shadow 0.15s ease,
+              background 0.15s ease, color 0.15s ease;
+}
+ 
+.chip::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--acento);
+  border: 2px solid var(--tinta);
+  transition: transform 0.15s ease;
+}
+ 
+.chip:hover,
+.chip:focus-visible {
+  transform: translateY(-2px);
+  background: var(--tinta);
+  color: #fff;
+  box-shadow: 0 5px 0 var(--acento);
+}
+ 
+.chip:hover::before,
+.chip:focus-visible::before {
+  transform: scale(1.25);
+  border-color: #fff;
+}
+ 
+/* al apretar, el chip "se hunde" */
+.chip:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 var(--tinta);
+}
+ 
+/* === CATÁLOGO POR CATEGORÍA === */
+.categoria {
+  margin-top: 28px;
+  padding: 24px 26px 30px;
+  scroll-margin-top: 20px;
+  background: var(--blanco-calido);
+  border: 2px solid rgba(28, 31, 58, 0.12);
+  border-radius: 28px;
+}
+ 
+.categoria:nth-of-type(3n + 1) { --acento: var(--azul); }
+.categoria:nth-of-type(3n + 2) { --acento: var(--naranja); }
+.categoria:nth-of-type(3n + 3) { --acento: var(--menta); }
+ 
+.categoria-titulo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.6rem;
+}
+ 
+.categoria-titulo::before {
+  content: "";
+  width: 12px;
+  height: 30px;
+  border-radius: 6px;
+  background: var(--acento);
+}
+ 
+.categoria-cantidad {
+  padding: 2px 11px;
+  border-radius: 999px;
+  background: var(--crema);
+  font-family: "Nunito", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--tinta);
+}
+ 
+.catalogo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 16px;
+}
+ 
+.tile {
+  position: relative;
+  display: block;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 16px;
+  background: #f1e3b8;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+ 
+.tile img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
-
-/* Texto centrado, oculto por defecto */
-.name-game {
+ 
+.tile:hover,
+.tile:focus-visible {
+  transform: translateY(-5px) rotate(-1.5deg);
+  box-shadow: 0 6px 0 var(--acento);
+}
+ 
+/* los pares se inclinan para el otro lado: se siente como figuritas sueltas */
+.tile:nth-child(even):hover,
+.tile:nth-child(even):focus-visible {
+  transform: translateY(-5px) rotate(1.5deg);
+}
+ 
+.tile-nombre {
   position: absolute;
-  top: 85%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  font-size: 18px;
-  font-weight: bold;
+  inset: auto 0 0 0;
+  padding: 30px 10px 10px;
+  background: linear-gradient(to top, rgba(28, 31, 58, 0.92), transparent);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.95rem;
   text-align: center;
   opacity: 0;
-  transition: opacity 0.3s ease;
-  pointer-events: none;
-  z-index: 2;    /*hace que no afecte el sombreado al texto*/
+  transform: translateY(6px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
 }
-
-/* Aparece el texto pasar el cursor */
-.juegoCatalogo:hover .name-game { 
-  opacity: 1;  
+ 
+.tile:hover .tile-nombre,
+.tile:focus-visible .tile-nombre {
+  opacity: 1;
+  transform: none;
 }
-
-@media (max-width: 1300px) {
-  .juegoSelect { width: 600px; height: 420px; }
-  .juegoSecuizq, .juegoSecuder { width: 260px; height: 190px; }
+ 
+/* En pantallas táctiles no hay hover: el nombre queda siempre visible */
+@media (hover: none) {
+  .tile-nombre {
+    opacity: 1;
+    transform: none;
+  }
 }
-
-/* Tablets grandes */
-@media (max-width: 1000px) {
-  .juegoSelect { width: 480px; height: 340px; }
-  .juegoSecuizq, .juegoSecuder { width: 220px; height: 160px; }
+ 
+.categoria-vacia {
+  margin: 0;
+  color: var(--suave);
 }
-
-/* Tablets pequeñas / Celulares horizontales */
-@media (max-width: 800px) {
-  .juegoSelect { width: 380px; height: 280px; }
-  .juegoSecuizq, .juegoSecuder { width: 180px; height: 130px; }
+ 
+/* === DETALLES DE MOVIMIENTO === */
+ 
+/* Único momento de entrada: los populares "saltan" uno tras otro al cargar */
+.destacado {
+  animation: aparecer 0.5s cubic-bezier(0.2, 0.9, 0.3, 1.2) backwards;
 }
-
-/* Celulares verticales */
+.destacado:nth-child(2) { animation-delay: 0.08s; }
+.destacado:nth-child(3) { animation-delay: 0.16s; }
+.destacado:nth-child(4) { animation-delay: 0.24s; }
+.destacado:nth-child(5) { animation-delay: 0.32s; }
+ 
+@keyframes aparecer {
+  from { opacity: 0; transform: scale(0.94) translateY(12px); }
+  to   { opacity: 1; transform: none; }
+}
+ 
+/* Al saltar desde un chip, la categoría destella con su color de acento */
+.categoria:target {
+  animation: resaltar 1.2s ease-out;
+}
+ 
+@keyframes resaltar {
+  0%   { box-shadow: 0 0 0 0 var(--acento); }
+  30%  { box-shadow: 0 0 0 8px var(--acento); }
+  100% { box-shadow: 0 0 0 0 var(--acento); }
+}
+ 
+/* === RESPONSIVE === */
+@media (max-width: 760px) {
+  .destacados-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: clamp(110px, 28vw, 170px);
+  }
+  .destacado--principal .destacado-nombre {
+    font-size: 1.4rem;
+  }
+}
+ 
 @media (max-width: 600px) {
-  .contenedorPrincipal { margin-left: 60px; padding: 20px 10px; }
-  .juegoSelect { width: 300px; height: 220px; }
-  .juegoSecuizq, .juegoSecuder { width: 140px; height: 100px; }
-  .content { gap: 20px; overflow-x: auto; }
-  .btn-carrusel { font-size: 2rem; width: 40px; height: 40px; }
+  .home {
+    margin: 20px 12px 40px 60px;
+  }
+  .catalogo-grid {
+    grid-template-columns: repeat(auto-fill, minmax(135px, 1fr));
+    gap: 12px;
+  }
+  .categoria,
+  .destacados {
+    padding: 18px 14px 20px;
+    border-radius: 22px;
+  }
+  .categorias-nav {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 14px 14px 18px;
+    border-radius: 20px;
+    scrollbar-width: none;
+  }
+  .chip {
+    flex-shrink: 0;
+  }
 }
-
-
-
-
-
+ 
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .home * {
+    transition: none !important;
+    animation: none !important;
+  }
+}

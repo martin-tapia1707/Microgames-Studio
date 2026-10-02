@@ -1,252 +1,307 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700&display=swap");
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* === PALETA (la misma del home y de selectedgame) === */
+:root {
+  --tinta: #1c1f3a;
+  --azul: #3b4cff;
+  --naranja: #ff7a1a;
+  --menta: #17b897;
+  --coral: #ff5a4d;
+  --crema: #fbefc9;
+  --blanco-calido: #fffcf3;
+  --suave: #5b5f86;
+  --borde: rgba(28, 31, 58, 0.12);
 }
+
+/* === GENERAL === */
+html { scroll-behavior: smooth; }
 
 body {
-    font-family: "Acme", sans-serif;
-    margin: 0;
-    padding: 0;
-    position: relative; /* necesario para el pseudo-elemento */   
-    min-height: 100vh;
-    overflow-x: hidden; /* previene scrolls laterales indeseados */
-    background: #fff7de; 
-}
-
-/* BACKGROUND */
-
-
-.contenido-game {
-    padding: 40px 20px;
-    position: relative;
-    background: #fff9c4;     
-    padding-bottom: 60px; /* espacio interno abajo */
-    margin-bottom: 40px;  /* espacio externo abajo */ 
-    transition: margin-left 0.75s ease;   /*transicion tipo, animacion, para que no sea tosca*/
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    margin-left: 40px;
-}
-
-
-/*    APARTADO  DE  PERFIL */
-
-
-.profile-content {
-    width: 100%;
-    margin: 0;
-    padding: 20px;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    background: #fff9c4;
-    border-radius: 0;
-    max-width: 1405px;
-}
-
-
-.perfil-cabecera {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-
-.profile-avatar {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    margin-right: 20px;
-}
-
-.profile-info {
-    font-size: 1rem;
-    color: #555;
-    margin: 5px 0;
-}
-
-
-.user-name{
-    font-size: 40px;
-    margin: 0;
-    color: #333;
-}
-
-.user-rol{
-    font-size: 15px;
-}
-
-.user-date{
-    font-size: 15px;
-}
-
-.perfil-detalles {
-    margin-bottom: 20px;
-    padding: 0 20px;
-}
-
-.user-desc {
-    position: relative;
-    font-size: 25px;
-    color: #333;
-    top: 10px;
-    width: 100%;
-}
-
-
-    /*   APARTADO SOBRE MI     */
-
-
-.about-me {
-    font-size: 32px;
-    color: #ff6d4d;
-    font-family: "Acme", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-}
-
-.desc{
-    position: relative;
-    top: 5px;
-}
-
-
-     /*   APARTADO DE MI HISTORIAL EN LOS JUEGOS   */
-
-
-.profile-history {
-  display: flex;
+  font-family: "Nunito", system-ui, sans-serif;
+  margin: 0;
+  padding: 0;
   position: relative;
-  justify-content: center;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: var(--crema);
+  background-image: radial-gradient(rgba(28, 31, 58, 0.09) 1.5px, transparent 1.5px);
+  background-size: 22px 22px;
+  color: var(--tinta);
+}
+
+/* el margen izquierdo deja lugar a la barra lateral */
+.perfil {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 1100px;
+  margin: 30px 30px 60px 90px;
+}
+
+.perfil *,
+.perfil *::before,
+.perfil *::after { box-sizing: border-box; }
+
+.perfil :focus-visible {
+  outline: 3px solid var(--naranja);
+  outline-offset: 3px;
+}
+
+/* === CAJAS === */
+.perfil-tarjeta {
+  padding: 24px 26px 28px;
+  background: var(--blanco-calido);
+  border: 2px solid var(--borde);
+  border-radius: 28px;
+}
+
+.perfil-sobre     { --acento: var(--naranja); }
+.perfil-favoritos { --acento: var(--menta); }
+
+/* títulos con el marcador de color */
+.perfil-titulo {
+  display: flex;
   align-items: center;
-  padding: 40px 20px;
-  margin-left: 20px;
-  margin-right: 30px;
-  margin-top: 30px;
-  background-color: #ffffff;
-  border-radius: 25px;
+  gap: 12px;
+  margin: 0 0 16px;
+  font-family: "Fredoka", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.perfil-titulo::before {
+  content: "";
+  flex-shrink: 0;
+  width: 12px;
+  height: 28px;
+  border-radius: 6px;
+  background: var(--acento, var(--azul));
+}
+
+.perfil-cantidad {
+  padding: 2px 11px;
+  border-radius: 999px;
+  background: var(--crema);
+  font-family: "Nunito", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+/* === CABECERA === */
+.perfil-cabecera {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 22px;
+}
+
+.perfil-avatar {
+  flex-shrink: 0;
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border: 3px solid var(--tinta);
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 5px 0 var(--tinta);
+}
+
+.perfil-datos {
+  flex: 1;
+  min-width: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.perfil-nombre {
+  margin: 0;
+  font-family: "Fredoka", sans-serif;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 600;
+  line-height: 1.1;
+  overflow-wrap: anywhere;
+}
+
+/* el rol como pastillita, igual que en los comentarios */
+.perfil-rol {
+  padding: 2px 14px;
+  border-radius: 999px;
+  background: #e6e9ff;
+  color: var(--azul);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+/* === SOBRE MÍ === */
+.perfil-desc {
+  max-width: 75ch;
+  margin: 0;
+  color: #34375a;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+
+/* === JUEGOS FAVORITOS === */
+.favoritos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 16px;
+}
+
+.tile {
+  position: relative;
+  display: block;
+  aspect-ratio: 1;
   overflow: hidden;
-  height: 450px;
-  border: 5px solid #ff4920;
-    
+  border-radius: 16px;
+  background: #f1e3b8;
+  color: inherit;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.your-register{
-    position: absolute;
-    font-size: 34px;
-    color: #ff6d4d;
-    top: 7px;
-    left: 20px;
-    
+.tile img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.void-list{
-    text-align:center;
-    position: absolute;
-    top: 200px;
-    
+.tile:hover,
+.tile:focus-visible {
+  transform: translateY(-5px) rotate(-1.5deg);
+  box-shadow: 0 6px 0 var(--acento);
 }
 
-
-/*           BOTONES            */
-
-.log-out-link{
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    background-color: #690013;
-    color: #ffeb99;
-    font-size: 25px;
-    border-radius: 25px;
-    left: 20px;
-    top: 40px;
-    width: 550px;
-    height: 60px;
-    padding: 100 280px;
-    border: none;
-    cursor: pointer;
-    text-decoration: none;
-    transition: transform 0.25s ease;
-
-}
-.edit-profile, .log-out{
-    position: relative;
+.tile:nth-child(even):hover,
+.tile:nth-child(even):focus-visible {
+  transform: translateY(-5px) rotate(1.5deg);
 }
 
-.edit-profile-link{
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    background-color: #690013;
-    color: #ffeb99;
-    font-size: 25px;
-    border-radius: 25px;
-    bottom: 50px;
-    right: 150px;
-    width: 250px;
-    height: 60px;
-    padding: 10 20px;
-    border: none;
-    cursor: pointer;
-    font-family: "Acme", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    text-decoration: none; 
-    transition: transform 0.25s ease;
+.tile-nombre {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 30px 10px 10px;
+  background: linear-gradient(to top, rgba(28, 31, 58, 0.92), transparent);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
-
-
-
-.log-out-link:hover{
-    background-color: #ff4920;
-    color: #fffbb6;
-    transform: translateY(-1.5px);
-    transition: transform 0.15s ease;
+.tile:hover .tile-nombre,
+.tile:focus-visible .tile-nombre {
+  opacity: 1;
+  transform: none;
 }
 
-.edit-profile-link:hover{
-    background-color: #ff4920;
-    color: #fffbb6;
-    transform: translateY(-1.5px);
-    transition: transform 0.15s ease;
+/* en pantallas táctiles no hay hover: el nombre queda visible */
+@media (hover: none) {
+  .tile-nombre { opacity: 1; transform: none; }
 }
 
+.favoritos-vacio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 32px 16px;
+  text-align: center;
+  color: var(--suave);
+  border: 2px dashed var(--borde);
+  border-radius: 18px;
+}
 
+.favoritos-vacio p { margin: 0; }
 
-@media (max-width: 1000px) {
-    .perfil-cabecera, .profile-history {
-        flex-direction: column;
-        align-items: center;
-    }
-    .log-out-link, .edit-profile-link {
-        position: static;
-        width: 80%;
-        font-size: 20px;
-        margin: 10px auto;
-    }
+.favoritos-vacio-titulo {
+  color: var(--tinta);
+  font-family: "Fredoka", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* === BOTONES (estilo "tecla con relieve") === */
+.btn-perfil {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 24px;
+  border: 2px solid var(--tinta);
+  border-radius: 999px;
+  background: var(--blanco-calido);
+  color: var(--tinta);
+  font-family: "Fredoka", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.2;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 4px 0 var(--tinta);
+  transition: transform 0.15s ease, box-shadow 0.15s ease,
+              background 0.15s ease, color 0.15s ease;
+}
+
+.btn-perfil i { font-size: 1.3rem; }
+
+.btn-perfil:hover,
+.btn-perfil:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 var(--tinta);
+}
+
+.btn-perfil:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 var(--tinta);
+}
+
+.btn-editar,
+.btn-explorar {
+  background: var(--azul);
+  color: #fff;
+}
+
+.btn-explorar { margin-top: 14px; }
+
+.btn-salir {
+  align-self: flex-start;
+  background: var(--coral);
+  color: #fff;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 760px) {
+  .perfil-cabecera { justify-content: center; text-align: center; }
+  .perfil-datos { align-items: center; flex-basis: 100%; }
+  .btn-editar { width: 100%; }
 }
 
 @media (max-width: 600px) {
-    .profile-content {
-        padding: 10px;
-    }
-    .log-out-link, .edit-profile-link {
-        position: static;    
-        width: 80%;           
-        font-size: 18px;
-        margin: 10px auto;    /* centra boton */
+  .perfil {
+    gap: 18px;
+    margin: 20px 12px 40px 60px;
+  }
+  .perfil-tarjeta {
+    padding: 18px 14px 20px;
+    border-radius: 22px;
+  }
+  .perfil-avatar { width: 110px; height: 110px; }
+  .favoritos-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 12px;
+  }
+  .btn-salir { width: 100%; align-self: stretch; }
+}
 
-    }
-    .user-desc {
-        font-size: 16px;
-        max-width: 100%;
-    }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .perfil * { transition: none !important; animation: none !important; }
 }

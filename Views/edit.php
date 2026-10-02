@@ -1,6 +1,13 @@
 <?php
     session_start();
     include "../Includes/Config.php";
+
+    function e($v) { return htmlspecialchars((string)$v, ENT_QUOTES, 'UTF-8'); }
+
+    // Mensaje de error que deja ControladorDatos.php (se limpia después de leerlo).
+    // strip_tags quita el HTML viejo (<br>, <p>) por si el controlador todavía lo manda.
+    $error = strip_tags($_SESSION["error"] ?? "");
+    $_SESSION["error"] = "";
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -8,15 +15,12 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Microgames Studio</title>
-    <link rel="stylesheet" href="../CSS/edit.css">
-    <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
-        <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <title>Editar perfil | Microgames Studio</title>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
     <link rel="shortcut icon" href="../IMG/LogoEmpresa.png" />
-    <link rel="stylesheet" href="../CSS/user.css">
     <link rel="stylesheet" href="../CSS/header.css">
     <link rel="stylesheet" href="../CSS/sidebar.css">
-
+    <link rel="stylesheet" href="../CSS/edit.css">
 </head>
 <body>
 <?php
@@ -24,68 +28,94 @@
     require_once "sidebar.php";
 ?>
 
-    <!-- Contenido principal, avatar y descripcion sobre el -->
-    <div class="contenido-edit">
-        <div class="todo">
-            <section class="profile-content">
-                <div class="perfil-cabecera">
-                    <img class="profile-avatar"
-                        src="<?php echo $_SESSION["perfil"]?>">
-                    <div class="profile-info">
-                        <p class="user-name"><?php echo $_SESSION['usuario']; ?></p>
-                        <p class="user-mail"><?php echo $_SESSION['rol']; ?></p>
+    <main class="editar">
+
+        <!-- Vista previa: se actualiza en vivo mientras editás -->
+        <aside class="editar-tarjeta editar-previa">
+            <img id="previa-avatar" class="previa-avatar" src="<?= e($_SESSION['perfil'] ?? '') ?>" alt="Tu foto de perfil">
+            <div>
+                <p id="previa-nombre" class="previa-nombre"><?= e($_SESSION['usuario'] ?? '') ?></p>
+                <span class="previa-rol"><?= e($_SESSION['rol'] ?? '') ?></span>
+            </div>
+            <p class="previa-ayuda">Así te van a ver los demás.</p>
+        </aside>
+
+        <section class="editar-tarjeta">
+            <h1 class="editar-titulo">Editar perfil</h1>
+
+            <!-- Cambiar datos (misma acción y mismos name que antes) -->
+            <form id="form-editar" class="editar-form" method="post" action="../Database/ControladorDatos.php" enctype="multipart/form-data">
+
+                <div id="mensaje-error" class="mensaje-error" role="alert"><?= e($error) ?></div>
+
+                <div class="grupo">
+                    <h2 class="grupo-titulo">Cuenta</h2>
+
+                    <div class="campo">
+                        <label for="nombre">Nombre de usuario</label>
+                        <input id="nombre" type="text" name="nuevoNombre" maxlength="40" required
+                               value="<?= e($_SESSION['usuario'] ?? '') ?>">
+                    </div>
+
+                    <div class="campo">
+                        <label for="correo">Correo electrónico</label>
+                        <input id="correo" type="email" name="nuevoCorreo" maxlength="255" required
+                               value="<?= e($_SESSION['email'] ?? '') ?>">
                     </div>
                 </div>
-                <div class="perfil-detalles">
-                    <div class="user-desc">
-                        <h2 class="about-me">Descripción sobre mí:</h2>
-                        <p class="desc"><?php echo $_SESSION["descripcion"];?></p>
+
+                <div class="grupo">
+                    <h2 class="grupo-titulo">Contraseña</h2>
+                    <p class="campo-nota">Dejala vacía si no querés cambiarla.</p>
+
+                    <div class="campo">
+                        <label for="password-input">Nueva contraseña</label>
+                        <div class="campo-pass">
+                            <input id="password-input" type="password" name="nuevaContraseña" maxlength="40"
+                                   placeholder="Nueva contraseña" autocomplete="new-password">
+                            <button type="button" class="ver-pass" data-target="password-input" aria-label="Mostrar contraseña">
+                                <i class='bx bx-show'></i>
+                            </button>
+                        </div>
                     </div>
 
-                    <!-- Cambiar datos -->
+                    <div class="campo">
+                        <label for="repeat-password-input">Repetir contraseña</label>
+                        <div class="campo-pass">
+                            <input id="repeat-password-input" type="password" name="nuevaContraseñaR" maxlength="40"
+                                   placeholder="Repetir contraseña" autocomplete="new-password">
+                            <button type="button" class="ver-pass" data-target="repeat-password-input" aria-label="Mostrar contraseña">
+                                <i class='bx bx-show'></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
 
-                    <div class="changes-info">
+                <div class="grupo">
+                    <h2 class="grupo-titulo">Perfil</h2>
 
-                        <form method="post" action="../Database/ControladorDatos.php" enctype="multipart/form-data">
-
-                        <h1 class="title">Cambiar datos</h1>
-
-                        <p class="user"><b>Nombre de usuario</b></p><input class="text-box-name-user" type="text"
-                           Value="<?php echo $_SESSION["usuario"];?>"  name="nuevoNombre">
-
-                            <!-- Inputs -->
-
-                        <p class="password"><b>Contraseña</b></p><input id="password-input" class="text-box-password" type="password"
-                            placeholder="Contraseña" name="nuevaContraseña" ><button id="view-password" type="button" class="pass-button" onclick="view()">X</button>
-                        <p class="repeat-password"><b>Repetir contraseña</b></p><input id="repeat-password-input" class="text-box-repeat-password"
-                            type="password" placeholder="Repetir contraseña" name="nuevaContraseñaR"><button id="view-repeat-password" type="button"
-                            class="repeat-button" onclick="repeat()">X</button>
-
-                        <p class="mail"><b>Correo electronico</b></p><input class="text-box-mail" type="email"
-                            Value="<?php echo $_SESSION["email"];?>" name="nuevoCorreo">
-
-                        <p class="pic"><b>Foto:</b></p><input type="file" name="foto" class="text-box-pic">
-                        <p class="description"><b>Descripción</b></p><textarea class="text-box-description" type="text"
-                            placeholder="Descripción" name="nuevaDescripcion"><?php echo $_SESSION["descripcion"];?></textarea>
-
-
-                        <input type="submit" name="Guardar" class="edit-profile-button" value="Actualizar perfil"><br><br>
-
-                        
-                        </form>
-                        <?php
-                            echo $_SESSION["error"];
-                            $_SESSION["error"] = "";
-                        ?>
-
+                    <div class="campo campo-foto">
+                        <label for="foto">Foto de perfil</label>
+                        <input id="foto" type="file" name="foto" accept="image/*">
                     </div>
 
-            </section>
-        </div>
-    </div>
+                    <div class="campo">
+                        <label for="descripcion">Descripción</label>
+                        <textarea id="descripcion" name="nuevaDescripcion" maxlength="255"
+                                  placeholder="Contanos algo sobre vos"><?= e($_SESSION['descripcion'] ?? '') ?></textarea>
+                        <span id="contador" class="contador">0 / 255</span>
+                    </div>
+                </div>
+
+                <div class="editar-acciones">
+                    <button type="submit" name="Guardar" value="Actualizar perfil" class="btn-editar btn-guardar">Actualizar perfil</button>
+                    <a href="user.php" class="btn-editar">Cancelar</a>
+                </div>
+            </form>
+        </section>
+    </main>
 
     <script src="../JS/edit.js"></script>
-
 
 </body>
 
