@@ -1,263 +1,261 @@
- html {
-     background-color: #ffcf99;
-     overflow-x: hidden;
-     width: 100%;
-     height: 100%;
- }
- 
-
- * {
-     margin: 0;
-     padding: 0;
-     box-sizing: border-box;
- }
-
-
- .header-info {
-     background-color: #ff6d4d;
-     width: 700px;
-     height: 620px;
-     border-radius: 4%;
-     color: #ffeb99;
-     font-family: "Acme", sans-serif;
-     font-weight: 400;
-     display:flex;
-     flex-direction: column;
-     align-items: center;
-     justify-content: flex-start;
-     margin: 30px auto;
- }
-
-
- .content-login {
-     position: relative;
-     bottom: 155px;
-     right: 30px;
- }
-
-
- .logo {
-     display: flex;
-     height: 200px;
-     width: 400px;
-     margin-left: 0px;
-     margin-bottom: 20px;
-     flex-direction: column;
-     align-items: center;
- }
-
-
- .text-log-in {
-     position: relative;
-     top: 95px;
-     left: 25px;
-     font-size: 40px;
- }
-
-
- .caja-info {
-     position: relative;
-     top: 60px;
- }
-
-
- .text-box-name-user {
-     position: relative;
-     top: 45px;
-     left: 25px;
-     width: 640px;
-     height: 45px;
-     font-size: 30px;
-     background-color: #690013;
-     border-radius: 15px;
-     color: #ffeb99;
- }
-
-
- .text-box-name-user:focus {
-     border: 3px solid #ffd54f;
-     outline: none;
- }
-
- .text-box-name-user::placeholder {
-     color: #ffeb998a;
- }
-
-
- .text-box-password {
-     position: relative;
-     top: 35px;
-     left: 25px;
-     width: 640px;
-     height: 45px;
-     font-size: 30px;
-     background-color: #690013;
-     border-radius: 15px;
-     color: #ffeb99;
-     padding-right: 50px;  /* espacio para el botón */
- }
-
-
- .text-box-password:focus {
-     border: 3px solid #ffd54f;
-     outline: none;
- }
-
-
- .text-box-password::placeholder {
-     color: #ffeb998a;
- }
-
-
- .user {
-     position: relative;
-     font-size: 25px;
-     top: 55px;
-     left: 30px;
- }
-
- .password {
-     position: relative;
-     font-size: 25px;
-     top: 65px;
-     left: 30px;
- }
-
-
- .forgot {
-     position: relative;
-    top: 130px;
-    left: 30px;
-     font-size: 17px;
-     color: #fff4c3e0;
-     transition: all 0.25s ease;
- }
-
- .forgot:hover{
-    color: #fae99dcc;
-    transition: all 0.25s ease;
- }
-
-
- .make {
-     position: relative;
-     width: 550px;
-     height: 80px;
-     left: 68px;
-     top: 85px;
-     font-size: 20px;
-     color: #ffeb99;
-     border-radius: 10px;
-     background-color: #690013;
-     cursor: pointer;
-     border: none;
-     transition: all 0.25s ease;
- }
-
- .make:hover{
-    background-color: rgb(128, 6, 35);
-    color:#faecb2;
-    transform: translateY(-1.5px);
-    transition: all 0.25s ease;
- }
-
-
- .sign-in {
-    position: absolute;
-    top: 395px;
-    left: 235px;
-    font-size: 17px;
-    color: #fff4c3e0;
-    transition: all 0.25s ease;
- }
-
- .sign-in:hover {
-    color: #fae99dcc;
-    transition: all 0.25s ease;
- }
-
- .password-button {
-     position: absolute;
-     display: inline-block;
-     left: 620px;
-     top: 215px;
-     border: none;
-     background-color: #ffeb99;
-     color: #690013;
-     padding: 5px 10px;
-     cursor: pointer;
-     border-radius: 3px;
-     transition: all 0.75s ease;
- }
-
-  .password-button:hover{
-    background-color:#ffbe6a;
-    color:rgb(185, 9, 50);
-    transition: all 0.75s ease;
-  }
-
- @media (max-width: 768px) {
-
-    .sidebar{
-        display:none;
-    }
-
-    .header-info {
-    width: 80%;
-    height: auto;
-    padding-bottom: 40px; 
-    padding-left: 10px;
-    padding-right: 10px;
-    }
-
-    .content-login {
-    position: relative;
-    right: 0px;
-    bottom: 130px;
-    }
-
-    .logo{
-        width: 80%
-    }
-
-    .text-log-in{
-        top: 80px;
-    }
-
-    .forgot{
-     top: 40px;
-     left: 200px;
-     font-size: 17px;
-     color: #fff4c3e0;        
-    }
-    
-
-    .sign-in {
-     top: 395px;
-     left: 95px;
-     font-size: 17px;
-     color: #fff4c3e0;
+html {
+    background-color: #ffcf99;
+    overflow-x: hidden;
+    width: 100%;
+    height: 100%;
 }
 
-    .text-box-name-user,
-    .text-box-password{
-        width: 100%;
-        left: 0;
-    }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    .user,
-    .password {
-        left: 5%;
-    }
+
+body {
+    font-family: "Acme", sans-serif;
+}
+
+.header-info {
+    background-color: #ff6d4d;
+    width: 630px;
+    max-width: 90%;
+    min-height: 620px;
+    border-radius: 20px;
+    color: #ffeb99;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 10px auto;
+    padding: 20px 20px;
+
+}
+
+.logo {
+    height: auto;
+    width: 400px;
+    max-width: 100%;
+}
+
+.content-login {
+    width: 100%;
+    max-width: 580px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.text-log-in {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.caja-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espaciado automático entre elementos */
+}
+
+.field-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 5px;
+}
+
+.user, .password {
+    font-size: 22px;
+}
+
+.text-box-name-user,
+.text-box-password {
+    width: 100%;
+    height: 45px;
+    font-size: 20px;
+    background-color: #690013;
+    border-radius: 12px;
+    color: #ffeb99;
+    padding: 0 12px;
+    border: 2px solid transparent;
+}
+
+.text-box-name-user:focus,
+.text-box-password:focus {
+    border: 2px solid #ffd54f;
+    outline: none;
+}
+
+.text-box-name-user::placeholder,
+.text-box-password::placeholder {
+    color: #ffeb998a;
+}
+
+/* Wrapper para contener la contraseña y su botón */
+.password-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.password-wrapper .text-box-password {
+    padding-right: 55px;
+}
 
 .password-button {
-    left: auto;
-    right: 15px;
-    top: 215px;  
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background-color: #ffeb99;
+    color: #690013;
+    padding: 5px 12px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.25s ease;
 }
 
-    .make {
-        width: 80%;
-        left: 10%;
+.password-button:hover {
+    background-color: #ffbe6a;
+    color: rgb(185, 9, 50);
+}
+
+/* Enlace Olvidé mi Contraseña */
+.forgot {
+    font-size: 16px;
+    color: #fff4c3e0;
+    text-decoration: none;
+    align-self: flex-start;
+    margin-top: -5px;
+    transition: color 0.25s ease;
+}
+
+.forgot:hover {
+    color: #fae99d;
+    text-decoration: underline;
+}
+
+/* Botón de ingreso */
+.make {
+    width: 100%;
+    height: 55px;
+    font-size: 22px;
+    color: #ffeb99;
+    border-radius: 10px;
+    background-color: #690013;
+    cursor: pointer;
+    border: none;
+    margin-top: 10px;
+    transition: all 0.25s ease;
+}
+
+.make:hover {
+    background-color: rgb(128, 6, 35);
+    color: #faecb2;
+    transform: translateY(-1.5px);
+}
+
+/* Enlace Sign-in */
+.sign-in {
+    font-size: 16px;
+    color: #fff4c3e0;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 10px;
+    transition: color 0.25s ease;
+}
+
+.sign-in:hover {
+    color: #fae99d;
+    text-decoration: underline;
+}
+
+/* Adaptación responsive básica */
+/* ==========================================
+   RESPONSIVE PARA CELULARES (LOGIN)
+   ========================================== */
+
+/* Tablets pequeñas y celulares en modo horizontal (< 768px) */
+@media (max-width: 768px) {
+
+    .header-info {
+        width: 92%;
+        max-width: 500px;
+        min-height: auto; /* Permite que la altura crezca según el contenido */
+        margin: 20px auto 40px auto; /* Espacio extra abajo (40px) */
+        padding: 25px 20px;
     }
+
+    .logo {
+        width: 320px;
+    }
+
+    .text-log-in {
+        font-size: 30px;
+        margin-bottom: 15px;
+    }
+}
+
+/* Celulares estándar y pequeños (< 480px) */
+@media (max-width: 480px) {
+
+    .header-info {
+        width: 95%;
+        border-radius: 16px;
+        padding: 20px 15px;
+        margin: 15px auto 40px auto; /* Margen inferior para ver el fondo amarillo */
+    }
+
+    .logo {
+        width: 250px; /* Reducimos el logo para que no ocupe toda la pantalla */
+    }
+
+    .text-log-in {
+        font-size: 26px;
+        margin-bottom: 12px;
+    }
+
+    .user, .password {
+        font-size: 18px;
+    }
+
+    .text-box-name-user,
+    .text-box-password {
+        height: 42px;
+        font-size: 17px;
+        border-radius: 10px;
+    }
+
+    .password-button {
+        padding: 4px 8px;
+        font-size: 14px;
+    }
+
+    .forgot, .sign-in {
+        font-size: 15px;
+    }
+
+    .make {
+        height: 48px;
+        font-size: 19px;
+        margin-top: 5px;
+    }
+}
+
+
+.error-message {
+    color: #690013;
+    background-color: #ffeb99;
+    border: 2px solid #690013;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    width: 100%;
 }
