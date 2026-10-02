@@ -1,3 +1,18 @@
+/* ===== VARIABLES DE COLOR (las mismas de antes) ===== */
+:root {
+    --crema: #fff7de;
+    --amarillo: #ffeb99;
+    --dorado: #ffca1d;
+    --naranja: #ff880d;
+    --coral: #ff6d4d;
+    --vino: #690013;
+    --borde: #751a12;
+
+    /* Ajustá estos dos valores si tu sidebar o tu header miden distinto */
+    --sidebar: 80px;      /* ancho del sidebar fijo a la izquierda */
+    --arriba: 130px;      /* espacio libre arriba para que el header no tape el título */
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -5,12 +20,11 @@
 }
 
 body {
-    height: 100%;
-    font-family: 'Arial', sans-serif;
-    background-color: #fff7de;
+    font-family: "Acme", Arial, sans-serif;
+    background-color: var(--crema);
+    color: #333;
     overflow-x: hidden;
 }
-
 
 nav {
     display: flex;
@@ -26,981 +40,409 @@ nav {
     font-weight: 400;
 }
 
-
-.main-content{
-    margin-left: 0px;
-    height: 1400px;
+/* ===== CONTENEDOR PRINCIPAL ===== */
+.main-content {
+    position: relative;
+    padding: var(--arriba) 24px 90px calc(var(--sidebar) + 24px);
 }
 
+/* Cada bloque se centra en el espacio que deja libre el sidebar */
+.about-section,
+.members-zone,
+.Box-control {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
 
-              /* APARTADO TITULOS Y SUBTITULOS */
+/* ===== DECORACIÓN ===== */
+.deco {
+    position: absolute;
+    z-index: -1;
+    border-radius: 50%;
+    pointer-events: none;
+}
 
+/* Todos quedan dentro del contenedor, así que nunca se cortan */
+.deco-1 {
+    width: 220px;
+    height: 220px;
+    background: var(--amarillo);
+    top: 90px;
+    left: calc(var(--sidebar) + 10px);
+}
 
+.deco-2 {
+    width: 150px;
+    height: 150px;
+    border: 14px solid var(--dorado);
+    top: 640px;
+    right: 24px;
+    opacity: 0.6;
+}
+
+.deco-3 {
+    width: 90px;
+    height: 90px;
+    background: var(--naranja);
+    opacity: 0.35;
+    bottom: 70px;
+    right: 16%;
+}
+
+/* ===== PRESENTACIÓN: texto + logo en grilla ===== */
 .about-section {
-    background-color: #fff7de;
-    padding: 100px 80px;
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 50px;
+    align-items: center;
 }
 
-.cajasub {
-    height: 800px;
-}
-
-  
 .subtitle {
-    display: flex;
-    margin-left: 230px;
-    font-size: 100px;
-    font-family: "Acme", sans-serif;
-    color: #ff6d4d;
+    font-size: clamp(48px, 8vw, 96px);
+    line-height: 1;
+    color: var(--coral);
+    margin-bottom: 28px;
 }
 
+.subtitle::after {
+    content: "";
+    display: block;
+    width: 120px;
+    height: 10px;
+    margin-top: 14px;
+    border-radius: 10px;
+    background: var(--dorado);
+}
 
 .who-we-are-text {
-    display: flex;
-    font-size: 25px;
-    width: 590px;
-    margin-left: 200px;
-    margin-top: 70px;
-    font-family: "Acme", sans-serif;
+    font-size: 22px;
+    line-height: 1.5;
+    background-color: #ffffff99;
+    border: 4px solid var(--dorado);
+    border-radius: 24px;
+    padding: 28px;
 }
 
-
-.companylogo {
+.logo-wrap {
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    width: 750px;
-    height: 750px;
-    min-width: 750px;
-    min-height: 750px;
     justify-content: center;
     align-items: center;
-    margin-left: 980px;
-    margin-top: -665px;
 }
 
+.companylogo {
+    width: 100%;
+    max-width: 440px;
+    height: auto;
+    border-radius: 50%;
+    background-color: var(--amarillo);
+    border: 8px solid var(--dorado);
+    padding: 16px;
+    animation: flotar 4s ease-in-out infinite;
+}
+
+@keyframes flotar {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+/* ===== INTRODUCCIÓN DE MIEMBROS ===== */
+.members-zone {
+    text-align: center;
+    max-width: 900px;
+    margin: 90px auto 50px;
+}
 
 .sub {
-    font-size: 100px;
-    font-family: "Acme", sans-serif;
-    color: #ff880d;
-    margin: 0 250px 40px 550px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    font-size: clamp(42px, 7vw, 84px);
+    line-height: 1;
+    color: var(--naranja);
+    margin-bottom: 24px;
 }
 
 .members-text {
-    display: flex;
-    font-size: 25px;
-    margin-bottom: 440px;
-    margin-left: 200px;
-    width: 1500px;
-    height: 300px;
-    font-family: "Acme", sans-serif;
+    font-size: 22px;
+    line-height: 1.5;
 }
 
-/* APARTADO DE MIEMBROS */
+/* ===== TARJETAS DE MIEMBROS (grilla 3 / 2 / 1 columnas) ===== */
+.Box-control {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
 
-.Box-control{
+.boxD, .boxM, .boxA, .boxN, .boxP, .boxZ {
+    background-color: var(--amarillo);
+    border: 5px solid var(--dorado);
+    border-radius: 28px;
+    padding: 36px 20px 32px;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 40px; /* espacio entre cajas */
-    max-width: 1500px; /* 3 cajas de 425px + espacios */
-    margin-left: 200px;
-    margin-bottom: 150px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 8px 0 var(--dorado);
+    transition: transform 0.4s ease;
+}
+
+.boxD:hover, .boxM:hover, .boxA:hover, .boxN:hover, .boxP:hover, .boxZ:hover {
+    transform: translateY(-6px);
+}
+
+/* Foto de perfil circular, igual para todos */
+.devprofile, .martprofile, .agusprofile,
+.niltprofile, .patiprofile, .zaidprofile {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 5px solid var(--borde);
+    background-size: cover;
+    background-position: center;
+    object-fit: cover;
+    cursor: pointer;
 }
 
 .member-profile {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 40px; /* espacio entre cajas */
-    margin-top: 80px;
+    margin-top: 24px;
 }
-
 
 .member-name {
-    display: flex;
-    font-size: 50px;
-    color: #333;
-    
+    font-size: 32px;
 }
 
-.boxD {
-    background-color: #ffeb99;
-    width: 425px;
-    height: 520px;
-    border-radius: 12%;
-    border: solid 5px;
-    border-color:rgb(255, 202, 29);    
-    padding: 5px;
-    transition: transform 1s ease;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    position: static !important;
-    margin: 0;
+.member-role {
+    font-size: 20px;
+    color: var(--coral);
+    margin-top: 6px;
 }
 
+/* Fotos de fondo de cada miembro */
+.devprofile { background-image: url('../IMG/Pomni87.png'); }
+.agusprofile { background-image: url('../IMG/escobar.webp'); }
+.martprofile { background-image: url('https://avatars.githubusercontent.com/u/205787438?v=4'); }
 
-
-
-.boxD:hover {
-    transform: scale(1.04);
-}
-
-
-
-
-.devprofile {
-    height: 200px;
-    width: 200px;
-    border-radius: 50%;
-    border: solid 5px;
-    border-color: #751a12;
-    position: relative;
-    left: 0px;
-    margin: 125px auto 0;
-    background-image: url('../IMG/Pomni87.png');
-    background-size: cover;
-    background-position: center;
-    position: static !important;
-    cursor: pointer;
-    
-}
-
-
-
-
+/* Efectos al pasar el mouse (los de siempre) */
 @keyframes Devanimation {
-    0% {
-        transform: rotate(0deg);
-    }
-
-
-
-
-    5% {
-        transform: rotate(30deg);
-    }
-
-
-
-
-    10% {
-        transform: rotate(-25deg);
-    }
-
-
-
-
-    15% {
-        transform: rotate(20deg);
-    }
-
-
-
-
-    20% {
-        transform: rotate(-15deg);
-    }
-
-
-
-
-    30% {
-        transform: rotate(10deg);
-    }
-
-
-
-
-    45% {
-        transform: rotate(0deg);
-    }
-
-
-
-
-    75% {
-        transform: rotate(30deg);
-    }
-
-
-
-
-    80% {
-        transform: rotate(-25deg);
-    }
-
-
-
-
-    85% {
-        transform: rotate(20deg);
-    }
-
-
-
-
-    90% {
-        transform: rotate(-15deg);
-    }
-
-
-
-
-    95% {
-        transform: rotate(10deg);
-    }
-
-
-
-
-    100% {
-        transform: rotate(0deg);
-    }
+    0%   { transform: rotate(0deg); }
+    10%  { transform: rotate(-25deg); }
+    20%  { transform: rotate(20deg); }
+    30%  { transform: rotate(-15deg); }
+    45%  { transform: rotate(0deg); }
+    100% { transform: rotate(0deg); }
 }
-
-
-
 
 .devprofile:hover {
     animation: Devanimation 2.2s ease-in-out infinite;
-    transform: rotate(40deg);
-    transition: 0.7s;
 }
-
-
-.boxA {
-    background-color: #ffeb99;
-    width: 425px;
-    height: 520px;
-    border-radius: 12%;
-    border: solid 5px;
-    border-color:rgb(255, 202, 29);    
-    padding: 5px;
-    transition: transform 1s ease;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    position: static !important;
-    margin: 0;
-}
-
-
-
-
-.boxA:hover {
-    transform: scale(1.04);
-}
-
-
-
-
-.agusprofile {
-    height: 200px;
-    width: 200px;
-    border-radius: 50%;
-    border: solid 5px;
-    border-color: #751a12;
-    position: relative;
-    left: 0px;
-    margin: 125px auto 0;
-    display: flex;
-    background-image: url('../IMG/escobar.webp');
-    background-size: cover;
-    background-position: center;
-    cursor: pointer;
-}
-
-
-
 
 .agusprofile:hover {
     background-image: url('https://media.tenor.com/KxLhjoEInTUAAAAM/%D9%81%D8%A7%D8%B4%DB%8C%D8%B3%D9%85%D8%B3%D8%B1%D8%AE-soviet-union.gif');
 }
 
-
-
-
-.boxM {
-    background-color: #ffeb99;
-    width: 425px;
-    height: 520px;
-    border-radius: 12%;
-    border: solid 5px;
-    border-color:rgb(255, 202, 29);    
-    padding: 5px;
-    transition: transform 1s ease;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    position: static !important;
-    margin: 0;
-}
-
-
-
-
-.boxM:hover {
-    transform: scale(1.04);
-}
-
-
-
-
-.martprofile {
-    height: 200px;
-    width: 200px;
-    border-radius: 50%;
-    border: solid 5px;
-    border-color: #751a12;
-    position: relative;
-    margin: 125px auto 0;
-    left: 0px;
-    display: flex;
-    background-image: url('https://avatars.githubusercontent.com/u/205787438?v=4');
-    background-size: cover;
-    background-position: center;
-    cursor: pointer;
-}
-
-
-
-
 .martprofile:hover {
     background-image: url('https://media.tenor.com/AwWxwJVLj4oAAAAM/stechumielihampterki-zi-ewan-ie.gif');
 }
 
-
-
-
-
-
-/*     CAJAS  DE ABAJO
-
-
-
-
-
-
-
-
-        |             |
-        |             |
-        V             V            */
-
-
-
-
-
-
-.boxN {
-    background-color: #ffeb99;
-    width: 425px;
-    height: 520px;
-    border-radius: 12%;
-    border: solid 5px;
-    border-color:rgb(255, 202, 29);    
-    padding: 5px;
-    transition: transform 1s ease;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    position: static !important;
-    margin: 0;
-}
-
-
-
-
-.boxN:hover {
-    transform: scale(1.04);
-}
-
-
-
-
-.niltprofile {
-    height: 200px;
-    width: 200px;
-    border-radius: 50%;
-    border: solid 5px;
-    border-color: #751a12;
-    position: relative;
-    margin: 125px auto 0;
-    left: 0px;
-    cursor: pointer;
-}
-
-
-
-
-.boxP {
-    background-color: #ffeb99;
-    width: 425px;
-    height: 520px;
-    border-radius: 12%;
-    border: solid 5px;
-    border-color:rgb(255, 202, 29);
-    padding: 5px;
-    transition: transform 1s ease;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    position: static !important;
-    margin: 0;
-}
-
-
-
-
-.boxP:hover {
-    transform: scale(1.04);
-}
-
-
-
-
-.patiprofile {
-    height: 200px;
-    width: 200px;
-    border-radius: 50%;
-    border: solid 5px;
-    border-color: #751a12;
-    position: relative;
-    margin: 125px auto 0;
-    left: 0px;
-    cursor: pointer
-}
-
-
-
-
-
-
 @keyframes Patanimation {
-    0% {
-        transform: rotate(0deg);
-    }
-
-
-
-
-    100% {
-        transform: rotate(360deg);
-    }
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
-
-
-
-
-
 
 .patiprofile:hover {
     animation: Patanimation 3s linear infinite;
 }
 
-
-
-
-.boxZ {
-    background-color: #ffeb99;
-    width: 425px;
-    height: 520px;
-    border-radius: 12%;
-    border: solid 5px;
-    border-color:rgb(255, 202, 29);
-    padding: 5px;
-    transition: transform 1s ease;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    position: static !important;
-    margin: 0;
-}
-
-
-
-
-.boxZ:hover {
-    transform: scale(1.04);
-}
-
-
-
-
-.zaidprofile {
-    height: 200px;
-    width: 200px;
-    border-radius: 50%;
-    border: solid 5px;
-    border-color: #751a12;
-    position: relative;
-    margin: 125px auto 0;
-    left: 0px;
-    cursor: pointer;
-}
-
-
-
-
-
-
-
-
-/*  APARTADO DE INFORMACION DE LOS MIEMBROS */
-
-
-
-
-.D-profile-info {
-    position: relative;
-    background-color: #690013;
-    width: 400px;
-    height: 400px;
-    border-radius: 50%;
-    top: 30px;
-    left: 30px;
-    background-image: url('../IMG/Pomni87.png');
-    background-position: center;
-    background-size: cover;
-}
-
-
-
-
-.M-profile-info {
-    position: relative;
-    background-color: #690013;
-    width: 400px;
-    height: 400px;
-    border-radius: 50%;
-    top: 30px;
-    left: 30px;
-    background-image: url('https://avatars.githubusercontent.com/u/205787438?v=4');
-    background-size: cover;
-    background-position: center;
-}
-
-
-
-
-.A-profile-info {
-    position: relative;
-    background-color: #690013;
-    width: 400px;
-    height: 400px;
-    border-radius: 50%;
-    top: 30px;
-    left: 30px;
-    background-image: url('../IMG/escobar.webp');
-    background-size: cover;
-    background-position: center;
-}
-
-
-
-
-.P-profile-info {
-    position: relative;
-    background-color: #690013;
-    width: 400px;
-    height: 400px;
-    border-radius: 50%;
-    top: 30px;
-    left: 30px;
-    background-image: url('../IMG/perfilpatiño.jpg');
-    background-position: center;
-    background-size: cover;
-}
-
-
-
-
-.N-profile-info {
-    position: relative;
-    background-color: #690013;
-    width: 400px;
-    height: 400px;
-    border-radius: 50%;
-    top: 30px;
-    left: 30px;
-    background-image: url('../IMG/perfilnilton.jpg');
-    background-position: center;
-    background-size: cover;
-}
-
-
-
-
-.Z-profile-info {
-    position: relative;
-    background-color: #690013;
-    width: 400px;
-    height: 400px;
-    border-radius: 50%;
-    top: 30px;
-    left: 30px;
-    background-image: url('../IMG/perfilzaid.jpg');
-    background-position: center;
-    background-size: cover;
-}
-
-
-/*      SECCION DE INFORMACION DE CADA UNO       */
-
-
-#overlay{
-    position:fixed;
+/* ===== VENTANA DE INFORMACIÓN ===== */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    background:#333;
+    background: #333;
     display: none;
-    z-index: 10000;  /* ya el z-index tiene 10000 asi q va arribadel overlay*/
+    z-index: 10000;
+    animation: fadeIn 0.7s ease forwards;
 }
 
+@keyframes fadeIn {
+    0%   { opacity: 0; }
+    100% { opacity: 0.3; }
+}
+
+@keyframes fadeInfo {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
+}
 
 .header-info {
     position: fixed;
     display: none;
-    top: 150px;
-    background-color: #ff6d4d;
-    width: 1000px;
-    height: 700px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: min(960px, 92vw);
+    max-height: 90vh;
+    overflow-y: auto;
+    background-color: var(--coral);
     border-radius: 15px;
-    color: #ffeb99;
-    z-index: 10000;
-    font-family: "Acme", sans-serif;
-    font-weight: 400;
-    font-style: normal;   
-}
-
-.header-info {animation: fadeInfo 0.7s ease;} /*Animacion de transicion*/
-@keyframes fadeInfo{
-    0% {opacity: 0;}
-    100% {opacity: 1;}
-}
-
-#overlay {animation: fadeIn 0.7s ease forwards;}
-@keyframes fadeIn{
-    0% {opacity: 0;}
-    100% {opacity: 0.3;}
-}
-
-.header-info::-webkit-scrollbar {
-    width: 8px;
-}
-
-.header-info::-webkit-scrollbar-thumb {
-    background-color: #690013;
-    border-radius: 4px;
-
-}
-
-.header-info::-webkit-scrollbar-track {
-    background-color: #ff6d4d;
-    border-radius: 15px;
+    color: var(--amarillo);
+    z-index: 10001;
+    animation: fadeInfo 0.7s ease;
 }
 
 .content-header-info {
-    position: relative;
+    display: flex;
     justify-content: space-between;
-    height: 50px;
-    width: 1000px;
-    background-color: #690013;
+    align-items: center;
+    background-color: var(--vino);
+    padding: 8px 16px 8px 24px;
 }
-
-
-
 
 .text-header {
-    position: absolute;
-    margin-top: 8px;
-    margin-left: 20px;
+    font-size: 28px;
+    font-weight: 400;
 }
-
-
-
 
 .close-info {
-    background-color: #ff880d;
-    position: relative;
-    top: 5px;
-    left: 940px;
-    height: 40px;
+    background-color: var(--naranja);
     width: 50px;
+    height: 40px;
     border-radius: 5px;
-    cursor: pointer;
     border: none;
+    cursor: pointer;
+}
+
+.close-info-logo {
+    font-size: 26px;
+    color: var(--amarillo);
     font-weight: bold;
 }
 
-
-.close-info-logo{
-    position: absolute;
-    left: 15px;
-    bottom: 2px;
-    font-size: 30px;
-    color: #ffeb99;
-    font-weight: bold;
+/* Cuerpo del modal: foto + datos a la izquierda, descripción a la derecha */
+.modal-body {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 20px;
+    padding: 24px;
 }
 
-
-.info-box {
-    display:flex;
-    bottom: 250px;
+.modal-left {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
+.D-profile-info, .M-profile-info, .A-profile-info,
+.P-profile-info, .N-profile-info, .Z-profile-info {
+    width: 100%;
+    max-width: 300px;
+    aspect-ratio: 1 / 1;
+    margin: 0 auto;
+    border-radius: 50%;
+    background-color: var(--vino);
+    background-size: cover;
+    background-position: center;
+}
 
-.info-name {
-    position: absolute;
-    height: 80px;
-    width: 400px;
-    left: 30px;
-    top: 480px;
-    background-color: #690013;
+.D-profile-info { background-image: url('../IMG/Pomni87.png'); }
+.M-profile-info { background-image: url('https://avatars.githubusercontent.com/u/205787438?v=4'); }
+.A-profile-info { background-image: url('../IMG/escobar.webp'); }
+.P-profile-info { background-image: url('../IMG/perfilpatiño.jpg'); }
+.N-profile-info { background-image: url('../IMG/perfilnilton.jpg'); }
+.Z-profile-info { background-image: url('../IMG/perfilzaid.jpg'); }
+
+.info-name, .info-section, .info-data {
+    background-color: var(--vino);
     border-radius: 15px;
+    padding: 18px 20px;
 }
 
+.text-box-name { font-size: 30px; }
+.text-box-section { font-size: 26px; }
+.text-box-facts { font-size: 30px; line-height: 1.4; }
 
-.info-data {
-    position: absolute;
-    height: 595px;
-    width: 480px;
-    left: 490px;
-    top: 80px;
-    background-color: #690013;
-    border-radius: 15px;
-}
+/* ===== RESPONSIVE ===== */
 
+/* Tamaños fluidos: se achican solos al reducir la ventana o hacer zoom */
+.who-we-are-text,
+.members-text { font-size: clamp(18px, 1.8vw, 22px); }
+.member-name { font-size: clamp(24px, 2.6vw, 32px); }
+.member-role { font-size: clamp(17px, 1.7vw, 20px); }
+.text-box-name { font-size: clamp(22px, 2.4vw, 30px); }
+.text-box-section { font-size: clamp(19px, 2.1vw, 26px); }
+.text-box-facts { font-size: clamp(21px, 2.4vw, 30px); }
 
-
-
-.info-section {
-    position: absolute;
-    height: 95px;
-    width: 400px;
-    left: 30px;
-    top: 580px;
-    background-color: #690013;
-    border-radius: 15px;
-}
-
-
-.text-box-name {
-    position: absolute;
-    top: 18px;
-    left: 20px;
-    font-size: 35px;
-    white-space: normal;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-}
-
-
-
-
-.text-box-section {
-    position: absolute;
-    top: 11px;
-    left: 20px;
-    font-size: 30px;
-    white-space: normal;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-}
-
-
-
-.text-box-facts {
-    position: absolute;
-    top: 13px;
-    left: 5px;
-    font-size: 40px;
-    white-space: normal;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-}
-
-
-@media (min-width: 1600px) {
-
-    .subtitle {
-        margin-left: 300px;
-        font-size: 110px;
-    }
-
-    .companylogo {
-        width: 800px;
-        height: 800px;
-        min-width: 800px;
-        min-height: 800px;
-    }
-
-    .who-we-are-text {
-        width: 700px;
-        font-size: 27px;
-    }
-            .header-info{
-        transform: translateY(-5%);
-        overflow-x: hidden;  /*ocultar scrollbar de abajo*/
-    }
-}
-
-
-/* Pantallas medianas (entre 1000px y 1600px) */
-
-@media (max-width: 1600px) and (min-width: 1200px) {
-
-    .main-content{
-        margin-left: 0px
-    }
-
-    .subtitle {
-        margin-left: 150px;
-        font-size: 90px;
-    }
-
-    .companylogo {
-        width: 600px;
-        height: 600px;
-        min-width: 600px;
-        min-height: 600px;
-        margin-left: 700px;
-        margin-top: -500px;
-    }
-
-    .who-we-are-text {
-        margin-left: 150px;
-        width: 500px;
-    }
-
-    .sub {
-        margin-left: 400px;
-        font-size: 85px;
-        white-space: nowrap;
-    }
-
-    .members-text {
-        width: 1000px;
-        margin-left: 150px;
-    }
-
-        .header-info{
-        transform: translateY(-10%);
-        width: 90vw;            /*maneja la ventana*/
-        max-width: 1000px;     
-        max-height: 80vh;       /* scroll auto*/
-        overflow-y: auto;       /*acomoda la scrollbar*/
-        overflow-x: hidden;
-    }
-
-}
-
-
-
-
-/*  Tablets y pantallas max */
-
+/* Escritorio chico / zoom moderado: sigue 3 x 2, pero más compacto */
 @media (max-width: 1200px) {
+    .main-content { padding: var(--arriba) 20px 80px calc(var(--sidebar) + 20px); }
+    .about-section { gap: 32px; }
+    .Box-control { gap: 24px; }
+
+    .boxD, .boxM, .boxA, .boxN, .boxP, .boxZ { padding: 28px 14px 26px; }
+
+    .devprofile, .martprofile, .agusprofile,
+    .niltprofile, .patiprofile, .zaidprofile {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+/* Tablet o zoom alto: 2 x 3 */
+@media (max-width: 1000px) {
+    .Box-control { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Presentación y modal en una sola columna */
+@media (max-width: 900px) {
+    nav { padding: 10px 24px; }
 
     .about-section {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 30px 10px;
-        margin-left: 120px;
+        grid-template-columns: 1fr;
+        gap: 36px;
     }
 
-    .subtitle {
-        margin-left: 0;
-        font-size: 70px;
-        text-align: center;
-    }
+    .logo-wrap { order: -1; }
+    .companylogo { max-width: 300px; }
 
-    .who-we-are-text {
-        width: 90%;
-        margin-left: 0;
-        margin-top: 30px;
-        text-align: center;
-    }
+    .subtitle { text-align: center; }
+    .subtitle::after { margin-left: auto; margin-right: auto; }
 
-    .companylogo {
-        display: none;
-    }
+    .members-zone { margin: 70px auto 40px; }
 
-    .sub {
-        margin: 60px 0 40px;
-        text-align: center;
-        font-size: 70px;
-    }
-
-    .members-text {
-        width: 90%;
-        margin: 0 auto 200px;
-        text-align: center;
-    }
-    .header-info{
-        transform: translateY(-10%);
-        width: 90vw;            /*hace responsive o se adapte a la pantalla*/
-        max-width: 1000px;      
-        max-height: 80vh;       
-        overflow-y: auto;
-        overflow-x: hidden;
-    }
+    .modal-body { grid-template-columns: 1fr; }
 }
 
-/*    CAJA DE MIEMBROS RESPONSIVE */
+/* Celular o zoom muy alto: 1 x 6 */
+@media (max-width: 600px) {
+    .main-content { padding: var(--arriba) 16px 60px calc(var(--sidebar) + 16px); }
 
     .Box-control {
-        margin-right: 100px;
+        grid-template-columns: 1fr;
+        max-width: 420px;
+        margin: 0 auto;
     }
 
-    .boxD, .boxM, .boxA, .boxN, .boxP, .boxZ {  /*usado para ahorrar lineas de codigo, muestra que todas estas clases tengas la siguiente condicion */
-        padding-bottom: 30px;   
-    }
+    .who-we-are-text { padding: 20px; }
 
+    .companylogo { max-width: 240px; }
 
+    .deco-2, .deco-3 { display: none; }
 
-
-/* Celulares */
-
-@media (max-width: 600px) {
-
-    .subtitle {
-        margin-left: 0;
-        font-size: 40px;
-        padding: 10px;
-        text-align: center;
-    }
-
-    .who-we-are-text {
-        font-size: 18px;
-    }
-
-    .companylogo {
-        display: none;
-    }
-
-    .sub {
-        font-size: 55px;
-        text-align: center;
-    }
-
-    .members-text {
-        font-size: 18px;
-        text-align: center;
-    }
+    .header-info { width: 94vw; }
+    .modal-body { padding: 16px; gap: 14px; }
+    .text-header { font-size: 20px; }
 }
 
+/* Pantallas muy chicas */
+@media (max-width: 380px) {
+    .subtitle { font-size: 40px; }
+    .sub { font-size: 36px; }
+    .member-name { font-size: 22px; }
+}
+
+/* Respeta a quienes tienen desactivadas las animaciones en su sistema */
+@media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+    #overlay { opacity: 0.3; }
+}

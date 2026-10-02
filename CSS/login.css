@@ -50,7 +50,7 @@
  .text-log-in {
      position: relative;
      top: 95px;
-     left: 20px;
+     left: 25px;
      font-size: 40px;
  }
 
@@ -126,8 +126,8 @@
 
  .forgot {
      position: relative;
-     top: 40px;
-     left: 450px;
+    top: 130px;
+    left: 30px;
      font-size: 17px;
      color: #fff4c3e0;
      transition: all 0.25s ease;
